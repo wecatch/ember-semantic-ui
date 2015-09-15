@@ -1,0 +1,10 @@
+{{#if label}}
+	<label>{{label}}</label>
+{{/if}}
+{{#each _options as |op|}}
+    <div class="field" >
+        {{#ui-radio value=op.value }}{{op.label}}{{/ui-radio}}
+    </div>
+{{/each}}
+
+{{yield}}
