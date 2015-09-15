@@ -1,7 +1,7 @@
 {
   "name": "ember-semantic-ui",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.0.1",
+  "description": "The simple orm and components based in semantic-ui",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -11,11 +11,25 @@
     "start": "ember server",
     "test": "ember try:testall"
   },
-  "repository": "",
+  "repository": "https://github.com/wecatch/ember-semantic-ui",
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": {
+    "name": "wecatch",
+    "url": "http://wecatch.me"
+  },
+  "contributors": [{
+    "name": "zhyq0826",
+    "email": "zhyq0826@email.com",
+    "url": "https://github.com/zhyq0826",
+    "blog": "http://sanyuesha.com"
+  }, {
+    "name": "jerryshew",
+    "email": "jerryshew@email.com",
+    "url": "https://github.com/jerryshew",
+    "blog": "http://braavos.me"
+  }],
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.1.2",
@@ -38,9 +52,10 @@
     "ember-try": "0.0.6"
   },
   "keywords": [
-    "ember-addon",
-    "ember-orm",
-    "ember-admin",
+    "ember",
+    "addon",
+    "simple-orm",
+    "semantic-ui",
     "wecatch"
   ],
   "dependencies": {
