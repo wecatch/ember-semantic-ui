@@ -1,7 +1,7 @@
 {
   "name": "ember-semantic-ui",
   "version": "0.0.1",
-  "description": "The simple orm and components based in semantic-ui",
+  "description": "The components based on semantic-ui",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -52,9 +52,8 @@
     "ember-try": "0.0.6"
   },
   "keywords": [
-    "ember",
-    "addon",
-    "simple-orm",
+    "ember-addon",
+    "components",
     "semantic-ui",
     "wecatch"
   ],
