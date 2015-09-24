@@ -1,6 +1,14 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+    actions: {
+        onShow(){
+            console.log('onShow');
+        },
+        onHide(){
+            this.sendAction('action');
+        }
+    },
 	tagName: 'div',
 
 	/**
@@ -9,6 +17,13 @@ export default Ember.Component.extend({
      * @default  false
     */
 	show: false,
+
+    /**
+     * Setting to false will not allow you to close the modal by clicking on the dimmer
+     * @property {Ember.Boolean} closable
+     * @default  true
+    */
+    closable: true,
 	/**
 	 * Class names to apply to the button
 	 *
@@ -26,12 +41,20 @@ export default Ember.Component.extend({
 	}.observes('show'),
 
 	initialize: function(argument) {
-		let that = this;
+		let that = this,
+            closable = this.get('closable');
 
 		this.$().modal({
+            closable: closable,
 			onHide(){
-				that.set('show', false);
-			}
+                if(that.get('show')){
+                    that.set('show', false);
+                    that.send('onHide');
+                }
+			},
+            onShow(){
+                that.send('onShow');
+            }
 		})
 	}.on('didInsertElement'),
 });
