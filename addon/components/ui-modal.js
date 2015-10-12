@@ -3,10 +3,10 @@ import Ember from 'ember';
 export default Ember.Component.extend({
     actions: {
         onShow(){
-            console.log('onShow');
+            this.sendAction('onShow');
         },
         onHide(){
-            this.sendAction('action');
+            this.sendAction('onHide');
         }
     },
 	tagName: 'div',
