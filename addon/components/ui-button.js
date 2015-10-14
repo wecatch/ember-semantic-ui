@@ -22,8 +22,15 @@ export default Ember.Component.extend({
      * @returns  {void}
      */
     click: function() {
-        this.sendAction();
+        this.sendAction('action', this.get('param'));
     },
+
+    /**
+     * Param to be sent to parent action
+     *
+     * @property {Ember.Array} classNames
+     */
+    param: null,
 
     /**
      * Class names to apply to the button

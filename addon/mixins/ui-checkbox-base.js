@@ -23,7 +23,7 @@ export default Ember.Mixin.create({
      * @returns  {void}
      */
     click: function() {
-        this.sendAction();
+        this.sendAction('action');
     },
 
     /**
