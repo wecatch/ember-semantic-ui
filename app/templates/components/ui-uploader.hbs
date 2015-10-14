@@ -1,0 +1,55 @@
+<div class="ui fluid labeled input" >
+    <label class="ui fluid huge label" style="{{labelStyle}}" >
+        <i class="big cloud upload icon"></i>
+        upload files
+    </label>
+    <input type="file" style="{{inputStyle}}" name="file" >
+</div>
+<div class="ui divided items" >
+    {{#each queue as |q| }}
+        <div class="item" >
+            {{#if q.isDisplayableImage}}
+                <div class="image" >
+                    <img src="{{q.base64Image}}">
+                </div>
+            {{/if}}
+            <div class="content" >
+                <div class="header" >
+                    {{q.name}} {{progress}}
+                </div>
+                <div class="meta" >
+                    {{q.size}}
+                </div>
+                <div class="description" >
+                    {{#ui-progress theme="indicating" loading=q.isUploading  success=q.isUploaded  percent=q.percent }}
+                          {{#if q.isUploaded}}
+                            <div class="label">Upload success</div>
+                          {{else}}
+                             <div class="label">Uploading file</div>
+                          {{/if}}
+                    {{/ui-progress}}
+                </div>
+                <div class="extra" >
+                    {{#unless q.isUploaded }}
+                        {{#unless autoUpload }}
+                        {{#ui-button theme="green" loading=q.isUploading action="start" param=q }}
+                            <i class="upload icon" ></i>
+                            upload
+                        {{/ui-button}}
+                        {{/unless}}
+                        <div class="ui button" {{action "abort" q }} >
+                            <i class="cancel icon"></i>
+                            cancel
+                        </div>
+                    {{/unless}}
+                    {{#if q.isUploaded}}
+                        <div class="ui red button" {{action "deleteFile" q }} >
+                            <i class="delete icon" ></i>
+                            delete
+                        </div>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    {{/each}}
+</div>

@@ -1,0 +1,4 @@
+<input type="file" name="file" >
+{{#unless autoUpload}}
+    {{#ui-button loading=isUploading theme=theme action="start"}}upload{{/ui-button}}
+{{/unless}}
