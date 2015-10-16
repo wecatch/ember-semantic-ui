@@ -6,7 +6,7 @@ export default Ember.Mixin.create({
 	 * the component tag
 	 *
 	 * @property {Ember.String} text
-	 */	
+	 */
 	tagName: 'div',
 
 	/**
@@ -50,50 +50,50 @@ export default Ember.Mixin.create({
 	 * @property {Ember.Boolean} focus
 	 */
 	focus: false,
-	
+
 	/**
 	 * the input loading status
 	 *
 	 * @property {Ember.Boolean} loading
 	 */
-	loading:false,
+	loading: false,
 
 	/**
 	 * the input error status 
 	 *
 	 * @property {Ember.Boolean} error
 	 */
-	error:false,
+	error: false,
 
 	/**
 	 * the input error status 
 	 *
 	 * @property {Ember.Boolean} error
 	 */
-	disabled:false,
+	disabled: false,
 
 	/**
 	 * the input readonly status 
 	 *
 	 * @property {Ember.Boolean} readonly
 	 */
-	readonly:false,
+	readonly: false,
 
 	/**
 	 * Class names to apply to the button
 	 *
 	 * @property {Ember.Array} classNames
 	 */
-	classNameBindings: ['_uiClass','disabled:disabled:', 'theme', '_componentClass', 'focus:focus:', 'loading:loading:', 'error:error:'],
+	classNameBindings: ['_uiClass', 'disabled:disabled:', 'theme', '_componentClass', 'focus:focus:', 'loading:loading:', 'error:error:'],
 	_uiClass: 'ui',
-	_componentClass:'input',
-	
-    /**
-     * Attribute bindings for containing div
-     *
-     * @property {Ember.Array} attributeBindings
-     */
-    attributeBindings: [ ],
+	_componentClass: 'input',
+
+	/**
+	 * Attribute bindings for containing div
+	 *
+	 * @property {Ember.Array} attributeBindings
+	 */
+	attributeBindings: [],
 
 	// -------------------------------------------------------------------------
 	// Actions
@@ -102,17 +102,20 @@ export default Ember.Mixin.create({
 	// Events
 
 	/**
-     * @function initialize
-     * @observes "didInsertElement" event
-     * @returns  {void}
-    */
+	 * @function initialize
+	 * @observes "didInsertElement" event
+	 * @returns  {void}
+	 */
 	initialize: function(argument) {
 		this.$('input').val(this.get('value'));
-		if(this.get('readonly')){
+		if (this.get('readonly')) {
 			this.$('input').attr('readonly', 'readonly');
 		}
-		this.$('input').change(Ember.run.bind(this, function(){
+		this.$('input').change(Ember.run.bind(this, function() {
 			this.set('value', this.$('input').val());
 		}));
 	}.on('didInsertElement'),
+	valueChange: Ember.observer('value', function() {
+		this.$('input').val(this.value);
+	})
 });
