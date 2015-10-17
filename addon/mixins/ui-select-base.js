@@ -145,6 +145,20 @@ export default Ember.Mixin.create({
         });
 
      }.observes('options'),
+    
+    /**
+     * @function setSelected reset selected value when value change
+     * @observes "value" property
+     * @returns  {void}
+    */
+     setSelected: function(){
+        this.get('value') ? this.$('.ui.dropdown').dropdown('set selected', this.get('value')) : '';
+     }.observes('value'),
+    /**
+     * @function selectedValue 
+     * @observes "options" property
+     * @returns  {void}
+    */
 
     /**
      * @function assembleDom 

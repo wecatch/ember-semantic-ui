@@ -12,9 +12,9 @@ export default Ember.Mixin.create({
     /**
      * value  for the checkbox radio group component
      *
-     * @property {Ember.String} value
+     * @property {Ember.Array} value
      */
-    value: '',
+    value: [],
 
     /**
      * name for the checkbox radio group component

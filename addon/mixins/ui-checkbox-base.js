@@ -31,8 +31,8 @@ export default Ember.Mixin.create({
      *
      * @property {Ember.String} theme
      */
-    theme: function(){
-        if(this.get('type')=='radio'){
+    theme: function() {
+        if (this.get('type') == 'radio') {
             return 'radio';
         }
         return '';
@@ -45,7 +45,7 @@ export default Ember.Mixin.create({
      */
     classNameBindings: ['_uiClass', 'theme', '_componentClass'],
     _uiClass: 'ui',
-    _componentClass:'checkbox',
+    _componentClass: 'checkbox',
 
     /**
      * Attribute bindings for the checkbox component
@@ -71,14 +71,14 @@ export default Ember.Mixin.create({
      * @function initialize
      * @observes "didInsertElement" event
      * @returns  {void}
-    */
+     */
     initialize: function(argument) {
         this.$().checkbox();
-        let name = this.get('name'), 
+        let name = this.get('name'),
             input = this.$('input'),
             value = this.get('value'),
             checked = this.get('checked');
-            
+
         input.prop('checked', checked);
         input.attr('name', name);
         input.val(value);
@@ -86,5 +86,25 @@ export default Ember.Mixin.create({
             this.set('checked', this.$('input').is(':checked'));
         }));
 
-    }.on('didInsertElement')
+    }.on('didInsertElement'),
+
+    /**
+     * @function setChecked
+     * @observes "checked" 
+     * @returns  {void}
+     */
+    setChecked: function() {
+        let input = this.$('input');
+        input.prop('checked', this.get('checked'));
+    }.observes('checked'),
+
+    /**
+     * @function setValue
+     * @observes "value" 
+     * @returns  {void}
+     */
+    setValue: function() {
+        let input = this.$('input');
+        input.val(this.get('value'));
+    }.observes('value'),
 });
