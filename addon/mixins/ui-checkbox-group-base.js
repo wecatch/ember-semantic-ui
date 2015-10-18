@@ -52,7 +52,7 @@ export default Ember.Mixin.create({
     classNameBindings: ['theme', '_componentClass'],
     theme: 'inline',
     _componentClass: 'fields',
-    
+
     /**
      * options for the checkbox component
      *
@@ -66,29 +66,20 @@ export default Ember.Mixin.create({
      * @property {Ember.Array} options
      */
     _options: [],
-    
+
     /**
-     * @function init ember component init func
+     * @function initOptions connect options and _options step one
+     * @observes "didInsertElement" event
      * @returns  {void}
      */
-    init: function(){
-        this._super();
+    initOptions: function() {
         let _options = [];
-        this.get('options').forEach(Ember.run.bind(this, function(item){
+        this.get('options').forEach(Ember.run.bind(this, function(item) {
             _options.push({
                 'label': item[this.get('labelPath')],
                 'value': item[this.get('valuePath')],
             });
         }));
         this.set('_options', _options);
-    },
-    
-    /**
-     * @function initialize
-     * @observes "didInsertElement" event
-     * @returns  {void}
-     */
-    initialize: function (argument) {
-        this.setupOptions();
-    }.on('didInsertElement')
+    }.on('init'),
 });

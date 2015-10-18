@@ -17,6 +17,15 @@ export default Ember.Component.extend(UiSelectBase, {
     allowMulti: true,
 
     /**
+     * @function setSelected reset selected value when value change
+     * @observes "value" property
+     * @returns  {void}
+     */
+    setSelected: function() {
+        this.get('value') ? this.$('.ui.dropdown').dropdown('set selected', this.get('value')) : '';
+    }.observes('value.[]'),
+
+    /**
      * @function setupOptions 
      * @observes "options" property
      * @returns  {void}

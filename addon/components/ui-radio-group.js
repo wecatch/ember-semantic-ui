@@ -2,24 +2,44 @@ import Ember from 'ember';
 import UiCheckboxGroupBase from '../mixins/ui-checkbox-group-base';
 
 export default Ember.Component.extend(UiCheckboxGroupBase, {
-    setupOptions: function() {
-        // remove all old radio then rerender
-        this.$().remove('.checkbox');
+    /**
+     * @function initialize step two
+     * @observes "didInsertElement" event
+     * @returns  {void}
+     */
+    initialize: function(argument) {
+        this.setupChangeEvent();
+        this.setupChecked();
+    }.on('didInsertElement'),
+
+    setupChangeEvent: function() {
         this.$('input').change(Ember.run.bind(this, function() {
             this.set('value', this.$('input:checked').val());
         }));
+    },
 
-        this.setupValue();
-    }.observes('options'),
-    setupValue: function() {
+    setupChecked: function() {
         let self = this;
         let name = this.get('name');
 
         this.$('input').each(function(index, item) {
-            if (self.get('value').indexOf($(item).val()) >= 0) {
+            if (self.get('value') && self.get('value') === $(item).val()) {
                 $(item).prop('checked', true);
             }
             $(item).attr('name', name);
         });
-    }.observes('value'),
+    },
+
+    valueChange: Ember.observer('value', function(){
+        this.setupChecked();
+    }),
+    
+    optionsChange: function() {
+        this.initOptions();
+        // when new options was added
+        Ember.run.later(this, function() {
+            this.setupChecked();
+            this.setupChangeEvent();
+        }, 100);
+    }.observes('options.[]'),
 });
