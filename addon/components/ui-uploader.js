@@ -35,9 +35,9 @@ export default Ember.Component.extend({
         abort: function(obj) {
             this.sendAction('uploadAbort', obj);
             if (obj.uploader) {
-                try{
+                try {
                     obj.uploader.abort();
-                }catch(e){
+                } catch (e) {
 
                 }
             } else {
@@ -90,6 +90,14 @@ export default Ember.Component.extend({
     queue: [],
 
     /**
+     * upload multiple file
+     *
+     * @property {Ember.Boolean} multiple
+     * @default  []
+     */
+    multiple: false,
+
+    /**
      * @function initialize
      * @observes "didInsertElement" event
      * @returns  {void}
@@ -100,17 +108,23 @@ export default Ember.Component.extend({
             let input = e.target,
                 obj = null;
             if (!Ember.isEmpty(input.files)) {
-                obj = fileObject.create({
-                    fileToUpload: input.files[0]
-                });
-                self.queue.pushObject(obj);
+                for (let i = input.files.length - 1; i >= 0; i--) {
+                    let obj = fileObject.create({
+                        fileToUpload: input.files[i]
+                    });
+                    self.queue.pushObject(obj);
+                    if (self.autoUpload) {
+                        self.send('start', obj);
+                    }
+                }
+
                 //$(this).after($(this).clone().val(""));
                 $(this).val("");
-                if (self.autoUpload) {
-                    self.send('start', obj);
-                }
             }
         });
+        if (this.get('multiple')) {
+            this.$('input').attr('multiple', 'multiple');
+        }
     }.on('didInsertElement'),
     /**
      * @function inputStyle
