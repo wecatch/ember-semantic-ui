@@ -1,3 +1,6 @@
+// this file contains source code from  https://github.com/benefitcloud/ember-uploader
+// thanks to this great project
+
 import Ember from 'ember';
 
 var get = Ember.get,
