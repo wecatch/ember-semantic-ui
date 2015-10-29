@@ -26,23 +26,23 @@ addon in their Ember project.
 
 # Getting Started
 
-## install
+## Install
 
 In your ember-cli project, install this addon from npm 
 
 ```
-npm install ember-semantic-ui 
+npm install ember-semantic-ui --save
 
 ```
 
 or install the latest version from github
 
 ```
-npm install https://github.com/wecatch/ember-semantic-ui
+npm install https://github.com/wecatch/ember-semantic-ui --save
 
 ```
 
-## use this addon in your ember application
+## Use this addon in your ember application
 
 
 1.Put semantic ui dependency in your ember-cli project public/assets like this
