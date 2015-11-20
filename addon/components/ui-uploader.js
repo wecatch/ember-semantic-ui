@@ -15,7 +15,7 @@ export default Ember.Component.extend({
                 url: url
             });
 
-            obj.uploadPromise = obj.uploader.upload(obj.fileToUpload);
+            obj.uploadPromise = obj.uploader.upload(obj.fileToUpload, this.params);
 
             self.sendAction('uploadStart', obj);
             obj.set('isUploading', Ember.computed.alias('uploader.isUploading'));
@@ -38,7 +38,9 @@ export default Ember.Component.extend({
                 try {
                     obj.uploader.abort();
                 } catch (e) {
-
+                    
+                }finally {
+                    this.get('queue').removeObject(obj);
                 }
             } else {
                 this.get('queue').removeObject(obj);
@@ -96,6 +98,14 @@ export default Ember.Component.extend({
      * @default  []
      */
     multiple: false,
+
+    /**
+     * extra params
+     *
+     * @property {Ember.Object} params
+     * @default  null
+     */
+    params: null,
 
     /**
      * @function initialize

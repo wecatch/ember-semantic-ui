@@ -25,7 +25,10 @@
                           {{#if q.isUploaded}}
                             <div class="label">Upload success</div>
                           {{else}}
-                             <div class="label">Uploading file</div>
+                             <div class="label">
+                                Uploading file
+                                <div class="ui active small inline text loader" ></div>
+                             </div>
                           {{/if}}
                     {{/ui-progress}}
                 </div>
