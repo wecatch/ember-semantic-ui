@@ -9,6 +9,17 @@ export default Ember.Component.extend(UiSelectBase, {
      * @returns  {void}
      */
     setSelected: function() {
-        this.get('value') ? this.$('.ui.dropdown').dropdown('set selected', this.get('value')) : '';
+        let value = this.get('value'),
+            options = this.get('options'),
+            valuePath = this.get('valuePath'),
+            namePath = this.get('namePath');
+
+        for (var i = 0; i < options.length; i++) {
+            if (options[i][valuePath] == String(value)) {
+                this.$('.ui.dropdown').dropdown('set selected', value);
+                return;
+            }
+        };
+        this.$('.ui.dropdown').dropdown('restore defaults')
     }.observes('value'),
 });
