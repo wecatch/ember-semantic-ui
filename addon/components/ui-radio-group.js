@@ -24,7 +24,7 @@ export default Ember.Component.extend(UiCheckboxGroupBase, {
         let value = this.get('value');
 
         this.$('input').each(function(index, item) {
-            $(item).prop('checked', value === $(item).val());
+            $(item).prop('checked', value == $(item).val());
             $(item).attr('name', name);
         });
     },

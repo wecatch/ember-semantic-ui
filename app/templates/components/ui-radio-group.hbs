@@ -2,9 +2,7 @@
 	<label>{{label}}</label>
 {{/if}}
 {{#each _options as |op|}}
-    <div class="field" >
-        {{#ui-radio value=op.value }}{{op.label}}{{/ui-radio}}
-    </div>
+    {{#ui-radio value=op.value }}{{op.label}}{{/ui-radio}}
 {{/each}}
 
 {{yield}}

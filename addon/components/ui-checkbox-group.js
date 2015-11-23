@@ -41,12 +41,12 @@ export default Ember.Component.extend(UiCheckboxGroupBase, {
     }),
 
     setupChecked: function() {
-        let self = this;
         let value = this.get('value');
         if (typeof value == 'string') value = Array(value);
-        
-        this.$('input').each(function(index, item) {
-            $(item).prop('checked', value.indexOf($(item).val()) >= 0);
-        });
+        if (value) {
+            this.$('input').each(function(index, item) {
+                $(item).prop('checked', value.indexOf($(item).val()) >= 0);
+            });
+        }
     }.observes('value')
 });

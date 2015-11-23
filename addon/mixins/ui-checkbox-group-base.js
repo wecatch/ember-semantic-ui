@@ -35,7 +35,7 @@ export default Ember.Mixin.create({
      *
      * @property {Ember.String} labelPath
      */
-    labelPath: 'label',
+    labelPath: 'name',
 
     /**
      * value key for option
