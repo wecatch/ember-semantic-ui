@@ -118,6 +118,7 @@ export default Ember.Object.extend(Ember.Evented, {
       contentType: false,
       processData: false,
       traditional: true,
+      dataType: 'json',
       xhr: function() {
         var xhr = Ember.$.ajaxSettings.xhr();
         xhr.upload.onprogress = function(e) {
