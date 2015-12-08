@@ -58,7 +58,7 @@ export default Ember.Component.extend(Ember.Evented, {
                 uploader.on('didUpload', function(data) {
                     self.set('isUploaded', true);
                     fileObject.set('data', data)
-                    self.sendAction('uploadSucess', fileObject);
+                    self.sendAction('uploadSuccess', fileObject);
                 });
             }
         },

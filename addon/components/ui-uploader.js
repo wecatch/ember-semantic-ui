@@ -29,7 +29,7 @@ export default Ember.Component.extend({
                 obj.set('isUploaded', true);
                 obj.set('data', data);
 
-                self.sendAction('uploadSucess', obj);
+                self.sendAction('uploadSuccess', obj);
             });
         },
         abort: function(obj) {
@@ -136,6 +136,17 @@ export default Ember.Component.extend({
             this.$('input').attr('multiple', 'multiple');
         }
     }.on('didInsertElement'),
+    /**
+     * @function willDestroyElement empty queue
+     * 
+     * @returns  null
+     */
+    willDestroyElement(){
+        let self = this;
+        this.queue.forEach(function(item){
+            self.queue.removeObject(item);
+        });
+    },
     /**
      * @function inputStyle
      * 
