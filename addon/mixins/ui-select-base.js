@@ -182,20 +182,12 @@ export default Ember.Mixin.create({
         }
         if (options) {
             if(allowMulti){
-                options.forEach(function(item){
-                    let selected = '';
-                    let option = '';
-                    if(selectedVal.indexOf(item[valuePath])>=0){
-                        selected = 'selected="selected"';
-                    }
-                    option = '<option value="'+item[valuePath]+'"'+selected+'>'+item[namePath]+'</option>';
-                    selectDom += option;
-                });
+                // padding
             }else {
                 options.forEach(function(item){
                     let selected = '';
                     let option = '';
-                    if(selectedVal===item[valuePath]){
+                    if(String(selectedVal)===item[valuePath]){
                         selected = 'selected="selected"';
                     }
                     option = '<option value="'+item[valuePath]+'"'+selected+'>'+item[namePath]+'</option>';
