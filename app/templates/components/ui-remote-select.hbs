@@ -1,0 +1,45 @@
+<label for="">{{label}}</label>
+<br>
+<div class="ui small labels basic">
+    {{#each selectedNames as |name|}}
+        <div class="ui label" {{action 'removeSelect' name}}>
+            {{name}}
+            <i class="delete icon"></i>
+        </div>
+    {{/each}}
+</div>
+{{input action="onInputChange" on="key-up" class="ui input" placeholder='搜索...'}}
+<div style="position:relative">
+    {{#if model}}
+        <div class="ui segment" style="position: absolute;
+                                        width: 100%;
+                                        height: 300px;
+                                        overflow-y: scroll;
+                                        overflow-x: hidden;
+                                        border-bottom: none;
+                                        margin-top: 1px;z-index:100">
+            <div class="ui list" style="">
+                {{#each model as |item|}}
+                    <div class="item">
+                        {{#if item.selected}}
+                            <a href='javascript:;' {{action 'toggleSelect' item}}>
+                                {{item.name}}
+                                <i class="checkmark icon"></i>
+                            </a>
+                        {{else}}
+                            <a href='javascript:;' data-value={{item.value}}  {{action 'toggleSelect' item}}>{{item.name}}</a>
+                        {{/if}}
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+        <div class="ui center aligned segment" style="position: absolute;
+                                                            top: 300px;
+                                                            border-top: none;
+                                                            width: 100%;
+                                                            overflow: hidden;
+                                                            margin-top: 1px;z-index:100">
+            <div class="ui button" {{action 'clearSearch'}}>关闭</div>
+        </div>
+    {{/if}}
+</div>
