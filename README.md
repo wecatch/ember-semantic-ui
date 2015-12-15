@@ -22,7 +22,7 @@ addon in their Ember project.
 - ui-select
 - ui-uploader
 - file-input
-
+- ui-link
 
 # Getting Started
 
