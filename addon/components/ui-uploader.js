@@ -1,9 +1,8 @@
 import Ember from 'ember';
 import emberUploader from '../utils/ember-uploader';
-import {
-    fileObject, humanReadableFileSize
-}
-from '../utils/file-object';
+import { fileObject, humanReadableFileSize } from '../utils/file-object';
+
+const {get, set, computed} = Ember;
 
 export default Ember.Component.extend({
     actions: {
@@ -18,7 +17,7 @@ export default Ember.Component.extend({
             obj.uploadPromise = obj.uploader.upload(obj.fileToUpload, this.params);
 
             self.sendAction('uploadStart', obj);
-            obj.set('isUploading', Ember.computed.alias('uploader.isUploading'));
+            obj.set('isUploading', computed.alias('uploader.isUploading'));
 
             obj.uploader.on('progress', function(e) {
                 obj.set('percent', parseInt(e.percent));
@@ -89,7 +88,7 @@ export default Ember.Component.extend({
      * @property {Ember.Array} queue
      * @default  []
      */
-    queue: [],
+    queue: null,
 
     /**
      * upload multiple file
@@ -129,23 +128,28 @@ export default Ember.Component.extend({
                 }
 
                 //$(this).after($(this).clone().val(""));
+                //empty input files
                 $(this).val("");
             }
         });
-        if (this.get('multiple')) {
-            this.$('input').attr('multiple', 'multiple');
-        }
     }.on('didInsertElement'),
     /**
-     * @function willDestroyElement empty queue
+     * @function willDestroy empty queue
      * 
      * @returns  null
      */
-    willDestroyElement(){
-        let self = this;
-        this.queue.forEach(function(item){
-            self.queue.removeObject(item);
-        });
+    willDestroy(){
+        this._super();
+        this.queue.clear();//clear input file
+    },
+    /**
+     * @function willDestroy empty queue
+     * 
+     * @returns  null
+     */
+    init(){
+        this._super(...arguments);
+        this.set('queue', Ember.A());
     },
     /**
      * @function inputStyle

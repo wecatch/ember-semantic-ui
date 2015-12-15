@@ -12,7 +12,7 @@ export default Ember.Component.extend(Ember.Evented, {
     uploader: null,
     url: null,
     method: 'POST',
-    extra: {},
+    extra: null,
     paramName: 'file',
     isUploaded: false,
     isUploading: Ember.computed.alias('uploader.isUploading'),
@@ -42,11 +42,10 @@ export default Ember.Component.extend(Ember.Evented, {
     },
     actions: {
         start: function() {
-            let uploader = this.get('uploader'),
-                fileObject = this.get('fileObject'),
-                self = this;
+            let { uploader, fileObject, extra} = this.getProperties('uploader', 'fileObject', 'extra');
+            let self = this;
             if (fileObject) {
-                uploader.upload(fileObject.fileToUpload);
+                uploader.upload(fileObject.fileToUpload, extra);
                 this.sendAction('uploadStart', fileObject);
 
                 //progress event
@@ -68,14 +67,19 @@ export default Ember.Component.extend(Ember.Evented, {
         }
     },
     init: function() {
-        this._super();
-        let url = this.get('url'),
-            method = this.get('method'),
-            paramName = this.get('paramName');
+        this._super(...arguments);
+        let { url, method, paramName} = this.getProperties('url', 'method', 'paramName');
         this.set('uploader', emberUploader.create({
             url: url,
             paramName: paramName,
             type: method
         }));
     },
+    willDestroy(){
+        this._super();
+        this._destroyUploader();
+    },
+    _destroyUploader: function(){
+        this.set('uploader', null);
+    }
 });

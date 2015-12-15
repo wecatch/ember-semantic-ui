@@ -95,6 +95,12 @@ The [ember-uploader](https://github.com/benefitcloud/ember-uploader) project sup
 # Release notes
 
 
+## 0.0.5 
+
+**2015-12-09**
+
+- ui-uploader,ui-checkbox,file-object fix some bugs 
+
 ## 0.0.3 
 
 **2015-10-21**
