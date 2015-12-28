@@ -7,7 +7,7 @@ export default Ember.Component.extend(UiSelectBase, {
      *
      * @property {Ember.String} value
      */
-    value: [],
+    value: null,
 
     /**
      * if allow search option
@@ -50,4 +50,8 @@ export default Ember.Component.extend(UiSelectBase, {
         });
         
      }.observes('options'),
+    init: function(){
+        this._super(...arguments);
+        this.set('value', Ember.A());
+    }
 });
