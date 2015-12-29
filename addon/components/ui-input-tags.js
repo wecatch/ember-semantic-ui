@@ -18,7 +18,7 @@ export default Ember.Component.extend({
      *
      * @property {Ember.String} value
      */
-    value: [],
+    value: null,
 
     /**
      * @function initialize
@@ -41,5 +41,9 @@ export default Ember.Component.extend({
                 that.set('value', value.toArray());
             }
         });
-    }.on('didInsertElement')
+    }.on('didInsertElement'),
+    init: function(){
+        this._super(...arguments);
+        this.set('value', Ember.A());
+    }
 });

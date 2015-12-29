@@ -5,13 +5,12 @@ export default Ember.Component.extend({
     classNameBindings: ['class'],
     tagName: 'div',
     modelName: '',
-    model: [],
-    value: [],
+    model: null,
+    value: null,
     valuePath: 'value',
     labelPath: 'name',
     label: '选中项',
-    selectedNames: [],
-
+    selectedNames: null,
     formatOptions: function(options){
         let new_options = [];
         let labelPath = this.get('labelPath');
@@ -58,7 +57,10 @@ export default Ember.Component.extend({
 
         return value;
     },
-
+    init: function(){
+        this._super(...arguments);
+        this.initValues();
+    },
     actions: {
         onInputChange(name){
             let that = this;
