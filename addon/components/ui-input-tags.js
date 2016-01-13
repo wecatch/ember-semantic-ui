@@ -26,8 +26,14 @@ export default Ember.Component.extend({
      * @returns  {void}
      */
     initialize: function(argument) {
-
+        this.renderDropDown();
+    }.on('didInsertElement'),
+    renderDropDown: function() {
         let that = this;
+        let selectDom = this.assembleDom();
+        this.$().empty();
+        this.$().append(selectDom);
+
         this.$('select').dropdown({
             allowAdditions: true,
             onAdd: function(addedValue, addedText, $addedChoice) {
@@ -41,9 +47,27 @@ export default Ember.Component.extend({
                 that.set('value', value.toArray());
             }
         });
-    }.on('didInsertElement'),
-    init: function(){
+    }.observes('value.[]'),
+    assembleDom: function() {
+
+        // init select
+        let selectDom = '<select multiple="" class="' + this.get('_uiClass') + ' ' + this.get('theme') + ' ' + this.get('_componentClass') + '">';
+        let value = this.get('value');
+
+        for (var i = 0; i < value.length; i++) {
+            let item = String(value[i]);
+            let option = '';
+            option = '<option value="' + item + '" selected="" >' + item + '</option>';
+            selectDom += option;
+        };
+
+        selectDom += '</select>';
+        return selectDom;
+    },
+    init: function() {
         this._super(...arguments);
-        this.set('value', Ember.A());
+        if (!this.get('value')) {
+            this.set('value', Ember.A());
+        }
     }
 });

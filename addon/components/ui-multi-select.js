@@ -52,6 +52,8 @@ export default Ember.Component.extend(UiSelectBase, {
      }.observes('options'),
     init: function(){
         this._super(...arguments);
-        this.set('value', Ember.A());
+        if(!this.get('value')){
+            this.set('value', Ember.A());
+        }
     }
 });
