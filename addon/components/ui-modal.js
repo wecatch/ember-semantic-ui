@@ -46,6 +46,7 @@ export default Ember.Component.extend({
 
 		this.$().modal({
             closable: closable,
+            observeChanges: true,
 			onHide(){
                 if(that.get('show')){
                     that.set('show', false);
