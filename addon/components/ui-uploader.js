@@ -59,6 +59,14 @@ export default Ember.Component.extend({
     url: '',
 
     /**
+     * isClear
+     *
+     * @property {Ember.Boolean} isClear
+     * @default  ""
+     */
+    isClear: false,
+
+    /**
      * The root component element
      *
      * @property {Ember.String} tagName
@@ -107,6 +115,14 @@ export default Ember.Component.extend({
     params: null,
 
     /**
+     * file accept
+     *
+     * @property {Ember.Object} accept
+     * @default  null
+     */
+    accept: 'audio/*,video/*,image/*',
+
+    /**
      * @function initialize
      * @observes "didInsertElement" event
      * @returns  {void}
@@ -142,6 +158,12 @@ export default Ember.Component.extend({
         this._super();
         this.queue.clear();//clear input file
     },
+
+    isClearChange: Ember.observer('isClear', function(){
+        if(this.isClear){
+            this.queue.clear();//clear input file
+        }
+    }),
     /**
      * @function willDestroy empty queue
      * 
