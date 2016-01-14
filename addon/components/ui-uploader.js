@@ -59,14 +59,6 @@ export default Ember.Component.extend({
     url: '',
 
     /**
-     * isClear
-     *
-     * @property {Ember.Boolean} isClear
-     * @default  ""
-     */
-    isClear: false,
-
-    /**
      * The root component element
      *
      * @property {Ember.String} tagName
@@ -159,11 +151,6 @@ export default Ember.Component.extend({
         this.queue.clear();//clear input file
     },
 
-    isClearChange: Ember.observer('isClear', function(){
-        if(this.isClear){
-            this.queue.clear();//clear input file
-        }
-    }),
     /**
      * @function willDestroy empty queue
      * 
@@ -171,7 +158,9 @@ export default Ember.Component.extend({
      */
     init(){
         this._super(...arguments);
-        this.set('queue', Ember.A());
+        if(this.queue === null){
+            this.set('queue', Ember.A());
+        }
     },
     /**
      * @function inputStyle
