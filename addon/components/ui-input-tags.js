@@ -40,6 +40,14 @@ export default Ember.Component.extend({
             this.renderDropDown();
         });
     }),
+    /**
+     * @function initialize step two
+     * @observes "didInsertElement" event
+     * @returns  {void}
+     */
+    initialize: function(argument) {
+        this.renderDropDown();
+    }.on('didInsertElement'),
     init: function() {
         this._super(...arguments);
         if (!this.get('value')) {
