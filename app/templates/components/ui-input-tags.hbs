@@ -1,5 +1,15 @@
-<select class="{{_uiClass}} {{theme}} {{_componentClass}}" multiple="" >
+<div class="ui multiple selection dropdown">
+  <input name="states" type="hidden" value="{{value}}" >
+  <i class="dropdown icon"></i>
     {{#each value as |op|}}
-        <option value="{{op}}" selected="" >{{op}}</option>
+        <a class="ui label" data-value="{{op}}">
+            {{op}}
+            <i class="delete icon" ></i>
+        </a>
     {{/each}}
-</select>
+  <div class="menu">
+    {{#each value as |op|}}
+        <div data-value="{{op}}">{{op}}</div>
+    {{/each}}
+  </div>
+</div>

@@ -35,11 +35,6 @@ export default Ember.Component.extend({
             }
         });
     },
-    valueChange: Ember.observer('value', function() {
-        Ember.run.scheduleOnce('afterRender', this, function() {
-            this.renderDropDown();
-        });
-    }),
     /**
      * @function initialize step two
      * @observes "didInsertElement" event
