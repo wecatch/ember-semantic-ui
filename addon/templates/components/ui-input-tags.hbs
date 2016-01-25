@@ -1,0 +1,14 @@
+<input type="hidden" value="{{value}}" >
+<i class="dropdown icon"></i>
+{{#each value as |op|}}
+    <a class="ui transition label visible" data-value="{{op}}" style="display: inline-block !important;"  >
+        {{op}}
+        <i class="delete icon" ></i>
+    </a>
+{{/each}}
+<input class="search">
+<div class="menu">
+  {{#each value as |op|}}
+      <div class="item" data-value="{{op}}">{{op}}</div>
+  {{/each}}
+</div>
