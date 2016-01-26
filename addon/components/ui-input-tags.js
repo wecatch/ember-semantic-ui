@@ -35,6 +35,7 @@ export default Ember.Component.extend({
                 let value = that.get('value');
                 value.addObject(addedValue);
                 that.set('value', value.toArray());
+                // that.$('.addition.item').empty();
             },
             onRemove: function(removedValue, removedText, $removedChoice) {
                 let value = that.get('value');
@@ -43,21 +44,11 @@ export default Ember.Component.extend({
             },
             onLabelCreate: function(label){
                 that.$('input.search').val('');
+                that.$('.addition.item b').html('');
                 return false;
             }
         });
     },
-    /**
-     * @function initialize step two
-     * @observes "didInsertElement" event
-     * @returns  {void}
-     */
-    valueChange: Ember.observer('value', function(){
-        // this.$('.label').remove();
-        // Ember.run.scheduleOnce('afterRender', this, function(){
-        //     this.renderDropDown();
-        // });
-    }),
     initialize: function(argument) {
         this.renderDropDown();
     }.on('didInsertElement'),
