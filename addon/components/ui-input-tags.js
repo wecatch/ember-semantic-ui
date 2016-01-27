@@ -45,7 +45,7 @@ export default Ember.Component.extend({
             onLabelCreate: function(label){
                 that.$('input.search').val('');
                 that.$('.addition.item b').html('');
-                return false;
+                return $(label);
             }
         });
     },
