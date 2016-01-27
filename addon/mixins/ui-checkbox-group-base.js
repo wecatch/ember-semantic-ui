@@ -14,7 +14,7 @@ export default Ember.Mixin.create({
      *
      * @property {Ember.Array} value
      */
-    value: [],
+    value: null,
 
     /**
      * name for the checkbox radio group component
@@ -58,28 +58,49 @@ export default Ember.Mixin.create({
      *
      * @property {Ember.Array} options
      */
-    options: [],
+    options: null,
 
     /**
      * options for the checkbox component
      *
      * @property {Ember.Array} options
      */
-    _options: [],
-
+    _options: null,
+    valueChange: Ember.observer('value', function(){
+        if(this._options){
+            for (var i = 0; i < this._options.length; i++) {
+                let item = this._options[i];
+                Ember.set(item, 'checked', this.isOptionChecked(item['value']));
+            };
+        }
+    }),
     /**
      * @function initOptions connect options and _options step one
      * @observes "didInsertElement" event
      * @returns  {void}
      */
-    initOptions: function() {
+    init: function() {
+        this._super(...arguments);
+        this.setupOptions();
+        if(!this.name){
+            this.set('name', Ember.guidFor(this));
+        }
+    },
+    setupOptions: function(){
         let _options = [];
-        this.get('options').forEach(Ember.run.bind(this, function(item) {
-            _options.push({
-                'label': item[this.get('labelPath')],
-                'value': item[this.get('valuePath')],
-            });
-        }));
-        this.set('_options', _options);
-    }.on('init'),
+        if(this.options){
+            for (var i = 0; i < this.options.length; i++) {
+                let item = this.options[i];
+                let label = item[this.get('labelPath')];
+                let value = item[this.get('valuePath')];
+                let checked = this.isOptionChecked(value);
+                _options.push({
+                    'label': label,
+                    'value': value,
+                    'checked': checked
+                });
+            };
+            this.set('_options', _options);
+        }
+    }.observes('options')
 });

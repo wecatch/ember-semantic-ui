@@ -8,14 +8,6 @@ export default Ember.Mixin.create({
      * @default  "input"
      */
     tagName: 'div',
-
-    /**
-     * the input type
-     *
-     * @property {Ember.String} type
-     */
-    type: 'checkbox',
-
     /**
      * Alert external code about the click
      *
@@ -23,7 +15,7 @@ export default Ember.Mixin.create({
      * @returns  {void}
      */
     click: function() {
-        this.sendAction('action');
+        this.sendAction('action', this.value, this.checked);
     },
 
     /**
@@ -31,39 +23,33 @@ export default Ember.Mixin.create({
      *
      * @property {Ember.String} theme
      */
-    theme: function() {
-        if (this.get('type') == 'radio') {
-            return 'radio';
-        }
-        return '';
-    }.property(),
-
+    _theme: 'checkbox',
     /**
      * Class names to apply to the button
      *
      * @property {Ember.Array} classNames
      */
-    classNameBindings: ['_uiClass', 'theme', '_componentClass'],
+    classNameBindings: ['_uiClass', '_theme', 'theme', '_componentClass'],
     _uiClass: 'ui',
     _componentClass: 'checkbox',
 
     /**
-     * Attribute bindings for the checkbox component
+     * 
      *
-     * @property {Ember.String} attributeBindings
+     * @property {Ember.String} value
      */
     value: null,
 
     /**
-     * Attribute bindings for the checkbox component
+     * checkbox checked
      *
-     * @property {Ember.String} attributeBindings
+     * @property {Ember.Boolean} checked
      */
     checked: false,
     /**
-     * Attribute bindings for the checkbox component
+     * checkbox name
      *
-     * @property {Ember.String} attributeBindings
+     * @property {Ember.String} name
      */
     name: null,
 
@@ -74,20 +60,15 @@ export default Ember.Mixin.create({
      */
     initialize: function(argument) {
         this.$().checkbox();
-        let name = this.get('name'),
-            input = this.$('input'),
-            value = this.get('value'),
-            checked = this.get('checked');
+        let {name, value, checked} = this.getProperties('name','value', 'checked');
+        let input = this.$('input');
 
         input.prop('checked', checked);
-        input.attr('name', name);
-        input.val(value);
         this.$('input').change(Ember.run.bind(this, function() {
             this.set('checked', this.$('input').is(':checked'));
         }));
 
     }.on('didInsertElement'),
-
     /**
      * @function setChecked
      * @observes "checked" 
@@ -96,15 +77,5 @@ export default Ember.Mixin.create({
     setChecked: function() {
         let input = this.$('input');
         input.prop('checked', this.get('checked'));
-    }.observes('checked'),
-
-    /**
-     * @function setValue
-     * @observes "value" 
-     * @returns  {void}
-     */
-    setValue: function() {
-        let input = this.$('input');
-        input.val(this.get('value'));
-    }.observes('value'),
+    }.observes('checked')
 });

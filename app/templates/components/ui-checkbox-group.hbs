@@ -1,8 +1,0 @@
-{{#if label}}
-	<label>{{label}}</label>
-{{/if}}
-{{#each _options as |op|}}
-    {{#ui-checkbox value=op.value  }}{{op.label}}{{/ui-checkbox}}
-{{/each}}
-
-{{yield}}

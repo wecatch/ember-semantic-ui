@@ -1,44 +1,31 @@
 import Ember from 'ember';
 import UiCheckboxGroupBase from '../mixins/ui-checkbox-group-base';
+import layout from '../templates/components/ui-radio-group';
+
 
 export default Ember.Component.extend(UiCheckboxGroupBase, {
-    /**
-     * @function initialize step two
-     * @observes "didInsertElement" event
-     * @returns  {void}
-     */
+    layout: layout,
+    isOptionChecked(optionValue){
+        if(this.value){
+            return this.value === optionValue;
+        }
+        return false
+    },
     initialize: function(argument) {
-        this.setupChangeEvent();
-        this.setupChecked();
+        if(!this.options){
+            let name = this.name;
+            this.$('input').each(function(index, item) {
+                if(!$(item).attr('name')){
+                    $(item).attr('name', name);
+                }
+            });
+        }
     }.on('didInsertElement'),
-
-    setupChangeEvent: function() {
-        this.$('input').change(Ember.run.bind(this, function() {
-            this.set('value', this.$('input:checked').val());
-        }));
-    },
-
-    setupChecked: function() {
-        let self = this;
-        let name = this.get('name');
-        let value = this.get('value');
-
-        this.$('input').each(function(index, item) {
-            $(item).prop('checked', value == $(item).val());
-            $(item).attr('name', name);
-        });
-    },
-
-    valueChange: Ember.observer('value', function(){
-        this.setupChecked();
-    }),
-    
-    optionsChange: function() {
-        this.initOptions();
-        // when new options was added
-        Ember.run.later(this, function() {
-            this.setupChecked();
-            this.setupChangeEvent();
-        }, 100);
-    }.observes('options.[]'),
+    actions: {
+        childChange(value, checked){
+            if(checked){
+                this.set('value', value);
+            }
+        }
+    }
 });
