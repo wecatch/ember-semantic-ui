@@ -1,25 +1,15 @@
 import Ember from 'ember';
 import UiSelectBase from '../mixins/ui-select-base';
-
+import layout from '../templates/components/ui-select';
+import multiLayout from '../templates/components/ui-multi-select';
 
 export default Ember.Component.extend(UiSelectBase, {
-    /**
-     * @function setSelected reset selected value when value change
-     * @observes "value" property
-     * @returns  {void}
-     */
-    setSelected: function() {
-        let value = this.get('value'),
-            options = this.get('options'),
-            valuePath = this.get('valuePath'),
-            namePath = this.get('namePath');
-
-        for (var i = 0; i < options.length; i++) {
-            if (options[i][valuePath] == String(value)) {
-                this.$('.ui.dropdown').dropdown('set selected', String(value));
-                return;
-            }
-        };
-        this.$('.ui.dropdown').dropdown('restore defaults')
-    }.observes('value'),
+    init(){
+        if(this.multiple){
+            this.set('layout', multiLayout)
+        }else {
+            this.set('layout', layout);
+        }
+        this._super(...arguments);
+    }
 });

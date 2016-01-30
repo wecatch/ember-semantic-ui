@@ -1,0 +1,28 @@
+<input type="hidden" name="{{name}}" value="" >
+<i class="dropdown icon"></i>
+{{#if multiple}}
+    {{#each _selectedOptions as |item|}}
+        {{#if item.selected}}
+        <a class="ui transition label visible" data-value="{{item.value}}" style="display: inline-block !important;"  >            
+            {{yield}} {{item.label}}
+            <i class="delete icon" ></i>
+        </a>
+        {{/if}}
+    {{/each}}
+{{/if}}
+{{#if search}}
+    <input class="search" autocomplete="off" tabindex="0">
+{{/if}}
+<div class="default text">{{placeHolder}}</div>
+<div class="menu">
+    {{! Executed in the when custome label display. }}
+    {{#each _options as |item|}}
+        <div class="item {{if item.selected selectedClass ''}}"  data-value="{{item.value}}">
+            {{#if hasBlockParams}}
+                {{yield item}}
+            {{else}}
+                {{item.label}}
+            {{/if}}
+        </div>
+    {{/each}}
+</div>

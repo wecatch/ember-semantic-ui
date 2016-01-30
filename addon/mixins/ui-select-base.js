@@ -11,11 +11,25 @@ export default Ember.Mixin.create({
     tagName: 'div',
 
     /**
-     * value  for the select radio group component
-     *
+     * value  for the select 
+    *
      * @property {Ember.String} value
      */
     value: '',
+
+    /**
+     * defaultValue  for the component
+     *
+     * @property {Ember.String} value
+     */
+    defaultValue: '',
+
+    /**
+     * defaultLabel  for the component
+     *
+     * @property {Ember.String} defaultLabel
+     */
+    _selectedLabel: '',
 
     /**
      * name for the select radio group component
@@ -36,7 +50,7 @@ export default Ember.Mixin.create({
      *
      * @property {Ember.String} namePath
      */
-    namePath: 'name',
+    labelPath: 'name',
 
     /**
      * value key for option
@@ -44,14 +58,6 @@ export default Ember.Mixin.create({
      * @property {Ember.String} valuePath
      */
     valuePath: 'value',
-    
-    /**
-     * if allow empty option
-     *
-     * @property {Ember.String} allowBlank
-     */
-    allowBlank: true,
-
     /**
      * placeHolder for blank option
      *
@@ -64,140 +70,187 @@ export default Ember.Mixin.create({
      *
      * @property {Ember.String} theme
      */
-    theme: '',
-    
-    /**
-     * if allow search option
-     *
-     * @property {Ember.String} allowSearch
-     */
-    allowSearch: true,
+    theme: 'fluid',
 
-    /**
-     * if allow search option
-     *
-     * @property {Ember.String} allowSearch
-     */
-    allowMulti: false,
-    
     /**
      * options for the select component
      *
      * @property {Ember.Array} options
      */
-    options: [],
+    options: null,
 
     /**
-     * Class names to apply to the select
+     * options for the select component
+     *
+     * @property {Ember.Array} options
+     */
+    _options: null,
+
+    /**
+     * Class names to apply to the button
      *
      * @property {Ember.Array} classNames
      */
-    classNameBindings: ['theme'],
-
+    classNameBindings: ['_uiClass', 'search:search:', 'multiple:multiple:','theme', '_theme', '_componentClass'],
+    _uiClass: 'ui',
+    _theme: 'selection',
+    _componentClass: 'dropdown',
     /**
      * attribute to apply to the select
      *
      * @property {Ember.String} multiple
      */
-    attributeBindings: [],
-
+    multiple: false,
     /**
      * attribute to apply to the select
      *
-     * @property {Ember.String} multiple
+     * @property {Ember.String} search
      */
-    multiple: function(){
-        return this.get('allowMulti') ? 'multiple=""' : '';
-    }.property('allowMulti'),
+    search: false,
 
     /**
-     * attribute to apply to the select
+     * inner value state just for outer value change
      *
-     * @property {Ember.String} multiple
+     * @property {Ember.String} search
      */
-    search: function(){
-        return this.get('allowSearch') ? 'search' : '';
-    }.property('allowSearch'),
+    _value: null,
+
     /**
      * @function initialize
      * @observes "didInsertElement" event
      * @returns  {void}
      */
-    initialize: function (argument) {
-        this.setupOptions();
+    initialize: function(argument) {
+        this.renderDropDown();
     }.on('didInsertElement'),
+    isOptionChecked(optionValue) {
+        if (this.value) {
+            if(this.multiple){
+                return this.value.contains(optionValue);
+            }else {
+                return this.value === optionValue;
+            }
+        }
+        return false;
+    },
+    renderDropDown() {
+        let that = this;
+        this.$().dropdown({
+            onAdd: function(addedValue, addedText, $addedChoice){
+                that._selectedOptions.pushObject({
+                    'value': addedValue,
+                    'label': Ember.String.htmlSafe(addedText),
+                    'selected': true,
+                });
 
+                that.value.pushObject(addedValue);
+            },
+            onRemove: function(removedValue, removedText, $removedChoice){
+                for (var i = 0; i < that._selectedOptions.length; i++) {
+                    let item = that._selectedOptions[i];
+                    if(item['value'] === removedValue){
+                        that._selectedOptions.removeObject(item);
+                    }
+                };
+                that.value.removeObject(removedValue);
+            },
+            onChange: function(value, text, $choice) {
+                if(!that.multiple){
+                    that.set('value', value);
+                    that.set('_value', value);
+                }
+            },
+            onLabelCreate: function(label){
+                that.$('input.search').val('');
+                return $(label);
+            }
+        });
+    },
+    init(){
+        this._super(...arguments);
+        if(!this.name){
+            this.set('name', Ember.guidFor(this));
+        }
+
+        if(this.multiple){
+            if(!Ember.isArray(this.value)){
+                throw new Error(`${this.name} ui-select expect value array, now is ${this.value}`);
+            }
+            this.set('_value', this.value.join(','));
+        }else {
+            this.set('_value', this.value);
+        }
+        this.setupOptions();
+    },
+    valueChange: function(){
+        if(this.multiple){
+            if(this.value.join(',') !== this._value){
+                this.setupSelected();
+                this.set('_value', this.value.join(','));
+            }
+        }else {
+            if(this.value !== this._value){
+                this.setupSelected();
+                this.set('_value', this.value);
+            }
+        }
+    }.observes('value', 'value.[]'),
+    setupSelected: function(){
+        for (var i = 0; i < this._options.length; i++) {
+            let item = this._options[i];
+            let checked = this.isOptionChecked(item['value']);
+            Ember.set(item, 'selected', checked);
+        };
+        if(this.multiple){
+            for (var i = 0; i < this._selectedOptions.length; i++) {
+                let item = this._selectedOptions[i];
+                Ember.set(item, 'selected', this.isOptionChecked(item['value']));
+            };
+        }
+    },
+    /**
+     * selected items to 
+     *
+     * @property {Ember.String} _selectedOptions
+     */
+    _selectedOptions: null,
+    selectedClass: Ember.computed('multiple', function(){
+        if(this.multiple){
+            return 'active filtered';
+        }
+
+        return 'active selected';
+    }),
     /**
      * @function setupOptions 
      * @observes "options" property
      * @returns  {void}
-    */
-    setupOptions: function(){
-        let selectDom =  this.assembleDom();
-
-        this.$().empty();
-        this.$().append(selectDom);
-        let that = this;
-        this.$('select').dropdown({
-            onChange: function(value, text, $choice){
-                that.set('value', value);
-            }
-        });
-
-     }.observes('options'),
-    
-    /**
-     * @function selectedValue 
-     * @observes "options" property
-     * @returns  {void}
-    */
-
-    /**
-     * @function assembleDom 
-     * 
-     * @returns  select dom
-    */
-     assembleDom: function(){
-        let options = this.get('options'), 
-            valuePath = this.get('valuePath'),
-            namePath = this.get('namePath'),
-            selectedVal = this.get('value'),
-            label = this.get('label'),
-            allowBlank = this.get('allowBlank'),
-            allowMulti = this.get('allowMulti'),
-            placeHolder = this.get('placeHolder');
-
-        // init select option
-        let selectDom = '';
-        // init lable
-        if(label){
-            selectDom += '<label>'+label+'</label>';
+     */
+    setupOptions: function() {
+        let _options = [];
+        let _selectedOptions = [];
+        if (this.options) {
+            for (var i = 0; i < this.options.length; i++) {
+                let item = this.options[i];
+                let label = item[this.get('labelPath')];
+                let value = item[this.get('valuePath')];
+                let checked = this.isOptionChecked(value);
+                if(checked){
+                    this.set('_selectedLabel', label);
+                    _selectedOptions.pushObject({
+                        'label': label,
+                        'value': value,
+                        'selected': checked
+                    });
+                }
+                _options.pushObject(Ember.Object.create({
+                    'label': label,
+                    'value': value,
+                    'selected': checked
+                }));
+            };
         }
-
-        // init select
-        selectDom += '<select '+this.get('multiple')+' class="ui '+ this.get('search') +' dropdown ">';
-        // init blank
-        if (allowBlank){
-            selectDom += '<option value="">'+placeHolder+'</option>';
-        }
-        if (options) {
-            if(allowMulti){
-                // padding
-            }else {
-                options.forEach(function(item){
-                    let selected = '';
-                    let option = '';
-                    if(String(selectedVal)===item[valuePath]){
-                        selected = 'selected="selected"';
-                    }
-                    option = '<option value="'+item[valuePath]+'"'+selected+'>'+item[namePath]+'</option>';
-                    selectDom += option;
-                });
-            }
-        }
-
-        selectDom += '</select>';
-
-        return selectDom;
-    }
+        this.set('_options', _options);
+        this.set('_selectedOptions', _selectedOptions);
+    }.observes('options')
 });
