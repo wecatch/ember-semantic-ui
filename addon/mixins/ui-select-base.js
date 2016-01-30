@@ -137,11 +137,12 @@ export default Ember.Mixin.create({
         let that = this;
         this.$().dropdown({
             onAdd: function(addedValue, addedText, $addedChoice){
-                that._selectedOptions.pushObject({
+                let obj = Ember.Object.create({
                     'value': addedValue,
                     'label': Ember.String.htmlSafe(addedText),
                     'selected': true,
-                });
+                })
+                that._selectedOptions.pushObject(obj);
 
                 that.value.pushObject(addedValue);
             },
@@ -157,7 +158,6 @@ export default Ember.Mixin.create({
             onChange: function(value, text, $choice) {
                 if(!that.multiple){
                     that.set('value', value);
-                    that.set('_value', value);
                 }
             },
             onLabelCreate: function(label){
@@ -174,39 +174,23 @@ export default Ember.Mixin.create({
 
         if(this.multiple){
             if(!Ember.isArray(this.value)){
-                throw new Error(`${this.name} ui-select expect value array, now is ${this.value}`);
+                this.set('value', Ember.A());
             }
             this.set('_value', this.value.join(','));
-        }else {
-            this.set('_value', this.value);
         }
         this.setupOptions();
     },
-    valueChange: function(){
-        if(this.multiple){
-            if(this.value.join(',') !== this._value){
-                this.setupSelected();
-                this.set('_value', this.value.join(','));
-            }
-        }else {
-            if(this.value !== this._value){
-                this.setupSelected();
-                this.set('_value', this.value);
-            }
-        }
-    }.observes('value', 'value.[]'),
     setupSelected: function(){
+        this._selectedOptions.clear();
         for (var i = 0; i < this._options.length; i++) {
             let item = this._options[i];
             let checked = this.isOptionChecked(item['value']);
             Ember.set(item, 'selected', checked);
+            if(checked){
+                this.set('_selectedLabel', item['label']);
+                this._selectedOptions.pushObject(item);
+            }
         };
-        if(this.multiple){
-            for (var i = 0; i < this._selectedOptions.length; i++) {
-                let item = this._selectedOptions[i];
-                Ember.set(item, 'selected', this.isOptionChecked(item['value']));
-            };
-        }
     },
     /**
      * selected items to 
@@ -235,19 +219,16 @@ export default Ember.Mixin.create({
                 let label = item[this.get('labelPath')];
                 let value = item[this.get('valuePath')];
                 let checked = this.isOptionChecked(value);
-                if(checked){
-                    this.set('_selectedLabel', label);
-                    _selectedOptions.pushObject({
-                        'label': label,
-                        'value': value,
-                        'selected': checked
-                    });
-                }
-                _options.pushObject(Ember.Object.create({
+                let obj = Ember.Object.create({
                     'label': label,
                     'value': value,
                     'selected': checked
-                }));
+                });
+                if(checked){
+                    this.set('_selectedLabel', label);
+                    _selectedOptions.pushObject(obj);
+                }
+                _options.pushObject(obj);
             };
         }
         this.set('_options', _options);

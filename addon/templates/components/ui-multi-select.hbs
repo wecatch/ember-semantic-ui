@@ -1,15 +1,17 @@
 <input type="hidden" name="{{name}}" value="" >
 <i class="dropdown icon"></i>
-{{#if multiple}}
-    {{#each _selectedOptions as |item|}}
-        {{#if item.selected}}
-        <a class="ui transition label visible" data-value="{{item.value}}" style="display: inline-block !important;"  >            
-            {{yield}} {{item.label}}
-            <i class="delete icon" ></i>
-        </a>
+{{#each _selectedOptions as |item|}}
+    {{#if item.selected}}
+    <a class="ui transition label visible" data-value="{{item.value}}" style="display: inline-block !important;"  >
+        {{#if hasBlockParams}}
+            {{yield item}}
+        {{else}}
+            {{item.label}}
         {{/if}}
-    {{/each}}
-{{/if}}
+        <i class="delete icon" ></i>
+    </a>
+    {{/if}}
+{{/each}}
 {{#if search}}
     <input class="search" autocomplete="off" tabindex="0">
 {{/if}}
