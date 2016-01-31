@@ -6,9 +6,13 @@ import layout from '../templates/components/ui-select';
 export default Ember.Component.extend(UiSelectBase, {
     layout: layout,
     defaultValue: null,
-    didUpdateAttrs(){
-        if(this.value !== this._value){
+    didUpdateAttrs() {
+        //only update when outer change value
+        console.log(this.value);
+        console.log(this._value);
+        if (this.value !== this._value) {
             this.setupSelected();
+            this.set('_value', this.value);
         }
     },
     renderDropDown() {
@@ -41,4 +45,11 @@ export default Ember.Component.extend(UiSelectBase, {
             }
         };
     },
+    init() {
+        this._super(...arguments);
+        this.set('_value', this.value);
+    },
+    isDisplayHolder: Ember.computed('_selectedOptions.[]', function(){
+        return this._selectedOptions.filterBy('selected', true).length === 0;
+    })
 });

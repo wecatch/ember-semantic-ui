@@ -37,11 +37,11 @@ export default Ember.Mixin.create({
      */
     valuePath: 'value',
     /**
-     * placeHolder for blank option
+     * placeholder for blank option
      *
-     * @property {Ember.String} placeHolder
+     * @property {Ember.String} placeholder
      */
-    placeHolder: '',
+    placeholder: '',
 
     /**
      * the select theme

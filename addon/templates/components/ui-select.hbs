@@ -1,23 +1,20 @@
-<input type="hidden" name="{{name}}" value="" >
+<input type="hidden" name="" value="" >
 <i class="dropdown icon"></i>
 {{#if search}}
     <input class="search" autocomplete="off" tabindex="0">
 {{/if}}
-    {{#if _selectedOptions }}
-        <div class="text">
-            {{#each _selectedOptions as |item|}}
-                {{#if item.selected}}
-                    {{#if hasBlockParams}}
-                        {{yield item}}
-                    {{else}}
-                        {{item.label}}
-                    {{/if}}
-                {{/if}}
-            {{/each}}
-        </div>
-    {{else}}
-        <div class="default text">{{placeHolder}}</div>
-    {{/if}}
+<div class="{{if isDisplayHolder 'default' ''}} text">
+    {{#each _selectedOptions as |item|}}
+        {{#if item.selected}}
+            {{#if hasBlockParams}}
+                {{yield item}}
+            {{else}}
+                {{item.label}}
+            {{/if}}
+        {{/if}}
+    {{/each}}
+    {{if isDisplayHolder placeholder ''}}
+</div>
 <div class="menu">
     {{! Executed in the when custome label display. }}
     {{#each _options as |item|}}
