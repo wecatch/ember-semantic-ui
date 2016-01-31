@@ -1,6 +1,9 @@
 import Ember from 'ember';
+import layout from '../templates/components/ui-progress';
+
 
 export default Ember.Component.extend({
+    layout: layout,
 
     /**
      * A array contain class names apply to root element

@@ -4,5 +4,5 @@ import uiLabelBase from '../mixins/ui-label-base';
 
 
 export default Ember.Component.extend(uiLabelBase, {
-    
+    layout: layout
 });

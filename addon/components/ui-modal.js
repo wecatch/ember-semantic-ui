@@ -1,6 +1,9 @@
 import Ember from 'ember';
+import layout from '../templates/components/ui-modal';
+
 
 export default Ember.Component.extend({
+    layout: layout,
     actions: {
         onShow(){
             this.sendAction('onShow');

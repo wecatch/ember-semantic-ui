@@ -1,6 +1,9 @@
 import Ember from 'ember';
+import layout from '../templates/components/ui-form';
+
 
 export default Ember.Component.extend({
+    layout: layout,
     /**
      * The root component element
      *

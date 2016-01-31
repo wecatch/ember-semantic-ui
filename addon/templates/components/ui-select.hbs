@@ -3,7 +3,7 @@
 {{#if search}}
     <input class="search" autocomplete="off" tabindex="0">
 {{/if}}
-<div class="{{if isDisplayHolder 'default' ''}} text">
+<div class="{{if isDisplayHolder 'default text' 'text'}}">
     {{#each _selectedOptions as |item|}}
         {{#if item.selected}}
             {{#if hasBlockParams}}
