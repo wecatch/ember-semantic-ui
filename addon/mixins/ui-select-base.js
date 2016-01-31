@@ -12,32 +12,10 @@ export default Ember.Mixin.create({
 
     /**
      * value  for the select 
-    *
+     *
      * @property {Ember.String} value
      */
     value: '',
-
-    /**
-     * defaultValue  for the component
-     *
-     * @property {Ember.String} value
-     */
-    defaultValue: '',
-
-    /**
-     * defaultLabel  for the component
-     *
-     * @property {Ember.String} defaultLabel
-     */
-    _selectedLabel: '',
-
-    /**
-     * name for the select radio group component
-     *
-     * @property {Ember.String} name
-     */
-    name: '',
-
     /**
      *  label for the select radio group component
      *
@@ -82,7 +60,7 @@ export default Ember.Mixin.create({
     /**
      * options for the select component
      *
-     * @property {Ember.Array} options
+     * @property {Ember.Array} _options
      */
     _options: null,
 
@@ -91,16 +69,16 @@ export default Ember.Mixin.create({
      *
      * @property {Ember.Array} classNames
      */
-    classNameBindings: ['_uiClass', 'search:search:', 'multiple:multiple:','theme', '_theme', '_componentClass'],
+    classNameBindings: ['_uiClass', 'search:search:', '_multiple:multiple:', 'theme', '_theme', '_componentClass'],
     _uiClass: 'ui',
     _theme: 'selection',
     _componentClass: 'dropdown',
     /**
      * attribute to apply to the select
      *
-     * @property {Ember.String} multiple
+     * @property {Ember.String} _multiple
      */
-    multiple: false,
+    _multiple: false,
     /**
      * attribute to apply to the select
      *
@@ -111,9 +89,16 @@ export default Ember.Mixin.create({
     /**
      * inner value state just for outer value change
      *
-     * @property {Ember.String} search
+     * @property {Ember.String} _value
      */
     _value: null,
+
+    /**
+     * selected items to 
+     *
+     * @property {Ember.String} _selectedOptions
+     */
+    _selectedOptions: null,
 
     /**
      * @function initialize
@@ -123,97 +108,14 @@ export default Ember.Mixin.create({
     initialize: function(argument) {
         this.renderDropDown();
     }.on('didInsertElement'),
-    isOptionChecked(optionValue) {
-        if (this.value) {
-            if(this.multiple){
-                return this.value.contains(optionValue);
-            }else {
-                return this.value === optionValue;
-            }
-        }
-        return false;
-    },
-    renderDropDown() {
-        let that = this;
-        this.$().dropdown({
-            onAdd: function(addedValue, addedText, $addedChoice){
-                let obj = Ember.Object.create({
-                    'value': addedValue,
-                    'label': Ember.String.htmlSafe(addedText),
-                    'selected': true,
-                })
-                that._selectedOptions.pushObject(obj);
-
-                that.value.pushObject(addedValue);
-            },
-            onRemove: function(removedValue, removedText, $removedChoice){
-                for (var i = 0; i < that._selectedOptions.length; i++) {
-                    let item = that._selectedOptions[i];
-                    if(item['value'] === removedValue){
-                        that._selectedOptions.removeObject(item);
-                    }
-                };
-                that.value.removeObject(removedValue);
-            },
-            onChange: function(value, text, $choice) {
-                if(!that.multiple){
-                    that.set('value', value);
-                }
-            },
-            onLabelCreate: function(label){
-                that.$('input.search').val('');
-                return $(label);
-            }
-        });
-    },
-    init(){
-        this._super(...arguments);
-        if(!this.name){
-            this.set('name', Ember.guidFor(this));
-        }
-
-        if(this.multiple){
-            if(!Ember.isArray(this.value)){
-                this.set('value', Ember.A());
-            }
-            this.set('_value', this.value.join(','));
-        }
-        this.setupOptions();
-    },
-    setupSelected: function(){
-        this._selectedOptions.clear();
-        for (var i = 0; i < this._options.length; i++) {
-            let item = this._options[i];
-            let checked = this.isOptionChecked(item['value']);
-            Ember.set(item, 'selected', checked);
-            if(checked){
-                this.set('_selectedLabel', item['label']);
-                this._selectedOptions.pushObject(item);
-            }
-        };
-    },
-    /**
-     * selected items to 
-     *
-     * @property {Ember.String} _selectedOptions
-     */
-    _selectedOptions: null,
-    selectedClass: Ember.computed('multiple', function(){
-        if(this.multiple){
-            return 'active filtered';
-        }
-
-        return 'active selected';
-    }),
     /**
      * @function setupOptions 
      * @observes "options" property
      * @returns  {void}
      */
     setupOptions: function() {
-        let _options = [];
-        let _selectedOptions = [];
         if (this.options) {
+            this._options.clear();
             for (var i = 0; i < this.options.length; i++) {
                 let item = this.options[i];
                 let label = item[this.get('labelPath')];
@@ -224,14 +126,17 @@ export default Ember.Mixin.create({
                     'value': value,
                     'selected': checked
                 });
-                if(checked){
-                    this.set('_selectedLabel', label);
-                    _selectedOptions.pushObject(obj);
+                if (checked) {
+                    this._selectedOptions.pushObject(obj);
                 }
-                _options.pushObject(obj);
+                this._options.pushObject(obj);
             };
         }
-        this.set('_options', _options);
-        this.set('_selectedOptions', _selectedOptions);
-    }.observes('options')
+    }.observes('options'),
+    init() {
+        this._super(...arguments);
+        this.set('_selectedOptions', Ember.A());
+        this.set('_options', Ember.A());
+        this.setupOptions();
+    }
 });

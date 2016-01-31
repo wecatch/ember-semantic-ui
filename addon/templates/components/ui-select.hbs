@@ -3,27 +3,25 @@
 {{#if search}}
     <input class="search" autocomplete="off" tabindex="0">
 {{/if}}
-{{#if hasBlockParams}}
-    <div class="text">
-        {{#each _selectedOptions as |item|}}
-            {{#if item.selected}}
-                {{yield item}}
-            {{/if}}
-        {{/each}}
-    </div>
-{{else}}
-    {{#if _selectedLabel}}
-        <div class="text" >
-            {{_selectedLabel}}
+    {{#if _selectedOptions }}
+        <div class="text">
+            {{#each _selectedOptions as |item|}}
+                {{#if item.selected}}
+                    {{#if hasBlockParams}}
+                        {{yield item}}
+                    {{else}}
+                        {{item.label}}
+                    {{/if}}
+                {{/if}}
+            {{/each}}
         </div>
     {{else}}
         <div class="default text">{{placeHolder}}</div>
     {{/if}}
-{{/if}}
 <div class="menu">
     {{! Executed in the when custome label display. }}
     {{#each _options as |item|}}
-        <div class="item {{if item.selected selectedClass ''}}"  data-value="{{item.value}}">
+        <div class="item {{if item.selected 'active selected' ''}}"  data-value="{{item.value}}">
             {{#if hasBlockParams}}
                 {{yield item}}
             {{else}}

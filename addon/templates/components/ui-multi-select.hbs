@@ -19,7 +19,7 @@
 <div class="menu">
     {{! Executed in the when custome label display. }}
     {{#each _options as |item|}}
-        <div class="item {{if item.selected selectedClass ''}}"  data-value="{{item.value}}">
+        <div class="item {{if item.selected 'active filtered' ''}}"  data-value="{{item.value}}">
             {{#if hasBlockParams}}
                 {{yield item}}
             {{else}}
