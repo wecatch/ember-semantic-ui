@@ -8,8 +8,6 @@ export default Ember.Component.extend(UiSelectBase, {
     defaultValue: null,
     didUpdateAttrs() {
         //only update when outer change value
-        console.log(this.value);
-        console.log(this._value);
         if (this.value !== this._value) {
             this.setupSelected();
             this.set('_value', this.value);
@@ -49,7 +47,7 @@ export default Ember.Component.extend(UiSelectBase, {
         this._super(...arguments);
         this.set('_value', this.value);
     },
-    isDisplayHolder: Ember.computed('_selectedOptions.[]', function(){
+    isDisplayHolder: Ember.computed('_selectedOptions.[]', function() {
         return this._selectedOptions.filterBy('selected', true).length === 0;
     })
 });
