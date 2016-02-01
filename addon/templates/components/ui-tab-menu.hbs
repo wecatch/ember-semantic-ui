@@ -1,0 +1,9 @@
+{{#if hasBlockParams}}
+    {{#each _tabs as |ta|}}
+        {{yield ta}}
+    {{/each}}
+{{else}}
+    {{#each _tabs as |ta|}}
+        <a class="item" data-tab="{{ta}}" >{{ta}}</a>
+    {{/each}}
+{{/if}}

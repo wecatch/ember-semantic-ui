@@ -6,23 +6,30 @@ addon in their Ember project.
 
 ## Components
 
-- ui-alert
+- ui-message
 - ui-button
+- ui-labeled-button
+- ui-left-labeled-button
+- ui-label
+- ui-pointing-label
+- ui-radio-group
 - ui-checkbox-group
 - ui-checkbox
-- ui-dropdown
 - ui-form-input
 - ui-form
 - ui-input-tags
 - ui-input
 - ui-modal
+- ui-modal-title
+- ui-modal-content
+- ui-modal-foot
+- ui-select
 - ui-multi-select
+- ui-dropdown-menu
 - ui-panel
-- ui-radio-group
 - ui-select
 - ui-uploader
 - file-input
-- ui-link
 
 # Getting Started
 
@@ -88,11 +95,19 @@ ember server
 ```
 
 
-# Thank you 
+# Thanks 
 
 The [ember-uploader](https://github.com/benefitcloud/ember-uploader) project support this addon file-uploader. Thanks to their [author](https://github.com/benefitcloud)
 
 # Release notes
+
+
+## 0.0.7 
+
+- remove ui-remote-select, ui-link, ui-dropdown
+- added ui-label, ui-labeled-button, ui-animated-button, ui-dropdown-menu, ui-left-labeled-button, ui-pointing-label
+- redesign ui-select, ui-multi-select, ui-checkbox-group, ui-radio-group
+- ui-alter renamed to ui-message
 
 
 ## 0.0.5 

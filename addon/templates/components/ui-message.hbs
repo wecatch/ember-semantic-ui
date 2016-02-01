@@ -1,0 +1,18 @@
+{{#if close}}
+    <i class="close icon" {{action "closeMessage"}} ></i>
+{{/if}}
+{{#if header}}
+    <div class="header">{{header}}</div>
+{{/if}}
+{{#if message}}
+    <p>{{message}}</p>
+{{/if}}
+{{#if messages}}
+    <ul class="list">
+        {{#each messages as |m|}}
+            <li>{{m}}</li>
+        {{/each}}
+    </ul>
+{{/if}}
+
+{{yield}}
