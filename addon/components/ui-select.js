@@ -27,10 +27,11 @@ export default Ember.Component.extend(UiSelectBase, {
                 //trigger _selectionOptions re selected
                 //trigger _options re selected
                 //make sure only call setupSelected once
-                console.log(text);
-                console.log(value);
                 that.setupSelected(value);
                 that.$().dropdown('hide');
+                if(that.search){
+                    that.$('.menu .item').removeClass('filtered');
+                }
             }
         });
     },
