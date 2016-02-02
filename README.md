@@ -110,6 +110,11 @@ The [ember-uploader](https://github.com/benefitcloud/ember-uploader) project sup
 - ui-alter renamed to ui-message
 
 
+**Tip**
+
+0.0.7 is not backward compatible, be careful to update
+
+
 ## 0.0.5 
 
 **2015-12-09**
