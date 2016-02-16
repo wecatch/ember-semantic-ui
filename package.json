@@ -12,6 +12,7 @@
     "test": "ember try:testall"
   },
   "repository": "https://github.com/wecatch/ember-semantic-ui",
+  "homepage": "http://wecatch.github.io/ember-semantic-ui/",
   "engines": {
     "node": ">= 0.10.0"
   },
