@@ -44,7 +44,9 @@ export default Ember.Component.extend({
             return this.get('tabs').split(this.get('delimiter'));
         }
     }),
+    active: '',
     initialize: function() {
         this.$('.item').tab();
+        this.$('.item[data-tab="'+this.active+'"]').addClass("active");
     }.on('didInsertElement')
 });
