@@ -48,7 +48,7 @@ export default Ember.Mixin.create({
      *
      * @property {Ember.String} theme
      */
-    theme: 'fluid',
+    theme: '',
 
     /**
      * options for the select component
