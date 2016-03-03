@@ -7,11 +7,7 @@ export default Ember.Component.extend(UiSelectBase, {
     layout: layout,
     defaultValue: null,
     didUpdateAttrs() {
-        //only update when outer change value
-        if (this.value !== this._value) {
-            this.setupSelected();
-            this.set('_value', this.value);
-        }
+        this.setupSelected();
     },
     renderDropDown() {
         let that = this;
@@ -21,13 +17,7 @@ export default Ember.Component.extend(UiSelectBase, {
                 return $(label);
             },
             action: function(text, value) {
-                // nothing built in occurs
                 that.set('value', value);
-                that.set('_value', value);
-                //trigger _selectionOptions re selected
-                //trigger _options re selected
-                //make sure only call setupSelected once
-                that.setupSelected(value);
                 that.$().dropdown('hide');
                 if(that.search){
                     that.$('.menu .item').removeClass('filtered');
@@ -38,11 +28,11 @@ export default Ember.Component.extend(UiSelectBase, {
     isOptionChecked(optionValue) {
         return String(this.value) === optionValue;
     },
-    setupSelected: function(value) {
+    setupSelected: function() {
         this._selectedOptions.clear();
         for (var i = 0; i < this._options.length; i++) {
             let item = this._options[i];
-            let checked = value ? value === item['value'] : this.isOptionChecked(item['value']);
+            let checked = this.isOptionChecked(item['value']);
             Ember.set(item, 'selected', checked);
             if (checked) {
                 this._selectedOptions.pushObject(item);
@@ -50,8 +40,7 @@ export default Ember.Component.extend(UiSelectBase, {
         };
     },
     didInitAttrs(){
-        this._super(...arguments);
-        this.set('_value', this.value);
+        this.setupSelected();
     },
     isDisplayHolder: Ember.computed('_selectedOptions.[]', function() {
         return this._selectedOptions.filterBy('selected', true).length === 0;
