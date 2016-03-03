@@ -6,10 +6,7 @@ import layout from '../templates/components/ui-radio-group';
 export default Ember.Component.extend(UiCheckboxGroupBase, {
     layout: layout,
     isOptionChecked(optionValue){
-        if(this.value){
-            return this.value === optionValue;
-        }
-        return false
+        return String(this.value) === optionValue;
     },
     initialize: function(argument) {
         if(!this.options){

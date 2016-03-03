@@ -15,7 +15,9 @@ export default Ember.Mixin.create({
      * @returns  {void}
      */
     click: function() {
-        this.sendAction('action', this.value, this.checked);
+        if(typeof this.attrs.action ==='function' ){
+            this.attrs.action(this.value, this.checked);
+        }
     },
 
     /**

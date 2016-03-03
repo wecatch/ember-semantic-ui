@@ -96,7 +96,7 @@ export default Ember.Mixin.create({
                 let checked = this.isOptionChecked(value);
                 _options.push({
                     'label': label,
-                    'value': value,
+                    'value': String(value),
                     'checked': checked
                 });
             };

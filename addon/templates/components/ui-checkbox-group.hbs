@@ -2,7 +2,7 @@
 	<label>{{label}}</label>
 {{/if}}
 {{#each _options as |op|}}
-    {{#ui-checkbox value=op.value action="childChange" checked=op.checked }}{{op.label}}{{/ui-checkbox}}
+    {{#ui-checkbox value=op.value action=(action "childChange") checked=op.checked }}{{op.label}}{{/ui-checkbox}}
 {{/each}}
 
 {{yield (action "childChange") }}
