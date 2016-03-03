@@ -123,7 +123,7 @@ export default Ember.Mixin.create({
                 let checked = this.isOptionChecked(value);
                 let obj = Ember.Object.create({
                     'label': label,
-                    'value': value,
+                    'value': String(value),
                     'selected': checked
                 });
                 if (checked) {

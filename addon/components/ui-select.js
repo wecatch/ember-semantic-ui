@@ -36,10 +36,7 @@ export default Ember.Component.extend(UiSelectBase, {
         });
     },
     isOptionChecked(optionValue) {
-        if (this.value) {
-            return this.value === optionValue;
-        }
-        return false;
+        return String(this.value) === optionValue;
     },
     setupSelected: function(value) {
         this._selectedOptions.clear();
@@ -52,7 +49,7 @@ export default Ember.Component.extend(UiSelectBase, {
             }
         };
     },
-    init() {
+    didInitAttrs(){
         this._super(...arguments);
         this.set('_value', this.value);
     },
