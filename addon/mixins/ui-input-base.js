@@ -106,16 +106,27 @@ export default Ember.Mixin.create({
 	 * @observes "didInsertElement" event
 	 * @returns  {void}
 	 */
+	_updateInputValue() {
+		this.$('input').val(this.value);
+	},
+	_updateValue() {
+		let newValue = this.$('input').val();
+		if (typeof this.attrs.update === 'function') {
+			this.attrs.update(newValue);
+		}else {
+			this.set('value', newValue);
+		}
+	},
 	initialize: function(argument) {
-		this.$('input').val(this.get('value'));
+		this._updateInputValue();
 		if (this.get('readonly')) {
 			this.$('input').attr('readonly', 'readonly');
 		}
-		this.$('input').change(Ember.run.bind(this, function() {
-			this.set('value', this.$('input').val());
-		}));
+		this.$('input').change(() => {
+			this._updateValue();
+		});
 	}.on('didInsertElement'),
-	valueChange: Ember.observer('value', function() {
-		this.$('input').val(this.value);
-	})
+	initValue: function() {
+		this._updateInputValue();
+	}.on('didUpdateAttrs'),
 });
