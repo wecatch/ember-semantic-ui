@@ -21,26 +21,15 @@ export default Ember.Component.extend({
     _uiClass: 'ui',
     _componentClass: 'multiple search selection dropdown',
 
-    /**
-     * the input value
-     *
-     * @property {Ember.String} value
-     */
-    value: null,
     renderDropDown: function() {
         let that = this;
         this.$().dropdown({
             allowAdditions: true,
             onAdd: function(addedValue, addedText, $addedChoice) {
-                let value = that.get('value');
-                value.addObject(addedValue);
-                that.set('value', value.toArray());
-                // that.$('.addition.item').empty();
+                that._addValue(addedValue);
             },
             onRemove: function(removedValue, removedText, $removedChoice) {
-                let value = that.get('value');
-                value.removeObject(removedValue);
-                that.set('value', value.toArray());
+                that._removeValue(removedValue);
             },
             onLabelCreate: function(label){
                 that.$('input.search').val('');
@@ -52,10 +41,32 @@ export default Ember.Component.extend({
     initialize: function(argument) {
         this.renderDropDown();
     }.on('didInsertElement'),
-    init: function() {
+    _addValue(value){
+        this.get('value').addObject(value);
+        if(typeof this.attrs.update === 'function'){
+            this.attrs.update(this.get('value'));
+        }
+    },
+    _removeValue(value){
+        this.get('value').removeObject(value);
+        if(typeof this.attrs.update === 'function'){
+            this.attrs.update(this.get('value'));
+        }
+    },
+    didInitAttrs(){
         this._super(...arguments);
-        if (!this.get('value')) {
+        //value can not be passed to component
+        if(this.attrs.value === undefined){
             this.set('value', Ember.A());
         }
-    }
+    },
+    hiddenValue: Ember.computed('value', {
+        get(){
+            if(Ember.isArray(this.value)){
+                return this.value.join(',');
+            }else{
+                return '';
+            }
+        }
+    })
 });

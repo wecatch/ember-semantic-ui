@@ -8,17 +8,6 @@ export default Ember.Mixin.create({
      * @default  "input"
      */
     tagName: 'div',
-    /**
-     * Alert external code about the click
-     *
-     * @function click
-     * @returns  {void}
-     */
-    click: function() {
-        if(typeof this.attrs.action ==='function' ){
-            this.attrs.action(this.value, this.checked);
-        }
-    },
 
     /**
      * the checkbox 
@@ -62,15 +51,27 @@ export default Ember.Mixin.create({
      */
     initialize: function(argument) {
         this.$().checkbox();
-        let {name, value, checked} = this.getProperties('name','value', 'checked');
+        let {value, checked} = this.getProperties('value', 'checked');
         let input = this.$('input');
 
+        this.$('input').change(()=>{
+            let isChecked = this.$('input').is(':checked');
+            this._updateValue(isChecked);
+            this.set('checked', isChecked);
+        });
         input.prop('checked', checked);
-        this.$('input').change(Ember.run.bind(this, function() {
-            this.set('checked', this.$('input').is(':checked'));
-        }));
+        this._updateValue(checked);
 
     }.on('didInsertElement'),
+    _updateValue(checked){
+        if(typeof this.attrs.update ==='function'){
+            if(checked){
+                this.attrs.update(this.value);
+            }else {
+                this.attrs.update('');
+            }
+        }
+    },
     /**
      * @function setChecked
      * @observes "checked" 
@@ -79,5 +80,5 @@ export default Ember.Mixin.create({
     setChecked: function() {
         let input = this.$('input');
         input.prop('checked', this.get('checked'));
-    }.observes('checked')
+    }.on('didUpdateAttrs')
 });
