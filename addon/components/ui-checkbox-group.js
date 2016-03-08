@@ -12,7 +12,7 @@ export default Ember.Component.extend(UiCheckboxGroupBase, {
         return false
     },
     actions: {
-        childChange(value, checked){
+        childChange(checked, value){
             if(checked && !this.value.contains(value)){
                 this.value.pushObject(value);
             }

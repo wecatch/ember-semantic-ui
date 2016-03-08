@@ -19,7 +19,7 @@ export default Ember.Component.extend(UiCheckboxGroupBase, {
         }
     }.on('didInsertElement'),
     actions: {
-        childChange(value, checked){
+        childChange(checked, value){
             if(checked){
                 this.set('value', value);
             }
