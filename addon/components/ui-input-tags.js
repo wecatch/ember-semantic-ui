@@ -42,7 +42,13 @@ export default Ember.Component.extend({
         this.renderDropDown();
     }.on('didInsertElement'),
     _addValue(value){
-        this.get('value').addObject(value);
+        try{
+            this.get('value').addObject(value);
+        }catch(e){
+            let id = Ember.guidFor(this);
+            Ember.Logger.warn(`component:ui-input-tags ${id} value is not array`);
+            Ember.Logger.error(e);
+        }
         if(typeof this.attrs.update === 'function'){
             this.attrs.update(this.get('value'));
         }
@@ -55,7 +61,7 @@ export default Ember.Component.extend({
     },
     didInitAttrs(){
         this._super(...arguments);
-        //value can not be passed to component
+        //if value do not be passed to component
         if(this.attrs.value === undefined){
             this.set('value', Ember.A());
         }
