@@ -71,6 +71,8 @@ export default Ember.Mixin.create({
                 this.attrs.update('');
             }
         }
+
+        this.sendAction('action', checked, this.value);
     },
     /**
      * @function setChecked
