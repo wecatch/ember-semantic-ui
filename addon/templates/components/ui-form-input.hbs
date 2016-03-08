@@ -1,6 +1,5 @@
 {{#if label}}
 	<label>{{label}}</label>
-{{else}}
-	<label>{{yield}}</label>
 {{/if}}
-<input type="{{type}}" placeholder={{placeholder}} />
+{{yield}}
+<input type="{{type}}" placeholder={{placeholder}} value="{{value}}" />

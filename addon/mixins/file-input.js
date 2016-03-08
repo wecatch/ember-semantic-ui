@@ -53,6 +53,8 @@ export default Ember.Mixin.create(Ember.Evented, {
                 uploader.on('didUpload', function(data) {
                     self.set('isUploaded', true);
                     fileObject.set('data', data)
+                    //empty input file
+                    self.$('input').val("");
                     self.sendAction('uploadSuccess', fileObject);
                 });
             }
@@ -60,6 +62,8 @@ export default Ember.Mixin.create(Ember.Evented, {
         abort: function() {
             this.get('uploader').abort();
             self.sendAction('uploadAbort');
+            //empty input file
+            self.$('input').val("");
         }
     },
     init: function() {

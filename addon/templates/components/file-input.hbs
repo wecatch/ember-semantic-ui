@@ -1,5 +1,6 @@
 {{#if hasBlockParams}}
-    {{yield (action "start") uploader}}
+    <input type="file" name="file" >
+    {{yield uploader (action "start") (action "abort") }}
 {{else}}
     <input type="file" name="file" >
     {{#unless autoUpload}}

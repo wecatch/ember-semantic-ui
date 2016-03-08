@@ -106,9 +106,6 @@ export default Ember.Mixin.create({
 	 * @observes "didInsertElement" event
 	 * @returns  {void}
 	 */
-	_updateInputValue() {
-		this.$('input').val(this.value);
-	},
 	_updateValue() {
 		let newValue = this.$('input').val();
 		if (typeof this.attrs.update === 'function') {
@@ -118,15 +115,11 @@ export default Ember.Mixin.create({
 		}
 	},
 	initialize: function(argument) {
-		this._updateInputValue();
 		if (this.get('readonly')) {
 			this.$('input').attr('readonly', 'readonly');
 		}
 		this.$('input').change(() => {
 			this._updateValue();
 		});
-	}.on('didInsertElement'),
-	initValue: function() {
-		this._updateInputValue();
-	}.on('didUpdateAttrs'),
+	}.on('didInsertElement')
 });
