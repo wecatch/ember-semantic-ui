@@ -54,13 +54,15 @@ export default Ember.Mixin.create({
         let {value, checked} = this.getProperties('value', 'checked');
         let input = this.$('input');
 
+        //set checbox stated
+        input.prop('checked', checked);
+        //bind input change event
         this.$('input').change(()=>{
-            let isChecked = this.$('input').is(':checked');
+            let isChecked = input.is(':checked');
             this._updateValue(isChecked);
             this.set('checked', isChecked);
+            this.sendAction('action', isChecked, this.value);
         });
-        input.prop('checked', checked);
-        this._updateValue(checked);
 
     }.on('didInsertElement'),
     _updateValue(checked){
@@ -71,8 +73,10 @@ export default Ember.Mixin.create({
                 this.attrs.update('');
             }
         }
-
-        this.sendAction('action', checked, this.value);
+    },
+    didInitAttrs(){
+        //set checked value
+        this._updateValue(this.get('checked'));
     },
     /**
      * @function setChecked
@@ -81,6 +85,9 @@ export default Ember.Mixin.create({
      */
     setChecked: function() {
         let input = this.$('input');
+        //when checked change, set checkbox state
         input.prop('checked', this.get('checked'));
+        //change value
+        this._updateValue(this.get('checked'));
     }.on('didUpdateAttrs')
 });
