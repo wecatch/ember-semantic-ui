@@ -67,9 +67,9 @@ export default Ember.Component.extend({
     },
     actions: {
         closeMessage() {
-            this.$().transition('fade');
+            this && this.$() && this.$().transition('fade');
             run.next(this, () => {
-                this.destroy();
+                this && this.destroy();
             });
         }
     }
