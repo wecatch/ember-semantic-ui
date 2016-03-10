@@ -22,16 +22,10 @@ export default Ember.Mixin.create({
      * @returns  {void}
      */
     click: function() {
-        this.sendAction('action', this.get('param'));
+        if(typeof this.attrs.action == 'function'){
+            this.attrs.action();
+        }
     },
-
-    /**
-     * Param to be sent to parent action
-     *
-     * @property {Ember.Object} param
-     */
-    param: null,
-
     /**
      * Class names to apply to the button
      *
