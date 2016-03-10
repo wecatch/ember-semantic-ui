@@ -6,10 +6,18 @@ export default Ember.Component.extend({
     layout: layout,
     actions: {
         onShow(){
-            this.sendAction('onShow');
+            if(typeof this.attrs.onShow == 'function'){
+                this.attrs.onShow();
+            }else {
+                this.sendAction('onShow');
+            }
         },
         onHide(){
-            this.sendAction('onHide');
+            if(typeof this.attrs.onHide == 'function'){
+                this.attrs.onHide();
+            }else{
+                this.sendAction('onHide');
+            }
         }
     },
 	tagName: 'div',
@@ -27,6 +35,9 @@ export default Ember.Component.extend({
      * @default  true
     */
     closable: true,
+
+    transition: 'scale',
+
 	/**
 	 * Class names to apply to the button
 	 *
@@ -40,9 +51,13 @@ export default Ember.Component.extend({
      * @returns  {void}
     */
 	showModal: function(){
-		this.get('show') ? this.$().modal('show') : this.$().modal('hide');
+        if(this.get('show')){
+            this.$().modal('setting', 'transition', this.transition);
+            this.$().modal('show');            
+        }else{
+            this.$().modal('hide');
+        }
 	}.observes('show'),
-
 	initialize: function(argument) {
 		let that = this,
             closable = this.get('closable');
@@ -58,6 +73,16 @@ export default Ember.Component.extend({
 			},
             onShow(){
                 that.send('onShow');
+            },
+            onApprove() {
+                if(typeof that.attrs.onApprove == 'function'){
+                    that.attrs.onApprove();
+                }
+            },
+            onDeny(){
+                if(typeof that.attrs.onDeny == 'function'){
+                    return that.attrs.onDeny();
+                }
             }
 		})
 	}.on('didInsertElement'),
