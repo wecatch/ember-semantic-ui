@@ -8,16 +8,6 @@ export default Ember.Component.extend(UiCheckboxGroupBase, {
     isOptionChecked(optionValue){
         return String(this.value) === optionValue;
     },
-    initialize: function(argument) {
-        if(!this.options){
-            let name = this.name;
-            this.$('input').each(function(index, item) {
-                if(!$(item).attr('name')){
-                    $(item).attr('name', name);
-                }
-            });
-        }
-    }.on('didInsertElement'),
     actions: {
         childChange(checked, value){
             if(checked){

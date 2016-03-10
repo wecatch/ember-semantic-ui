@@ -1,5 +1,9 @@
 import Ember from 'ember';
 
+const {computed} = Ember;
+
+const {bool} = computed;
+
 export default Ember.Mixin.create({
     /**
      * The root component element
@@ -73,6 +77,7 @@ export default Ember.Mixin.create({
                 Ember.set(item, 'checked', this.isOptionChecked(item['value']));
             };
         }
+        this.setupBlockOptions();
     }),
     /**
      * @function initOptions connect options and _options step one
@@ -86,6 +91,22 @@ export default Ember.Mixin.create({
             this.set('name', Ember.guidFor(this));
         }
     },
+    initialize: function() {
+        this.setupBlockOptions();
+    }.on('didInsertElement'),
+    setupBlockOptions: function(){
+        if(this.hasBlock && !this.options){
+            let name = this.name;
+            this.$('input').each((index, item)=>{
+                if(!$(item).attr('name')){
+                    $(item).attr('name', name);
+                }
+                let checked = this.isOptionChecked($(item).val());
+                $(item).prop('checked', checked);
+            });
+        }
+    },
+
     setupOptions: function(){
         let _options = [];
         if(this.options){
@@ -102,5 +123,6 @@ export default Ember.Mixin.create({
             };
             this.set('_options', _options);
         }
-    }.observes('options')
+    }.observes('options'),
+    hasBlock: bool('template').readOnly()
 });
