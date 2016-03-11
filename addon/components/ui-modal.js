@@ -39,12 +39,15 @@ export default Ember.Component.extend({
     transition: 'scale',
 
 	/**
-	 * Class names to apply to the button
+	 * Class names to apply to the modal
 	 *
-	 * @property {Ember.Array} classNames
+	 * @property {Ember.Array} classNameBindings
 	*/
-	classNames: ['ui', 'modal'],
-
+    classNameBindings: ['_uiClass', 'theme', 'class', '_componentClass'],
+    _uiClass: 'ui',
+    _componentClass: 'modal',
+    class: '',
+    theme:'',
 	/**
      * @function showModal
      * @observes "show" property
@@ -53,6 +56,7 @@ export default Ember.Component.extend({
 	showModal: function(){
         if(this.get('show')){
             this.$().modal('setting', 'transition', this.transition);
+            this.$().modal('setting', 'closable', this.closable);
             this.$().modal('show');            
         }else{
             this.$().modal('hide');
@@ -76,7 +80,7 @@ export default Ember.Component.extend({
             },
             onApprove() {
                 if(typeof that.attrs.onApprove == 'function'){
-                    that.attrs.onApprove();
+                    return that.attrs.onApprove();
                 }
             },
             onDeny(){
