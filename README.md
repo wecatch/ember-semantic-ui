@@ -19,6 +19,7 @@ addon in their Ember project.
 - ui-form
 - ui-input-tags
 - ui-input
+- ui-date-input
 - ui-modal
 - ui-modal-title
 - ui-modal-content
@@ -38,14 +39,14 @@ addon in their Ember project.
 In your ember-cli project, install this addon from npm 
 
 ```
-npm install ember-semantic-ui --save
+ember install ember-semantic-ui --save
 
 ```
 
 or install the latest version from github
 
 ```
-npm install https://github.com/wecatch/ember-semantic-ui --save
+ember install git+https://github.com/wecatch/ember-semantic-ui --save
 
 ```
 
