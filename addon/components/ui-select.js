@@ -19,6 +19,12 @@ export default Ember.Component.extend(UiSelectBase, {
             action: function(text, value) {
                 that.set('value', value);
                 that.$().dropdown('hide');
+                if(that.attrs.value === undefined){
+                    that.setupSelected();
+                }
+                if(that.attrs.update === 'function'){
+                    that.attrs.update(value);
+                }
                 if(that.search){
                     that.$('.menu .item').removeClass('filtered');
                 }
