@@ -71,6 +71,9 @@ export default Ember.Component.extend({
             run.next(this, () => {
                 this && this.destroy();
             });
+            if(typeof this.attrs.onClose == 'function'){
+                this.attrs.onClose();
+            }
         }
     }
 });

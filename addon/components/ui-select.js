@@ -22,7 +22,7 @@ export default Ember.Component.extend(UiSelectBase, {
                 if(that.attrs.value === undefined){
                     that.setupSelected();
                 }
-                if(that.attrs.update === 'function'){
+                if(typeof that.attrs.update === 'function'){
                     that.attrs.update(value);
                 }
                 if(that.search){
