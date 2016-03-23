@@ -7,21 +7,13 @@ const {observer} = Ember;
 const minutes=[];
 
 for (var i = 0; i < 60; i++) {
-    if(i<10){
-        minutes[i] = {'value':'0'+i, 'name':i};
-    }else{
-        minutes[i] = {'value':i, 'name':i};
-    }
+    minutes[i] = {'value':i, 'name':i};
 };
 
 const hours = [];
 
 for (var i = 0; i < 24; i++) {
-    if(i<10){
-        hours[i] = {'value':'0'+i, 'name':i};
-    }else {
-        hours[i] = {'value':i, 'name':i};
-    }
+    hours[i] = {'value':i, 'name':i};
 };
 
 export default Ember.Component.extend({
@@ -32,9 +24,19 @@ export default Ember.Component.extend({
     classNameBindings: ['class'],
     class: '',
     rtime: observer('d,h,m', function(){
-        let m = moment(`${this.d} ${this.h}:${this.m}`).format('YYYY-MM-DD HH:mm');
+        let hour = this.h;
+        let minute = this.m;
+        let date = moment(this.d);
+        let options = {
+            year: date.year(), 
+            month: date.month(), 
+            day: date.day(),
+            hour: hour,
+            minute: minute,
+        }
+        let time = moment(options).format('YYYY-MM-DD HH:mm');
         if(typeof this.attrs.update == 'function'){
-            this.attrs.update(m);
+            this.attrs.update(time);
         }
     }),
     didInitAttrs(){
