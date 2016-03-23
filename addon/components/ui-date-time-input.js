@@ -30,7 +30,7 @@ export default Ember.Component.extend({
     hours:hours,
     value: null,
     classNameBindings: ['class'],
-    class: 'inline fields',
+    class: '',
     rtime: observer('d,h,m', function(){
         let m = moment(`${this.d} ${this.h}:${this.m}`).format('YYYY-MM-DD HH:mm');
         if(typeof this.attrs.update == 'function'){
@@ -38,9 +38,11 @@ export default Ember.Component.extend({
         }
     }),
     didInitAttrs(){
-        let time = moment(this.value);
-        this.set('d', time.format('YYYY-MM-DD'));
-        this.set('h', time.hour());
-        this.set('m', time.minute());
+        if(this.value && moment(this.value).isValid()){
+            let time = moment(this.value);
+            this.set('d', time.format('YYYY-MM-DD'));
+            this.set('h', time.hour());
+            this.set('m', time.minute());
+        }
     }
 });
