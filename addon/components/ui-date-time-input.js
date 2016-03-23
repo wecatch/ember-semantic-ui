@@ -29,6 +29,8 @@ export default Ember.Component.extend({
     minutes:minutes,
     hours:hours,
     value: null,
+    classNameBindings: ['class'],
+    class: 'inline fields',
     rtime: observer('d,h,m', function(){
         let m = moment(`${this.d} ${this.h}:${this.m}`).format('YYYY-MM-DD HH:mm');
         if(typeof this.attrs.update == 'function'){
