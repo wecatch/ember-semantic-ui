@@ -1,0 +1,72 @@
+{{outlet}}
+
+
+<div class="ui container" >
+    <div class="ui dividing header" >ui radio</div>
+    <div class="ui two column grid" >
+        <div class="row" >
+            <div class="column" >
+                <div class="ui compact segment" >
+                    \{{#ui-radio}}normal\{{/ui-radio}}
+                </div>
+            </div>
+            <div class="column" >
+                {{#ui-radio }}normal{{/ui-radio}}
+            </div>
+        </div>
+        <div class="row" >
+            <div class="column" >
+                <div class="ui compact segment" >
+                    \{{#ui-radio checked=true }}normal\{{/ui-radio}}
+                </div>
+            </div>
+            <div class="column" >
+                {{#ui-radio  checked=true }}normal{{/ui-radio}}
+            </div>
+        </div>
+        <div class="row" >
+            <div class="column" >
+                <div class="ui compact segment" >
+                    \{{#ui-radio theme="toggle"}}toggle\{{/ui-radio}}
+                </div>
+            </div>
+            <div class="column" >
+                {{#ui-radio theme="toggle"}}toggle{{/ui-radio}}
+            </div>
+        </div>
+        <div class="row" >
+            <div class="column" >
+                <div class="ui compact segment" >
+                    \{{#ui-radio checked=true theme="toggle"}}toggle\{{/ui-radio}}
+                </div>
+            </div>
+            <div class="column" >
+                {{#ui-radio checked=true theme="toggle"}}toggle{{/ui-radio}}
+            </div>
+        </div>
+        <div class="row" >
+            <div class="column" >
+                <div class="ui compact segment" >
+                    \{{#ui-radio theme="slider" }}slider\{{/ui-radio}}
+                </div>
+            </div>
+            <div class="column" >
+                {{#ui-radio theme="slider" }}slider{{/ui-radio}}
+            </div>
+        </div>
+    </div>
+    <div class="ui dividing header" >useage</div>
+    <div class="ui two column grid" >
+        <div class="row" >
+            <div class="column" >
+                <div class="ui compact segment" >
+                    \{{#ui-radio checked=true  theme="slider" }}slider\{{/ui-radio}}
+                </div>
+            </div>
+            <div class="column" >
+                {{#ui-radio checked=isChecked  value="apple"  theme="slider" }}slider{{/ui-radio}}
+                <div class="ui left pointing  label" >{{isChecked}}</div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="ui grid" >
+    <div class="row">
+        <div class="column">
+            <div class="ui segments">
+                <div class="ui secondary segment">
+                    {{code-highlight code=(code-show 'ui-animated-button' 0) }}
+                </div>          
+                <div class="ui segment">
+                    {{#ui-animated-button as |ab| }}
+                        <div class="{{ab.visible}}">Next</div>
+                        <div class="{{ab.hidden}}">
+                            <i class="right arrow icon"></i>
+                        </div>
+                    {{/ui-animated-button}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="ui container" >
+    <div class="ui dividing header" >ui uploader</div>
+    <div class="ui grid" >
+        <div class="column" >
+            <div class="ui form" >
+                <div class="field">
+                    {{code-highlight code=(code-show 'ui-uploader' 0)}}
+                </div>
+                {{#ui-uploader multiple=true url="/upload" autoUpload=true uploadStart="uploadStart" uploadProgress="uploadProgress" uploadSucess="uploadSucess" deleteFile="deleteFile" }}{{/ui-uploader}}
+            </div>
+        </div>
+    </div>
+</div>

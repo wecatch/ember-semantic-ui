@@ -1,0 +1,77 @@
+{{outlet}}
+
+<h4 class="ui header">form</h4>
+<div class="html ui top attached segment">
+    {{#ui-form}}
+        {{#ui-form-input}}email{{/ui-form-input}}
+        {{#ui-button}}save{{/ui-button}}
+    {{/ui-form}}
+</div>
+<div class="ui instructive bottom attached segment">
+    {{code-highlight code=(code-show 'ui-form' 0)}}
+</div>
+
+
+<h4 class="ui header">form loading</h4>
+<div class="html ui top attached segment">
+    {{#ui-form loading=true }}
+        {{#ui-form-input}}email{{/ui-form-input}}
+        {{#ui-button}}save{{/ui-button}}
+    {{/ui-form}}
+</div>
+<div class="ui instructive bottom attached segment">
+    {{code-highlight code=(code-show 'ui-form' 1)}}
+</div>
+
+<h4 class="ui header">form success</h4>
+<div class="html ui top attached segment">
+    {{#ui-form success=true }}
+        {{#ui-form-input}}email{{/ui-form-input}}
+        <div class="ui success message">
+            <div class="header">Form Completed</div>
+            <p>You're all signed up for the newsletter.</p>
+        </div>
+        {{#ui-button}}save{{/ui-button}}
+    {{/ui-form}}
+</div>
+<div class="ui instructive bottom attached segment">
+    {{code-highlight code=(code-show 'ui-form' 2)}}
+</div>
+
+<h4 class="ui header">form error</h4>
+<div class="html ui top attached segment">
+    {{#ui-form error=true }}
+        {{#ui-form-input}}email{{/ui-form-input}}
+        <div class="ui error message">
+            <div class="header">Form Completed</div>
+            <p>You're all signed up for the newsletter.</p>
+        </div>
+        {{#ui-button}}save{{/ui-button}}
+    {{/ui-form}}
+</div>
+<div class="ui instructive bottom attached segment">
+    {{code-highlight code=(code-show 'ui-form' 3)}}
+</div>
+
+
+<h4 class="ui header">fluid form </h4>
+<div class="html ui top attached segment">
+    {{#ui-form theme="fluid" }}
+        {{#ui-form-input}}email{{/ui-form-input}}
+        {{#ui-button}}save{{/ui-button}}
+    {{/ui-form}}
+</div>
+<div class="ui instructive bottom attached segment">
+    {{code-highlight code=(code-show 'ui-form' 4)}}
+</div>
+
+<h4 class="ui header">huge form </h4>
+<div class="html ui top attached segment">
+    {{#ui-form theme="huge" }}
+        {{#ui-form-input}}email{{/ui-form-input}}
+        {{#ui-button}}save{{/ui-button}}
+    {{/ui-form}}
+</div>
+<div class="ui instructive bottom attached segment">
+    {{code-highlight code=(code-show 'ui-form' 5)}}
+</div>

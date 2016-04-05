@@ -1,0 +1,38 @@
+<div class="ui grid" >
+    <div class="row">
+        <div class="column">
+            <div class="ui segments">
+                <div class="ui secondary segment">
+                    {{code-highlight code=(code-show 'ui-date-time-input' 0)}}
+                </div>
+                <div class="ui segment">
+                    {{ui-date-time-input value='2016-03-04 12:12' update=(action (mut value))}}
+                    <span>{{value}}</span>
+                </div>
+
+                <div class="ui secondary segment">
+                    {{code-highlight code=(code-show 'ui-date-time-input' 1)}}
+                </div>
+                <div class="ui segment">
+                    <div class="ui form">
+                        {{#ui-date-time-input update=(action (mut value2)) class="three fields" as |datetime| }}
+                            <div class="field">
+                                <label>日期</label>
+                                {{component datetime.date  }}
+                            </div>
+                            <div class="field">
+                                <label>小时</label>
+                                {{component datetime.hour}}
+                            </div>
+                            <div class="field">
+                                <label>分钟</label>
+                                {{component datetime.minute}}
+                            </div>
+                        {{/ui-date-time-input}}
+                    </div>
+                    <span>{{value2}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

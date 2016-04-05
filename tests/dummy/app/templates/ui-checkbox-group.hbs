@@ -1,0 +1,55 @@
+<div class="ui grid" >
+    <div class="row">
+        <div class="column">
+            <div class="ui segments">
+                <div class="ui secondary segment">
+                    {{code-highlight code=(code-show 'ui-checkbox-group' 0) }}
+                </div>
+                <div class="ui segment">
+                    <div class="ui form" >
+                        {{#ui-checkbox-group theme="inline fields" value=checkvalue as |valueChange| }}
+                            <label>choose company</label>
+                            <div class="field" >
+                                {{#ui-checkbox  value="apple" action=(action valueChange) }}apple{{/ui-checkbox}}
+                            </div>
+                            <div class="field" >
+                                {{#ui-checkbox  value="google" action=(action valueChange) }}google{{/ui-checkbox}}
+                            </div>
+                            <div class="field" >
+                                {{#ui-checkbox  value="dropbox" action=(action valueChange) }}dropbox{{/ui-checkbox}}
+                            </div>
+                            <div class="field">
+                                {{checkvalueShow}}
+                            </div>
+                        {{/ui-checkbox-group}}
+                    </div>
+                </div>
+                <div class="ui secondary segment">
+                    {{code-highlight code=(code-show 'ui-checkbox-group' 1) }}
+                </div>
+
+                <div class="ui segment">
+                    <div class="ui form" >
+                        {{#ui-checkbox-group theme="grouped fields" label="choose company" options=options.options value=checkvalue2 }}{{/ui-checkbox-group}}
+                        <div class="field">
+                            {{checkvalueShow2}}
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ui secondary segment">
+                    {{code-highlight code=(code-show 'ui-checkbox-group' 2) }}
+                </div>
+
+                <div class="ui segment">
+                    <div class="ui form" >
+                        {{#ui-checkbox-group label="choose company" theme="inline fields" options=options.options value=checkvalue3 }}{{/ui-checkbox-group}}
+                        <div class="field">
+                            {{checkvalueShow3}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

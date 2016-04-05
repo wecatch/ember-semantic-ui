@@ -1,0 +1,36 @@
+<div class="ui grid" >
+    <div class="row">
+        <div class="column">
+            <div class="ui segments">
+              
+              <div class="ui secondary segment">
+                  {{code-highlight code=(code-show 'ui-input-tags' 0) }}
+              </div>
+              <div class="ui segment">
+                {{ui-input-tags value=value}}
+                <p>{{valueShow}}</p>
+              </div>
+
+              
+              <div class="ui secondary segment">
+                  {{code-highlight code=(code-show 'ui-input-tags' 1) }}
+              </div>
+              <div class="ui segment">
+                  {{ui-input-tags update=(action (mut value1)) }}
+                  <p>{{value1Show}}</p>
+              </div>
+
+
+              <div class="ui segment">
+                <div class="ui form segment">
+                    {{ui-input-tags value=value2 }}
+                    <div class="field">
+                      {{value2Show}}
+                    </div>
+                    {{#ui-button action=(action "changeValue2") }}dynamic change value{{/ui-button}}
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>

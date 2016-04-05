@@ -1,0 +1,61 @@
+{{outlet}}
+
+<div class="ui grid" >
+    <div class="row">
+        <div class="column">
+            <div class="ui segments">
+                <div class="ui secondary segment">
+                    {{code-highlight code=(code-show 'ui-label' 0)}}
+                </div>
+                <div class="ui segment">
+                     {{#ui-label theme="rblue image" }}
+                         i am label
+                        <div class="detail" >detail</div>
+                    {{/ui-label}}
+                </div>
+
+                 <div class="ui secondary segment">
+                    {{code-highlight code=(code-show 'ui-label' 1)}}
+                </div>
+                <div class="ui segment">
+                    {{#ui-label theme="raised segment" }}
+                        <div class="ribbon" >i am label</div>
+                    {{/ui-label}}
+                </div>
+
+                <div class="ui secondary segment">
+                    {{code-highlight code=(code-show 'ui-label' 2)}}
+                </div>
+                <div class="ui segment">
+                   {{#ui-label theme="basic" }}label{{/ui-label}}
+                </div>
+                
+                <div class="ui secondary segment">
+                    {{code-highlight code=(code-show 'ui-label' 3)}}
+                </div>
+                <div class="ui segment">
+                    {{#ui-label theme="basic red" }}label{{/ui-label}}
+                </div>
+
+                <div class="ui secondary segment">
+                    {{code-highlight code=(code-show 'ui-label' 4)}}
+                </div>
+                <div class="ui segment">
+                    {{#ui-label theme="red" }}label{{/ui-label}}
+                </div>
+
+                <div class="ui secondary segment">
+                    {{code-highlight code=(code-show 'ui-label' 5)}}
+                </div>
+
+                <div class="ui segment">
+                    {{#ui-label theme="red image" }}
+                        <img src="https://www.baidu.com/img/bd_logo1.png">
+                        baidu
+                    {{/ui-label}}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

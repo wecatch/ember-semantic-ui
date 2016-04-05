@@ -1,0 +1,42 @@
+<div class="ui grid" >
+    <div class="row">
+        <div class="column">
+            <div class="ui segments">
+                <div class="ui secondary segment">
+                    {{code-highlight code=(code-show 'ui-radio-group' 0)}}
+                </div>           
+                <div class="ui segment">
+                    <div class="ui form" >
+                        {{#ui-radio-group theme="grouped" value=checkvalue name="co1" as |vc| }}
+                            <label>choose company</label>
+                        <div class="field" >
+                            {{#ui-radio  value="apple" action=vc }}apple{{/ui-radio}}
+                        </div>
+                        <div class="field" >
+                            {{#ui-radio  value="google" action=vc }}google{{/ui-radio}}
+                        </div>
+                        <div class="field" >
+                            {{#ui-radio  value="dropbox" action=vc }}dropbox{{/ui-radio}}
+                        </div>
+                        <div class="field">
+                            {{checkvalue}}
+                        </div>
+                        {{/ui-radio-group}}
+                    </div>
+                </div>
+                <div class="ui secondary segment">
+                    {{code-highlight code=(code-show 'ui-radio-group' 1)}}
+                </div>           
+                <div class="ui segment">
+                    <div class="ui form" >
+                        {{#ui-radio-group name="co3" labelPath="name" label="choose company" theme="inline fields" options=options.options value=checkvalue3 }}
+                        {{/ui-radio-group}}
+                        <div class="field">
+                            {{checkvalue3}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

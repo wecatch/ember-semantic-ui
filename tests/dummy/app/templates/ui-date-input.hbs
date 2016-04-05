@@ -1,0 +1,17 @@
+<div class="ui grid" >
+    <div class="row">
+        <div class="column">
+            <div class="ui segments">
+                <div class="ui secondary segment">
+                    <code class="code xml">
+                        \{{ui-date-input update=(action (mut value))}}
+                    </code>
+                </div>
+                <div class="ui segment">
+                    {{ui-date-input value='2016-03-04' update=(action (mut value))}}
+                    <span>{{value}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

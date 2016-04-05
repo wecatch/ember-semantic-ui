@@ -3,23 +3,48 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Dummy</title>
+    <title>EmberSemanticUiDemo</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {{content-for "head"}}
-
+    {{content-for 'head'}}
+    
+    <link rel="stylesheet" href="assets/semantic.min.css">
     <link rel="stylesheet" href="assets/vendor.css">
     <link rel="stylesheet" href="assets/dummy.css">
 
-    {{content-for "head-footer"}}
+
+    {{content-for 'head-footer'}}
+    <style type="text/css">
+        .hljs {
+            background: none;
+        }
+
+        pre {
+            display: block;
+            /*padding: 9.5px;*/
+            margin: 0 0 10px;
+            font-size: 13px;
+            line-height: 1.42857143;
+            word-break: break-all;
+            word-wrap: break-word;
+            color: #616469;
+            background-color: #f5f5f5;
+            /*border: 1px solid #cccccc;*/
+            border-radius: 2px
+      }
+
+    </style>
   </head>
   <body>
-    {{content-for "body"}}
-
+    {{content-for 'body'}}
     <script src="assets/vendor.js"></script>
+    <script src="assets/semantic.min.js"></script>
     <script src="assets/dummy.js"></script>
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script> -->
 
-    {{content-for "body-footer"}}
+
+
+    {{content-for 'body-footer'}}
   </body>
 </html>

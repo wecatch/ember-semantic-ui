@@ -1,0 +1,18 @@
+<div class="ui container" >
+    <div class="ui dividing header" >file input</div>
+    <div class="ui two column grid" >
+        <div class="row" >
+            <div class="ui form" >
+                    <div class="field">
+                        {{code-highlight code=(code-show 'file-input' 0)}}
+                    </div>
+                    <div class="field" >
+                        {{file-input url="/upload" autoUpload=false extra=extra uploadProgress="uploadProgress" fileObject=fileObject uploadStart="uploadStart" uploadSucess="uploadSucess" }}
+                     {{!--    {{#if fileObject}}
+                            <img src="{{fileObject.base64Image}}">
+                        {{/if}} --}}
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>

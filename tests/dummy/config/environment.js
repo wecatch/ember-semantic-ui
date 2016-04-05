@@ -8,6 +8,7 @@ module.exports = function(environment) {
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
+        EXTEND_PROTOTYPES: true
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
       }
@@ -41,6 +42,13 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
 
+  }
+
+  if (environment === 'gh_pages') {
+    ENV.APP.rootElement = '#ember-semantic-ui-demo' ;
+    ENV.baseURL = '/ember-semantic-ui';
+    ENV.modulePrefix = 'dummy';
+    ENV.locationType = 'hash';
   }
 
   return ENV;

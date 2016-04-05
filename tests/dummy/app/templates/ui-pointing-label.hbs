@@ -1,0 +1,58 @@
+{{outlet}}
+
+<div class="ui grid" >
+    <div class="row">
+        <div class="column">
+            <div class="ui segments">
+                 
+                 <div class="ui secondary segment">
+                    {{code-highlight code=(code-show 'ui-pointing-label' 0)}}
+                </div>           
+                <div class="ui segment">
+                    {{#ui-pointing-label theme="red" direction="left" }}
+                        below label
+                    {{/ui-pointing-label}}
+                </div>
+                
+                <div class="ui secondary segment">
+                    {{code-highlight code=(code-show 'ui-pointing-label' 1)}}
+                </div>
+                <div class="ui segment">
+                    {{#ui-pointing-label theme="tag blue" direction="below" }}
+                        label
+                    {{/ui-pointing-label}}
+                </div>
+
+
+                 <div class="ui secondary segment">
+                    {{code-highlight code=(code-show 'ui-pointing-label' 2)}}
+                </div>
+                <div class="ui segment">
+                    {{#ui-pointing-label direction="below" }}
+                        below label
+                    {{/ui-pointing-label}}
+                </div>
+
+
+                 <div class="ui secondary segment">
+                    {{code-highlight code=(code-show 'ui-pointing-label' 3)}}
+                </div>
+                <div class="ui segment">
+                    {{#ui-pointing-label direction="left" }}
+                        left label
+                    {{/ui-pointing-label}}
+                </div>
+
+                 <div class="ui secondary segment">
+                    {{code-highlight code=(code-show 'ui-pointing-label' 4)}}
+                </div>
+                <div class="ui segment">
+                    {{#ui-pointing-label direction="right" }}
+                        right lbale
+                    {{/ui-pointing-label}}
+                </div>
+
+           </div>
+        </div>
+    </div>
+</div>
