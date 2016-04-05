@@ -40,6 +40,7 @@ Router.map(function() {
     this.route('ui-form-input');
 
     this.route('ui-modal');
+    this.route('ui-popup');
 
     this.route('ui-progress');
     
