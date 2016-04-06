@@ -1,48 +1,112 @@
 import Ember from 'ember';
 import layout from '../templates/components/ui-popup';
 
+const {computed, copy} = Ember;
+
 export default Ember.Component.extend({
   layout,
-  classNameBindings: ['_ui', 'class', '_componentClass', 'position', 'transition'],
-  attributeBindings: ['dataContent', 'dataHtml', 'dataTitle'],
+  classNameBindings: ['class'],
   class: '',
   target: '',
-  dataContent: '',
-  dataHtml: '',
-  dataTitle: '',
-  event: 'click',
+  content: '',
+  html: '',
+  title: '',
+  variation: '',
+  /**
+   * Event used to trigger popup: focus, click, hover, or manual
+   *
+   * @property {Ember.String} event
+   * @default  "click"
+   */
+  event: 'hover',
+  position: 'top left',
+  inline: false,
+  transition: 'slide down',
+  /**
+   * Whether popup should not close on hover (useful for popup navigation menus)
+   *
+   * @property {Ember.Boolean} hoverable
+   * @default  false
+   */
+  hoverable: false,
+  /**
+   * When using on: 'click' specifies whether clicking the page should close the popup
+   *
+   * @property {Ember.Boolean} closable
+   * @default  true
+   */
+  closable: true,
+  /**
+   * Duration of animation events
+   *
+   * @property {Ember.Number} duration
+   * @default  200
+   */
+  duration: 200,
+  delayShow: 50,
+  delayHide: 30, 
+  preserve: false,
   didUpdateAttrs(){
-    if(this.target){
-        let self = this;
-        this.$().popup({
-            popup: Ember.$('#'+self.target),
-            event: self.event,
-            onCreate: function(){
-                if(typeof self.attrs.onCreate == 'function'){
-                    self.attrs.onCreate();
-                }
-            },
-            onRemove: function(){
-                if(typeof self.attrs.onRemove == 'function'){
-                    self.attrs.onRemove();
-                }
-            },
-            onShow: function(){
-                if(typeof self.attrs.onShow == 'function'){
-                    self.attrs.onShow();
-                }
-            },
-            onVisible: function(){
-                if(typeof self.attrs.onVisible == 'function'){
-                    self.attrs.onVisible();
-                }
-            },
-            onHide: function(){
-                if(typeof self.attrs.onHide == 'function'){
-                    self.attrs.onHide();
-                }
-            }
-        });
+    if(this.popup){
+        this.bindPopEvent();
     }
+  },
+  bindPopEvent(){
+      let self = this;
+      let hoverable = copy(this.hoverable);
+      let closable = copy(this.closable);
+      let preserve = copy(this.preserve);
+      let inline = copy(this.inline);
+
+      this.$() && this.$().popup({
+          popup: Ember.$('#'+self.popup),
+          on: self.event,
+          inline: inline,
+          hoverable: hoverable,
+          closable: closable,
+          target: self.target || false,
+          title: self.title,
+          variation: self.variation,
+          html: self.html,
+          content: self.content,
+          duration: self.duration,
+          position: self.position,
+          delay: {
+            show: self.delayShow,
+            hide: self.delayHide
+          },
+          preserve: preserve,
+          onCreate: function(){
+              if(typeof self.attrs.onCreate == 'function'){
+                  self.attrs.onCreate(self);
+              }
+          },
+          onRemove: function(){
+              if(typeof self.attrs.onRemove == 'function'){
+                  self.attrs.onRemove(self);
+              }
+          },
+          onShow: function(){
+              if(typeof self.attrs.onShow == 'function'){
+                  self.attrs.onShow(self);
+              }
+          },
+          onVisible: function(){
+              if(typeof self.attrs.onVisible == 'function'){
+                  self.attrs.onVisible(self);
+              }
+          },
+          onHide: function(){
+              if(typeof self.attrs.onHide == 'function'){
+                  self.attrs.onHide(self);
+              }
+          }
+      });
+  },
+  hide(){
+    this.$().popup('hide');
+  },
+  show(){
+    this.$().popup('show');
   }
 });

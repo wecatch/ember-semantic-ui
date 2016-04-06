@@ -3,10 +3,8 @@ import layout from '../templates/components/ui-popup-content';
 
 export default Ember.Component.extend({
     layout,
-    classNameBindings: ['_ui', 'class', '_componentClass', 'position', 'transition'],
+    classNameBindings: ['_ui', 'class', '_componentClass'],
     class: 'flowing',
-    position: 'top left',
-    transition: 'transition hide',
     _ui: 'ui',
     _componentClass: 'popup',
     target: null,

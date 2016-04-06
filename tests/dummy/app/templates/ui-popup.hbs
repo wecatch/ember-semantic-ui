@@ -7,10 +7,27 @@
                 </div>
 
                 <div class="ui segment">
-                    {{#ui-popup target=target tagName='button' class="ui button"}}show me{{/ui-popup}}
+                    {{#ui-popup popup=target tagName='button' class="ui button" onShow=(action "onPopupShow" 'hello pop')}}show me{{/ui-popup}}
                     {{#ui-popup-content target=(mut target) }}
                         <div class="header">
-                            i am popup
+                            {{value}}
+                        </div>
+                    {{/ui-popup-content}}
+                </div>
+
+                <div class="ui secondary segment">
+                    {{#ui-popup popup=target1 tagName='button' event='click' hoverable=true class="ui button" onShow=(action "onPopupShow" 'hello pop')}}show me{{/ui-popup}}
+                    {{#ui-popup-content target=(mut target1) class="fluid"}}
+                        <div class="ui grid">
+                            <div class="ui form six column">
+                              <div class="field">
+                                <textarea name="" id="" cols="30" rows="10"></textarea>
+                              </div>
+                              <div class="field">
+                                  <button class="ui button save" {{action "save"}} >save</button>
+                                  <button class="ui button cancel" {{action "cancel"}} >cancel</button>
+                              </div>
+                            </div>
                         </div>
                     {{/ui-popup-content}}
                 </div>         
