@@ -12,12 +12,12 @@ export default Ember.Component.extend(UiSelectBase, {
      */
     defaultValue: null,
     _multiple: true,
-    _valueChange: function() {
+    _valueChange: Ember.observer('value.[]', function(){
         if (this.value.join(',') !== this._value) {
             this.setupSelected();
             this.set('_value', this.value.join(','));
         }
-    }.observes('value.[]'),
+    }),
     renderDropDown() {
         let that = this;
         this.$().dropdown({

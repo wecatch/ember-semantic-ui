@@ -1,8 +1,12 @@
 import Ember from 'ember';
 
-const {computed} = Ember;
+const {
+    computed
+} = Ember;
 
-const {bool} = computed;
+const {
+    bool
+} = computed;
 
 export default Ember.Mixin.create({
     /**
@@ -70,8 +74,8 @@ export default Ember.Mixin.create({
      * @property {Ember.Array} options
      */
     _options: null,
-    valueChange: Ember.observer('value', function(){
-        if(this._options){
+    valueChange: Ember.observer('value', function() {
+        if (this._options) {
             for (var i = 0; i < this._options.length; i++) {
                 let item = this._options[i];
                 Ember.set(item, 'checked', this.isOptionChecked(item['value']));
@@ -87,18 +91,18 @@ export default Ember.Mixin.create({
     init: function() {
         this._super(...arguments);
         this.setupOptions();
-        if(!this.name){
+        if (!this.name) {
             this.set('name', Ember.guidFor(this));
         }
     },
-    initialize: function() {
+    didInsertElement() {
         this.setupBlockOptions();
-    }.on('didInsertElement'),
-    setupBlockOptions: function(){
-        if(this.hasBlock && !this.options){
+    },
+    setupBlockOptions() {
+        if (this.hasBlock && !this.options) {
             let name = this.name;
-            this.$('input').each((index, item)=>{
-                if(!$(item).attr('name')){
+            this.$('input').each((index, item) => {
+                if (!$(item).attr('name')) {
                     $(item).attr('name', name);
                 }
                 let checked = this.isOptionChecked($(item).val());
@@ -106,10 +110,9 @@ export default Ember.Mixin.create({
             });
         }
     },
-
-    setupOptions: function(){
+    setupOptions() {
         let _options = [];
-        if(this.options){
+        if (this.options) {
             for (var i = 0; i < this.options.length; i++) {
                 let item = this.options[i];
                 let label = item[this.get('labelPath')];
@@ -123,6 +126,9 @@ export default Ember.Mixin.create({
             };
             this.set('_options', _options);
         }
-    }.observes('options'),
+    },
+    optionsChange: Ember.observer('options', function() {
+        this.setupOptions();
+    }),
     hasBlock: bool('template').readOnly()
 });

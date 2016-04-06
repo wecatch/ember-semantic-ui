@@ -70,7 +70,11 @@ let fileObject = Ember.Object.extend({
             // Read in the image file as a data URL.
             reader.readAsDataURL(fileToUpload);
         }
-    }.on('init'),
+    },
+    init(){
+        this._super(...arguments);
+        this.readFile();
+    }
 });
 
 

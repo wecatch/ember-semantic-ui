@@ -105,15 +105,15 @@ export default Ember.Mixin.create({
      * @observes "didInsertElement" event
      * @returns  {void}
      */
-    initialize: function(argument) {
+    didInsertElement(argument) {
         this.renderDropDown();
-    }.on('didInsertElement'),
+    },
     /**
      * @function setupOptions 
      * @observes "options" property
      * @returns  {void}
      */
-    setupOptions: function() {
+    setupOptions() {
         if (this.options) {
             this._options.clear();
             for (var i = 0; i < this.options.length; i++) {
@@ -132,7 +132,10 @@ export default Ember.Mixin.create({
                 this._options.pushObject(obj);
             };
         }
-    }.observes('options'),
+    },
+    optionsChange: Ember.observer('options', function(){
+        this.setupOptions();
+    }),
     init() {
         this._super(...arguments);
         this.set('_selectedOptions', Ember.A());

@@ -47,7 +47,7 @@ export default Ember.Component.extend({
      * @default  ""
      */
     attributeBindings: ['percent:data-percent'],
-    initialize: function(argument) {
+    didInsertElement() {
         this.$().progress();
-    }.on('didInsertElement')
+    }
 });

@@ -5,8 +5,23 @@ const {computed, copy} = Ember;
 
 export default Ember.Component.extend({
   layout,
-  classNameBindings: ['class'],
-  class: '',
+  classNameBindings: ['_class'],
+  class: 'ui button',
+  _class: computed('class', {
+    get(){
+      if(this.attrs.class){
+        return ''
+      }else {
+        return this.class;
+      }
+    }
+  }),
+  /**
+   * If a selector or jQuery object is specified this allows the popup to be positioned relative to that element.
+   *
+   * @property {Ember.String} target
+   * @default  ""
+   */
   target: '',
   content: '',
   html: '',
@@ -47,9 +62,19 @@ export default Ember.Component.extend({
   delayHide: 30, 
   preserve: false,
   didUpdateAttrs(){
-    if(this.popup){
+      if(this.popup || this.title || this.content || this.html){
         this.bindPopEvent();
-    }
+      }
+  },
+  didInitAttrs(){
+      if(this.popup || this.title || this.content || this.html){
+        this.bindPopEvent();
+      }
+  },
+  didInsertElement(){
+      if(this.title || this.content || this.html){
+          this.bindPopEvent();
+      }
   },
   bindPopEvent(){
       let self = this;
@@ -59,7 +84,7 @@ export default Ember.Component.extend({
       let inline = copy(this.inline);
 
       this.$() && this.$().popup({
-          popup: Ember.$('#'+self.popup),
+          popup: self.popup && Ember.$('#'+self.popup) || false,
           on: self.event,
           inline: inline,
           hoverable: hoverable,

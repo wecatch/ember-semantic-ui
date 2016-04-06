@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-    value: ['google'],
+    value: Ember.A(['google']),
     valueShow: Ember.computed('value.[]', {
         get() {
             return this.value.join(',');
@@ -19,7 +19,7 @@ export default Ember.Controller.extend({
     }),
     actions: {
         changeValue2(){
-            this.set('value2', ['google']);
+            this.set('value2', Ember.A(['google']));
             Ember.run.later(this, function (argument) {
                 this.get('value2').addObject('apple');
             }, 1000);

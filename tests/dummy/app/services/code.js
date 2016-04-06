@@ -351,7 +351,39 @@ const uiDateTimeInput = [
 {{/ui-date-time-input}}
 </div>
 `
+];
+
+const uiPopup = [
+`
+{{#ui-popup popup=target tagName='button' class="ui button" onShow=(action "onPopupShow" 'hello pop')}}show me{{/ui-popup}}
+{{#ui-popup-content target=(mut target) }}
+    <div class="header">
+        {{value}}
+    </div>
+{{/ui-popup-content}}
+`,
+`
+{{#ui-popup popup=target1 tagName='button' event='click' hoverable=true class="ui button" onShow=(action "onPopupShow" 'hello pop')}}show me{{/ui-popup}}
+{{#ui-popup-content target=(mut target1) class="fluid"}}
+    <div class="ui grid">
+        <div class="ui form six column">
+          <div class="field">
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+          </div>
+          <div class="field">
+              <button class="ui button save" {{action "save"}} >save</button>
+              <button class="ui button cancel" {{action "cancel"}} >cancel</button>
+          </div>
+        </div>
+    </div>
+{{/ui-popup-content}}
+`,
+`
+{{#ui-popup tagName='span' hoverable=true title='i am popup title' content='i am popup content'}}show me{{/ui-popup}}
+`
 ]
+
+
 
 const code = {
     'ui-uploader': uiUploader,
@@ -378,6 +410,7 @@ const code = {
     'ui-dropdown-menu': uiDropdownMenu,
     'file-input': fileInput,
     'ui-date-time-input': uiDateTimeInput,
+    'ui-popup': uiPopup,
 };
 
 export default Ember.Service.extend({

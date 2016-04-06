@@ -38,15 +38,15 @@ export default Ember.Component.extend({
             }
         });
     },
-    initialize: function(argument) {
+    didInsertElement() {
         this.renderDropDown();
-    }.on('didInsertElement'),
+    },
     _addValue(value){
         try{
             this.get('value').addObject(value);
         }catch(e){
             let id = Ember.guidFor(this);
-            Ember.Logger.warn(`component:ui-input-tags ${id} value is not array`);
+            Ember.Logger.warn(`component:ui-input-tags ${id} value is not Ember.A type`);
             Ember.Logger.error(e);
         }
         if(typeof this.attrs.update === 'function'){
@@ -60,7 +60,6 @@ export default Ember.Component.extend({
         }
     },
     didInitAttrs(){
-        this._super(...arguments);
         //if value do not be passed to component
         if(this.attrs.value === undefined){
             this.set('value', Ember.A());

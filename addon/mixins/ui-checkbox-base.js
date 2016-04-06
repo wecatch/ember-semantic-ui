@@ -49,7 +49,7 @@ export default Ember.Mixin.create({
      * @observes "didInsertElement" event
      * @returns  {void}
      */
-    initialize: function(argument) {
+    didInsertElement() {
         this.$().checkbox();
         let {value, checked} = this.getProperties('value', 'checked');
         let input = this.$('input');
@@ -63,8 +63,7 @@ export default Ember.Mixin.create({
             this.set('checked', isChecked);
             this.sendAction('action', isChecked, this.value);
         });
-
-    }.on('didInsertElement'),
+    },
     _updateValue(checked){
         if(typeof this.attrs.update ==='function'){
             if(checked){
@@ -78,16 +77,19 @@ export default Ember.Mixin.create({
         //set checked value
         this._updateValue(this.get('checked'));
     },
+    didUpdateAttrs(){
+        this.setChecked();
+    },
     /**
      * @function setChecked
      * @observes "checked" 
      * @returns  {void}
      */
-    setChecked: function() {
+    setChecked() {
         let input = this.$('input');
         //when checked change, set checkbox state
         input.prop('checked', this.get('checked'));
         //change value
         this._updateValue(this.get('checked'));
-    }.on('didUpdateAttrs')
+    }
 });

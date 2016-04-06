@@ -19,13 +19,13 @@ export default Ember.Mixin.create(Ember.Evented, {
      * @observes "didInsertElement" event
      * @returns  {void}
      */
-    initialize: function(argument) {
+    didInsertElement: function() {
         let self = this;
         this.$('input').change(function(e) {
             let input = e.target;
             self.trigger('filesDidChange', input.files);
         });
-    }.on('didInsertElement'),
+    },
     filesDidChange: function(files) {
         if (!Ember.isEmpty(files)) {
             this.set('fileObject', fileObject.create({

@@ -17,9 +17,9 @@ export default Ember.Component.extend({
     classNameBindings: ['_uiClass', 'theme', '_componentClass'],
     _uiClass: 'ui',
     _componentClass: 'dropdown',
-    initialize: function(argument) {
+    didInsertElement() {
         this.renderDropDown();
-    }.on('didInsertElement'),
+    },
     renderDropDown() {
         this.$().dropdown();
     }

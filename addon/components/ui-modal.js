@@ -53,7 +53,7 @@ export default Ember.Component.extend({
      * @observes "show" property
      * @returns  {void}
     */
-	showModal: function(){
+	showModal: Ember.observer('show', function(){
         if(this.get('show')){
             this.$().modal('setting', 'transition', this.transition);
             this.$().modal('setting', 'closable', this.closable);
@@ -61,8 +61,8 @@ export default Ember.Component.extend({
         }else{
             this.$().modal('hide');
         }
-	}.observes('show'),
-	initialize: function(argument) {
+	}),
+	didInsertElement() {
 		let that = this,
             closable = this.get('closable');
 
@@ -89,5 +89,5 @@ export default Ember.Component.extend({
                 }
             }
 		})
-	}.on('didInsertElement'),
+	},
 });

@@ -3,7 +3,7 @@
         <div class="column">
             <div class="ui segments">
                 <div class="ui secondary segment">
-                    {{code-highlight code=(code-show 'ui-button' 0)}}
+                    {{code-highlight code=(code-show 'ui-popup' 0)}}
                 </div>
 
                 <div class="ui segment">
@@ -13,6 +13,9 @@
                             {{value}}
                         </div>
                     {{/ui-popup-content}}
+                </div>
+                <div class="ui secondary segment">
+                    {{code-highlight code=(code-show 'ui-popup' 1)}}
                 </div>
 
                 <div class="ui secondary segment">
@@ -30,7 +33,14 @@
                             </div>
                         </div>
                     {{/ui-popup-content}}
-                </div>         
+                </div> 
+
+                <div class="ui secondary segment">
+                    {{code-highlight code=(code-show 'ui-popup' 2)}}
+                </div>
+                <div class="ui secondary segment">
+                    {{#ui-popup tagName='span' hoverable=true title='i am popup title' content='i am popup content'}}show me{{/ui-popup}}
+                </div>      
             </div>
         </div>
     </div>
