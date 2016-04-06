@@ -61,6 +61,7 @@ export default Ember.Component.extend({
   delayShow: 50,
   delayHide: 30, 
   preserve: false,
+  lastResort: false,
   didUpdateAttrs(){
       if(this.popup || this.title || this.content || this.html){
         this.bindPopEvent();
@@ -96,6 +97,7 @@ export default Ember.Component.extend({
           content: self.content,
           duration: self.duration,
           position: self.position,
+          lastResort: self.lastResort,
           delay: {
             show: self.delayShow,
             hide: self.delayHide
