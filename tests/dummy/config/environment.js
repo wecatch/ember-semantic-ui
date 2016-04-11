@@ -43,7 +43,7 @@ module.exports = function(environment) {
 
   }
 
-  if (environment === 'gh_pages') {
+  if (environment === 'gh-pages') {
     ENV.APP.rootElement = '#ember-semantic-ui-demo' ;
     ENV.baseURL = '/ember-semantic-ui';
     ENV.modulePrefix = 'dummy';

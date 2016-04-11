@@ -1,7 +1,9 @@
 # Ember-semantic-ui
 
-This Ember addon support many UI components based on [semantic-ui](http://semantic-ui.com), Anyone can use this 
-addon in their Ember project. 
+This Ember addon support many UI components based on [semantic-ui](http://semantic-ui.com), Anyone can use this addon in their Ember project. 
+
+
+[Demo](http://wecatch.me/ember-semantic-ui/demo/)
 
 
 ## Components
