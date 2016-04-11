@@ -122,7 +122,7 @@ export default Ember.Component.extend({
      * @observes "didInsertElement" event
      * @returns  {void}
      */
-    initialize: function(argument) {
+    didInsertElement() {
         let self = this;
         this.$('input').change(function(e) {
             let input = e.target,
@@ -143,7 +143,7 @@ export default Ember.Component.extend({
                 $(this).val("");
             }
         });
-    }.on('didInsertElement'),
+    },
     /**
      * @function willDestroy empty queue
      * 
@@ -170,29 +170,32 @@ export default Ember.Component.extend({
      * 
      * @returns  {string}
      */
-    inputStyle: function() {
-        let style_array = [
-            'opacity: 0',
-            'width:100% !important',
-            'overflow:hidden',
-            'position:relative',
-            'left:-100%',
-            'display:block',
-        ]
-        return style_array.join(';');
-    }.property(),
-
+    inputStyle: Ember.computed({
+        get(){
+            let style_array = [
+                'opacity: 0',
+                'width:100% !important',
+                'overflow:hidden',
+                'position:relative',
+                'left:-100%',
+                'display:block',
+            ]
+            return Ember.String.htmlSafe(style_array.join(';'));
+        }
+    }),
     /**
      * @function labelStyle
      * 
      * @returns  {string}
      */
-    labelStyle: function() {
-        let style_array = [
-            'height: 6.25em',
-            'line-height: 5.25em',
-            'text-align: center',
-        ]
-        return style_array.join(';');
-    }.property(),
+    labelStyle: Ember.computed({
+        get(){
+            let style_array = [
+                'height: 6.25em',
+                'line-height: 5.25em',
+                'text-align: center',
+            ]
+            return Ember.String.htmlSafe(style_array.join(';'));
+        }
+    }),
 });

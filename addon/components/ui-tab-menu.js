@@ -45,8 +45,8 @@ export default Ember.Component.extend({
         }
     }),
     active: '',
-    initialize: function() {
+    didInsertElement() {
         this.$('.item').tab();
         this.$('.item[data-tab="'+this.active+'"]').addClass("active");
-    }.on('didInsertElement')
+    }
 });
