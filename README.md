@@ -22,10 +22,12 @@ This Ember addon support many UI components based on [semantic-ui](http://semant
 - ui-input-tags
 - ui-input
 - ui-date-input
+- ui-date-time-input
 - ui-modal
 - ui-modal-title
 - ui-modal-content
 - ui-modal-foot
+- ui-pop-up
 - ui-select
 - ui-multi-select
 - ui-dropdown-menu
@@ -52,6 +54,15 @@ ember install git+https://github.com/wecatch/ember-semantic-ui --save
 
 ```
 
+## Dummy app
+
+```
+git clone https://github.com/wecatch/ember-semantic-ui
+npm install
+bower install
+ember server
+``
+
 ## Use this addon in your ember application
 
 
@@ -72,8 +83,8 @@ ember install git+https://github.com/wecatch/ember-semantic-ui --save
 
 ```
 
-<link rel="stylesheet" href="assets/semantic.css">
-<script src="assets/semantic.js"></script>
+<link rel="stylesheet" href="assets/semantic.min.css">
+<script src="assets/semantic.min.js"></script>
 
 ```
 
@@ -103,6 +114,12 @@ ember server
 The [ember-uploader](https://github.com/benefitcloud/ember-uploader) project support this addon file-uploader. Thanks to their [author](https://github.com/benefitcloud)
 
 # Release notes
+
+## 0.0.8
+
+- added ui-pop-up, ui-date-input, ui-date-time-input
+- fix many bugs
+- rework some component according to [component-best-practices](https://poteto.github.io/component-best-practices/)
 
 
 ## 0.0.7 

@@ -318,7 +318,19 @@ const uiSelect = [
 `
 ];
 
-const uiTabMenu = [];
+const uiTabMenu = [
+`
+{{#ui-tab-menu tabs='first,second' active='first' }}
+  
+{{/ui-tab-menu}}
+{{#ui-tab-segment tab='first' active=true}}
+  first
+{{/ui-tab-segment}}
+{{#ui-tab-segment tab='second'}}
+  second
+{{/ui-tab-segment}}
+`
+];
 
 
 const fileInput = [
@@ -411,6 +423,7 @@ const code = {
     'file-input': fileInput,
     'ui-date-time-input': uiDateTimeInput,
     'ui-popup': uiPopup,
+    'ui-tab-menu': uiTabMenu,
 };
 
 export default Ember.Service.extend({

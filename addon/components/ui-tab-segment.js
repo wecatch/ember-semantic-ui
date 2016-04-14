@@ -12,5 +12,10 @@ export default Ember.Component.extend(uiSegmentBase, {
      * @property {Ember.Array} attributeBindings
      */
     attributeBindings: ['tab:data-tab'],
-    tab: ''
+    tab: '',
+    didInsertElement(){
+        if(this.active){
+            this.$().addClass('active');
+        }
+    }
 });
