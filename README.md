@@ -61,7 +61,7 @@ git clone https://github.com/wecatch/ember-semantic-ui
 npm install
 bower install
 ember server
-``
+```
 
 ## Use this addon in your ember application
 
@@ -69,23 +69,19 @@ ember server
 1.Put semantic ui dependency in your ember-cli project public/assets like this
 
 ```
-
 ├── semantic.css
 ├── semantic.js
 ├── semantic.min.css
 ├── semantic.min.js
 └── themes
-
 ```
 
 2.Modify app/index.html and import semanti-ui js file and css file
 
 
 ```
-
 <link rel="stylesheet" href="assets/semantic.min.css">
 <script src="assets/semantic.min.js"></script>
-
 ```
 
 
@@ -93,7 +89,6 @@ ember server
 
 
 ```
-
 ember server 
 
 ```
@@ -103,9 +98,7 @@ ember server
 
 
 ```
-
 {{ui-input}}
-
 ```
 
 
