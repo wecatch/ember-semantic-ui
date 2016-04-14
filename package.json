@@ -1,6 +1,6 @@
 {
   "name": "ember-semantic-ui",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "The components based on semantic-ui",
   "directories": {
     "doc": "doc",
