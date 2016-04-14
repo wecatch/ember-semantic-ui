@@ -43,15 +43,13 @@ This Ember addon support many UI components based on [semantic-ui](http://semant
 In your ember-cli project, install this addon from npm 
 
 ```
-ember install ember-semantic-ui --save
-
+ember install ember-semantic-ui
 ```
 
 or install the latest version from github
 
 ```
-ember install git+https://github.com/wecatch/ember-semantic-ui --save
-
+npm install git+https://github.com/wecatch/ember-semantic-ui --save-dev
 ```
 
 ## Dummy app
@@ -90,7 +88,6 @@ ember server
 
 ```
 ember server 
-
 ```
 
 
