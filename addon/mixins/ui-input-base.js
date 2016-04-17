@@ -118,8 +118,29 @@ export default Ember.Mixin.create({
 		if (this.get('readonly')) {
 			this.$('input').attr('readonly', 'readonly');
 		}
-		this.$('input').change(() => {
+		this.$('input').change((e) => {
 			this._updateValue();
+			if(typeof this.attrs.onChange === 'function'){
+				this.attrs.onChange(e);
+			}
+		});
+
+		this.$('input').focus((e)=>{
+			if(typeof this.attrs.onFocus === 'function'){
+				this.attrs.onFocus(e);
+			}
+		});
+
+		this.$('input').focusin((e)=>{
+			if(typeof this.attrs.onFocusin === 'function'){
+				this.attrs.onFocusin(e);
+			}
+		});
+
+		this.$('input').focusout((e)=>{
+			if(typeof this.attrs.onFocusout === 'function'){
+				this.attrs.onFocusout(e);
+			}
 		});
 	}
 });

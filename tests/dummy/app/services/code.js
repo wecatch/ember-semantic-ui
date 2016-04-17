@@ -104,7 +104,18 @@ const uiDropdownMenu = [
 
 const uiDropDown = [];
 
-const uiFormInput = [];
+const uiFormInput = [
+`
+<div class="ui form">
+    {{#ui-form-input}}email{{/ui-form-input}}
+</div>
+`,
+`
+<div class="ui form">
+{{#ui-form-input onChange=(action 'onchange') onFocus=(action 'onfocus') onFocusin=(action 'onfocusin') onFocusout=(action 'onfocusout') }}email{{/ui-form-input}}
+</div>
+`
+];
 
 const uiForm = [
 `

@@ -46,6 +46,17 @@
 				<div class="ui segment">
 					{{#ui-input readonly=true value="search" }}{{/ui-input}}
 				</div>
+				
+				<div class="ui secondary segment">
+					<code class="code xml">
+		                \{{#ui-input onFocus=(action 'onfocus')}}\{{/ui-input}}
+					</code>
+				</div>
+				<div class="ui segment">
+					<label for="">email</label>
+					{{#ui-input onFocus=(action 'onfocus')}}{{/ui-input}}
+					{{result}} focus
+				</div>
           	</div>
 
           	<div class="ui segments">

@@ -1,0 +1,45 @@
+<div class="ui grid" >
+    <div class="row">
+        <div class="column">
+            <div class="ui segments">
+                <div class="ui secondary segment">
+                    {{code-highlight code=(code-show 'ui-form-input' 0)}}
+                </div>
+
+                <div class="ui segment">
+                    <div class="ui form">
+                        {{#ui-form-input}}email{{/ui-form-input}}
+                    </div>
+                </div>
+
+                <div class="ui secondary segment">
+                    {{code-highlight code=(code-show 'ui-form-input' 1)}}
+                </div>
+
+                <div class="ui segment">
+                    <div class="ui form">
+                    {{#ui-form-input onChange=(action 'onchange') onFocus=(action 'onfocus') onFocusin=(action 'onfocusin') onFocusout=(action 'onfocusout') }}email{{/ui-form-input}}
+                    </div>
+                    <table class="ui table">
+                        <thead>
+                            <tr>
+                                <th>type</th>
+                                <th>value</th>
+                                <th>time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each result as |item|}}
+                            <tr>
+                                <td>{{item.type}}</td>
+                                <td>{{item.value}}</td>
+                                <td>{{item.time}}</td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
