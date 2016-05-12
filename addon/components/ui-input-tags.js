@@ -64,6 +64,10 @@ export default Ember.Component.extend({
         if(this.attrs.value === undefined){
             this.set('value', Ember.A());
         }
+
+        for (var i = this.value.length - 1; i >= 0; i--) {
+            this.value.set('0', String(this.value[i]));
+        };
     },
     hiddenValue: Ember.computed('value', {
         get(){
