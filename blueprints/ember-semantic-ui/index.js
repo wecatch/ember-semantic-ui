@@ -7,6 +7,8 @@ module.exports = {
     var self = this;
     return this.addBowerPackageToProject('moment').then(function(){
         return self.addBowerPackageToProject('pikaday');  
+    }).then(function(){
+        return self.addBowerPackageToProject('semantic');
     });
   }
 };
