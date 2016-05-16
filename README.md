@@ -64,17 +64,7 @@ ember server
 ## Use this addon in your ember application
 
 
-1.Put semantic ui dependency in your ember-cli project public/assets like this
-
-```
-├── semantic.css
-├── semantic.js
-├── semantic.min.css
-├── semantic.min.js
-└── themes
-```
-
-2.Modify app/index.html and import semanti-ui js file and css file
+1.Modify app/index.html and import semanti-ui js file and css file
 
 
 ```
@@ -83,7 +73,7 @@ ember server
 ```
 
 
-3.Start ember app 
+2.Start ember app 
 
 
 ```
@@ -91,7 +81,7 @@ ember server
 ```
 
 
-4.Then you can use this addon components in your ember app 
+3.Then you can use this addon components in your ember app 
 
 
 ```

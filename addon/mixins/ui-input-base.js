@@ -1,6 +1,10 @@
 import Ember from 'ember';
 
-
+/** 
+ui-input-base mixin
+@public
+@class ui-input-base
+**/
 export default Ember.Mixin.create({
 	/**
 	 * the component tag

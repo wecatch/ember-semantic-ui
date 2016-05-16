@@ -2,6 +2,11 @@ import Ember from 'ember';
 import emberUploader from '../utils/ember-uploader';
 import { fileObject, humanReadableFileSize} from '../utils/file-object';
 
+/** 
+file-input mixin
+@public
+@class file-input
+**/
 export default Ember.Mixin.create(Ember.Evented, {
     fileObject: null,
     style: '',

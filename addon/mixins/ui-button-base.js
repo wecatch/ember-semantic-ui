@@ -1,25 +1,25 @@
 import Ember from 'ember';
 
+/** 
+ui-button mixin
+@public
+@class ui-button-base
+**/
 export default Ember.Mixin.create({
     /**
      * The root component element
      *
-     * @property {Ember.String} tagName
+     * @property tagName
+     * @type {String}
      * @default  "button"
      */
     tagName: 'button',
 
-    // -------------------------------------------------------------------------
-    // Actions
-
-    // -------------------------------------------------------------------------
-    // Events
-
     /**
      * Alert external code about the click
      *
-     * @function click
-     * @returns  {void}
+     * @method click
+     * @return  {void}
      */
     click: function() {
         if(typeof this.attrs.action == 'function'){
@@ -31,39 +31,48 @@ export default Ember.Mixin.create({
     /**
      * Class names to apply to the button
      *
-     * @property {Ember.Array} classNames
+     * @property classNames
+     * @type {Array}
      */
     classNameBindings: ['_uiClass', 'disabled:disabled:', 'loading:loading:', 'active:active:', '_theme', 'theme', '_componentClass'],
     _uiClass: 'ui',
     _componentClass:'button',
     /**
      * private variable, Class names to apply to the button 
-     *
-     * @property {Ember.Array} _theme 
+     * @private
+     * @property _theme
+     * @type {String}  
      */
     _theme: '',
     /**
-     * Class names to apply to the button 
+     * Class name to apply to the button 
      *
-     * @property {Ember.Array} theme 
+     * @property theme 
+     * @type {String}
      */
     theme: '',
     /**
      * the button loading status
      *
-     * @property {Ember.Boolean} loading
+     * @property loading
+     * @type {boolean}
+     * @default false
      */
     loading:false,
     /**
      * the button disabled status 
      *
-     * @property {Ember.Boolean} disabled
+     * @property disabled
+     * @type {boolean}
+     * @default false
      */
     disabled:false,
     /**
      * the button active status
      *
-     * @property {Ember.Boolean} active
+     * @property active
+     * @type {boolean}
+     * @default false
      */
     active:false
 });

@@ -1,6 +1,10 @@
 import Ember from 'ember';
 
-
+/** 
+ui-select-base mixin
+@public
+@class ui-select-base
+**/
 export default Ember.Mixin.create({
     /**
      * The root component element

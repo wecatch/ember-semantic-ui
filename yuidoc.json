@@ -1,7 +1,7 @@
 {
-  "name": "ember-easy-orm",
-  "description": "A easy ORM library for ember app",
-  "version": "0.0.7",
+  "name": "ember-semantic-ui",
+  "description": "Ember ui components based on semantic-ui",
+  "version": "0.1.0",
   "options": {
     "paths": [
       "addon"

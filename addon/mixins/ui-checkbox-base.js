@@ -1,5 +1,10 @@
 import Ember from 'ember';
 
+/** 
+ui-checkbox-base mixin
+@public
+@class ui-checkbox-base
+**/
 export default Ember.Mixin.create({
     /**
      * The root component element
