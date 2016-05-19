@@ -1,5 +1,13 @@
 import Ember from 'ember';
 
+/**
+FileObject class
+
+@module utils
+@namespace utils
+@class FileObject
+@constructor
+*/
 let fileObject = Ember.Object.extend({
     init: function() {
         this._super();

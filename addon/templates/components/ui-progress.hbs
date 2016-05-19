@@ -1,6 +1,6 @@
-{{#if percent}}
-<div class="bar" style="transition: 300ms; -webkit-transition: 300ms; width: {{percent}}%;">
-  <div class="progress" >{{percent}} %</div>
+<div class="bar">
+    <div class="progress">{{_percent}}%</div>
 </div>
-{{yield}}
+{{#if lable}}
+  <div class="label">{{label}}</div>
 {{/if}}

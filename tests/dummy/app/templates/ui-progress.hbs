@@ -1,11 +1,15 @@
 <div class="ui container" >
     <div class="ui dividing header" >ui progress</div>
-    <div class="ui two column grid" >
+    <div class="ui segment">
+        {{code-highlight code=(code-show 'ui-progress' 0)}}
+    </div>
+    {{ui-progress percent=value }}
+    {{ui-progress percent=value class="indicating" }}
+    {{ui-progress percent=value class="red" }}
+    <div class="ui grid" >
         <div class="row" >
-            {{ui-progress percent=value }}
-        </div>
-        <div class="row" >
-            {{ui-input type="number" value=value}}
+            <button class="ui green button" {{action "plus" }} >+</button>
+            <button class="ui button" {{action "minus" }} >-</button>
         </div>
     </div>
 </div>

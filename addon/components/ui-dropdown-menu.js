@@ -1,22 +1,33 @@
 import Ember from 'ember';
 import layout from '../templates/components/ui-dropdown-menu';
 
+/**
+ui-dropdown-menu component
+
+@module components
+@namespace components
+@class UiDropdownMenu
+@constructor
+*/
 export default Ember.Component.extend({
     layout: layout,
     /**
-     * the select theme
+     * the component style class
      *
-     * @property {Ember.String} theme
+     * @property {String} theme
+     * @default 'fluid'
      */
     theme: 'fluid',
     /**
-     * Class names to apply to the button
+     * the component style class
      *
-     * @property {Ember.Array} classNames
+     * @property {String} class
      */
-    classNameBindings: ['_uiClass', 'theme', '_componentClass'],
+    class: '',
+    classNameBindings: ['_uiClass', 'class', 'theme', '_componentClass'],
     _uiClass: 'ui',
     _componentClass: 'dropdown',
+    
     didInsertElement() {
         this.renderDropDown();
     },

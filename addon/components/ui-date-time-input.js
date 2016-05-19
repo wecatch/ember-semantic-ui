@@ -16,12 +16,30 @@ for (var i = 0; i < 24; i++) {
     hours[i] = {'value':i, 'name':i};
 };
 
+/**
+ui-date-time-input component
+
+@module components
+@namespace components
+@class UiDateTimeInput 
+@constructor
+*/
 export default Ember.Component.extend({
     layout,
     minutes:minutes,
     hours:hours,
+    /**
+    datetime value
+    @property {String} value
+    @default null
+    */
     value: null,
     classNameBindings: ['class'],
+    /**
+    class apply to this component
+    @property {String} class
+    @default ''
+    */
     class: '',
     rtime: observer('d,h,m', function(){
         let hour = this.h;

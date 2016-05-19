@@ -6,16 +6,44 @@ import Ember from 'ember';
 var get = Ember.get,
     set = Ember.set;
 
+
+/**
+EmberUploader class
+
+@module utils
+@namespace utils
+@class EmberUploader
+@constructor
+*/
 export default Ember.Object.extend(Ember.Evented, {
+  /**
+     * upload url
+     * 
+     * @property {String} url
+     * 
+  */
   url: null,
   paramNamespace: null,
+  /**
+   * upload file parameter name
+   *
+   * @property {String} paramName
+   * @default 'file'
+  */
   paramName: 'file',
+  /**
+   * ajax request status
+   *
+   * @property {Boolean} isUploading
+   * @default false
+   */
   isUploading: false,
 
   /**
    * ajax request type (method), by default it will be POST
    *
-   * @property type
+   * @property {String} type
+   * @default 'POST'
    */
   type: 'POST',
 

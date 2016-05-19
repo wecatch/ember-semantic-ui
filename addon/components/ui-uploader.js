@@ -6,11 +6,14 @@ import layout from '../templates/components/ui-uploader';
 
 const {get, set, computed} = Ember;
 
-/** 
-ui-uploader
-@public
-@class uiUploader
-**/
+/**
+ui-uploader component
+
+@module components
+@namespace components
+@class UiUploader
+@constructor
+*/
 export default Ember.Component.extend({
     layout: layout,
     actions: {

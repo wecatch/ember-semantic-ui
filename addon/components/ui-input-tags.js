@@ -1,23 +1,31 @@
 import Ember from 'ember';
 import layout from '../templates/components/ui-input-tags';
 
+/**
+ui-input-tags component
+
+@module components
+@namespace components
+@class UiInputTags
+@constructor
+*/
 export default Ember.Component.extend({
     layout: layout,
-    /**
-     * The root component element
-     *
-     * @property {Ember.String} tagName
-     * @default  "div"
-     */
     tagName: 'div',
 
+    /**
+     * Class name to apply to the button
+     *
+     * @property {String} theme
+    */
     theme: 'fluid',
     /**
-     * Class names to apply to the button
+     * Class name to apply to the button
      *
-     * @property {Ember.Array} classNames
-     */
-    classNameBindings: ['_uiClass', 'theme', '_componentClass'],
+     * @property {String} theme
+    */
+    class: '',
+    classNameBindings: ['_uiClass', 'class', 'theme', '_componentClass'],
     _uiClass: 'ui',
     _componentClass: 'multiple search selection dropdown',
 
@@ -61,12 +69,12 @@ export default Ember.Component.extend({
     },
     didInitAttrs(){
         //if value do not be passed to component
-        if(this.attrs.value === undefined){
+        if(this.value === undefined){
             this.set('value', Ember.A());
         }
 
         for (var i = this.value.length - 1; i >= 0; i--) {
-            this.value.set('0', String(this.value[i]));
+            this.value.set(String(i), String(this.value[i]));
         };
     },
     hiddenValue: Ember.computed('value', {

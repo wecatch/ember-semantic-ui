@@ -1,5 +1,13 @@
 import Ember from 'ember';
 
+/**
+ui-segment-base mixin
+
+@module mixins
+@namespace mixins
+@class uiSegmentBase
+@constructor
+*/
 export default Ember.Mixin.create({
     classNameBindings: ['_uiClass', 'theme', '_theme', '_componentClass'],
     _uiClass: 'ui',

@@ -12,11 +12,29 @@ let zh_cn = {
     weekdaysShort : ['日','一','二','三','四','五','六']
 }
 
+/**
+ui-date-input component
+
+@module components
+@namespace components
+@class UiDateInput 
+@constructor
+*/
 export default Ember.Component.extend({
     layout: layout,
+    /**
+    display language, by default is zh_CN 
+    @property {String} lang
+    @default 'zh_CN'
+    */
     lang: 'zh_CN',
     tagName: 'div',
     classNameBindings: ['class'],
+    /**
+    class apply to this component
+    @property {String} class
+    @default 'ui input'
+    */
     class: 'ui input',
     didInsertElement(){
         let self = this;
@@ -36,10 +54,17 @@ export default Ember.Component.extend({
         let picker = new Pikaday(options);
         this.set('picker', picker);
     },
-    /*
-    * 'bottom right', 'bottom left', 'top left', 'top right'
+    /**
+    pikaday position 'bottom right', 'bottom left', 'top left', 'top right'
+    @property {String} position
+    @default 'bottom left'
     */
     position: 'bottom left',
+    /**
+    moment format
+    @property {String} format
+    @default 'YYYY-MM-DD'
+    */
     format: 'YYYY-MM-DD',
     didInitAttrs(){
         if(this.value && moment(this.value).isValid()){

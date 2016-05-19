@@ -1,10 +1,22 @@
 import Ember from 'ember';
 import layout from '../templates/components/ui-modal';
 
+/**
 
+ui-modal component
+
+@module components
+@namespace components
+@class UiModal
+@constructor
+*/
 export default Ember.Component.extend({
     layout: layout,
     actions: {
+        /**
+        when modal show, this action will be triggered
+        @event onShow
+        */
         onShow(){
             if(typeof this.attrs.onShow == 'function'){
                 this.attrs.onShow();
@@ -12,6 +24,10 @@ export default Ember.Component.extend({
                 this.sendAction('onShow');
             }
         },
+        /**
+        when modal hide, this action will be triggered
+        @event onShow
+        */
         onHide(){
             if(typeof this.attrs.onHide == 'function'){
                 this.attrs.onHide();
@@ -24,32 +40,43 @@ export default Ember.Component.extend({
 
 	/**
      * modal status 
-     * @property {Ember.Boolean} show
+     * @property {Boolean} show
      * @default  false
     */
 	show: false,
 
     /**
      * Setting to false will not allow you to close the modal by clicking on the dimmer
-     * @property {Ember.Boolean} closable
+     * @property {Boolean} closable
      * @default  true
     */
     closable: true,
 
+    /**
+     * transition
+     * @property {String} transition
+     * @default  'scale'
+    */
     transition: 'scale',
 
-	/**
-	 * Class names to apply to the modal
-	 *
-	 * @property {Ember.Array} classNameBindings
-	*/
     classNameBindings: ['_uiClass', 'theme', 'class', '_componentClass'],
     _uiClass: 'ui',
     _componentClass: 'modal',
+    
+    /**
+     * Class names to apply to the modal
+     *
+     * @property {String} class
+    */
     class: '',
+    /**
+     * Class names to apply to the modal
+     *
+     * @property {String} theme
+    */
     theme:'',
 	/**
-     * @function showModal
+     * @method showModal
      * @observes "show" property
      * @returns  {void}
     */

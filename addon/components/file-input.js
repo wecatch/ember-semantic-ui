@@ -1,7 +1,17 @@
 import Ember from 'ember';
-import fileInput from '../mixins/file-input';
+import fileInputBase from '../mixins/file-input-base';
 import layout from '../templates/components/file-input';
 
-export default Ember.Component.extend(fileInput, {
+
+/**
+file-input component, see {{#crossLink "mixins.FileInputBase"}}{{/crossLink}}
+
+@module components
+@class FileInput
+@namespace components
+@constructor
+
+*/
+export default Ember.Component.extend(fileInputBase, {
     layout: layout
 });

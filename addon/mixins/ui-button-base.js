@@ -1,10 +1,13 @@
 import Ember from 'ember';
 
-/** 
-ui-button mixin
-@public
-@class ui-button-base
-**/
+/**
+ui-button-base mixinx
+
+@module mixins
+@class UiButtonBase
+@namespace mixins
+@constructor
+*/
 export default Ember.Mixin.create({
     /**
      * The root component element

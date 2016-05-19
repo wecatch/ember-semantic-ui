@@ -15,26 +15,60 @@ const {
     set
 } = Ember;
 
+
+/**
+ui-message component
+
+@module components
+@namespace components
+@class UiMessage
+@constructor
+*/
 export default Ember.Component.extend({
     layout: layout,
     header: null,
+    /**
+     * The message to show
+     *
+     * @property {String} message
+     * @default  null
+     */
     message: null,
+    /**
+     * The messages to show
+     *
+     * @property {Array} message
+     * @default  null
+     */
     messages: null,
+    /**
+     * allow to close messsage, by default false  
+     *
+     * @property {Boolean} close
+     * @default  false
+     */
     close: false,
-    /**
-     * The root component element
-     *
-     * @property {Ember.String} tagName
-     * @default  "button"
-     */
     tagName: 'div',
-    theme: '',
-    timeout: 0,
     /**
-     * Class names to apply to the button
+     * Class name to apply to the message
      *
-     * @property {Ember.Array} classNames
+     * @property {String} theme
+    */
+    theme: '',
+
+    /**
+     * Class name to apply to the message
+     *
+     * @property {String} class
+    */
+    theme: '',
+    /**
+     * timeout to close message, by default 0  
+     *
+     * @property {Number} timeout
+     * @default  false
      */
+    timeout: 0,
     classNameBindings: ['_uiClass', '_theme', '_size', 'theme', '_componentClass'],
     _uiClass: 'ui',
     _componentClass: 'message',
@@ -66,6 +100,10 @@ export default Ember.Component.extend({
         }
     },
     actions: {
+        /**
+        close message event
+        @event closeMessage
+        */
         closeMessage() {
             this && this.$() && this.$().transition('fade');
             run.next(this, () => {

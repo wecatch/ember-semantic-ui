@@ -297,7 +297,13 @@ const uiMultiSelect = [
 {{/ui-multi-select}}`
 ];
 
-const uiProgress = [];
+const uiProgress = [
+`
+{{ui-progress percent=value }}
+{{ui-progress percent=value class="indicating" }}
+{{ui-progress percent=value class="red" }}
+`
+];
 
 const uiRadioGroup = [
 `

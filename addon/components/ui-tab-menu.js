@@ -16,14 +16,18 @@ const {
     set
 } = Ember;
 
+
+/**
+ui-tab-menu component
+
+@module components
+@namespace components
+@class UiTabMenu
+@constructor
+*/
 export default Ember.Component.extend({
     layout: layout,
     tagName: 'div',
-    /**
-     * Class names to apply to the button
-     *
-     * @property {Ember.Array} classNames
-     */
     tabs: '',
     delimiter: ',',
     classNameBindings: ['_uiClass', '_theme', '_componentClass'],
@@ -44,6 +48,10 @@ export default Ember.Component.extend({
             return this.get('tabs').split(this.get('delimiter'));
         }
     }),
+    /**
+    the active tab name
+    @property {String} active
+    */
     active: '',
     didInsertElement() {
         this.$('.item').tab();

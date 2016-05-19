@@ -2,52 +2,88 @@ import Ember from 'ember';
 import layout from '../templates/components/ui-progress';
 
 
+/**
+
+ui-progress component
+
+@module components
+@namespace components
+@class UiProgress
+@constructor
+*/
 export default Ember.Component.extend({
     layout: layout,
-
-    /**
-     * A array contain class names apply to root element
-     *
-     * @property {Ember.Array} classNames
-     * @default  ""
-     */
-    classNameBindings: ['_uiClass', 'theme', 'loading:active:', 'success:success:', '_componentClass'],
+    classNameBindings: ['_uiClass', 'class', 'theme', 'loading:active:', '_componentClass', 'success:success:', 'error:error:'],
     _uiClass: 'ui',
     _componentClass: 'progress',
 
     /**
-     * progress theme
+     * progress theme, indicating
      *
-     * @property {Ember.String} theme
+     * @property {String} theme
      * @default  ''
      */
     theme: '',
 
     /**
-     * progress status
+     * progress theme
      *
-     * @property {Ember.Boolean} status
+     * @property {String} class
+     * @default  ''
+     */
+    class: '',
+
+    /**
+     * progress loading status, by default false
+     *
+     * @property {Boolean} loading
      * @default  false
      */
     loading: false,
+
+    /**
+     * progress success status, by default false
+     *
+     * @property {Boolean} success
+     * @default  false
+     */
     success: false,
 
     /**
+     * progress error status, by default false
+     *
+     * @property {Boolean} error
+     * @default  false
+     */
+    error: false,
+    /**
      * progress percent
      *
-     * @property {Ember.Number} percent
+     * @property {Number} percent
      * @default  0
      */
     percent: 0,
-
-    /**
-     * A array contain attribute to root element
-     *
-     * @property {Ember.Array} attribuebindings
-     * @default  ""
-     */
-    attributeBindings: ['percent:data-percent'],
     didInsertElement() {
-        this.$().progress();
-    }
+        this.$().progress({
+            percent: this.get('_percent')
+        });
+    },
+    _percent: Ember.computed('percent', {
+        get(){
+            if(this.percent > 100){
+                return 100;
+            }
+
+            if(this.percent < 0){
+                return 0;
+            }
+
+            return this.percent;
+        }
+    }),
+    updateProgress: Ember.observer('percent', function(){
+        this.$().progress({
+            percent: this.get('_percent')
+        });
+    })
 });

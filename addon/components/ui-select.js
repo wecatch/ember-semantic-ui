@@ -3,6 +3,14 @@ import UiSelectBase from '../mixins/ui-select-base';
 import layout from '../templates/components/ui-select';
 
 
+/**
+ui-select component {{#crossLink "mixins.UiSelectBase"}}{{/crossLink}}
+
+@module components
+@namespace components 
+@class UiSelect
+@constructor
+*/
 export default Ember.Component.extend(UiSelectBase, {
     layout: layout,
     defaultValue: null,

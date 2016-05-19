@@ -1,115 +1,99 @@
 import Ember from 'ember';
 
-/** 
+
+/**
 ui-input-base mixin
-@public
-@class ui-input-base
-**/
+
+@module mixins
+@namespace mixins
+@class UiInputBase 
+@constructor
+*/
 export default Ember.Mixin.create({
-	/**
-	 * the component tag
-	 *
-	 * @property {Ember.String} text
-	 */
 	tagName: 'div',
 
 	/**
 	 * the input type
 	 *
-	 * @property {Ember.String} type
+	 * @property {String} type
+	 * @default text
 	 */
 	type: 'text',
 
 	/**
 	 * the input value
 	 *
-	 * @property {Ember.String} value
+	 * @property {String} value
 	 */
 	value: '',
 
 	/**
 	 * the input placeholder
 	 *
-	 * @property {Ember.String} placeholder
+	 * @property {String} placeholder
 	 */
 	placeholder: '',
 
 	/**
 	 * the label 
 	 *
-	 * @property {Ember.String} label
+	 * @property {String} label
 	 */
 	label: '',
 
 	/**
 	 * the input 
 	 *
-	 * @property {Ember.String} theme
+	 * @property {String} theme
 	 */
 	theme: '',
 
 	/**
 	 * the input focus status
 	 *
-	 * @property {Ember.Boolean} focus
+	 * @property {Boolean} focus
+	 * @default false
 	 */
 	focus: false,
 
 	/**
 	 * the input loading status
 	 *
-	 * @property {Ember.Boolean} loading
+	 * @property {Boolean} loading
+	 * @default false
 	 */
 	loading: false,
 
 	/**
 	 * the input error status 
 	 *
-	 * @property {Ember.Boolean} error
+	 * @property {Boolean} error
+	 * @default false
 	 */
 	error: false,
 
 	/**
 	 * the input error status 
 	 *
-	 * @property {Ember.Boolean} error
+	 * @property {Boolean} error
+	 * @default false
 	 */
 	disabled: false,
 
 	/**
 	 * the input readonly status 
 	 *
-	 * @property {Ember.Boolean} readonly
+	 * @property {Boolean} readonly
+	 * @default false
 	 */
 	readonly: false,
 
-	/**
-	 * Class names to apply to the button
-	 *
-	 * @property {Ember.Array} classNames
-	 */
 	classNameBindings: ['_uiClass', 'disabled:disabled:', 'theme', '_componentClass', 'focus:focus:', 'loading:loading:', 'error:error:'],
 	_uiClass: 'ui',
 	_componentClass: 'input',
 
-	/**
-	 * Attribute bindings for containing div
-	 *
-	 * @property {Ember.Array} attributeBindings
-	 */
+	//Attribute bindings for containing div
 	attributeBindings: [],
-
-	// -------------------------------------------------------------------------
-	// Actions
-
-	// -------------------------------------------------------------------------
-	// Events
-
-	/**
-	 * @function initialize
-	 * @observes "didInsertElement" event
-	 * @returns  {void}
-	 */
 	_updateValue() {
 		let newValue = this.$('input').val();
 		if (typeof this.attrs.update === 'function') {

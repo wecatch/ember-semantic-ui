@@ -3,6 +3,15 @@ import layout from '../templates/components/ui-popup';
 
 const {computed, copy} = Ember;
 
+/**
+
+ui-popup component
+
+@module components
+@namespace components
+@class UiPopup
+@constructor
+*/
 export default Ember.Component.extend({
   layout,
   classNameBindings: ['_class'],
@@ -19,42 +28,54 @@ export default Ember.Component.extend({
   /**
    * If a selector or jQuery object is specified this allows the popup to be positioned relative to that element.
    *
-   * @property {Ember.String} target
+   * @property {String} target
    * @default  ""
    */
   target: '',
+  /**
+  the pop content
+  @property {String} content
+  */
   content: '',
+  /**
+  the pop html content
+  @property {String} html
+  */
   html: '',
+  /**
+  the pop title
+  @property {String} title
+  */
   title: '',
   variation: '',
   /**
-   * Event used to trigger popup: focus, click, hover, or manual
+   * Event used to trigger popup: focus, click, hover, or manual, by default hover
    *
-   * @property {Ember.String} event
-   * @default  "click"
+   * @property {String} event
+   * @default  "hover"
    */
   event: 'hover',
   position: 'top left',
   inline: false,
   transition: 'slide down',
   /**
-   * Whether popup should not close on hover (useful for popup navigation menus)
+   * Whether popup should not close on hover (useful for popup navigation menus), by default false
    *
-   * @property {Ember.Boolean} hoverable
+   * @property {Boolean} hoverable
    * @default  false
    */
   hoverable: false,
   /**
-   * When using on: 'click' specifies whether clicking the page should close the popup
+   * When using on: 'click' specifies whether clicking the page should close the popup, by default true
    *
-   * @property {Ember.Boolean} closable
+   * @property {Boolean} closable
    * @default  true
    */
   closable: true,
   /**
-   * Duration of animation events
+   * Duration of animation events, by default 200
    *
-   * @property {Ember.Number} duration
+   * @property {Number} duration
    * @default  200
    */
   duration: 200,

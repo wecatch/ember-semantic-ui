@@ -13,7 +13,7 @@
     "quiet": true,
     "parseOnly": false,
     "lint": false,
-    "themedir" : "node_modules/yuidoc-lucid-theme",
-    "helpers" : ["node_modules/yuidoc-lucid-theme/helpers/helpers.js"]
+    "themedir" : "node_modules/yuidoc-ember-cli-theme",
+    "helpers" : ["node_modules/yuidoc-ember-cli-theme/helpers.js"]
   }
 }

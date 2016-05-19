@@ -1,21 +1,31 @@
 import Ember from 'ember';
 
+/**
+ui-label-base mixin
+
+@module mixins
+@namespace mixins
+@class UiLabelBase 
+@constructor
+*/
 export default Ember.Mixin.create({
-    /**
-     * The root component element
-     *
-     * @property {Ember.String} tagName
-     * @default  "button"
-     */
     tagName: 'div',
-    /**
-     * Class names to apply to the button
-     *
-     * @property {Ember.Array} classNames
-     */
-    classNameBindings: ['_uiClass', '_theme', 'theme', '_componentClass'],
+    classNameBindings: ['_uiClass', '_theme', 'class', 'theme', '_componentClass'],
     _uiClass: 'ui',
     _componentClass:'label',
     _theme: '',
+    /**
+     * label class
+     *
+     * @property {String} class
+     * @default  ''
+     */
+    class: '',
+    /**
+     * lable theme
+     *
+     * @property {String} theme
+     * @default  ''
+     */
     theme: ''
 });

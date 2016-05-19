@@ -9,11 +9,14 @@ const {
 } = computed;
 
 
-/** 
-ui-checkbox-group-base mixin
-@public
-@class ui-checkbox-group-base
-**/
+/**
+ui-checkbox-base mixinx
+
+@module mixins
+@namespace mixins
+@class UiCheckboxGroupBase
+@constructor
+*/
 export default Ember.Mixin.create({
     /**
      * The root component element

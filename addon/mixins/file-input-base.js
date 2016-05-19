@@ -2,28 +2,92 @@ import Ember from 'ember';
 import emberUploader from '../utils/ember-uploader';
 import { fileObject, humanReadableFileSize} from '../utils/file-object';
 
-/** 
-file-input mixin
-@public
-@class file-input
-**/
+
+/**
+file-input-base mixinx
+
+@module mixins
+@namespace mixins
+@class FileInputBase
+@extends Ember.Evented
+@constructor
+*/
 export default Ember.Mixin.create(Ember.Evented, {
+    /**
+     * file object instance see {{#crossLink " file-object"}}{{/crossLink}}
+     * @property {Object} fileObject
+     * 
+     */
     fileObject: null,
+    /**
+     * style
+     * @property {String} style
+     * 
+     */
     style: '',
+    /**
+     * ember uploader instance see {{#crossLink "utils.EmberUploader"}}{{/crossLink}}
+     * 
+     * @property {Object} uploader
+     * 
+    */
     uploader: null,
+    /**
+     * upload url
+     * 
+     * @property {String} url
+     * 
+    */
     url: null,
+    /**
+     * upload request method
+     * 
+     * @property {String} method
+     * @default 'POST'
+     * 
+    */
     method: 'POST',
+    /**
+     * extra parameters for upload
+     * 
+     * @property {Object} extra
+     * @default null
+     * 
+    */
     extra: null,
+    /**
+     * the upload file parameter name
+     * 
+     * @property {String} paramName
+     * @default 'file'
+     * 
+    */
     paramName: 'file',
+    /**
+     * the upload file is finished
+     * 
+     * @property {Boolean} isUploaded
+     * @default false
+     * 
+    */
     isUploaded: false,
+    /**
+     * the upload request status
+     * 
+     * @property {Boolean} isUploading
+     * @default false
+     * 
+    */
     isUploading: Ember.computed.alias('uploader.isUploading'),
+    /**
+     * allow autoUpload
+     * 
+     * @property {Boolean} autoUpload
+     * @default true
+     * 
+    */
     autoUpload: true,
     theme: 'green',
-    /**
-     * @function initialize
-     * @observes "didInsertElement" event
-     * @returns  {void}
-     */
     didInsertElement: function() {
         let self = this;
         this.$('input').change(function(e) {
@@ -42,6 +106,13 @@ export default Ember.Mixin.create(Ember.Evented, {
         }
     },
     actions: {
+        /**
+         * start upload action
+         * 
+         * @event start
+         * 
+         * 
+        */
         start: function() {
             let { uploader, fileObject, extra} = this.getProperties('uploader', 'fileObject', 'extra');
             let self = this;
@@ -64,6 +135,13 @@ export default Ember.Mixin.create(Ember.Evented, {
                 });
             }
         },
+       /**
+         * abort upload action
+         * 
+         * @event abort
+         * 
+         * 
+        */
         abort: function() {
             this.get('uploader').abort();
             self.sendAction('uploadAbort');

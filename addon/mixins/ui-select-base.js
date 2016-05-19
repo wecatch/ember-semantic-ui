@@ -1,119 +1,113 @@
 import Ember from 'ember';
 
-/** 
+
+/**
 ui-select-base mixin
-@public
-@class ui-select-base
-**/
+
+@module mixins
+@namespace mixins
+@class UiSelectBase
+@constructor
+*/
 export default Ember.Mixin.create({
-    /**
-     * The root component element
-     *
-     * @property {Ember.String} tagName
-     * @default  "select"
-     */
     tagName: 'div',
 
     /**
      * value  for the select 
      *
-     * @property {Ember.String} value
+     * @property {String} value
      */
     value: '',
     /**
      *  label for the select radio group component
      *
-     * @property {Ember.String} label
+     * @property {String} label
      */
     label: '',
 
     /**
-     * name key for option
+     * name key for option, by default name
      *
-     * @property {Ember.String} namePath
+     * @property {String} namePath
+     * @default 'value'
      */
     labelPath: 'name',
 
     /**
-     * value key for option
+     * value key for option, by default value
      *
-     * @property {Ember.String} valuePath
+     * @property {String} valuePath
+     * @default 'value'
      */
     valuePath: 'value',
     /**
      * placeholder for blank option
      *
-     * @property {Ember.String} placeholder
+     * @property {String} placeholder
      */
     placeholder: '',
 
     /**
      * the select theme
      *
-     * @property {Ember.String} theme
+     * @property {String} theme
      */
     theme: '',
 
     /**
+     * the select theme
+     *
+     * @property {String} class
+     */
+    class: '',
+
+    /**
      * options for the select component
      *
-     * @property {Ember.Array} options
+     * @property {Array} options
      */
     options: null,
 
     /**
      * options for the select component
-     *
-     * @property {Ember.Array} _options
+     * @private
+     * @property {Array} _options
      */
     _options: null,
 
-    /**
-     * Class names to apply to the button
-     *
-     * @property {Ember.Array} classNames
-     */
-    classNameBindings: ['_uiClass', 'search:search:', '_multiple:multiple:', 'theme', '_theme', '_componentClass'],
+    classNameBindings: ['_uiClass', 'search:search:', '_multiple:multiple:', 'class', 'theme', '_theme', '_componentClass'],
     _uiClass: 'ui',
     _theme: 'selection',
     _componentClass: 'dropdown',
-    /**
-     * attribute to apply to the select
-     *
-     * @property {Ember.String} _multiple
-     */
     _multiple: false,
     /**
-     * attribute to apply to the select
+     * allow select to search or not , by default false
      *
-     * @property {Ember.String} search
+     * @property {Boolean} search
+     * @default false
      */
     search: false,
 
     /**
      * inner value state just for outer value change
      *
-     * @property {Ember.String} _value
+     * @private
+     * @property {String} _value
      */
     _value: null,
 
     /**
      * selected items to 
      *
-     * @property {Ember.String} _selectedOptions
+     * @property {String} _selectedOptions
      */
     _selectedOptions: null,
 
-    /**
-     * @function initialize
-     * @observes "didInsertElement" event
-     * @returns  {void}
-     */
     didInsertElement(argument) {
         this.renderDropDown();
     },
     /**
-     * @function setupOptions 
+     * @method setupOptions 
      * @observes "options" property
      * @returns  {void}
      */
