@@ -412,6 +412,46 @@ const uiPopup = [
 `
 ]
 
+const layout = [
+`
+{{#ui-grid}}
+    {{#ui-column wide=4 }}
+        <div class="ui segment">
+           left
+        </div>
+    {{/ui-column}}
+    {{#ui-column wide=12 }}
+        <div class="ui segment">
+           main content
+        </div>
+    {{/ui-column}}
+{{/ui-grid}}
+`,
+`
+{{#ui-grid}}
+    {{#ui-row}}
+      {{#ui-column wide=16 }}
+        {{#ui-menu}}
+          <div class="item">
+            Home
+          </div>
+        {{/ui-menu}}
+      {{/ui-column}}
+    {{/ui-row}}
+    {{#ui-column wide=4 }}
+        <div class="ui segment">
+           left
+        </div>
+    {{/ui-column}}
+    {{#ui-column wide=12 }}
+        <div class="ui segment">
+           main content
+        </div>
+    {{/ui-column}}
+{{/ui-grid}}
+
+`
+]
 
 
 const code = {
@@ -441,6 +481,7 @@ const code = {
     'ui-date-time-input': uiDateTimeInput,
     'ui-popup': uiPopup,
     'ui-tab-menu': uiTabMenu,
+    'layout': layout
 };
 
 export default Ember.Service.extend({

@@ -61,7 +61,7 @@ export default Ember.Component.extend({
      *
      * @property {String} class
     */
-    theme: '',
+    class: '',
     /**
      * timeout to close message, by default 0  
      *

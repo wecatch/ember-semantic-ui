@@ -22,7 +22,7 @@ export default Ember.Component.extend({
     /**
      * Class name to apply to the button
      *
-     * @property {String} theme
+     * @property {String} class
     */
     class: '',
     classNameBindings: ['_uiClass', 'class', 'theme', '_componentClass'],

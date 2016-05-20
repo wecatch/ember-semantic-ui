@@ -6,6 +6,10 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+    this.route('ui-container');
+    this.route('ui-text-container');
+    this.route('layout');
+
     this.route('ui-message');
     
     this.route('ui-button');

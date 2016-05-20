@@ -1,0 +1,88 @@
+<div class="ui header">
+  left menu + right content
+</div>
+<div class="ui divider"></div>
+{{#ui-grid}}
+    {{#ui-column wide=4 }}
+        <div class="ui segment">
+           left
+        </div>
+    {{/ui-column}}
+    {{#ui-column wide=12 }}
+        <div class="ui segment">
+           main content
+        </div>
+    {{/ui-column}}
+{{/ui-grid}}
+<div style="height:20px;" ></div>
+{{code-highlight code=(code-show 'layout' 0) }}
+<div class="ui header">
+  example 
+</div>
+{{#ui-container}}
+    {{#ui-grid}}
+        {{#ui-column wide=4 }}
+            {{#ui-vertical-menu}}
+              <a class="active teal item">
+                Inbox
+                <div class="ui teal pointing left label">1</div>
+              </a>
+              <a class="item">
+                Spam
+                <div class="ui label">51</div>
+              </a>
+              <a class="item">
+                Updates
+                <div class="ui label">1</div>
+              </a>
+              <div class="item">
+                <div class="ui transparent icon input">
+                  <input type="text" placeholder="Search mail...">
+                  <i class="search icon"></i>
+                </div>
+              </div>
+            {{/ui-vertical-menu}}
+        {{/ui-column}}
+        {{#ui-column wide=12 }}
+            {{#ui-segment}}
+                    {{#ui-form}}
+                        <div class="field">
+                            <label for="">name</label>
+                            <input type="text">
+                        </div>
+                        <button class="ui button">submit</button>
+                    {{/ui-form}}
+            {{/ui-segment}}
+        {{/ui-column}}
+    {{/ui-grid}}
+{{/ui-container}}
+
+<div class="ui header">
+    top menu+left menu + right content
+</div>
+<div class="ui divider"></div>
+{{#ui-grid}}
+    {{#ui-row}}
+      {{#ui-column wide=16 }}
+        {{#ui-menu}}
+          <div class="item">
+            Home
+          </div>
+        {{/ui-menu}}
+      {{/ui-column}}
+    {{/ui-row}}
+    {{#ui-column wide=4 }}
+        <div class="ui segment">
+           left
+        </div>
+    {{/ui-column}}
+    {{#ui-column wide=12 }}
+        <div class="ui segment">
+           main content
+        </div>
+    {{/ui-column}}
+{{/ui-grid}}
+<div style="height:20px;" ></div>
+{{code-highlight code=(code-show 'layout' 1) }}
+
+
