@@ -2,7 +2,7 @@ import Ember from 'ember';
 import layout from '../templates/components/ui-vertical-menu';
 
 /**
-ui-menu component
+ui-vertical-menu component
 
 @module components
 @namespace components
