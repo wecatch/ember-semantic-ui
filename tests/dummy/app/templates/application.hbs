@@ -88,9 +88,11 @@
             </div>
         </div>
         <div class="twelve wide column" >
+            {{#if host}}
             <div class="ui segment">
-                <a href="{{host}}api/classes/components.{{routeName}}.html">See {{routeName}} Doc</a>
+                <a href="{{host}}" target="_blank" >See {{routeName}} Doc</a>
             </div>
+            {{/if}}
           {{outlet}}
         </div>
     </div>

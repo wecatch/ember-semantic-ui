@@ -12,12 +12,19 @@ const {
 export default Ember.Controller.extend({
     routeName: Ember.computed('currentPath', {
         get(){
-            return  capitalize(camelize(this.get('currentPath')));
+            return capitalize(camelize(this.get('currentPath')));
         }
     }),
-    host: Ember.computed({
+    host: Ember.computed('routeName', {
         get(){
-            return window.location.host+ENV.baseURL;
+            let host = window.location.origin+ENV.baseURL;
+            let routeName = this.get('routeName');
+            if(routeName === 'Index' || routeName === 'Layout'){
+                return '';
+            }
+            
+            let p =  `docs/classes/components.${routeName}.html`
+            return `${host}${p}`;
         }
     })
 });

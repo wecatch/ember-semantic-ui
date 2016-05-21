@@ -4,6 +4,8 @@ This Ember addon support many UI components based on [semantic-ui](http://semant
 
 
 [Demo](http://wecatch.me/ember-semantic-ui/demo/)
+[Docs](http://wecatch.me/ember-semantic-ui/docs/)
+
 
 
 ## Components
