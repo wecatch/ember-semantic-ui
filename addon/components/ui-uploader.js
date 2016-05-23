@@ -16,6 +16,12 @@ ui-uploader component
 */
 export default Ember.Component.extend({
     layout: layout,
+    /**
+     * file request ajax setting traditional, by default true
+     * @property {boolean} traditional
+     * 
+     */
+    traditional: true,
     actions: {
         /** 
         activate upload action
@@ -27,7 +33,8 @@ export default Ember.Component.extend({
                 self = this;
 
             obj.uploader = emberUploader.create({
-                url: url
+                url: url,
+                traditional: self.get('traditional')
             });
 
             obj.uploadPromise = obj.uploader.upload(obj.fileToUpload, this.params);

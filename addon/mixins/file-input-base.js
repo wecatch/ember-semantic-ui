@@ -14,6 +14,12 @@ file-input-base mixinx
 */
 export default Ember.Mixin.create(Ember.Evented, {
     /**
+     * file request ajax setting traditional, by default true
+     * @property {boolean} traditional
+     * 
+     */
+    traditional: true,
+    /**
      * file object instance see {{#crossLink " file-object"}}{{/crossLink}}
      * @property {Object} fileObject
      * 
@@ -87,6 +93,16 @@ export default Ember.Mixin.create(Ember.Evented, {
      * 
     */
     autoUpload: true,
+
+    /**
+     *  multiple file or not, by default false
+     * 
+     * @property {Boolean} multiple
+     * @default false
+     * 
+    */
+    multiple: false,
+    
     theme: 'green',
     didInsertElement: function() {
         let self = this;
@@ -96,7 +112,9 @@ export default Ember.Mixin.create(Ember.Evented, {
         });
     },
     filesDidChange: function(files) {
-        if (!Ember.isEmpty(files)) {
+        if(Ember.isArray(files)){
+            this.send('start', files);
+        }else if (!Ember.isEmpty(files)) {
             this.set('fileObject', fileObject.create({
                 fileToUpload: files[0]
             }));
@@ -113,27 +131,37 @@ export default Ember.Mixin.create(Ember.Evented, {
          * 
          * 
         */
-        start: function() {
+        start: function(files) {
             let { uploader, fileObject, extra} = this.getProperties('uploader', 'fileObject', 'extra');
             let self = this;
-            if (fileObject) {
+            if(files){
+                let fa = Ember.A({content: files});
+                uploader.upload(files, extra);
+                this.sendAction('uploadStart', fa);
+                uploader.on('didUpload', function(data) {
+                    self.set('isUploaded', true);
+                    //empty input file
+                    self.$('input').val("");
+                    self.sendAction('uploadSuccess', fa, data);
+                });
+            }else if (fileObject) {
                 uploader.upload(fileObject.fileToUpload, extra);
                 this.sendAction('uploadStart', fileObject);
-
-                //progress event
-                uploader.on('progress', function(e) {
-                    self.sendAction('uploadProgress', e);
-                });
-
                 //didupload event
                 uploader.on('didUpload', function(data) {
                     self.set('isUploaded', true);
                     fileObject.set('data', data)
                     //empty input file
                     self.$('input').val("");
-                    self.sendAction('uploadSuccess', fileObject);
+                    self.sendAction('uploadSuccess', fileObject, data);
                 });
             }
+
+            //progress event
+            uploader.on('progress', function(e) {
+                self.sendAction('uploadProgress', e);
+            });
+
         },
        /**
          * abort upload action
@@ -155,7 +183,8 @@ export default Ember.Mixin.create(Ember.Evented, {
         this.set('uploader', emberUploader.create({
             url: url,
             paramName: paramName,
-            type: method
+            type: method,
+            traditional: this.get('traditional')
         }));
     },
     willDestroy(){

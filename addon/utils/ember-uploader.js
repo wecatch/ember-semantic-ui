@@ -32,6 +32,14 @@ export default Ember.Object.extend(Ember.Evented, {
   */
   paramName: 'file',
   /**
+   * ajax request settings traditional, by default false
+   *
+   * @property {Boolean} traditional
+   * @default true
+   */
+  traditional: true,
+
+  /**
    * ajax request status
    *
    * @property {Boolean} isUploading
@@ -80,7 +88,11 @@ export default Ember.Object.extend(Ember.Evented, {
       var paramName;
 
       for (var i = files.length - 1; i >= 0; i--) {
-        paramName = this.toNamespacedParam(this.paramName) + '[' + i + ']';
+        if(get(this, 'traditional')){
+          paramName = this.toNamespacedParam(this.paramName);
+        }else {
+          paramName = this.toNamespacedParam(this.paramName) + '[' + i + ']';
+        }
         formData.append(paramName , files[i]);
       }
     } else {
@@ -145,7 +157,7 @@ export default Ember.Object.extend(Ember.Evented, {
       type: method || 'POST',
       contentType: false,
       processData: false,
-      traditional: true,
+      traditional: get(self, 'traditional'),
       dataType: 'json',
       xhr: function() {
         var xhr = Ember.$.ajaxSettings.xhr();

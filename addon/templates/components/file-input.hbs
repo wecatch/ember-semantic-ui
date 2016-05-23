@@ -1,8 +1,12 @@
-{{#if hasBlockParams}}
-    <input type="file" name="file" >
-    {{yield uploader (action "start") (action "abort") fileObject}}
+{{#if multiple }}
+    <input type="file" name="file" multiple>
 {{else}}
     <input type="file" name="file" >
+{{/if}}
+
+{{#if hasBlockParams}}
+    {{yield uploader (action "start") (action "abort") fileObject}}
+{{else}}
     {{#unless autoUpload}}
         {{#ui-button loading=isUploading theme=theme action="start"}}upload{{/ui-button}}
     {{/unless}}
