@@ -18,7 +18,11 @@ Router.map(function() {
     this.route('ui-left-labeled-button');
 
     this.route('ui-dropdown');
+
     this.route('ui-dropdown-menu');
+    this.route('ui-menu');
+    this.route('ui-vertical-menu');
+    this.route('ui-tab-menu');
 
     this.route('ui-select');
     this.route('ui-multi-select');
@@ -31,7 +35,6 @@ Router.map(function() {
 
     this.route('ui-segment');
 
-    this.route('ui-tab-menu');
 
     this.route('ui-checkbox');
     this.route('ui-checkbox-group');

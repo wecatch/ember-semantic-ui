@@ -10,33 +10,83 @@ This Ember addon support many UI components based on [semantic-ui](http://semant
 
 ## Components
 
-- ui-message
-- ui-button
-- ui-labeled-button
-- ui-left-labeled-button
-- ui-label
-- ui-pointing-label
-- ui-radio-group
-- ui-checkbox-group
-- ui-checkbox
-- ui-form-input
-- ui-form
-- ui-input-tags
-- ui-input
-- ui-date-input
-- ui-date-time-input
-- ui-modal
-- ui-modal-title
-- ui-modal-content
-- ui-modal-foot
-- ui-pop-up
-- ui-select
-- ui-multi-select
-- ui-dropdown-menu
-- ui-panel
-- ui-select
-- ui-uploader
-- file-input
+**Layout**
+
+- [ui-container](http://wecatch.me/ember-semantic-ui/demo/#/ui-container)
+- [ui-text-container](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-text-container)
+
+
+**Button**
+
+- [ui-button](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-button)
+- [ui-labeled-button](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-labeled-button)
+- [ui-left-labeled-button](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-left-labeled-button)
+
+**Menu**
+
+- [ui-dropdown-menu](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-dropdown-menu)
+- [ui-menu](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-menu)
+- [ui-vertical-menu](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-vertical-menu)
+- [ui-tab-menu](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-tab-menu)
+
+
+**Form**
+
+- [ui-form-input](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-form-input)
+- [ui-form](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-form)
+
+
+**Input**
+
+- [ui-input-tags](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-input-tags)
+- [ui-input](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-input)
+- [ui-date-input](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-date-input)
+- [ui-date-time-input](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-date-time-input)
+
+
+**Checkbox**
+
+- [ui-radio-group](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-radio-group)
+- [ui-checkbox-group](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-checkbox-group)
+- [ui-checkbox](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-checkbox)
+
+
+**Modal**
+
+- [ui-modal](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-modal)
+- [ui-modal-title](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-modal-title)
+- [ui-modal-content](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-modal-content)
+- [ui-modal-foot](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-modal-foot)
+
+**Select**
+
+- [ui-select](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-select)
+- [ui-multi-select](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-multi-select)
+- [ui-select](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-select)
+
+
+**Label**
+
+- [ui-label](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-label)
+- [ui-pointing-label](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-pointing-label)
+
+**File**
+
+- [ui-uploader](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-uploader)
+- [file-input](http://wecatch.github.io/ember-semantic-ui/demo/#/file-input)
+
+
+**Popup**
+
+- [ui-pop-up](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-pop-up)
+
+**Message**
+
+- [ui-message](http://wecatch.me/ember-semantic-ui/demo/ui-message)
+
+**Panel**
+
+- [ui-panel](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-panel)
 
 # Getting Started
 
@@ -96,6 +146,17 @@ ember server
 The [ember-uploader](https://github.com/benefitcloud/ember-uploader) project support this addon file-uploader. Thanks to their [author](https://github.com/benefitcloud)
 
 # Release notes
+
+## 0.1.1
+
+fix dummy app
+
+## 0.1.0
+
+- add docs
+- file-input support multiple files upload
+- add menu component
+- add row, column, container component
 
 ## 0.0.8
 

@@ -1,7 +1,8 @@
 <div class="ui container">
     <div class="ui grid">
-        <div class="four wide column">
-            <div class="ui secondary vertical fluid menu">
+        {{#ui-column wide=4 }}
+        <div class="four wide column" >
+            <div class="ui visible sidebar secondary vertical menu" >
                 <div class="ui red header item">
                     Layout
                 </div>
@@ -17,6 +18,12 @@
                 {{#link-to "ui-labeled-button" class="item"}}ui-labeled-button{{/link-to}}
                 {{#link-to "ui-left-labeled-button" class="item"}}ui-left-labeled-button{{/link-to}} 
 
+                <div class="ui red header item">
+                    Menu
+                </div>
+                {{#link-to "ui-menu" class="item"}}ui-menu{{/link-to}} 
+                {{#link-to "ui-vertical-menu" class="item"}}ui-vertical-menu{{/link-to}} 
+                {{#link-to "ui-tab-menu" class="item"}}ui-tab-menu{{/link-to}} 
                 {{#link-to "ui-dropdown-menu" class="item"}}ui-dropdown-menu{{/link-to}} 
                 
                 <div class="ui red header item">
@@ -37,9 +44,7 @@
                     Segment
                 </div>
                 {{#link-to "ui-segment" class="item"}}ui-segment{{/link-to}} 
-                
-                {{#link-to "ui-tab-menu" class="item"}}ui-tab-menu{{/link-to}} 
-                
+                                
                 <div class="ui red header item">
                     Checkbox
                 </div>
@@ -87,13 +92,14 @@
                 {{#link-to "ui-uploader" class="item"}}ui-uploader{{/link-to}} 
             </div>
         </div>
-        <div class="twelve wide column" >
+        {{/ui-column}}
+        {{#ui-column wide=12 }}
             {{#if host}}
             <div class="ui segment">
                 <a href="{{host}}" target="_blank" >See {{routeName}} Doc</a>
             </div>
             {{/if}}
           {{outlet}}
-        </div>
+        {{/ui-column}}
     </div>
 </div>
