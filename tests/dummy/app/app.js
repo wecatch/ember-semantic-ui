@@ -13,6 +13,15 @@ App = Ember.Application.extend({
   Resolver
 });
 
+Ember.LinkComponent.reopen({
+    click(){
+        this._super(...arguments);
+        Ember.$('html,body').animate({
+            scrollTop: '0px'
+        }, 200);
+    }
+});
+
 loadInitializers(App, config.modulePrefix);
 
 export default App;
