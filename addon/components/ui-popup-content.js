@@ -21,7 +21,8 @@ export default Ember.Component.extend({
     @property {function} target
     */
     target: null,
-    didInitAttrs(){
+    init(){
+        this._super(...arguments);
         if(typeof this.attrs.target){
             Ember.run.scheduleOnce('afterRender', this, function(){
                 this.attrs.target.update(this.elementId);

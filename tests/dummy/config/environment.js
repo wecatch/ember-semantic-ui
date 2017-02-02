@@ -4,7 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'dummy',
     environment: environment,
-    baseURL: '/',
+    rootURL: '/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
@@ -29,7 +29,7 @@ module.exports = function(environment) {
 
   if (environment === 'test') {
     // Testem prefers this...
-    ENV.baseURL = '/';
+    // ENV.rootURL = '/';
     ENV.locationType = 'none';
 
     // keep test console output quieter
@@ -45,7 +45,7 @@ module.exports = function(environment) {
 
   if (environment === 'gh-pages') {
     ENV.APP.rootElement = '#ember-semantic-ui-demo' ;
-    ENV.baseURL = '/ember-semantic-ui/';
+    ENV.rootURL = '/ember-semantic-ui/';
     ENV.modulePrefix = 'dummy';
     ENV.locationType = 'hash';
   }

@@ -81,8 +81,9 @@ export default Ember.Mixin.create({
             }
         }
     },
-    didInitAttrs(){
+    init(){
         //set checked value
+        this._super(...arguments);
         this._updateValue(this.get('checked'));
     },
     didUpdateAttrs(){

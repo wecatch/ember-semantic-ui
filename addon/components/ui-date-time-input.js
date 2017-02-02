@@ -57,7 +57,8 @@ export default Ember.Component.extend({
             this.attrs.update(time);
         }
     }),
-    didInitAttrs(){
+    init(){
+        this._super(...arguments);
         if(this.value && moment(this.value).isValid()){
             let time = moment(this.value);
             this.set('d', time.format('YYYY-MM-DD'));

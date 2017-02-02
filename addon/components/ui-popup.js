@@ -88,7 +88,8 @@ export default Ember.Component.extend({
         this.bindPopEvent();
       }
   },
-  didInitAttrs(){
+  init(){
+      this._super(...arguments);
       if(this.popup || this.title || this.content || this.html){
         this.bindPopEvent();
       }

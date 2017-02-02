@@ -69,7 +69,7 @@ export default Ember.Component.extend(UiSelectBase, {
     },
     isOptionChecked(optionValue) {
         if (this.value) {
-            return this.value.contains(optionValue);
+            return this.value.includes(optionValue);
         }
         return false;
     },
