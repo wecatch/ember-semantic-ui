@@ -147,6 +147,10 @@ The [ember-uploader](https://github.com/benefitcloud/ember-uploader) project sup
 
 # Release notes
 
+## 0.1.2
+
+upgrade ember-cli to 2.11, upgrade ember to latest 2.11
+
 ## 0.1.1
 
 fix dummy app
