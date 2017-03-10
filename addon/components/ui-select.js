@@ -2,6 +2,7 @@ import Ember from 'ember';
 import UiSelectBase from '../mixins/ui-select-base';
 import layout from '../templates/components/ui-select';
 
+const {computed} = Ember;
 
 /**
 ui-select component {{#crossLink "mixins.UiSelectBase"}}{{/crossLink}}
@@ -11,53 +12,118 @@ ui-select component {{#crossLink "mixins.UiSelectBase"}}{{/crossLink}}
 @class UiSelect
 @constructor
 */
-export default Ember.Component.extend(UiSelectBase, {
+export default Ember.Component.extend({
     layout: layout,
     defaultValue: null,
-    didUpdateAttrs() {
-        this.setupSelected();
-    },
-    renderDropDown() {
+    tagName: 'select',
+    didRender() {
         let that = this;
         this.$().dropdown({
-            onLabelCreate: function(label) {
-                that.$('input.search').val('');
-                return $(label);
-            },
-            action: function(text, value) {
-                that.set('value', value);
-                that.$().dropdown('hide');
-                if(that.attrs.value === undefined){
-                    that.setupSelected();
-                }
-                if(typeof that.attrs.update === 'function'){
-                    that.attrs.update(value);
-                }
-                if(that.search){
-                    that.$('.menu .item').removeClass('filtered');
-                }
+            forceSelection: false,
+            onChange(value, text, $choice){
+                that.attrs.value.update(value);
             }
         });
     },
+    /**
+     * value  for the select 
+     *
+     * @property {String} value
+     */
+    value: '',
+    /**
+     *  label for the select radio group component
+     *
+     * @property {String} label
+     */
+    label: '',
+
+    /**
+     * name key for option, by default name
+     *
+     * @property {String} namePath
+     * @default 'value'
+     */
+    labelPath: 'name',
+
+    /**
+     * value key for option, by default value
+     *
+     * @property {String} valuePath
+     * @default 'value'
+     */
+    valuePath: 'value',
+    /**
+     * placeholder for blank option
+     *
+     * @property {String} placeholder
+     */
+    placeholder: '',
+
+    /**
+     * the select theme
+     *
+     * @property {String} theme
+     */
+    theme: '',
+
+    /**
+     * the select theme
+     *
+     * @property {String} class
+     */
+    class: '',
+
+    /**
+     * options for the select component
+     *
+     * @property {Array} options
+     */
+    options: null,
+
+    /**
+     * options for the select component
+     * @private
+     * @property {Array} _options
+     */
+    _options: computed('options', {
+        get(){
+            const _options = Ember.A();
+            for (var i = 0; i < this.options.length; i++) {
+                let item = this.options[i];
+                let label = item[this.get('labelPath')];
+                let value = item[this.get('valuePath')];
+                let checked = this.isOptionChecked(value);
+                let obj = Ember.Object.create({
+                    'label': label,
+                    'value': String(value),
+                    'selected': checked
+                });
+                _options.pushObject(obj);
+            };
+            return _options;
+        }
+    }),
+
+    classNameBindings: ['_uiClass', 'search:search:', 'class', 'theme', 'selection', '_componentClass'],
+    _uiClass: 'ui',
+    _componentClass: 'dropdown',
+    /**
+     * allow select to search or not , by default false
+     *
+     * @property {Boolean} search
+     * @default false
+     */
+    search: false,
+    /**
+     * @method setupOptions 
+     * @observes "options" property
+     * @returns  {void}
+     */
     isOptionChecked(optionValue) {
         return String(this.value) === optionValue;
     },
-    setupSelected: function() {
-        this._selectedOptions.clear();
-        for (var i = 0; i < this._options.length; i++) {
-            let item = this._options[i];
-            let checked = this.isOptionChecked(item['value']);
-            Ember.set(item, 'selected', checked);
-            if (checked) {
-                this._selectedOptions.pushObject(item);
-            }
-        };
-    },
-    init(){
+    init() {
         this._super(...arguments);
-        this.setupSelected();
-    },
-    isDisplayHolder: Ember.computed('_selectedOptions.[]', function() {
-        return this._selectedOptions.filterBy('selected', true).length === 0;
-    })
+    }
 });
