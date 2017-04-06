@@ -24,6 +24,9 @@ export default Ember.Component.extend({
                 that.attrs.value.update(value);
             }
         });
+        if(!this.get('value')){
+            this.$().dropdown('restore placeholder text');
+        }
     },
     /**
      * value  for the select 
