@@ -103,7 +103,7 @@ export default Ember.Mixin.create({
      */
     _selectedOptions: null,
 
-    didInsertElement(argument) {
+    didInsertElement() {
         this.renderDropDown();
     },
     /**
@@ -128,7 +128,7 @@ export default Ember.Mixin.create({
                     this._selectedOptions.pushObject(obj);
                 }
                 this._options.pushObject(obj);
-            };
+            }
         }
     },
     optionsChange: Ember.observer('options', function(){

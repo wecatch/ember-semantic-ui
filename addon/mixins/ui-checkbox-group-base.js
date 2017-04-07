@@ -1,7 +1,8 @@
 import Ember from 'ember';
 
 const {
-    computed
+    computed,
+    $
 } = Ember;
 
 const {
@@ -88,7 +89,7 @@ export default Ember.Mixin.create({
             for (var i = 0; i < this._options.length; i++) {
                 let item = this._options[i];
                 Ember.set(item, 'checked', this.isOptionChecked(item['value']));
-            };
+            }
         }
         this.setupBlockOptions();
     }),
@@ -132,7 +133,7 @@ export default Ember.Mixin.create({
                     'value': String(value),
                     'checked': checked
                 });
-            };
+            }
             this.set('_options', _options);
         }
     },

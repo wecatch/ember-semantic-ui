@@ -102,7 +102,7 @@ export default Ember.Component.extend({
                     'selected': checked
                 });
                 _options.pushObject(obj);
-            };
+            }
             return _options;
         }
     }),

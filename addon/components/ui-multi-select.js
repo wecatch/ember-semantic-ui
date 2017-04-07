@@ -65,7 +65,7 @@ export default Ember.Component.extend(UiSelectBase, {
             if(checked){
                 this._selectedOptions.pushObject(item);
             }
-        };
+        }
     },
     isOptionChecked(optionValue) {
         if (this.value) {

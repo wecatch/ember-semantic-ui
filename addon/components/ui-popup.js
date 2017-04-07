@@ -19,9 +19,9 @@ export default Ember.Component.extend({
   _class: computed('class', {
     get(){
       if(this.attrs.class){
-        return ''
+        return '';
       }else {
-        return this.class;
+        return this.get('class');
       }
     }
   }),
@@ -106,7 +106,7 @@ export default Ember.Component.extend({
       let preserve = copy(this.preserve);
       let inline = copy(this.inline);
 
-      if(!this.$()) return;
+      if(!this.$()) {return;}
       this.$().popup({
           popup: self.popup && Ember.$('#'+self.popup) || false,
           on: self.event,

@@ -163,8 +163,7 @@ export default Ember.Component.extend({
     didInsertElement() {
         let self = this;
         this.$('input').change(function(e) {
-            let input = e.target,
-                obj = null;
+            let input = e.target;
             if (!Ember.isEmpty(input.files)) {
                 for (let i = input.files.length - 1; i >= 0; i--) {
                     let obj = fileObject.create({
@@ -178,7 +177,7 @@ export default Ember.Component.extend({
 
                 //$(this).after($(this).clone().val(""));
                 //empty input files
-                $(this).val("");
+                Ember.$(this).val("");
             }
         });
     },
@@ -217,7 +216,7 @@ export default Ember.Component.extend({
                 'position:relative',
                 'left:-100%',
                 'display:block',
-            ]
+            ];
             return Ember.String.htmlSafe(style_array.join(';'));
         }
     }),
@@ -232,7 +231,7 @@ export default Ember.Component.extend({
                 'height: 6.25em',
                 'line-height: 5.25em',
                 'text-align: center',
-            ]
+            ];
             return Ember.String.htmlSafe(style_array.join(';'));
         }
     }),

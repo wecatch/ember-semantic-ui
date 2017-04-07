@@ -59,7 +59,7 @@ export default Ember.Mixin.create({
      */
     didInsertElement() {
         this.$().checkbox();
-        let {value, checked} = this.getProperties('value', 'checked');
+        let {checked} = this.getProperties('checked');
         let input = this.$('input');
 
         //set checbox stated

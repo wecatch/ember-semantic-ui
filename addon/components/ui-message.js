@@ -104,7 +104,7 @@ export default Ember.Component.extend({
             }
             run.next(this, () => {
                 if(this) {
-                    this.destroy()
+                    this.destroy();
                 }
             });
             if(typeof this.attrs.onClose === 'function'){

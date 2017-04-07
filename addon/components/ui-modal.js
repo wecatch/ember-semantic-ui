@@ -115,6 +115,6 @@ export default Ember.Component.extend({
                     return that.attrs.onDeny();
                 }
             }
-		})
-	},
+		});
+	}
 });

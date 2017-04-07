@@ -9,10 +9,6 @@ FileObject class
 @constructor
 */
 let fileObject = Ember.Object.extend({
-    init: function() {
-        this._super();
-        Ember.assert("File to upload required on init.", !!this.get('fileToUpload'));
-    },
     // ...........................................
     // Name is used for the upload property
     name: '',
@@ -88,7 +84,7 @@ let fileObject = Ember.Object.extend({
 
 function humanReadableFileSize(size) {
     var label = "";
-    if (size == 0) {
+    if (size === 0) {
         label = "0 KB";
     } else if (size && !isNaN(size)) {
         var fileSizeInBytes = size;
@@ -102,9 +98,9 @@ function humanReadableFileSize(size) {
         label += Math.max(fileSizeInBytes, 0.1).toFixed(1) + byteUnits[i];
     }
     return label;
-};
+}
 
 export {
     fileObject,
-    humanReadableFileSize,
-}
+    humanReadableFileSize
+};
