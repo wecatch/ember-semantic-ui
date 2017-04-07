@@ -21,7 +21,7 @@ export default Ember.Component.extend(UiCheckboxGroupBase, {
         if(Ember.isArray(this.value)){
             return this.value.includes(optionValue);
         }
-        return false
+        return false;
     },
     actions: {
         childChange(checked, value){

@@ -10,7 +10,7 @@ let zh_cn = {
     months        : ['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'],
     weekdays      : ['周日','星期一','星期二','星期三','星期四','星期五','星期六'],
     weekdaysShort : ['日','一','二','三','四','五','六']
-}
+};
 
 /**
 ui-date-input component
@@ -43,12 +43,12 @@ export default Ember.Component.extend({
             format: self.format,
             position: self.position,
             onSelect: function () {
-                if(typeof self.attrs.update == 'function'){
+                if(typeof self.attrs.update === 'function'){
                     self.attrs.update(this.getMoment().format(self.format));
                 }
             }
         }
-        if(self.lang == 'zh_CN'){
+        if(self.lang === 'zh_CN'){
             options.i18n = zh_cn;
         }
         let picker = new Pikaday(options);

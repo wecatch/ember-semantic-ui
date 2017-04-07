@@ -18,7 +18,7 @@ const n = {
     '14':'fourteen', 
     '15':'fifteen',
     '16':'sixteen'
-} 
+};
 
 export default Ember.Component.extend({
     layout,
@@ -26,7 +26,7 @@ export default Ember.Component.extend({
         get(){
             let wide = n[String(this.get('wide'))];
             if (!wide){
-                return ''
+                return '';
             }else {
                 return wide+' wide';
             }

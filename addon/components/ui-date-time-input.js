@@ -8,13 +8,13 @@ const minutes=[];
 
 for (var i = 0; i < 60; i++) {
     minutes[i] = {'value':i, 'name':i};
-};
+}
 
 const hours = [];
 
 for (var i = 0; i < 24; i++) {
     hours[i] = {'value':i, 'name':i};
-};
+}
 
 /**
 ui-date-time-input component
@@ -51,9 +51,9 @@ export default Ember.Component.extend({
             day: date.day(),
             hour: hour,
             minute: minute,
-        }
+        };
         let time = moment(options).format('YYYY-MM-DD HH:mm');
-        if(typeof this.attrs.update == 'function'){
+        if(typeof this.attrs.update === 'function'){
             this.attrs.update(time);
         }
     }),

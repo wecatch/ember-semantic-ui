@@ -33,16 +33,16 @@ export default Ember.Component.extend({
         let that = this;
         this.$().dropdown({
             allowAdditions: true,
-            onAdd: function(addedValue, addedText, $addedChoice) {
+            onAdd: function(addedValue, addedText) {
                 that._addValue(addedValue);
             },
-            onRemove: function(removedValue, removedText, $removedChoice) {
+            onRemove: function(removedValue, removedText) {
                 that._removeValue(removedValue);
             },
             onLabelCreate: function(label){
                 that.$('input.search').val('');
                 that.$('.addition.item b').html('');
-                return $(label);
+                return Ember.$(label);
             }
         });
     },
@@ -76,7 +76,7 @@ export default Ember.Component.extend({
 
         for (var i = this.value.length - 1; i >= 0; i--) {
             this.value.set(String(i), String(this.value[i]));
-        };
+        }
     },
     hiddenValue: Ember.computed('value', {
         get(){
