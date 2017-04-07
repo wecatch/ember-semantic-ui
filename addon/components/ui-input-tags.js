@@ -33,10 +33,10 @@ export default Ember.Component.extend({
         let that = this;
         this.$().dropdown({
             allowAdditions: true,
-            onAdd: function(addedValue, addedText) {
+            onAdd: function(addedValue) {
                 that._addValue(addedValue);
             },
-            onRemove: function(removedValue, removedText) {
+            onRemove: function(removedValue) {
                 that._removeValue(removedValue);
             },
             onLabelCreate: function(label){

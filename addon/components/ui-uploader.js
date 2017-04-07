@@ -1,10 +1,10 @@
 import Ember from 'ember';
 import emberUploader from '../utils/ember-uploader';
-import { fileObject, humanReadableFileSize } from '../utils/file-object';
+import { fileObject } from '../utils/file-object';
 import layout from '../templates/components/ui-uploader';
 
 
-const {get, set, computed} = Ember;
+const {computed} = Ember;
 
 /**
 ui-uploader component

@@ -47,7 +47,7 @@ export default Ember.Component.extend({
                     self.attrs.update(this.getMoment().format(self.format));
                 }
             }
-        }
+        };
         if(self.lang === 'zh_CN'){
             options.i18n = zh_cn;
         }

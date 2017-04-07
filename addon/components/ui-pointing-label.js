@@ -23,7 +23,7 @@ export default Ember.Component.extend(uiLabelBase, {
     direction: '',
     _theme: Ember.computed('direction', function() {
         let direction = ['pointing'];
-        if(this.direction == 'below'){
+        if(this.direction === 'below'){
             direction.push(this.direction);
         }
 

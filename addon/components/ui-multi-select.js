@@ -30,29 +30,29 @@ export default Ember.Component.extend(UiSelectBase, {
     renderDropDown() {
         let that = this;
         this.$().dropdown({
-            onAdd: function(addedValue, addedText, $addedChoice) {
+            onAdd: function(addedValue) {
                 for (var i = 0; i < that._options.length; i++) {
                     let item = that._options[i];
                     if (item['value'] === addedValue) {
                         that._selectedOptions.pushObject(item);
                         break;
                     }
-                };
+                }
                 that.value.pushObject(addedValue);
             },
-            onRemove: function(removedValue, removedText, $removedChoice) {
+            onRemove: function(removedValue) {
                 for (var i = 0; i < that._selectedOptions.length; i++) {
                     let item = that._selectedOptions[i];
                     if (item['value'] === removedValue) {
                         that._selectedOptions.removeObject(item);
                         break;
                     }
-                };
+                }
                 that.value.removeObject(removedValue);
             },
             onLabelCreate: function(label) {
                 that.$('input.search').val('');
-                return $(label);
+                return Ember.$(label);
             }
         });
     },

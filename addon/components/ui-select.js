@@ -1,11 +1,10 @@
 import Ember from 'ember';
-import UiSelectBase from '../mixins/ui-select-base';
 import layout from '../templates/components/ui-select';
 
 const {computed} = Ember;
 
 /**
-ui-select component {{#crossLink "mixins.UiSelectBase"}}{{/crossLink}}
+ui-select component
 
 @module components
 @namespace components 
@@ -20,7 +19,7 @@ export default Ember.Component.extend({
         let that = this;
         this.$().dropdown({
             forceSelection: false,
-            onChange(value, text, $choice){
+            onChange(value){
                 that.attrs.value.update(value);
             }
         });

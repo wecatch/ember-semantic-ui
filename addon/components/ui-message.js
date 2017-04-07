@@ -2,17 +2,10 @@ import Ember from 'ember';
 import layout from '../templates/components/ui-message';
 
 const {
-    String: {
-        classify, htmlSafe
-    },
-    Component,
     getWithDefault,
     warn,
     run,
-    on,
-    get,
-    computed,
-    set
+    computed
 } = Ember;
 
 
@@ -106,11 +99,15 @@ export default Ember.Component.extend({
         @event closeMessage
         */
         closeMessage() {
-            this && this.$() && this.$().transition('fade');
+            if(this && this.$()){
+                this.$().transition('fade');
+            }
             run.next(this, () => {
-                this && this.destroy();
+                if(this) {
+                    this.destroy()
+                }
             });
-            if(typeof this.attrs.onClose == 'function'){
+            if(typeof this.attrs.onClose === 'function'){
                 this.attrs.onClose();
             }
         }

@@ -2,18 +2,8 @@ import Ember from 'ember';
 import layout from '../templates/components/ui-tab-menu';
 
 const {
-    String: {
-        classify, htmlSafe
-    },
-    Component,
-    getWithDefault,
-    warn,
-    run,
-    on,
-    get,
     computed,
     isArray,
-    set
 } = Ember;
 
 

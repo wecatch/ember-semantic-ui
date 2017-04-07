@@ -18,7 +18,7 @@ export default Ember.Component.extend({
         @event onShow
         */
         onShow(){
-            if(typeof this.attrs.onShow == 'function'){
+            if(typeof this.attrs.onShow === 'function'){
                 this.attrs.onShow();
             }else {
                 this.sendAction('onShow');
@@ -29,7 +29,7 @@ export default Ember.Component.extend({
         @event onShow
         */
         onHide(){
-            if(typeof this.attrs.onHide == 'function'){
+            if(typeof this.attrs.onHide === 'function'){
                 this.attrs.onHide();
             }else{
                 this.sendAction('onHide');
@@ -106,12 +106,12 @@ export default Ember.Component.extend({
                 that.send('onShow');
             },
             onApprove() {
-                if(typeof that.attrs.onApprove == 'function'){
+                if(typeof that.attrs.onApprove === 'function'){
                     return that.attrs.onApprove();
                 }
             },
             onDeny(){
-                if(typeof that.attrs.onDeny == 'function'){
+                if(typeof that.attrs.onDeny === 'function'){
                     return that.attrs.onDeny();
                 }
             }

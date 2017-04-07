@@ -25,7 +25,7 @@ export default Ember.Mixin.create({
      * @return  {void}
      */
     click: function() {
-        if(typeof this.attrs.action == 'function'){
+        if(typeof this.attrs.action === 'function'){
             this.attrs.action();
         }else {
             this.sendAction('action', this.param);

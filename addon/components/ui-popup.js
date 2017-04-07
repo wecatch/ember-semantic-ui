@@ -106,7 +106,8 @@ export default Ember.Component.extend({
       let preserve = copy(this.preserve);
       let inline = copy(this.inline);
 
-      this.$() && this.$().popup({
+      if(!this.$()) return;
+      this.$().popup({
           popup: self.popup && Ember.$('#'+self.popup) || false,
           on: self.event,
           inline: inline,
@@ -126,27 +127,27 @@ export default Ember.Component.extend({
           },
           preserve: preserve,
           onCreate: function(){
-              if(typeof self.attrs.onCreate == 'function'){
+              if(typeof self.attrs.onCreate === 'function'){
                   self.attrs.onCreate(self);
               }
           },
           onRemove: function(){
-              if(typeof self.attrs.onRemove == 'function'){
+              if(typeof self.attrs.onRemove === 'function'){
                   self.attrs.onRemove(self);
               }
           },
           onShow: function(){
-              if(typeof self.attrs.onShow == 'function'){
+              if(typeof self.attrs.onShow === 'function'){
                   self.attrs.onShow(self);
               }
           },
           onVisible: function(){
-              if(typeof self.attrs.onVisible == 'function'){
+              if(typeof self.attrs.onVisible === 'function'){
                   self.attrs.onVisible(self);
               }
           },
           onHide: function(){
-              if(typeof self.attrs.onHide == 'function'){
+              if(typeof self.attrs.onHide === 'function'){
                   self.attrs.onHide(self);
               }
           }
