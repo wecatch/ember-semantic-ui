@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import emberUploader from '../utils/ember-uploader';
-import { fileObject, humanReadableFileSize} from '../utils/file-object';
+import { fileObject } from '../utils/file-object';
 
 
 /**
@@ -150,7 +150,7 @@ export default Ember.Mixin.create(Ember.Evented, {
                 //didupload event
                 uploader.on('didUpload', function(data) {
                     self.set('isUploaded', true);
-                    fileObject.set('data', data)
+                    fileObject.set('data', data);
                     //empty input file
                     self.$('input').val("");
                     self.sendAction('uploadSuccess', fileObject, data);
@@ -172,9 +172,9 @@ export default Ember.Mixin.create(Ember.Evented, {
         */
         abort: function() {
             this.get('uploader').abort();
-            self.sendAction('uploadAbort');
+            this.sendAction('uploadAbort');
             //empty input file
-            self.$('input').val("");
+            this.$('input').val("");
         }
     },
     init: function() {
