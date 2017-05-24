@@ -15,9 +15,9 @@ export default Ember.Component.extend({
      * the component style class
      *
      * @property {String} theme
-     * @default 'fluid'
+     * @default ''
      */
-    theme: 'fluid',
+    theme: '',
     /**
      * the component style class
      *
