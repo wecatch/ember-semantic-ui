@@ -32,6 +32,19 @@ export default Ember.Component.extend({
         this.renderDropDown();
     },
     renderDropDown() {
-        this.$().dropdown();
+        let that = this;
+        this.$().dropdown({
+            onChange(value){
+                if(that.attrs.value){
+                    that.attrs.value.update(value);
+                }
+            }
+        });
+    },
+    didRender(){
+        // re render component then restore default texts
+        if(!this.attrs.value.value){
+            this.$().dropdown('restore defaults');
+        }
     }
 });

@@ -20,7 +20,9 @@ export default Ember.Component.extend({
         this.$().dropdown({
             forceSelection: false,
             onChange(value){
-                that.attrs.value.update(value);
+                if(that.attrs.value){
+                    that.attrs.value.update(value);
+                }
             }
         });
         if(!this.get('value')){
