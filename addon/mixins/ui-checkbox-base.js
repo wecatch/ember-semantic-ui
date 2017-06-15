@@ -18,17 +18,23 @@ export default Ember.Mixin.create({
     tagName: 'div',
 
     /**
-     * the checkbox 
+     * the checkbox default class
+     * @private
+     * @property {Ember.String} _theme
+     */
+    _theme: 'checkbox',
+    /**
+     * the checkbox classes
      *
      * @property {Ember.String} theme
      */
-    _theme: 'checkbox',
+    class: '',
     /**
      * Class names to apply to the button
      *
      * @property {Ember.Array} classNames
      */
-    classNameBindings: ['_uiClass', '_theme', 'theme', '_componentClass'],
+    classNameBindings: ['_uiClass', '_theme', 'class', '_componentClass'],
     _uiClass: 'ui',
     _componentClass: 'checkbox',
 
