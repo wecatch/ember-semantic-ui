@@ -1,12 +1,11 @@
+'use strict';
 /*jshint node:true*/
 /* global require, module */
-var EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
+const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 var Funnel = require('broccoli-funnel');
 
-
 module.exports = function(defaults) {
-
-  var options = {
+  let app = new EmberAddon(defaults, {
     // Add options here
     minifyJS: {
       enabled: true
