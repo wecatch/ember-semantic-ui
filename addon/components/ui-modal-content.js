@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/ui-modal-content';
+import Component from '@ember/component';
 
 /**
 ui-modal-content component
@@ -9,7 +10,7 @@ ui-modal-content component
 @class UiModalContent
 @constructor
 */
-export default Ember.Component.extend({
+export default Component.extend({
     layout: layout,
 	tagName: 'div',
     classNameBindings: ['theme', '_componentClass'],

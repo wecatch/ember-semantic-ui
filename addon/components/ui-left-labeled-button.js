@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import layout from '../templates/components/ui-left-labeled-button';
 import uiButtonBase from '../mixins/ui-button-base';
 
@@ -11,7 +11,7 @@ ui-left-labeled-button component {{#crossLink "mixins.UiButtonBase"}}{{/crossLin
 @namespace components
 @constructor
 */
-export default Ember.Component.extend(uiButtonBase, {
+export default Component.extend(uiButtonBase, {
     tagName: 'div',
     layout: layout,
     _theme: 'left labeled',

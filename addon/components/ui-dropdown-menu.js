@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/ui-dropdown-menu';
+import Component from '@ember/component';
 
 /**
 ui-dropdown-menu component
@@ -9,7 +10,7 @@ ui-dropdown-menu component
 @class UiDropdownMenu
 @constructor
 */
-export default Ember.Component.extend({
+export default Component.extend({
     layout: layout,
     /**
      * the component style class

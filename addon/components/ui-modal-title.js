@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import layout from '../templates/components/ui-modal-title';
 
 /**
@@ -9,7 +9,7 @@ ui-modal-title component
 @class UiModalTitle
 @constructor
 */
-export default Ember.Component.extend({
+export default Component.extend({
     layout: layout,
 	tagName: 'div',
     classNames: [ 'header'],

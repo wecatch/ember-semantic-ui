@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/ui-form';
+import Component from '@ember/component';
 
 /**
 ui-form component
@@ -9,7 +10,7 @@ ui-form component
 @class UiForm
 @constructor
 */
-export default Ember.Component.extend({
+export default Component.extend({
     layout: layout,
     /**
      * The root component element

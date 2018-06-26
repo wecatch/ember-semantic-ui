@@ -1,5 +1,5 @@
-import Ember from 'ember';
 import layout from '../templates/components/ui-grid';
+import Component from '@ember/component';
 
 /**
 ui-grid component
@@ -9,7 +9,7 @@ ui-grid component
 @class UiGrid
 @constructor
 */
-export default Ember.Component.extend({
+export default Component.extend({
     layout,
     classNameBindings: ['_uiClass', 'class', '_componentClass'],
     _uiClass: 'ui',

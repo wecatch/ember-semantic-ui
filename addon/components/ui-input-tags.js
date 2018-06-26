@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/ui-input-tags';
+import Component from '@ember/component';
 
 /**
 ui-input-tags component
@@ -9,7 +10,7 @@ ui-input-tags component
 @class UiInputTags
 @constructor
 */
-export default Ember.Component.extend({
+export default Component.extend({
     layout: layout,
     tagName: 'div',
 

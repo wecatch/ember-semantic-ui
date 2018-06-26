@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import UiInputBase from '../mixins/ui-input-base';
 import layout from '../templates/components/ui-form-input';
+import Component from '@ember/component';
 
 /**
 ui-form-input component see {{#crossLink "mixins.UiInputBase"}}{{/crossLink}}
@@ -10,7 +11,7 @@ ui-form-input component see {{#crossLink "mixins.UiInputBase"}}{{/crossLink}}
 @class UiFormInput
 @constructor
 */
-export default Ember.Component.extend(UiInputBase, {
+export default Component.extend(UiInputBase, {
     layout: layout,
     _uiClass: '',
     _componentClass: 'field',

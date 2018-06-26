@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/ui-message';
+import Component from '@ember/component';
 
 const {
     getWithDefault,
@@ -17,7 +18,7 @@ ui-message component
 @class UiMessage
 @constructor
 */
-export default Ember.Component.extend({
+export default Component.extend({
     layout: layout,
     header: null,
     /**

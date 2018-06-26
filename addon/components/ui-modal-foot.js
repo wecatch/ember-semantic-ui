@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/ui-modal-foot';
+import Component from '@ember/component';
 
 /**
 ui-modal-foot component
@@ -9,7 +10,7 @@ ui-modal-foot component
 @class UiModalFoot
 @constructor
 */
-export default Ember.Component.extend({
+export default Component.extend({
     layout: layout,
 	tagName: 'div',
 	classNames: ['actions'],

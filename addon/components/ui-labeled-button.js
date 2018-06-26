@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import layout from '../templates/components/ui-labeled-button';
 import uiButtonBase from '../mixins/ui-button-base';
 
@@ -10,7 +10,7 @@ ui-labeled-button component {{#crossLink "mixins.UiButtonBase"}}{{/crossLink}}
 @class UiLabeledButton
 @constructor
 */
-export default Ember.Component.extend(uiButtonBase, {
+export default Component.extend(uiButtonBase, {
     tagName: 'div',
     layout: layout,
     _theme: 'labeled',

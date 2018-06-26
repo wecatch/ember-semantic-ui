@@ -1,6 +1,7 @@
 import moment from 'moment';
 import Ember from 'ember';
 import layout from '../templates/components/ui-date-time-input';
+import Component from '@ember/component';
 
 const {observer} = Ember;
 
@@ -24,7 +25,7 @@ ui-date-time-input component
 @class UiDateTimeInput 
 @constructor
 */
-export default Ember.Component.extend({
+export default Component.extend({
     layout,
     minutes:minutes,
     hours:hours,

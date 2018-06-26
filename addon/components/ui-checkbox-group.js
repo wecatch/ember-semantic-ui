@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import UiCheckboxGroupBase from '../mixins/ui-checkbox-group-base';
 import layout from '../templates/components/ui-checkbox-group';
+import Component from '@ember/component';
 
 /**
 ui-checkbox-group component see {{#crossLink "mixins.UiCheckboxGroupBase"}}{{/crossLink}}
@@ -10,7 +11,7 @@ ui-checkbox-group component see {{#crossLink "mixins.UiCheckboxGroupBase"}}{{/cr
 @class UiCheckboxGroup
 @constructor
 */
-export default Ember.Component.extend(UiCheckboxGroupBase, {
+export default Component.extend(UiCheckboxGroupBase, {
     layout: layout,
     /**
     value is checked or not

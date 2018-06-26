@@ -1,6 +1,6 @@
-import Ember from 'ember';
 import uiButtonBase from '../mixins/ui-button-base';
 import layout from '../templates/components/ui-button';
+import Component from '@ember/component';
 
 /**
 ui-button component see {{#crossLink "mixins.UiButtonBase"}}{{/crossLink}}
@@ -10,6 +10,6 @@ ui-button component see {{#crossLink "mixins.UiButtonBase"}}{{/crossLink}}
 @namespace components
 @constructor
 */
-export default Ember.Component.extend(uiButtonBase, {
+export default Component.extend(uiButtonBase, {
   layout: layout
 });

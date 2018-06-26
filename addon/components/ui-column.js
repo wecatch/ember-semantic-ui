@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/ui-column';
+import Component from '@ember/component';
 
 const n = {
     '1': 'one',
@@ -20,7 +21,7 @@ const n = {
     '16':'sixteen'
 };
 
-export default Ember.Component.extend({
+export default Component.extend({
     layout,
     _wide: Ember.computed('wide', {
         get(){

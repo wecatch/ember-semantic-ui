@@ -5,7 +5,7 @@ const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 var Funnel = require('broccoli-funnel');
 
 module.exports = function(defaults) {
-  let app = new EmberAddon(defaults, {
+   var options = {
     // Add options here
     minifyJS: {
       enabled: true

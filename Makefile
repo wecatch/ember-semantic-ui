@@ -1,5 +1,7 @@
 start:
-	ember server
+	ember serve
+test:
+	ember serve --test
 docs:
 	yuidoc -c yuidoc.json
 clean:

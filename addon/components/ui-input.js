@@ -1,6 +1,6 @@
-import Ember from 'ember';
 import UiInputBase from '../mixins/ui-input-base';
 import layout from '../templates/components/ui-input';
+import Component from '@ember/component';
 
 
 /**
@@ -11,6 +11,6 @@ ui-input component see {{#crossLink "mixins.UiInputBase"}}{{/crossLink}}
 @class UiInput
 @constructor
 */
-export default Ember.Component.extend(UiInputBase, {
+export default Component.extend(UiInputBase, {
     layout: layout
 });

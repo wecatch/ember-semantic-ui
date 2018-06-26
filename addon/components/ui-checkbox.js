@@ -1,6 +1,6 @@
-import Ember from 'ember';
 import UiCheckboxBase from '../mixins/ui-checkbox-base';
 import layout from '../templates/components/ui-checkbox';
+import Component from '@ember/component';
 
 /**
 ui-checkbox component see {{#crossLink "mixins.UiCheckboxBase"}}{{/crossLink}}
@@ -10,6 +10,6 @@ ui-checkbox component see {{#crossLink "mixins.UiCheckboxBase"}}{{/crossLink}}
 @class UiCheckbox
 @constructor
 */
-export default Ember.Component.extend(UiCheckboxBase, {
+export default Component.extend(UiCheckboxBase, {
     layout: layout
 });

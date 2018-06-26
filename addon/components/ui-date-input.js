@@ -2,6 +2,7 @@ import Ember from 'ember';
 import moment from 'moment';
 import Pikaday from 'pikaday';
 import layout from '../templates/components/ui-date-input';
+import Component from '@ember/component';
 
 
 let zh_cn = {
@@ -20,7 +21,7 @@ ui-date-input component
 @class UiDateInput 
 @constructor
 */
-export default Ember.Component.extend({
+export default Component.extend({
     layout: layout,
     /**
     display language, by default is zh_CN 

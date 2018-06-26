@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import layout from '../templates/components/ui-animated-button';
 import uiButtonBase from '../mixins/ui-button-base';
 
@@ -11,7 +11,7 @@ ui-animated-button component see {{#crossLink "mixins.UiButtonBase"}}{{/crossLin
 @class UiAnimatedButton
 @constructor
 */
-export default Ember.Component.extend(uiButtonBase, {
+export default Component.extend(uiButtonBase, {
   layout: layout,
   tagName: 'div',
   _theme: 'animated',
