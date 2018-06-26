@@ -2,8 +2,7 @@
   "name": "ember-semantic-ui",
   "dependencies": {
     "ember-qunit-notifications": "~0.1.0",
-    "moment": "~2.12.0",
     "highlightjs": "~9.2.0",
-    "semantic": "~2.2.7"
+    "semantic": "^2.3.2"
   }
 }

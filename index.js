@@ -11,8 +11,8 @@ module.exports = {
     }
     this._super.included(app);
     app.import({
-        development : app.bowerDirectory+'/moment/min/moment-with-locales.js',
-        production  : app.bowerDirectory+'/moment/min/moment-with-locales.min.js'
+        development : 'node_modules/moment/min/moment-with-locales.js',
+        production  : 'node_modules/moment/min/moment-with-locales.min.js'
     });
     app.import('node_modules/pikaday/pikaday.js');
     app.import('node_modules/pikaday/css/pikaday.css');

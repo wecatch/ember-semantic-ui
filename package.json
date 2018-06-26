@@ -75,6 +75,7 @@
     "broccoli-merge-trees": "^1.1.1",
     "ember-cli-babel": "^6.6.0",
     "ember-cli-htmlbars": "1.1.1",
+    "moment": "^2.22.2",
     "pikaday": "^1.7.0"
   },
   "ember-addon": {
