@@ -1,10 +1,11 @@
-import Ember from 'ember';
+import { get } from '@ember/object';
+import Helper from '@ember/component/helper';
+import { inject } from '@ember/service';
 
-const {get} = Ember
 
-export default Ember.Helper.extend({
-  code: Ember.inject.service(),
-  compute(params, hash) {
+export default Helper.extend({
+  code: inject(),
+  compute(params) {
     let code = get(this, 'code');
     let name = params[0];
     let index = params[1];

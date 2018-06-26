@@ -1,10 +1,7 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import { isArray } from '@ember/array';
+import Component from '@ember/component';
 import layout from '../templates/components/ui-tab-menu';
-
-const {
-    computed,
-    isArray,
-} = Ember;
 
 
 /**
@@ -15,7 +12,7 @@ ui-tab-menu component
 @class UiTabMenu
 @constructor
 */
-export default Ember.Component.extend({
+export default Component.extend({
     layout: layout,
     tagName: 'div',
     tabs: '',

@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import layout from '../templates/components/ui-text-container';
 
 /**
@@ -9,7 +9,7 @@ ui-text-container component
 @class UiTextContainer
 @constructor
 */
-export default Ember.Component.extend({
+export default Component.extend({
     layout,
     classNameBindings: ['_uiClass', '_componentClass'],
     _uiClass: 'ui',

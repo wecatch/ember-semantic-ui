@@ -1,8 +1,10 @@
-import Ember from 'ember';
+import { helper as buildHelper } from '@ember/component/helper';
+import { htmlSafe } from '@ember/template';
+import $ from 'jquery';
 
 export function rawContent(content) {
-    let rcontent = Ember.$.trim(content);
-    return Ember.String.htmlSafe('<pre>'+rcontent+'</pre>');
+    let rcontent = $.trim(content);
+    return htmlSafe('<pre>'+rcontent+'</pre>');
 }
 
-export default Ember.Helper.helper(rawContent);
+export default buildHelper(rawContent);

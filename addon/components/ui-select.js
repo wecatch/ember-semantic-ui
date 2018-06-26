@@ -1,7 +1,8 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import Component from '@ember/component';
+import { A } from '@ember/array';
+import EmberObject from '@ember/object';
 import layout from '../templates/components/ui-select';
-
-const {computed} = Ember;
 
 /**
 ui-select component
@@ -11,7 +12,7 @@ ui-select component
 @class UiSelect
 @constructor
 */
-export default Ember.Component.extend({
+export default Component.extend({
     layout: layout,
     defaultValue: null,
     tagName: 'select',
@@ -92,13 +93,13 @@ export default Ember.Component.extend({
      */
     _options: computed('options', {
         get(){
-            const _options = Ember.A();
+            const _options = A();
             for (var i = 0; i < this.options.length; i++) {
                 let item = this.options[i];
                 let label = item[this.get('labelPath')];
                 let value = item[this.get('valuePath')];
                 let checked = this.isOptionChecked(value);
-                let obj = Ember.Object.create({
+                let obj = EmberObject.create({
                     'label': label,
                     'value': String(value),
                     'selected': checked

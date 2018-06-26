@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import layout from '../templates/components/ui-tab-segment';
 import uiSegmentBase from '../mixins/ui-segment-base';
 
@@ -12,7 +12,7 @@ ui-tab-segment component  {{#crossLink "mixins.uiSegmentBase"}}{{/crossLink}}
 @class UiTabSegment
 @constructor
 */
-export default Ember.Component.extend(uiSegmentBase, {
+export default Component.extend(uiSegmentBase, {
     layout: layout,
     _theme: 'tab',
     theme: 'bottom attached',

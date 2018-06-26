@@ -1,12 +1,12 @@
-import Ember from 'ember';
+import Controller from '@ember/controller';
 
-export default Ember.Controller.extend({
+export default Controller.extend({
     result: 0,
     actions: {
         onfocus(e){
             this.send('log',e);
         },
-        log(e){
+        log(){
             this.set('result', this.result+1);
         }
     }

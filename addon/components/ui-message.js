@@ -1,13 +1,9 @@
-import Ember from 'ember';
 import layout from '../templates/components/ui-message';
 import Component from '@ember/component';
-
-const {
-    getWithDefault,
-    warn,
-    run,
-    computed
-} = Ember;
+import { getWithDefault } from '@ember/object';
+import { warn } from '@ember/debug';
+import { run } from '@ember/runloop';
+import { computed } from '@ember/object';
 
 
 /**

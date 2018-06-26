@@ -1,19 +1,18 @@
 /*global hljs*/
 import Ember from 'ember';
+import { computed } from '@ember/object';
+import { htmlSafe } from '@ember/template';
+import Component from '@ember/component';
 
 const {
-    computed,
     Handlebars: {
         Utils
-    },
-    String: {
-        htmlSafe
     }
 } = Ember;
 
 hljs.configure({useBR: true, tabReplace:'    '});
 
-export default Ember.Component.extend({
+export default Component.extend({
     tagName: 'pre',
     // classNameBindings:['lang'],
     lang: 'handlebars',

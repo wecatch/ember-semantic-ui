@@ -1,7 +1,8 @@
-import Ember from 'ember';
+import Controller from '@ember/controller';
+import {A} from '@ember/array';
 
-export default Ember.Controller.extend({
-    result: Ember.A(),
+export default Controller.extend({
+    result: A(),
     actions: {
         onchange(e){
             this.send('log',e);

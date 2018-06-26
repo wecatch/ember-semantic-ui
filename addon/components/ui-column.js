@@ -1,6 +1,6 @@
-import Ember from 'ember';
 import layout from '../templates/components/ui-column';
 import Component from '@ember/component';
+import { computed } from '@ember/object'
 
 const n = {
     '1': 'one',
@@ -23,7 +23,7 @@ const n = {
 
 export default Component.extend({
     layout,
-    _wide: Ember.computed('wide', {
+    _wide: computed('wide', {
         get(){
             let wide = n[String(this.get('wide'))];
             if (!wide){

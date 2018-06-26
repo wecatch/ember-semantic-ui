@@ -1,13 +1,9 @@
-import Ember from 'ember';
-
-const {
-    computed,
-    $
-} = Ember;
-
-const {
-    bool
-} = computed;
+import $ from 'jquery';
+import Mixin from '@ember/object/mixin';
+import { observer } from '@ember/object';
+import { bool } from '@ember/object/computed';
+import { set } from '@ember/object';
+import { guidFor } from '@ember/object/internals';
 
 
 /**
@@ -18,7 +14,7 @@ ui-checkbox-base mixinx
 @class UiCheckboxGroupBase
 @constructor
 */
-export default Ember.Mixin.create({
+export default Mixin.create({
     /**
      * The root component element
      *
@@ -84,11 +80,11 @@ export default Ember.Mixin.create({
      * @property {Ember.Array} options
      */
     _options: null,
-    valueChange: Ember.observer('value', function() {
+    valueChange: observer('value', function() {
         if (this._options) {
             for (var i = 0; i < this._options.length; i++) {
                 let item = this._options[i];
-                Ember.set(item, 'checked', this.isOptionChecked(item['value']));
+                set(item, 'checked', this.isOptionChecked(item['value']));
             }
         }
         this.setupBlockOptions();
@@ -102,7 +98,7 @@ export default Ember.Mixin.create({
         this._super(...arguments);
         this.setupOptions();
         if (!this.name) {
-            this.set('name', Ember.guidFor(this));
+            this.set('name', guidFor(this));
         }
     },
     didInsertElement() {
@@ -137,7 +133,7 @@ export default Ember.Mixin.create({
             this.set('_options', _options);
         }
     },
-    optionsChange: Ember.observer('options', function() {
+    optionsChange: observer('options', function() {
         this.setupOptions();
     }),
     hasBlock: bool('template').readOnly()

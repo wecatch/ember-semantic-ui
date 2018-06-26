@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import EmberObject from '@ember/object';
 
 /**
 FileObject class
@@ -8,7 +8,7 @@ FileObject class
 @class FileObject
 @constructor
 */
-let fileObject = Ember.Object.extend({
+let fileObject = EmberObject.extend({
     // ...........................................
     // Name is used for the upload property
     name: '',

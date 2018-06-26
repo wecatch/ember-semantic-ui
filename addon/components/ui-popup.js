@@ -1,7 +1,8 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import { copy } from '@ember/object/internals';
+import Component from '@ember/component';
+import $ from 'jquery';
 import layout from '../templates/components/ui-popup';
-
-const {computed, copy} = Ember;
 
 /**
 
@@ -12,7 +13,7 @@ ui-popup component
 @class UiPopup
 @constructor
 */
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
   classNameBindings: ['_class'],
   class: 'ui button',
@@ -108,7 +109,7 @@ export default Ember.Component.extend({
 
       if(!this.$()) {return;}
       this.$().popup({
-          popup: self.popup && Ember.$('#'+self.popup) || false,
+          popup: self.popup && $('#'+self.popup) || false,
           on: self.event,
           inline: inline,
           hoverable: hoverable,

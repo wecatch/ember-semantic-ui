@@ -1,6 +1,10 @@
 import Ember from 'ember';
 import layout from '../templates/components/ui-input-tags';
 import Component from '@ember/component';
+import { guidFor } from '@ember/object/internals'
+import { A } from '@ember/array';
+import { computed } from '@ember/object';
+import { isArray } from '@ember/array';
 
 /**
 ui-input-tags component
@@ -54,7 +58,7 @@ export default Component.extend({
         try{
             this.get('value').addObject(value);
         }catch(e){
-            let id = Ember.guidFor(this);
+            let id = guidFor(this);
             Ember.Logger.warn(`component:ui-input-tags ${id} value is not Ember.A type`);
             Ember.Logger.error(e);
         }
@@ -72,16 +76,16 @@ export default Component.extend({
         //if value do not be passed to component
         this._super(...arguments);
         if(this.value === undefined){
-            this.set('value', Ember.A());
+            this.set('value', A());
         }
 
         for (var i = this.value.length - 1; i >= 0; i--) {
             this.value.set(String(i), String(this.value[i]));
         }
     },
-    hiddenValue: Ember.computed('value', {
+    hiddenValue: computed('value', {
         get(){
-            if(Ember.isArray(this.value)){
+            if(isArray(this.value)){
                 return this.value.join(',');
             }else{
                 return '';

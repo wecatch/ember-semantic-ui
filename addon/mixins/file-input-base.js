@@ -1,4 +1,9 @@
-import Ember from 'ember';
+import { isEmpty } from '@ember/utils';
+import Mixin from '@ember/object/mixin';
+import Evented from '@ember/object/evented';
+import { alias } from '@ember/object/computed';
+import { isArray, A } from '@ember/array';
+
 import emberUploader from '../utils/ember-uploader';
 import { fileObject } from '../utils/file-object';
 
@@ -12,7 +17,7 @@ file-input-base mixinx
 @extends Ember.Evented
 @constructor
 */
-export default Ember.Mixin.create(Ember.Evented, {
+export default Mixin.create(Evented, {
     /**
      * file request ajax setting traditional, by default true
      * @property {boolean} traditional
@@ -84,7 +89,7 @@ export default Ember.Mixin.create(Ember.Evented, {
      * @default false
      * 
     */
-    isUploading: Ember.computed.alias('uploader.isUploading'),
+    isUploading: alias('uploader.isUploading'),
     /**
      * allow autoUpload
      * 
@@ -112,9 +117,9 @@ export default Ember.Mixin.create(Ember.Evented, {
         });
     },
     filesDidChange: function(files) {
-        if(Ember.isArray(files)){
+        if(isArray(files)){
             this.send('start', files);
-        }else if (!Ember.isEmpty(files)) {
+        }else if (!isEmpty(files)) {
             this.set('fileObject', fileObject.create({
                 fileToUpload: files[0]
             }));
@@ -135,7 +140,7 @@ export default Ember.Mixin.create(Ember.Evented, {
             let { uploader, fileObject, extra} = this.getProperties('uploader', 'fileObject', 'extra');
             let self = this;
             if(files){
-                let fa = Ember.A({content: files});
+                let fa = A({content: files});
                 uploader.upload(files, extra);
                 this.sendAction('uploadStart', fa);
                 uploader.on('didUpload', function(data) {

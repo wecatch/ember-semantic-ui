@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import Mixin from '@ember/object/mixin';
 
 /**
 ui-label-base mixin
@@ -8,7 +8,7 @@ ui-label-base mixin
 @class UiLabelBase 
 @constructor
 */
-export default Ember.Mixin.create({
+export default Mixin.create({
     tagName: 'div',
     classNameBindings: ['_uiClass', '_theme', 'class', 'theme', '_componentClass'],
     _uiClass: 'ui',

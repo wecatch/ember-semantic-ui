@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import Mixin from '@ember/object/mixin';
 
 /**
 ui-checkbox-base mixinx
@@ -8,7 +8,7 @@ ui-checkbox-base mixinx
 @class UiCheckboxBase
 @constructor
 */
-export default Ember.Mixin.create({
+export default Mixin.create({
     /**
      * The root component element
      *

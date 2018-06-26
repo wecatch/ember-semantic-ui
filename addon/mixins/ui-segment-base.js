@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import Mixin from '@ember/object/mixin';
 
 /**
 ui-segment-base mixin
@@ -8,7 +8,7 @@ ui-segment-base mixin
 @class uiSegmentBase
 @constructor
 */
-export default Ember.Mixin.create({
+export default Mixin.create({
     classNameBindings: ['_uiClass', 'theme', '_theme', '_componentClass'],
     _uiClass: 'ui',
     _componentClass: 'segment',

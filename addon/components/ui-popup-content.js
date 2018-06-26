@@ -1,4 +1,6 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { scheduleOnce } from '@ember/runloop';
+
 import layout from '../templates/components/ui-popup-content';
 
 /**
@@ -10,7 +12,7 @@ ui-popup-content component
 @class UiPopupContent
 @constructor
 */
-export default Ember.Component.extend({
+export default Component.extend({
     layout,
     classNameBindings: ['_ui', 'class', '_componentClass'],
     class: 'flowing',
@@ -24,7 +26,7 @@ export default Ember.Component.extend({
     init(){
         this._super(...arguments);
         if(typeof this.attrs.target){
-            Ember.run.scheduleOnce('afterRender', this, function(){
+            scheduleOnce('afterRender', this, function(){
                 this.attrs.target.update(this.elementId);
             });
         }

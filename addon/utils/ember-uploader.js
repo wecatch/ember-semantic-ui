@@ -1,10 +1,15 @@
 // this file contains source code from  https://github.com/benefitcloud/ember-uploader
 // thanks to this great project
 
-import Ember from 'ember';
+import { get, set } from '@ember/object';
+import EmberObject from '@ember/object';
+import Evented from '@ember/object/evented';
+import { isArray } from '@ember/array';
+import { Promise } from 'rsvp';
+import { run } from '@ember/runloop';
+import $ from 'jquery';
 
-var get = Ember.get,
-    set = Ember.set;
+
 
 
 /**
@@ -15,7 +20,7 @@ EmberUploader class
 @class EmberUploader
 @constructor
 */
-export default Ember.Object.extend(Ember.Evented, {
+export default EmberObject.extend(Evented, {
   /**
      * upload url
      * 
@@ -82,7 +87,7 @@ export default Ember.Object.extend(Ember.Evented, {
     }
 
     // if is a array of files ...
-    if (Ember.isArray(files)) {
+    if (isArray(files)) {
       var paramName;
 
       for (var i = files.length - 1; i >= 0; i--) {
@@ -158,7 +163,7 @@ export default Ember.Object.extend(Ember.Evented, {
       traditional: get(self, 'traditional'),
       dataType: 'json',
       xhr: function() {
-        var xhr = Ember.$.ajaxSettings.xhr();
+        var xhr = $.ajaxSettings.xhr();
         xhr.upload.onprogress = function(e) {
           self.didProgress(e);
         };
@@ -176,16 +181,16 @@ export default Ember.Object.extend(Ember.Evented, {
   _ajax: function(settings) {
     var self = this;
 
-    return new Ember.RSVP.Promise(function(resolve, reject) {
+    return new Promise(function(resolve, reject) {
       settings.success = function(data) {
-        Ember.run(null, resolve, self.didUpload(data));
+        run(null, resolve, self.didUpload(data));
       };
 
       settings.error = function(jqXHR, responseText, errorThrown) {
-        Ember.run(null, reject, self.didError(jqXHR, responseText, errorThrown));
+        run(null, reject, self.didError(jqXHR, responseText, errorThrown));
       };
 
-      Ember.$.ajax(settings);
+      $.ajax(settings);
     });
   }
 });

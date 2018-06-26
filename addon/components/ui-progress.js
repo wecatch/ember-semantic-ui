@@ -1,4 +1,6 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { computed } from '@ember/object';
+import { observer } from '@ember/object';
 import layout from '../templates/components/ui-progress';
 
 
@@ -11,7 +13,7 @@ ui-progress component
 @class UiProgress
 @constructor
 */
-export default Ember.Component.extend({
+export default Component.extend({
     layout: layout,
     classNameBindings: ['_uiClass', 'class', 'theme', 'loading:active:', '_componentClass', 'success:success:', 'error:error:'],
     _uiClass: 'ui',
@@ -68,7 +70,7 @@ export default Ember.Component.extend({
             percent: this.get('_percent')
         });
     },
-    _percent: Ember.computed('percent', {
+    _percent: computed('percent', {
         get(){
             if(this.percent > 100){
                 return 100;
@@ -81,7 +83,7 @@ export default Ember.Component.extend({
             return this.percent;
         }
     }),
-    updateProgress: Ember.observer('percent', function(){
+    updateProgress: observer('percent', function(){
         this.$().progress({
             percent: this.get('_percent')
         });

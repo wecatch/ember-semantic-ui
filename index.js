@@ -14,8 +14,8 @@ module.exports = {
         development : app.bowerDirectory+'/moment/min/moment-with-locales.js',
         production  : app.bowerDirectory+'/moment/min/moment-with-locales.min.js'
     });
-    app.import(app.bowerDirectory+'/pikaday/pikaday.js');
-    app.import(app.bowerDirectory+'/pikaday/css/pikaday.css');
+    app.import('node_modules/pikaday/pikaday.js');
+    app.import('node_modules/pikaday/css/pikaday.css');
     app.import('vendor/shims/moment.js');
     app.import('vendor/shims/pikaday.js');
 

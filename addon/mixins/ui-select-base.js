@@ -1,4 +1,7 @@
-import Ember from 'ember';
+import Mixin from '@ember/object/mixin'; 
+import EmberObject from '@ember/object'; 
+import { observer } from '@ember/object'; 
+import { A } from '@ember/array'; 
 
 
 /**
@@ -9,7 +12,7 @@ ui-select-base mixin
 @class UiSelectBase
 @constructor
 */
-export default Ember.Mixin.create({
+export default Mixin.create({
     tagName: 'div',
 
     /**
@@ -119,7 +122,7 @@ export default Ember.Mixin.create({
                 let label = item[this.get('labelPath')];
                 let value = item[this.get('valuePath')];
                 let checked = this.isOptionChecked(value);
-                let obj = Ember.Object.create({
+                let obj = EmberObject.create({
                     'label': label,
                     'value': String(value),
                     'selected': checked
@@ -131,13 +134,13 @@ export default Ember.Mixin.create({
             }
         }
     },
-    optionsChange: Ember.observer('options', function(){
+    optionsChange: observer('options', function(){
         this.setupOptions();
     }),
     init() {
         this._super(...arguments);
-        this.set('_selectedOptions', Ember.A());
-        this.set('_options', Ember.A());
+        this.set('_selectedOptions', A());
+        this.set('_options', A());
         this.setupOptions();
     }
 });

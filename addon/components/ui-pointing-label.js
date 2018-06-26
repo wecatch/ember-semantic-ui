@@ -1,4 +1,5 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { computed } from '@ember/object';
 import layout from '../templates/components/ui-pointing-label';
 import uiLabelBase from '../mixins/ui-label-base';
 
@@ -13,7 +14,7 @@ ui-pointing-label component see {{#crossLink "mixins.uiLabelBase"}}{{/crossLink}
 @class UiPointingLabel
 @constructor
 */
-export default Ember.Component.extend(uiLabelBase, {
+export default Component.extend(uiLabelBase, {
     layout: layout,
     /**
      * pointing direction: below, left, right
@@ -21,7 +22,7 @@ export default Ember.Component.extend(uiLabelBase, {
      * @property {String} direction
      */
     direction: '',
-    _theme: Ember.computed('direction', function() {
+    _theme: computed('direction', function() {
         let direction = ['pointing'];
         if(this.direction === 'below'){
             direction.push(this.direction);

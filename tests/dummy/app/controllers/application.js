@@ -1,21 +1,17 @@
-import Ember from 'ember';
+import { capitalize } from '@ember/string';
+import { camelize } from '@ember/string';
+import Controller from '@ember/controller';
+import { computed } from '@ember/object';
 import ENV from 'dummy/config/environment';
 
 
-const {
-    String: {
-        capitalize,
-        camelize
-    }
-} = Ember;
-
-export default Ember.Controller.extend({
-    routeName: Ember.computed('currentPath', {
+export default Controller.extend({
+    routeName: computed('currentPath', {
         get(){
             return capitalize(camelize(this.get('currentPath')));
         }
     }),
-    host: Ember.computed('routeName', {
+    host: computed('routeName', {
         get(){
             let host = window.location.origin+ENV.baseURL;
             let routeName = this.get('routeName');

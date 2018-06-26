@@ -1,7 +1,9 @@
-import Ember from 'ember';
 import UiSelectBase from '../mixins/ui-select-base';
 import layout from '../templates/components/ui-multi-select';
 import Component from '@ember/component';
+import { observer } from '@ember/object';
+import { set } from '@ember/object';
+import $ from 'jquery';
 
 
 /**
@@ -22,7 +24,7 @@ export default Component.extend(UiSelectBase, {
      */
     defaultValue: null,
     _multiple: true,
-    _valueChange: Ember.observer('value.[]', function(){
+    _valueChange: observer('value.[]', function(){
         if (this.value.join(',') !== this._value) {
             this.setupSelected();
             this.set('_value', this.value.join(','));
@@ -53,7 +55,7 @@ export default Component.extend(UiSelectBase, {
             },
             onLabelCreate: function(label) {
                 that.$('input.search').val('');
-                return Ember.$(label);
+                return $(label);
             }
         });
     },
@@ -62,7 +64,7 @@ export default Component.extend(UiSelectBase, {
         for (var i = 0; i < this._options.length; i++) {
             let item = this._options[i];
             let checked = this.isOptionChecked(item['value']);
-            Ember.set(item, 'selected', checked);
+            set(item, 'selected', checked);
             if(checked){
                 this._selectedOptions.pushObject(item);
             }

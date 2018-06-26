@@ -1,5 +1,6 @@
 import Component from '@ember/component';
 import layout from '../templates/components/ui-modal';
+import { observer } from '@ember/object';
 
 /**
 
@@ -80,7 +81,7 @@ export default Component.extend({
      * @observes "show" property
      * @returns  {void}
     */
-	showModal: Ember.observer('show', function(){
+	showModal: observer('show', function(){
         if(this.get('show')){
             this.$().modal('setting', 'transition', this.transition);
             this.$().modal('setting', 'closable', this.closable);

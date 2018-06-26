@@ -1,4 +1,3 @@
-import Ember from 'ember';
 import moment from 'moment';
 import Pikaday from 'pikaday';
 import layout from '../templates/components/ui-date-input';

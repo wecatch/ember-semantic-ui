@@ -1,10 +1,16 @@
 import Ember from 'ember';
+import { isEmpty } from '@ember/utils';
+import $ from 'jquery';
+import { A } from '@ember/array';
+import { computed } from '@ember/object';
+import { htmlSafe } from '@ember/template';
+import Component from '@ember/component';
+
 import emberUploader from '../utils/ember-uploader';
 import { fileObject } from '../utils/file-object';
 import layout from '../templates/components/ui-uploader';
 
 
-const {computed} = Ember;
 
 /**
 ui-uploader component
@@ -14,7 +20,7 @@ ui-uploader component
 @class UiUploader
 @constructor
 */
-export default Ember.Component.extend({
+export default Component.extend({
     layout: layout,
     /**
      * file request ajax setting traditional, by default true
@@ -65,7 +71,7 @@ export default Ember.Component.extend({
                 try {
                     obj.uploader.abort();
                 } catch (e) {
-                    
+                    Ember.Logger.error(e)
                 }finally {
                     this.get('queue').removeObject(obj);
                 }
@@ -164,7 +170,7 @@ export default Ember.Component.extend({
         let self = this;
         this.$('input').change(function(e) {
             let input = e.target;
-            if (!Ember.isEmpty(input.files)) {
+            if (!isEmpty(input.files)) {
                 for (let i = input.files.length - 1; i >= 0; i--) {
                     let obj = fileObject.create({
                         fileToUpload: input.files[i]
@@ -177,7 +183,7 @@ export default Ember.Component.extend({
 
                 //$(this).after($(this).clone().val(""));
                 //empty input files
-                Ember.$(this).val("");
+                $(this).val("");
             }
         });
     },
@@ -199,7 +205,7 @@ export default Ember.Component.extend({
     init(){
         this._super(...arguments);
         if(this.queue === null){
-            this.set('queue', Ember.A());
+            this.set('queue', A());
         }
     },
     /**
@@ -207,7 +213,7 @@ export default Ember.Component.extend({
      * 
      * @returns  {string}
      */
-    inputStyle: Ember.computed({
+    inputStyle: computed({
         get(){
             let style_array = [
                 'opacity: 0',
@@ -217,7 +223,7 @@ export default Ember.Component.extend({
                 'left:-100%',
                 'display:block',
             ];
-            return Ember.String.htmlSafe(style_array.join(';'));
+            return htmlSafe(style_array.join(';'));
         }
     }),
     /**
@@ -225,14 +231,14 @@ export default Ember.Component.extend({
      * 
      * @returns  {string}
      */
-    labelStyle: Ember.computed({
+    labelStyle: computed({
         get(){
             let style_array = [
                 'height: 6.25em',
                 'line-height: 5.25em',
                 'text-align: center',
             ];
-            return Ember.String.htmlSafe(style_array.join(';'));
+            return htmlSafe(style_array.join(';'));
         }
     }),
 });

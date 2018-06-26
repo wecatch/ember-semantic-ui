@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import Service from '@ember/service';
 
 const uiButton = [
 `{{#ui-button theme="basic"}}button{{/ui-button}}`,
@@ -102,7 +102,7 @@ const uiDropdownMenu = [
 {{/ui-dropdown-menu}}`
 ];
 
-const uiDropDown = [];
+// const uiDropDown = [];
 
 const uiFormInput = [
 `
@@ -480,10 +480,9 @@ const code = {
     'file-input': fileInput,
     'ui-date-time-input': uiDateTimeInput,
     'ui-popup': uiPopup,
-    'ui-tab-menu': uiTabMenu,
     'layout': layout
 };
 
-export default Ember.Service.extend({
+export default Service.extend({
     code: code
 });

@@ -1,4 +1,3 @@
-import Ember from 'ember';
 import layout from '../templates/components/ui-modal-foot';
 import Component from '@ember/component';
 

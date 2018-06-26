@@ -1,19 +1,17 @@
 import moment from 'moment';
-import Ember from 'ember';
 import layout from '../templates/components/ui-date-time-input';
 import Component from '@ember/component';
-
-const {observer} = Ember;
+import { observer } from '@ember/object'
 
 const minutes=[];
 
-for (var i = 0; i < 60; i++) {
+for (let i = 0; i < 60; i++) {
     minutes[i] = {'value':i, 'name':i};
 }
 
 const hours = [];
 
-for (var i = 0; i < 24; i++) {
+for (let i = 0; i < 24; i++) {
     hours[i] = {'value':i, 'name':i};
 }
 

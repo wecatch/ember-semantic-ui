@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import Mixin from '@ember/object/mixin';
 
 
 /**
@@ -9,7 +9,7 @@ ui-input-base mixin
 @class UiInputBase 
 @constructor
 */
-export default Ember.Mixin.create({
+export default Mixin.create({
 	tagName: 'div',
 
 	/**
