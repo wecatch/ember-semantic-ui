@@ -150,6 +150,11 @@ The [ember-uploader](https://github.com/benefitcloud/ember-uploader) project sup
 
 # Release notes
 
+## 0.2.0
+
+- upgrade ember-cli to 3.1, support ember to latest 3.0
+- upgrade semantic-ui to 2.3.2
+
 ## 0.1.2
 
 upgrade ember-cli to 2.11, upgrade ember to latest 2.11

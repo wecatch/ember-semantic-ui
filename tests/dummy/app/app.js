@@ -4,6 +4,7 @@ import loadInitializers from 'ember-load-initializers';
 import config from './config/environment';
 import LinkComponent from '@ember/routing/link-component';
 import Ember from 'ember';
+import $ from 'jquery';
 
 const App = Application.extend({
   modulePrefix: config.modulePrefix,
@@ -14,7 +15,7 @@ const App = Application.extend({
 LinkComponent.reopen({
     click(){
         this._super(...arguments);
-        Ember.$('html,body').animate({
+        $('html,body').animate({
             scrollTop: '0px'
         }, 200);
     }

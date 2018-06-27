@@ -5,6 +5,7 @@ import { guidFor } from '@ember/object/internals'
 import { A } from '@ember/array';
 import { computed } from '@ember/object';
 import { isArray } from '@ember/array';
+import $ from 'jquery';
 
 /**
 ui-input-tags component
@@ -47,7 +48,7 @@ export default Component.extend({
             onLabelCreate: function(label){
                 that.$('input.search').val('');
                 that.$('.addition.item b').html('');
-                return Ember.$(label);
+                return $(label);
             }
         });
     },
