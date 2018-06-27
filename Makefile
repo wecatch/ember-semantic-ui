@@ -6,3 +6,5 @@ docs:
 	yuidoc -c yuidoc.json
 clean:
 	rm -rf tmp
+publish:
+	npm publish
