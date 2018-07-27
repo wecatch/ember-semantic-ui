@@ -81,7 +81,7 @@ This Ember addon support many UI components based on [semantic-ui](http://semant
 
 **Popup**
 
-- [ui-pop-up](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-pop-up)
+- [ui-popup](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-popup)
 
 **Message**
 
