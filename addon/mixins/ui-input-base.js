@@ -96,6 +96,9 @@ export default Mixin.create({
 	attributeBindings: [],
 	_updateValue() {
 		let newValue = this.$('input').val();
+		if (this.get('type') === "number"){
+			newValue = parseFloat(newValue)
+		}
 		if (typeof this.attrs.update === 'function') {
 			this.attrs.update(newValue);
 		}else {
