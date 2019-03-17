@@ -22,12 +22,12 @@ module.exports = {
   },
   postprocessTree: function( type, tree ) {
     return mergeTrees([ tree,
-          new Funnel( 'bower_components/semantic/dist', {
+          new Funnel( 'node_modules/semantic-ui-css', {
               srcDir  : 'themes',
               include   : ['**/*'],
               destDir : '/assets/themes'
           }),
-          new Funnel('bower_components/semantic/dist', {
+          new Funnel('node_modules/semantic-ui-css', {
               srcDir  : '.',
               include   : ['*.min.*'],
               destDir : '/assets/'

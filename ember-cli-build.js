@@ -23,8 +23,9 @@ module.exports = function(defaults) {
   }
 
   var app = new EmberAddon(defaults, options);
-  app.import('bower_components/highlightjs/highlight.pack.js');
-  app.import('bower_components/highlightjs/styles/default.css');
+  // use npm instead of bower for highlight
+  app.import('node_modules/highlightjs/highlight.pack.js');
+  app.import('node_modules/highlightjs/styles/default.css');
   
   // app.import('bower_components/semantic/dist/semantic.min.css');
   // app.import('bower_components/semantic/dist/semantic.min.js');
@@ -35,13 +36,13 @@ module.exports = function(defaults) {
     This build file does *not* influence how the addon or the app using it
     behave. You most likely want to be modifying `./index.js` or app's build file
   */
-  var themes = new Funnel('bower_components/semantic/dist', {
+  var themes = new Funnel('node_modules/semantic-ui-css', {
       srcDir  : 'themes',
       include   : ['**/*'],
       destDir : '/assets/themes'
   });
 
-  var semantic = new Funnel('bower_components/semantic/dist', {
+  var semantic = new Funnel('node_modules/semantic-ui-css', {
       srcDir  : '.',
       include   : ['*.min.*'],
       destDir : '/assets/'
