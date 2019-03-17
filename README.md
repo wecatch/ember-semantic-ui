@@ -150,6 +150,11 @@ The [ember-uploader](https://github.com/benefitcloud/ember-uploader) project sup
 
 # Release notes
 
+
+## 0.2.3
+
+- bump babel
+
 ## 0.2.2
 
 - remove bower, install npm package semantic-ui-css for semantic-ui
