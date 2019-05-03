@@ -1,6 +1,6 @@
 {
   "name": "ember-semantic-ui",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "The components based on semantic-ui",
   "directories": {
     "doc": "doc",
@@ -43,7 +43,6 @@
     "ember-cli": "~3.1.4",
     "ember-cli-dependency-checker": "^2.0.0",
     "ember-cli-eslint": "^4.2.1",
-    "ember-cli-htmlbars": "^2.0.1",
     "ember-cli-htmlbars-inline-precompile": "^1.0.0",
     "ember-cli-inject-live-reload": "^1.4.1",
     "ember-cli-qunit": "^4.1.1",
@@ -75,7 +74,7 @@
     "broccoli-funnel": "^1.0.1",
     "broccoli-merge-trees": "^1.1.1",
     "ember-cli-babel": "^6.18.0",
-    "ember-cli-htmlbars": "1.1.1",
+    "ember-cli-htmlbars": "^2.0.1",
     "moment": "^2.22.2",
     "pikaday": "^1.7.0",
     "semantic-ui-css": "^2.4.1"
