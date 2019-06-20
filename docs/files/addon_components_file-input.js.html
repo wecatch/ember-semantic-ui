@@ -97,7 +97,7 @@
             
             
             <div class="version-info">
-              Version: 0.1.0
+              Version: 0.2.5
             </div>
             
         </div>
@@ -108,9 +108,9 @@
 </div>
 
 <pre class="code prettyprint linenums">
-import Ember from &#x27;ember&#x27;;
 import fileInputBase from &#x27;../mixins/file-input-base&#x27;;
 import layout from &#x27;../templates/components/file-input&#x27;;
+import Component from &#x27;@ember/component&#x27;
 
 
 /**
@@ -122,7 +122,7 @@ file-input component, see {{#crossLink &quot;mixins.FileInputBase&quot;}}{{/cros
 @constructor
 
 */
-export default Ember.Component.extend(fileInputBase, {
+export default Component.extend(fileInputBase, {
     layout: layout
 });
 </pre>

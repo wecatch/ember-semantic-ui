@@ -97,7 +97,7 @@
             
             
             <div class="version-info">
-              Version: 0.1.0
+              Version: 0.2.5
             </div>
             
         </div>
@@ -108,8 +108,9 @@
 </div>
 
 <pre class="code prettyprint linenums">
-import Ember from &#x27;ember&#x27;;
+import Component from &#x27;@ember/component&#x27;;
 import layout from &#x27;../templates/components/ui-modal&#x27;;
+import { observer } from &#x27;@ember/object&#x27;;
 
 /**
 
@@ -120,7 +121,7 @@ ui-modal component
 @class UiModal
 @constructor
 */
-export default Ember.Component.extend({
+export default Component.extend({
     layout: layout,
     actions: {
         /**
@@ -128,7 +129,7 @@ export default Ember.Component.extend({
         @event onShow
         */
         onShow(){
-            if(typeof this.attrs.onShow == &#x27;function&#x27;){
+            if(typeof this.attrs.onShow === &#x27;function&#x27;){
                 this.attrs.onShow();
             }else {
                 this.sendAction(&#x27;onShow&#x27;);
@@ -139,7 +140,7 @@ export default Ember.Component.extend({
         @event onShow
         */
         onHide(){
-            if(typeof this.attrs.onHide == &#x27;function&#x27;){
+            if(typeof this.attrs.onHide === &#x27;function&#x27;){
                 this.attrs.onHide();
             }else{
                 this.sendAction(&#x27;onHide&#x27;);
@@ -190,7 +191,7 @@ export default Ember.Component.extend({
      * @observes &quot;show&quot; property
      * @returns  {void}
     */
-	showModal: Ember.observer(&#x27;show&#x27;, function(){
+	showModal: observer(&#x27;show&#x27;, function(){
         if(this.get(&#x27;show&#x27;)){
             this.$().modal(&#x27;setting&#x27;, &#x27;transition&#x27;, this.transition);
             this.$().modal(&#x27;setting&#x27;, &#x27;closable&#x27;, this.closable);
@@ -216,17 +217,17 @@ export default Ember.Component.extend({
                 that.send(&#x27;onShow&#x27;);
             },
             onApprove() {
-                if(typeof that.attrs.onApprove == &#x27;function&#x27;){
+                if(typeof that.attrs.onApprove === &#x27;function&#x27;){
                     return that.attrs.onApprove();
                 }
             },
             onDeny(){
-                if(typeof that.attrs.onDeny == &#x27;function&#x27;){
+                if(typeof that.attrs.onDeny === &#x27;function&#x27;){
                     return that.attrs.onDeny();
                 }
             }
-		})
-	},
+		});
+	}
 });
 
 </pre>

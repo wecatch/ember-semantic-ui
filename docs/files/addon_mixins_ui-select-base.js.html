@@ -97,7 +97,7 @@
             
             
             <div class="version-info">
-              Version: 0.1.0
+              Version: 0.2.5
             </div>
             
         </div>
@@ -108,7 +108,10 @@
 </div>
 
 <pre class="code prettyprint linenums">
-import Ember from &#x27;ember&#x27;;
+import Mixin from &#x27;@ember/object/mixin&#x27;; 
+import EmberObject from &#x27;@ember/object&#x27;; 
+import { observer } from &#x27;@ember/object&#x27;; 
+import { A } from &#x27;@ember/array&#x27;; 
 
 
 /**
@@ -119,7 +122,7 @@ ui-select-base mixin
 @class UiSelectBase
 @constructor
 */
-export default Ember.Mixin.create({
+export default Mixin.create({
     tagName: &#x27;div&#x27;,
 
     /**
@@ -213,7 +216,7 @@ export default Ember.Mixin.create({
      */
     _selectedOptions: null,
 
-    didInsertElement(argument) {
+    didInsertElement() {
         this.renderDropDown();
     },
     /**
@@ -229,7 +232,7 @@ export default Ember.Mixin.create({
                 let label = item[this.get(&#x27;labelPath&#x27;)];
                 let value = item[this.get(&#x27;valuePath&#x27;)];
                 let checked = this.isOptionChecked(value);
-                let obj = Ember.Object.create({
+                let obj = EmberObject.create({
                     &#x27;label&#x27;: label,
                     &#x27;value&#x27;: String(value),
                     &#x27;selected&#x27;: checked
@@ -238,16 +241,16 @@ export default Ember.Mixin.create({
                     this._selectedOptions.pushObject(obj);
                 }
                 this._options.pushObject(obj);
-            };
+            }
         }
     },
-    optionsChange: Ember.observer(&#x27;options&#x27;, function(){
+    optionsChange: observer(&#x27;options&#x27;, function(){
         this.setupOptions();
     }),
     init() {
         this._super(...arguments);
-        this.set(&#x27;_selectedOptions&#x27;, Ember.A());
-        this.set(&#x27;_options&#x27;, Ember.A());
+        this.set(&#x27;_selectedOptions&#x27;, A());
+        this.set(&#x27;_options&#x27;, A());
         this.setupOptions();
     }
 });

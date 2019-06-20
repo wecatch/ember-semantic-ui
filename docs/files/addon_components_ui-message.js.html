@@ -97,7 +97,7 @@
             
             
             <div class="version-info">
-              Version: 0.1.0
+              Version: 0.2.5
             </div>
             
         </div>
@@ -108,22 +108,12 @@
 </div>
 
 <pre class="code prettyprint linenums">
-import Ember from &#x27;ember&#x27;;
 import layout from &#x27;../templates/components/ui-message&#x27;;
-
-const {
-    String: {
-        classify, htmlSafe
-    },
-    Component,
-    getWithDefault,
-    warn,
-    run,
-    on,
-    get,
-    computed,
-    set
-} = Ember;
+import Component from &#x27;@ember/component&#x27;;
+import { getWithDefault } from &#x27;@ember/object&#x27;;
+import { warn } from &#x27;@ember/debug&#x27;;
+import { run } from &#x27;@ember/runloop&#x27;;
+import { computed } from &#x27;@ember/object&#x27;;
 
 
 /**
@@ -134,7 +124,7 @@ ui-message component
 @class UiMessage
 @constructor
 */
-export default Ember.Component.extend({
+export default Component.extend({
     layout: layout,
     header: null,
     /**
@@ -216,11 +206,15 @@ export default Ember.Component.extend({
         @event closeMessage
         */
         closeMessage() {
-            this &amp;&amp; this.$() &amp;&amp; this.$().transition(&#x27;fade&#x27;);
+            if(this &amp;&amp; this.$()){
+                this.$().transition(&#x27;fade&#x27;);
+            }
             run.next(this, () =&gt; {
-                this &amp;&amp; this.destroy();
+                if(this) {
+                    this.destroy();
+                }
             });
-            if(typeof this.attrs.onClose == &#x27;function&#x27;){
+            if(typeof this.attrs.onClose === &#x27;function&#x27;){
                 this.attrs.onClose();
             }
         }

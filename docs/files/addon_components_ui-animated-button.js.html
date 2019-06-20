@@ -97,7 +97,7 @@
             
             
             <div class="version-info">
-              Version: 0.1.0
+              Version: 0.2.5
             </div>
             
         </div>
@@ -108,7 +108,7 @@
 </div>
 
 <pre class="code prettyprint linenums">
-import Ember from &#x27;ember&#x27;;
+import Component from &#x27;@ember/component&#x27;;
 import layout from &#x27;../templates/components/ui-animated-button&#x27;;
 import uiButtonBase from &#x27;../mixins/ui-button-base&#x27;;
 
@@ -121,7 +121,7 @@ ui-animated-button component see {{#crossLink &quot;mixins.UiButtonBase&quot;}}{
 @class UiAnimatedButton
 @constructor
 */
-export default Ember.Component.extend(uiButtonBase, {
+export default Component.extend(uiButtonBase, {
   layout: layout,
   tagName: &#x27;div&#x27;,
   _theme: &#x27;animated&#x27;,

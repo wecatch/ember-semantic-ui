@@ -97,7 +97,7 @@
             
             
             <div class="version-info">
-              Version: 0.1.0
+              Version: 0.2.5
             </div>
             
         </div>
@@ -108,7 +108,7 @@
 </div>
 
 <pre class="code prettyprint linenums">
-import Ember from &#x27;ember&#x27;;
+import EmberObject from &#x27;@ember/object&#x27;;
 
 /**
 FileObject class
@@ -118,11 +118,7 @@ FileObject class
 @class FileObject
 @constructor
 */
-let fileObject = Ember.Object.extend({
-    init: function() {
-        this._super();
-        Ember.assert(&quot;File to upload required on init.&quot;, !!this.get(&#x27;fileToUpload&#x27;));
-    },
+let fileObject = EmberObject.extend({
     // ...........................................
     // Name is used for the upload property
     name: &#x27;&#x27;,
@@ -198,7 +194,7 @@ let fileObject = Ember.Object.extend({
 
 function humanReadableFileSize(size) {
     var label = &quot;&quot;;
-    if (size == 0) {
+    if (size === 0) {
         label = &quot;0 KB&quot;;
     } else if (size &amp;&amp; !isNaN(size)) {
         var fileSizeInBytes = size;
@@ -212,12 +208,12 @@ function humanReadableFileSize(size) {
         label += Math.max(fileSizeInBytes, 0.1).toFixed(1) + byteUnits[i];
     }
     return label;
-};
+}
 
 export {
     fileObject,
-    humanReadableFileSize,
-}
+    humanReadableFileSize
+};
 </pre>
 
 </div>

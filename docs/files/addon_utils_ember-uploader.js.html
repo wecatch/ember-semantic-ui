@@ -97,7 +97,7 @@
             
             
             <div class="version-info">
-              Version: 0.1.0
+              Version: 0.2.5
             </div>
             
         </div>
@@ -111,10 +111,15 @@
 // this file contains source code from  https://github.com/benefitcloud/ember-uploader
 // thanks to this great project
 
-import Ember from &#x27;ember&#x27;;
+import { get, set } from &#x27;@ember/object&#x27;;
+import EmberObject from &#x27;@ember/object&#x27;;
+import Evented from &#x27;@ember/object/evented&#x27;;
+import { isArray } from &#x27;@ember/array&#x27;;
+import { Promise } from &#x27;rsvp&#x27;;
+import { run } from &#x27;@ember/runloop&#x27;;
+import $ from &#x27;jquery&#x27;;
 
-var get = Ember.get,
-    set = Ember.set;
+
 
 
 /**
@@ -125,7 +130,7 @@ EmberUploader class
 @class EmberUploader
 @constructor
 */
-export default Ember.Object.extend(Ember.Evented, {
+export default EmberObject.extend(Evented, {
   /**
      * upload url
      * 
@@ -177,8 +182,6 @@ export default Ember.Object.extend(Ember.Evented, {
     var data = this.setupFormData(files, extra);
     var url  = get(this, &#x27;url&#x27;);
     var type = get(this, &#x27;type&#x27;);
-    var self = this;
-
     set(this, &#x27;isUploading&#x27;, true);
 
     return this.ajax(url, data, type);
@@ -194,7 +197,7 @@ export default Ember.Object.extend(Ember.Evented, {
     }
 
     // if is a array of files ...
-    if (Ember.isArray(files)) {
+    if (isArray(files)) {
       var paramName;
 
       for (var i = files.length - 1; i &gt;= 0; i--) {
@@ -270,7 +273,7 @@ export default Ember.Object.extend(Ember.Evented, {
       traditional: get(self, &#x27;traditional&#x27;),
       dataType: &#x27;json&#x27;,
       xhr: function() {
-        var xhr = Ember.$.ajaxSettings.xhr();
+        var xhr = $.ajaxSettings.xhr();
         xhr.upload.onprogress = function(e) {
           self.didProgress(e);
         };
@@ -288,16 +291,16 @@ export default Ember.Object.extend(Ember.Evented, {
   _ajax: function(settings) {
     var self = this;
 
-    return new Ember.RSVP.Promise(function(resolve, reject) {
+    return new Promise(function(resolve, reject) {
       settings.success = function(data) {
-        Ember.run(null, resolve, self.didUpload(data));
+        run(null, resolve, self.didUpload(data));
       };
 
       settings.error = function(jqXHR, responseText, errorThrown) {
-        Ember.run(null, reject, self.didError(jqXHR, responseText, errorThrown));
+        run(null, reject, self.didError(jqXHR, responseText, errorThrown));
       };
 
-      Ember.$.ajax(settings);
+      $.ajax(settings);
     });
   }
 });

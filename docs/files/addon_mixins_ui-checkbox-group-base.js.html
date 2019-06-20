@@ -97,7 +97,7 @@
             
             
             <div class="version-info">
-              Version: 0.1.0
+              Version: 0.2.5
             </div>
             
         </div>
@@ -108,15 +108,12 @@
 </div>
 
 <pre class="code prettyprint linenums">
-import Ember from &#x27;ember&#x27;;
-
-const {
-    computed
-} = Ember;
-
-const {
-    bool
-} = computed;
+import $ from &#x27;jquery&#x27;;
+import Mixin from &#x27;@ember/object/mixin&#x27;;
+import { observer } from &#x27;@ember/object&#x27;;
+import { bool } from &#x27;@ember/object/computed&#x27;;
+import { set } from &#x27;@ember/object&#x27;;
+import { guidFor } from &#x27;@ember/object/internals&#x27;;
 
 
 /**
@@ -127,7 +124,7 @@ ui-checkbox-base mixinx
 @class UiCheckboxGroupBase
 @constructor
 */
-export default Ember.Mixin.create({
+export default Mixin.create({
     /**
      * The root component element
      *
@@ -193,12 +190,12 @@ export default Ember.Mixin.create({
      * @property {Ember.Array} options
      */
     _options: null,
-    valueChange: Ember.observer(&#x27;value&#x27;, function() {
+    valueChange: observer(&#x27;value&#x27;, function() {
         if (this._options) {
             for (var i = 0; i &lt; this._options.length; i++) {
                 let item = this._options[i];
-                Ember.set(item, &#x27;checked&#x27;, this.isOptionChecked(item[&#x27;value&#x27;]));
-            };
+                set(item, &#x27;checked&#x27;, this.isOptionChecked(item[&#x27;value&#x27;]));
+            }
         }
         this.setupBlockOptions();
     }),
@@ -211,7 +208,7 @@ export default Ember.Mixin.create({
         this._super(...arguments);
         this.setupOptions();
         if (!this.name) {
-            this.set(&#x27;name&#x27;, Ember.guidFor(this));
+            this.set(&#x27;name&#x27;, guidFor(this));
         }
     },
     didInsertElement() {
@@ -242,11 +239,11 @@ export default Ember.Mixin.create({
                     &#x27;value&#x27;: String(value),
                     &#x27;checked&#x27;: checked
                 });
-            };
+            }
             this.set(&#x27;_options&#x27;, _options);
         }
     },
-    optionsChange: Ember.observer(&#x27;options&#x27;, function() {
+    optionsChange: observer(&#x27;options&#x27;, function() {
         this.setupOptions();
     }),
     hasBlock: bool(&#x27;template&#x27;).readOnly()

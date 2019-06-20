@@ -97,7 +97,7 @@
             
             
             <div class="version-info">
-              Version: 0.1.0
+              Version: 0.2.5
             </div>
             
         </div>
@@ -108,23 +108,10 @@
 </div>
 
 <pre class="code prettyprint linenums">
-import Ember from &#x27;ember&#x27;;
+import { computed } from &#x27;@ember/object&#x27;;
+import { isArray } from &#x27;@ember/array&#x27;;
+import Component from &#x27;@ember/component&#x27;;
 import layout from &#x27;../templates/components/ui-tab-menu&#x27;;
-
-const {
-    String: {
-        classify, htmlSafe
-    },
-    Component,
-    getWithDefault,
-    warn,
-    run,
-    on,
-    get,
-    computed,
-    isArray,
-    set
-} = Ember;
 
 
 /**
@@ -135,7 +122,7 @@ ui-tab-menu component
 @class UiTabMenu
 @constructor
 */
-export default Ember.Component.extend({
+export default Component.extend({
     layout: layout,
     tagName: &#x27;div&#x27;,
     tabs: &#x27;&#x27;,

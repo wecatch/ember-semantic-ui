@@ -2,7 +2,7 @@
     "project": {
         "name": "ember-semantic-ui",
         "description": "Ember ui components based on semantic-ui",
-        "version": "0.1.0"
+        "version": "0.2.5"
     },
     "files": {
         "addon/components/file-input.js": {
@@ -615,7 +615,7 @@
             },
             "tag": "module",
             "file": "addon/mixins/ui-select-base.js",
-            "line": 4,
+            "line": 7,
             "description": "file-input-base mixinx",
             "extends": "Ember.Evented",
             "is_constructor": 1
@@ -693,7 +693,7 @@
             "module": "components",
             "namespace": "components",
             "file": "addon/components/ui-checkbox-group.js",
-            "line": 5,
+            "line": 6,
             "description": "ui-checkbox-group component see {{#crossLink \"mixins.UiCheckboxGroupBase\"}}{{/crossLink}}"
         },
         "components.UiCheckbox": {
@@ -749,7 +749,7 @@
             "module": "components",
             "namespace": "components",
             "file": "addon/components/ui-date-time-input.js",
-            "line": 19,
+            "line": 18,
             "description": "ui-date-time-input component"
         },
         "components.UiDropdownMenu": {
@@ -819,7 +819,7 @@
             "module": "components",
             "namespace": "components",
             "file": "addon/components/ui-input-tags.js",
-            "line": 4,
+            "line": 10,
             "description": "ui-input-tags component"
         },
         "components.UiInput": {
@@ -903,7 +903,7 @@
             "module": "components",
             "namespace": "components",
             "file": "addon/components/ui-message.js",
-            "line": 19,
+            "line": 9,
             "description": "ui-message component"
         },
         "components.UiModalContent": {
@@ -959,7 +959,7 @@
             "module": "components",
             "namespace": "components",
             "file": "addon/components/ui-modal.js",
-            "line": 4,
+            "line": 5,
             "description": "ui-modal component"
         },
         "components.UiMultiSelect": {
@@ -973,7 +973,7 @@
             "module": "components",
             "namespace": "components",
             "file": "addon/components/ui-multi-select.js",
-            "line": 6,
+            "line": 9,
             "description": "ui-multi-select component see {{#crossLink \"mixins.UiSelectBase\"}}{{/crossLink}}"
         },
         "components.UiPointingLabel": {
@@ -987,7 +987,7 @@
             "module": "components",
             "namespace": "components",
             "file": "addon/components/ui-pointing-label.js",
-            "line": 6,
+            "line": 7,
             "description": "ui-pointing-label component see {{#crossLink \"mixins.uiLabelBase\"}}{{/crossLink}}"
         },
         "components.UiPopupContent": {
@@ -1001,7 +1001,7 @@
             "module": "components",
             "namespace": "components",
             "file": "addon/components/ui-popup-content.js",
-            "line": 4,
+            "line": 6,
             "description": "ui-popup-content component"
         },
         "components.UiPopup": {
@@ -1015,7 +1015,7 @@
             "module": "components",
             "namespace": "components",
             "file": "addon/components/ui-popup.js",
-            "line": 6,
+            "line": 7,
             "description": "ui-popup component"
         },
         "components.UiProgress": {
@@ -1029,7 +1029,7 @@
             "module": "components",
             "namespace": "components",
             "file": "addon/components/ui-progress.js",
-            "line": 5,
+            "line": 7,
             "description": "ui-progress component"
         },
         "components.UiRadioGroup": {
@@ -1099,8 +1099,8 @@
             "module": "components",
             "namespace": "components",
             "file": "addon/components/ui-select.js",
-            "line": 6,
-            "description": "ui-select component {{#crossLink \"mixins.UiSelectBase\"}}{{/crossLink}}"
+            "line": 7,
+            "description": "ui-select component"
         },
         "components.UiTabMenu": {
             "name": "components.UiTabMenu",
@@ -1113,7 +1113,7 @@
             "module": "components",
             "namespace": "components",
             "file": "addon/components/ui-tab-menu.js",
-            "line": 20,
+            "line": 7,
             "description": "ui-tab-menu component"
         },
         "components.UiTabSegment": {
@@ -1155,7 +1155,7 @@
             "module": "components",
             "namespace": "components",
             "file": "addon/components/ui-uploader.js",
-            "line": 9,
+            "line": 15,
             "description": "ui-uploader component"
         },
         "components.UiVerticalMenu": {
@@ -1183,7 +1183,7 @@
             "module": "mixins",
             "namespace": "mixins",
             "file": "addon/mixins/file-input-base.js",
-            "line": 6,
+            "line": 11,
             "description": "file-input-base mixinx"
         },
         "mixins.UiButtonBase": {
@@ -1225,7 +1225,7 @@
             "module": "mixins",
             "namespace": "mixins",
             "file": "addon/mixins/ui-checkbox-group-base.js",
-            "line": 12,
+            "line": 9,
             "description": "ui-checkbox-base mixinx"
         },
         "mixins.UiInputBase": {
@@ -1281,7 +1281,7 @@
             "module": "mixins",
             "namespace": "mixins",
             "file": "addon/mixins/ui-select-base.js",
-            "line": 4,
+            "line": 7,
             "description": "ui-select-base mixin"
         },
         "utils.EmberUploader": {
@@ -1295,7 +1295,7 @@
             "module": "utils",
             "namespace": "utils",
             "file": "addon/utils/ember-uploader.js",
-            "line": 10,
+            "line": 15,
             "description": "EmberUploader class"
         },
         "utils.FileObject": {
@@ -1317,7 +1317,7 @@
     "classitems": [
         {
             "file": "addon/components/ui-checkbox-group.js",
-            "line": 15,
+            "line": 16,
             "description": "value is checked or not",
             "itemtype": "method",
             "name": "isOptionChecked",
@@ -1379,7 +1379,7 @@
         },
         {
             "file": "addon/components/ui-date-time-input.js",
-            "line": 31,
+            "line": 30,
             "description": "datetime value",
             "itemtype": "property",
             "name": "value",
@@ -1391,7 +1391,7 @@
         },
         {
             "file": "addon/components/ui-date-time-input.js",
-            "line": 38,
+            "line": 37,
             "description": "class apply to this component",
             "itemtype": "property",
             "name": "class",
@@ -1408,7 +1408,7 @@
             "itemtype": "property",
             "name": "theme",
             "type": "String",
-            "default": "'fluid'",
+            "default": "''",
             "class": "components.UiDropdownMenu",
             "module": "components",
             "namespace": "components"
@@ -1515,7 +1515,7 @@
         },
         {
             "file": "addon/components/ui-input-tags.js",
-            "line": 16,
+            "line": 22,
             "description": "Class name to apply to the button",
             "itemtype": "property",
             "name": "theme",
@@ -1526,7 +1526,7 @@
         },
         {
             "file": "addon/components/ui-input-tags.js",
-            "line": 22,
+            "line": 28,
             "description": "Class name to apply to the button",
             "itemtype": "property",
             "name": "class",
@@ -1548,7 +1548,7 @@
         },
         {
             "file": "addon/components/ui-message.js",
-            "line": 30,
+            "line": 20,
             "description": "The message to show",
             "itemtype": "property",
             "name": "message",
@@ -1560,7 +1560,7 @@
         },
         {
             "file": "addon/components/ui-message.js",
-            "line": 37,
+            "line": 27,
             "description": "The messages to show",
             "itemtype": "property",
             "name": "message",
@@ -1572,7 +1572,7 @@
         },
         {
             "file": "addon/components/ui-message.js",
-            "line": 44,
+            "line": 34,
             "description": "allow to close messsage, by default false",
             "itemtype": "property",
             "name": "close",
@@ -1584,7 +1584,7 @@
         },
         {
             "file": "addon/components/ui-message.js",
-            "line": 52,
+            "line": 42,
             "description": "Class name to apply to the message",
             "itemtype": "property",
             "name": "theme",
@@ -1595,7 +1595,7 @@
         },
         {
             "file": "addon/components/ui-message.js",
-            "line": 59,
+            "line": 49,
             "description": "Class name to apply to the message",
             "itemtype": "property",
             "name": "class",
@@ -1606,7 +1606,7 @@
         },
         {
             "file": "addon/components/ui-message.js",
-            "line": 65,
+            "line": 55,
             "description": "timeout to close message, by default 0",
             "itemtype": "property",
             "name": "timeout",
@@ -1618,7 +1618,7 @@
         },
         {
             "file": "addon/components/ui-message.js",
-            "line": 104,
+            "line": 94,
             "description": "close message event",
             "itemtype": "event",
             "name": "closeMessage",
@@ -1650,7 +1650,7 @@
         },
         {
             "file": "addon/components/ui-modal.js",
-            "line": 16,
+            "line": 17,
             "description": "when modal show, this action will be triggered",
             "itemtype": "event",
             "name": "onShow",
@@ -1660,7 +1660,7 @@
         },
         {
             "file": "addon/components/ui-modal.js",
-            "line": 27,
+            "line": 28,
             "description": "when modal hide, this action will be triggered",
             "itemtype": "event",
             "name": "onShow",
@@ -1670,7 +1670,7 @@
         },
         {
             "file": "addon/components/ui-modal.js",
-            "line": 41,
+            "line": 42,
             "description": "modal status",
             "itemtype": "property",
             "name": "show",
@@ -1682,7 +1682,7 @@
         },
         {
             "file": "addon/components/ui-modal.js",
-            "line": 48,
+            "line": 49,
             "description": "Setting to false will not allow you to close the modal by clicking on the dimmer",
             "itemtype": "property",
             "name": "closable",
@@ -1694,7 +1694,7 @@
         },
         {
             "file": "addon/components/ui-modal.js",
-            "line": 55,
+            "line": 56,
             "description": "transition",
             "itemtype": "property",
             "name": "transition",
@@ -1706,7 +1706,7 @@
         },
         {
             "file": "addon/components/ui-modal.js",
-            "line": 66,
+            "line": 67,
             "description": "Class names to apply to the modal",
             "itemtype": "property",
             "name": "class",
@@ -1717,7 +1717,7 @@
         },
         {
             "file": "addon/components/ui-modal.js",
-            "line": 72,
+            "line": 73,
             "description": "Class names to apply to the modal",
             "itemtype": "property",
             "name": "theme",
@@ -1728,7 +1728,7 @@
         },
         {
             "file": "addon/components/ui-modal.js",
-            "line": 78,
+            "line": 79,
             "itemtype": "method",
             "name": "showModal",
             "observes": "\"show\" property",
@@ -1742,7 +1742,7 @@
         },
         {
             "file": "addon/components/ui-multi-select.js",
-            "line": 17,
+            "line": 20,
             "description": "defaultValue  for the component",
             "itemtype": "property",
             "name": "defaultValue",
@@ -1753,7 +1753,7 @@
         },
         {
             "file": "addon/components/ui-pointing-label.js",
-            "line": 18,
+            "line": 19,
             "description": "pointing direction: below, left, right",
             "itemtype": "property",
             "name": "direction",
@@ -1764,7 +1764,7 @@
         },
         {
             "file": "addon/components/ui-popup-content.js",
-            "line": 19,
+            "line": 21,
             "description": "target which pop this component",
             "itemtype": "property",
             "name": "target",
@@ -1775,7 +1775,7 @@
         },
         {
             "file": "addon/components/ui-popup.js",
-            "line": 28,
+            "line": 29,
             "description": "If a selector or jQuery object is specified this allows the popup to be positioned relative to that element.",
             "itemtype": "property",
             "name": "target",
@@ -1787,7 +1787,7 @@
         },
         {
             "file": "addon/components/ui-popup.js",
-            "line": 35,
+            "line": 36,
             "description": "the pop content",
             "itemtype": "property",
             "name": "content",
@@ -1798,7 +1798,7 @@
         },
         {
             "file": "addon/components/ui-popup.js",
-            "line": 40,
+            "line": 41,
             "description": "the pop html content",
             "itemtype": "property",
             "name": "html",
@@ -1809,7 +1809,7 @@
         },
         {
             "file": "addon/components/ui-popup.js",
-            "line": 45,
+            "line": 46,
             "description": "the pop title",
             "itemtype": "property",
             "name": "title",
@@ -1820,7 +1820,7 @@
         },
         {
             "file": "addon/components/ui-popup.js",
-            "line": 51,
+            "line": 52,
             "description": "Event used to trigger popup: focus, click, hover, or manual, by default hover",
             "itemtype": "property",
             "name": "event",
@@ -1832,7 +1832,7 @@
         },
         {
             "file": "addon/components/ui-popup.js",
-            "line": 61,
+            "line": 62,
             "description": "Whether popup should not close on hover (useful for popup navigation menus), by default false",
             "itemtype": "property",
             "name": "hoverable",
@@ -1844,7 +1844,7 @@
         },
         {
             "file": "addon/components/ui-popup.js",
-            "line": 68,
+            "line": 69,
             "description": "When using on: 'click' specifies whether clicking the page should close the popup, by default true",
             "itemtype": "property",
             "name": "closable",
@@ -1856,7 +1856,7 @@
         },
         {
             "file": "addon/components/ui-popup.js",
-            "line": 75,
+            "line": 76,
             "description": "Duration of animation events, by default 200",
             "itemtype": "property",
             "name": "duration",
@@ -1868,7 +1868,7 @@
         },
         {
             "file": "addon/components/ui-progress.js",
-            "line": 20,
+            "line": 22,
             "description": "progress theme, indicating",
             "itemtype": "property",
             "name": "theme",
@@ -1880,7 +1880,7 @@
         },
         {
             "file": "addon/components/ui-progress.js",
-            "line": 28,
+            "line": 30,
             "description": "progress theme",
             "itemtype": "property",
             "name": "class",
@@ -1892,7 +1892,7 @@
         },
         {
             "file": "addon/components/ui-progress.js",
-            "line": 36,
+            "line": 38,
             "description": "progress loading status, by default false",
             "itemtype": "property",
             "name": "loading",
@@ -1904,7 +1904,7 @@
         },
         {
             "file": "addon/components/ui-progress.js",
-            "line": 44,
+            "line": 46,
             "description": "progress success status, by default false",
             "itemtype": "property",
             "name": "success",
@@ -1916,7 +1916,7 @@
         },
         {
             "file": "addon/components/ui-progress.js",
-            "line": 52,
+            "line": 54,
             "description": "progress error status, by default false",
             "itemtype": "property",
             "name": "error",
@@ -1928,7 +1928,7 @@
         },
         {
             "file": "addon/components/ui-progress.js",
-            "line": 59,
+            "line": 61,
             "description": "progress percent",
             "itemtype": "property",
             "name": "percent",
@@ -1939,8 +1939,137 @@
             "namespace": "components"
         },
         {
+            "file": "addon/components/ui-select.js",
+            "line": 33,
+            "description": "value  for the select",
+            "itemtype": "property",
+            "name": "value",
+            "type": "String",
+            "class": "components.UiSelect",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-select.js",
+            "line": 39,
+            "description": "label for the select radio group component",
+            "itemtype": "property",
+            "name": "label",
+            "type": "String",
+            "class": "components.UiSelect",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-select.js",
+            "line": 46,
+            "description": "name key for option, by default name",
+            "itemtype": "property",
+            "name": "namePath",
+            "type": "String",
+            "default": "'value'",
+            "class": "components.UiSelect",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-select.js",
+            "line": 54,
+            "description": "value key for option, by default value",
+            "itemtype": "property",
+            "name": "valuePath",
+            "type": "String",
+            "default": "'value'",
+            "class": "components.UiSelect",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-select.js",
+            "line": 61,
+            "description": "placeholder for blank option",
+            "itemtype": "property",
+            "name": "placeholder",
+            "type": "String",
+            "class": "components.UiSelect",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-select.js",
+            "line": 68,
+            "description": "the select theme",
+            "itemtype": "property",
+            "name": "theme",
+            "type": "String",
+            "class": "components.UiSelect",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-select.js",
+            "line": 75,
+            "description": "the select theme",
+            "itemtype": "property",
+            "name": "class",
+            "type": "String",
+            "class": "components.UiSelect",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-select.js",
+            "line": 82,
+            "description": "options for the select component",
+            "itemtype": "property",
+            "name": "options",
+            "type": "Array",
+            "class": "components.UiSelect",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-select.js",
+            "line": 89,
+            "description": "options for the select component",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "_options",
+            "type": "Array",
+            "class": "components.UiSelect",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-select.js",
+            "line": 116,
+            "description": "allow select to search or not , by default false",
+            "itemtype": "property",
+            "name": "search",
+            "type": "Boolean",
+            "default": "false",
+            "class": "components.UiSelect",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-select.js",
+            "line": 123,
+            "itemtype": "method",
+            "name": "setupOptions",
+            "observes": "\"options\" property",
+            "return": {
+                "description": "",
+                "type": "Void"
+            },
+            "class": "components.UiSelect",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
             "file": "addon/components/ui-tab-menu.js",
-            "line": 51,
+            "line": 38,
             "description": "the active tab name",
             "itemtype": "property",
             "name": "active",
@@ -1962,7 +2091,7 @@
         },
         {
             "file": "addon/components/ui-uploader.js",
-            "line": 19,
+            "line": 25,
             "description": "file request ajax setting traditional, by default true",
             "itemtype": "property",
             "name": "traditional",
@@ -1973,7 +2102,7 @@
         },
         {
             "file": "addon/components/ui-uploader.js",
-            "line": 26,
+            "line": 32,
             "description": "activate upload action",
             "itemtype": "event",
             "name": "start",
@@ -1990,7 +2119,7 @@
         },
         {
             "file": "addon/components/ui-uploader.js",
-            "line": 57,
+            "line": 63,
             "description": "deactivate upload action",
             "itemtype": "event",
             "name": "abort",
@@ -2007,7 +2136,7 @@
         },
         {
             "file": "addon/components/ui-uploader.js",
-            "line": 76,
+            "line": 82,
             "description": "delete file from queue",
             "itemtype": "event",
             "name": "",
@@ -2024,7 +2153,7 @@
         },
         {
             "file": "addon/components/ui-uploader.js",
-            "line": 86,
+            "line": 92,
             "description": "The upload url",
             "itemtype": "property",
             "name": "url",
@@ -2036,7 +2165,7 @@
         },
         {
             "file": "addon/components/ui-uploader.js",
-            "line": 95,
+            "line": 101,
             "description": "The root component element",
             "itemtype": "property",
             "name": "tagName",
@@ -2048,7 +2177,7 @@
         },
         {
             "file": "addon/components/ui-uploader.js",
-            "line": 104,
+            "line": 110,
             "description": "A array contain class names apply to root element",
             "itemtype": "property",
             "name": "classNames",
@@ -2060,7 +2189,7 @@
         },
         {
             "file": "addon/components/ui-uploader.js",
-            "line": 113,
+            "line": 119,
             "description": "To allow  file autoUpload",
             "itemtype": "property",
             "name": "autoUpload",
@@ -2072,7 +2201,7 @@
         },
         {
             "file": "addon/components/ui-uploader.js",
-            "line": 122,
+            "line": 128,
             "description": "upload file queue",
             "itemtype": "property",
             "name": "queue",
@@ -2084,7 +2213,7 @@
         },
         {
             "file": "addon/components/ui-uploader.js",
-            "line": 131,
+            "line": 137,
             "description": "upload multiple file",
             "itemtype": "property",
             "name": "multiple",
@@ -2096,7 +2225,7 @@
         },
         {
             "file": "addon/components/ui-uploader.js",
-            "line": 140,
+            "line": 146,
             "description": "extra params",
             "itemtype": "property",
             "name": "params",
@@ -2108,7 +2237,7 @@
         },
         {
             "file": "addon/components/ui-uploader.js",
-            "line": 149,
+            "line": 155,
             "description": "file accept",
             "itemtype": "property",
             "name": "accept",
@@ -2120,7 +2249,7 @@
         },
         {
             "file": "addon/components/ui-uploader.js",
-            "line": 158,
+            "line": 164,
             "itemtype": "method",
             "name": "didInsertElement",
             "observes": "\"didInsertElement\" event",
@@ -2134,7 +2263,7 @@
         },
         {
             "file": "addon/components/ui-uploader.js",
-            "line": 185,
+            "line": 190,
             "itemtype": "method",
             "name": "willDestroy empty queue",
             "return": {
@@ -2146,7 +2275,7 @@
         },
         {
             "file": "addon/components/ui-uploader.js",
-            "line": 195,
+            "line": 200,
             "itemtype": "method",
             "name": "willDestroy empty queue",
             "return": {
@@ -2158,7 +2287,7 @@
         },
         {
             "file": "addon/components/ui-uploader.js",
-            "line": 206,
+            "line": 211,
             "itemtype": "method",
             "name": "inputStyle",
             "return": {
@@ -2171,7 +2300,7 @@
         },
         {
             "file": "addon/components/ui-uploader.js",
-            "line": 224,
+            "line": 229,
             "itemtype": "method",
             "name": "labelStyle",
             "return": {
@@ -2184,7 +2313,7 @@
         },
         {
             "file": "addon/mixins/file-input-base.js",
-            "line": 16,
+            "line": 21,
             "description": "file request ajax setting traditional, by default true",
             "itemtype": "property",
             "name": "traditional",
@@ -2195,7 +2324,7 @@
         },
         {
             "file": "addon/mixins/file-input-base.js",
-            "line": 22,
+            "line": 27,
             "description": "file object instance see {{#crossLink \" file-object\"}}{{/crossLink}}",
             "itemtype": "property",
             "name": "fileObject",
@@ -2206,7 +2335,7 @@
         },
         {
             "file": "addon/mixins/file-input-base.js",
-            "line": 28,
+            "line": 33,
             "description": "style",
             "itemtype": "property",
             "name": "style",
@@ -2217,7 +2346,7 @@
         },
         {
             "file": "addon/mixins/file-input-base.js",
-            "line": 34,
+            "line": 39,
             "description": "ember uploader instance see {{#crossLink \"utils.EmberUploader\"}}{{/crossLink}}",
             "itemtype": "property",
             "name": "uploader",
@@ -2228,7 +2357,7 @@
         },
         {
             "file": "addon/mixins/file-input-base.js",
-            "line": 41,
+            "line": 46,
             "description": "upload url",
             "itemtype": "property",
             "name": "url",
@@ -2239,7 +2368,7 @@
         },
         {
             "file": "addon/mixins/file-input-base.js",
-            "line": 48,
+            "line": 53,
             "description": "upload request method",
             "itemtype": "property",
             "name": "method",
@@ -2251,7 +2380,7 @@
         },
         {
             "file": "addon/mixins/file-input-base.js",
-            "line": 56,
+            "line": 61,
             "description": "extra parameters for upload",
             "itemtype": "property",
             "name": "extra",
@@ -2263,7 +2392,7 @@
         },
         {
             "file": "addon/mixins/file-input-base.js",
-            "line": 64,
+            "line": 69,
             "description": "the upload file parameter name",
             "itemtype": "property",
             "name": "paramName",
@@ -2275,7 +2404,7 @@
         },
         {
             "file": "addon/mixins/file-input-base.js",
-            "line": 72,
+            "line": 77,
             "description": "the upload file is finished",
             "itemtype": "property",
             "name": "isUploaded",
@@ -2287,7 +2416,7 @@
         },
         {
             "file": "addon/mixins/file-input-base.js",
-            "line": 80,
+            "line": 85,
             "description": "the upload request status",
             "itemtype": "property",
             "name": "isUploading",
@@ -2299,7 +2428,7 @@
         },
         {
             "file": "addon/mixins/file-input-base.js",
-            "line": 88,
+            "line": 93,
             "description": "allow autoUpload",
             "itemtype": "property",
             "name": "autoUpload",
@@ -2311,7 +2440,7 @@
         },
         {
             "file": "addon/mixins/file-input-base.js",
-            "line": 97,
+            "line": 102,
             "description": "multiple file or not, by default false",
             "itemtype": "property",
             "name": "multiple",
@@ -2323,7 +2452,7 @@
         },
         {
             "file": "addon/mixins/file-input-base.js",
-            "line": 127,
+            "line": 132,
             "description": "start upload action",
             "itemtype": "event",
             "name": "start",
@@ -2333,7 +2462,7 @@
         },
         {
             "file": "addon/mixins/file-input-base.js",
-            "line": 166,
+            "line": 171,
             "description": "abort upload action",
             "itemtype": "event",
             "name": "abort",
@@ -2453,7 +2582,20 @@
         {
             "file": "addon/mixins/ui-checkbox-base.js",
             "line": 20,
-            "description": "the checkbox",
+            "description": "the checkbox default class",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "_theme",
+            "type": "Ember.String",
+            "class": "mixins.UiCheckboxBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-checkbox-base.js",
+            "line": 26,
+            "description": "the checkbox classes",
             "itemtype": "property",
             "name": "theme",
             "type": "Ember.String",
@@ -2463,7 +2605,7 @@
         },
         {
             "file": "addon/mixins/ui-checkbox-base.js",
-            "line": 26,
+            "line": 32,
             "description": "Class names to apply to the button",
             "itemtype": "property",
             "name": "classNames",
@@ -2474,7 +2616,7 @@
         },
         {
             "file": "addon/mixins/ui-checkbox-base.js",
-            "line": 35,
+            "line": 41,
             "itemtype": "property",
             "name": "value",
             "type": "Ember.String",
@@ -2484,7 +2626,7 @@
         },
         {
             "file": "addon/mixins/ui-checkbox-base.js",
-            "line": 42,
+            "line": 48,
             "description": "checkbox checked",
             "itemtype": "property",
             "name": "checked",
@@ -2495,7 +2637,7 @@
         },
         {
             "file": "addon/mixins/ui-checkbox-base.js",
-            "line": 48,
+            "line": 54,
             "description": "checkbox name",
             "itemtype": "property",
             "name": "name",
@@ -2506,7 +2648,7 @@
         },
         {
             "file": "addon/mixins/ui-checkbox-base.js",
-            "line": 55,
+            "line": 61,
             "itemtype": "method",
             "name": "initialize",
             "observes": "\"didInsertElement\" event",
@@ -2520,7 +2662,7 @@
         },
         {
             "file": "addon/mixins/ui-checkbox-base.js",
-            "line": 92,
+            "line": 98,
             "itemtype": "method",
             "name": "setChecked",
             "observes": "\"checked\"",
@@ -2534,7 +2676,7 @@
         },
         {
             "file": "addon/mixins/ui-checkbox-group-base.js",
-            "line": 21,
+            "line": 18,
             "description": "The root component element",
             "itemtype": "property",
             "name": "tagName",
@@ -2546,7 +2688,7 @@
         },
         {
             "file": "addon/mixins/ui-checkbox-group-base.js",
-            "line": 29,
+            "line": 26,
             "description": "value  for the checkbox radio group component",
             "itemtype": "property",
             "name": "value",
@@ -2557,7 +2699,7 @@
         },
         {
             "file": "addon/mixins/ui-checkbox-group-base.js",
-            "line": 36,
+            "line": 33,
             "description": "name for the checkbox radio group component",
             "itemtype": "property",
             "name": "name",
@@ -2568,7 +2710,7 @@
         },
         {
             "file": "addon/mixins/ui-checkbox-group-base.js",
-            "line": 43,
+            "line": 40,
             "description": "label for the checkbox radio group component",
             "itemtype": "property",
             "name": "label",
@@ -2579,7 +2721,7 @@
         },
         {
             "file": "addon/mixins/ui-checkbox-group-base.js",
-            "line": 50,
+            "line": 47,
             "description": "label key for option",
             "itemtype": "property",
             "name": "labelPath",
@@ -2590,7 +2732,7 @@
         },
         {
             "file": "addon/mixins/ui-checkbox-group-base.js",
-            "line": 57,
+            "line": 54,
             "description": "value key for option",
             "itemtype": "property",
             "name": "valuePath",
@@ -2601,7 +2743,7 @@
         },
         {
             "file": "addon/mixins/ui-checkbox-group-base.js",
-            "line": 64,
+            "line": 61,
             "description": "Class bindings for the checkbox component",
             "itemtype": "property",
             "name": "classNameBindings",
@@ -2612,7 +2754,7 @@
         },
         {
             "file": "addon/mixins/ui-checkbox-group-base.js",
-            "line": 73,
+            "line": 70,
             "description": "options for the checkbox component",
             "itemtype": "property",
             "name": "options",
@@ -2623,7 +2765,7 @@
         },
         {
             "file": "addon/mixins/ui-checkbox-group-base.js",
-            "line": 80,
+            "line": 77,
             "description": "options for the checkbox component",
             "itemtype": "property",
             "name": "options",
@@ -2634,7 +2776,7 @@
         },
         {
             "file": "addon/mixins/ui-checkbox-group-base.js",
-            "line": 95,
+            "line": 92,
             "itemtype": "method",
             "name": "initOptions connect options and _options step one",
             "observes": "\"didInsertElement\" event",
@@ -2788,7 +2930,7 @@
         },
         {
             "file": "addon/mixins/ui-select-base.js",
-            "line": 15,
+            "line": 18,
             "description": "value  for the select",
             "itemtype": "property",
             "name": "value",
@@ -2799,7 +2941,7 @@
         },
         {
             "file": "addon/mixins/ui-select-base.js",
-            "line": 21,
+            "line": 24,
             "description": "label for the select radio group component",
             "itemtype": "property",
             "name": "label",
@@ -2810,7 +2952,7 @@
         },
         {
             "file": "addon/mixins/ui-select-base.js",
-            "line": 28,
+            "line": 31,
             "description": "name key for option, by default name",
             "itemtype": "property",
             "name": "namePath",
@@ -2822,7 +2964,7 @@
         },
         {
             "file": "addon/mixins/ui-select-base.js",
-            "line": 36,
+            "line": 39,
             "description": "value key for option, by default value",
             "itemtype": "property",
             "name": "valuePath",
@@ -2834,7 +2976,7 @@
         },
         {
             "file": "addon/mixins/ui-select-base.js",
-            "line": 43,
+            "line": 46,
             "description": "placeholder for blank option",
             "itemtype": "property",
             "name": "placeholder",
@@ -2845,7 +2987,7 @@
         },
         {
             "file": "addon/mixins/ui-select-base.js",
-            "line": 50,
+            "line": 53,
             "description": "the select theme",
             "itemtype": "property",
             "name": "theme",
@@ -2856,7 +2998,7 @@
         },
         {
             "file": "addon/mixins/ui-select-base.js",
-            "line": 57,
+            "line": 60,
             "description": "the select theme",
             "itemtype": "property",
             "name": "class",
@@ -2867,7 +3009,7 @@
         },
         {
             "file": "addon/mixins/ui-select-base.js",
-            "line": 64,
+            "line": 67,
             "description": "options for the select component",
             "itemtype": "property",
             "name": "options",
@@ -2878,7 +3020,7 @@
         },
         {
             "file": "addon/mixins/ui-select-base.js",
-            "line": 71,
+            "line": 74,
             "description": "options for the select component",
             "access": "private",
             "tagname": "",
@@ -2891,7 +3033,7 @@
         },
         {
             "file": "addon/mixins/ui-select-base.js",
-            "line": 83,
+            "line": 86,
             "description": "allow select to search or not , by default false",
             "itemtype": "property",
             "name": "search",
@@ -2903,7 +3045,7 @@
         },
         {
             "file": "addon/mixins/ui-select-base.js",
-            "line": 91,
+            "line": 94,
             "description": "inner value state just for outer value change",
             "access": "private",
             "tagname": "",
@@ -2916,7 +3058,7 @@
         },
         {
             "file": "addon/mixins/ui-select-base.js",
-            "line": 99,
+            "line": 102,
             "description": "selected items to",
             "itemtype": "property",
             "name": "_selectedOptions",
@@ -2927,7 +3069,7 @@
         },
         {
             "file": "addon/mixins/ui-select-base.js",
-            "line": 109,
+            "line": 112,
             "itemtype": "method",
             "name": "setupOptions",
             "observes": "\"options\" property",
@@ -2941,7 +3083,7 @@
         },
         {
             "file": "addon/utils/ember-uploader.js",
-            "line": 19,
+            "line": 24,
             "description": "upload url",
             "itemtype": "property",
             "name": "url",
@@ -2952,7 +3094,7 @@
         },
         {
             "file": "addon/utils/ember-uploader.js",
-            "line": 27,
+            "line": 32,
             "description": "upload file parameter name",
             "itemtype": "property",
             "name": "paramName",
@@ -2964,7 +3106,7 @@
         },
         {
             "file": "addon/utils/ember-uploader.js",
-            "line": 34,
+            "line": 39,
             "description": "ajax request settings traditional, by default false",
             "itemtype": "property",
             "name": "traditional",
@@ -2976,7 +3118,7 @@
         },
         {
             "file": "addon/utils/ember-uploader.js",
-            "line": 42,
+            "line": 47,
             "description": "ajax request status",
             "itemtype": "property",
             "name": "isUploading",
@@ -2988,7 +3130,7 @@
         },
         {
             "file": "addon/utils/ember-uploader.js",
-            "line": 50,
+            "line": 55,
             "description": "ajax request type (method), by default it will be POST",
             "itemtype": "property",
             "name": "type",
@@ -3000,7 +3142,7 @@
         },
         {
             "file": "addon/utils/ember-uploader.js",
-            "line": 58,
+            "line": 63,
             "description": "Start upload of files and extra data",
             "params": [
                 {
@@ -3026,99 +3168,107 @@
     "warnings": [
         {
             "message": "unknown tag: observes",
-            "line": " addon/components/ui-modal.js:78"
+            "line": " addon/components/ui-modal.js:79"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " addon/components/ui-modal.js:78"
+            "line": " addon/components/ui-modal.js:79"
         },
         {
             "message": "unknown tag: observes",
-            "line": " addon/components/ui-uploader.js:158"
+            "line": " addon/components/ui-select.js:123"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " addon/components/ui-uploader.js:158"
-        },
-        {
-            "message": "replacing incorrect tag: function with method",
-            "line": " addon/components/ui-uploader.js:185"
-        },
-        {
-            "message": "replacing incorrect tag: returns with return",
-            "line": " addon/components/ui-uploader.js:185"
-        },
-        {
-            "message": "replacing incorrect tag: function with method",
-            "line": " addon/components/ui-uploader.js:195"
-        },
-        {
-            "message": "replacing incorrect tag: returns with return",
-            "line": " addon/components/ui-uploader.js:195"
-        },
-        {
-            "message": "replacing incorrect tag: function with method",
-            "line": " addon/components/ui-uploader.js:206"
-        },
-        {
-            "message": "replacing incorrect tag: returns with return",
-            "line": " addon/components/ui-uploader.js:206"
-        },
-        {
-            "message": "replacing incorrect tag: function with method",
-            "line": " addon/components/ui-uploader.js:224"
-        },
-        {
-            "message": "replacing incorrect tag: returns with return",
-            "line": " addon/components/ui-uploader.js:224"
-        },
-        {
-            "message": "replacing incorrect tag: function with method",
-            "line": " addon/mixins/ui-checkbox-base.js:55"
+            "line": " addon/components/ui-select.js:123"
         },
         {
             "message": "unknown tag: observes",
-            "line": " addon/mixins/ui-checkbox-base.js:55"
+            "line": " addon/components/ui-uploader.js:164"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " addon/mixins/ui-checkbox-base.js:55"
+            "line": " addon/components/ui-uploader.js:164"
         },
         {
             "message": "replacing incorrect tag: function with method",
-            "line": " addon/mixins/ui-checkbox-base.js:92"
-        },
-        {
-            "message": "unknown tag: observes",
-            "line": " addon/mixins/ui-checkbox-base.js:92"
+            "line": " addon/components/ui-uploader.js:190"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " addon/mixins/ui-checkbox-base.js:92"
+            "line": " addon/components/ui-uploader.js:190"
         },
         {
             "message": "replacing incorrect tag: function with method",
-            "line": " addon/mixins/ui-checkbox-group-base.js:95"
-        },
-        {
-            "message": "unknown tag: observes",
-            "line": " addon/mixins/ui-checkbox-group-base.js:95"
+            "line": " addon/components/ui-uploader.js:200"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " addon/mixins/ui-checkbox-group-base.js:95"
+            "line": " addon/components/ui-uploader.js:200"
         },
         {
-            "message": "unknown tag: observes",
-            "line": " addon/mixins/ui-select-base.js:109"
+            "message": "replacing incorrect tag: function with method",
+            "line": " addon/components/ui-uploader.js:211"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " addon/mixins/ui-select-base.js:109"
+            "line": " addon/components/ui-uploader.js:211"
+        },
+        {
+            "message": "replacing incorrect tag: function with method",
+            "line": " addon/components/ui-uploader.js:229"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " addon/components/ui-uploader.js:229"
+        },
+        {
+            "message": "replacing incorrect tag: function with method",
+            "line": " addon/mixins/ui-checkbox-base.js:61"
+        },
+        {
+            "message": "unknown tag: observes",
+            "line": " addon/mixins/ui-checkbox-base.js:61"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " addon/mixins/ui-checkbox-base.js:61"
+        },
+        {
+            "message": "replacing incorrect tag: function with method",
+            "line": " addon/mixins/ui-checkbox-base.js:98"
+        },
+        {
+            "message": "unknown tag: observes",
+            "line": " addon/mixins/ui-checkbox-base.js:98"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " addon/mixins/ui-checkbox-base.js:98"
+        },
+        {
+            "message": "replacing incorrect tag: function with method",
+            "line": " addon/mixins/ui-checkbox-group-base.js:92"
+        },
+        {
+            "message": "unknown tag: observes",
+            "line": " addon/mixins/ui-checkbox-group-base.js:92"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " addon/mixins/ui-checkbox-group-base.js:92"
+        },
+        {
+            "message": "unknown tag: observes",
+            "line": " addon/mixins/ui-select-base.js:112"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " addon/mixins/ui-select-base.js:112"
         },
         {
             "message": "Missing item type\nStart upload of files and extra data",
-            "line": " addon/utils/ember-uploader.js:58"
+            "line": " addon/utils/ember-uploader.js:63"
         }
     ]
 }

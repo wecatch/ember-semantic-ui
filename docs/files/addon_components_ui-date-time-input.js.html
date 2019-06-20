@@ -97,7 +97,7 @@
             
             
             <div class="version-info">
-              Version: 0.1.0
+              Version: 0.2.5
             </div>
             
         </div>
@@ -109,22 +109,21 @@
 
 <pre class="code prettyprint linenums">
 import moment from &#x27;moment&#x27;;
-import Ember from &#x27;ember&#x27;;
 import layout from &#x27;../templates/components/ui-date-time-input&#x27;;
-
-const {observer} = Ember;
+import Component from &#x27;@ember/component&#x27;;
+import { observer } from &#x27;@ember/object&#x27;
 
 const minutes=[];
 
-for (var i = 0; i &lt; 60; i++) {
+for (let i = 0; i &lt; 60; i++) {
     minutes[i] = {&#x27;value&#x27;:i, &#x27;name&#x27;:i};
-};
+}
 
 const hours = [];
 
-for (var i = 0; i &lt; 24; i++) {
+for (let i = 0; i &lt; 24; i++) {
     hours[i] = {&#x27;value&#x27;:i, &#x27;name&#x27;:i};
-};
+}
 
 /**
 ui-date-time-input component
@@ -134,7 +133,7 @@ ui-date-time-input component
 @class UiDateTimeInput 
 @constructor
 */
-export default Ember.Component.extend({
+export default Component.extend({
     layout,
     minutes:minutes,
     hours:hours,
@@ -161,9 +160,9 @@ export default Ember.Component.extend({
             day: date.day(),
             hour: hour,
             minute: minute,
-        }
+        };
         let time = moment(options).format(&#x27;YYYY-MM-DD HH:mm&#x27;);
-        if(typeof this.attrs.update == &#x27;function&#x27;){
+        if(typeof this.attrs.update === &#x27;function&#x27;){
             this.attrs.update(time);
         }
     }),

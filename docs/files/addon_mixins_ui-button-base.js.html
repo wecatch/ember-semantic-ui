@@ -97,7 +97,7 @@
             
             
             <div class="version-info">
-              Version: 0.1.0
+              Version: 0.2.5
             </div>
             
         </div>
@@ -108,7 +108,7 @@
 </div>
 
 <pre class="code prettyprint linenums">
-import Ember from &#x27;ember&#x27;;
+import Mixin from &#x27;@ember/object/mixin&#x27;;
 
 /**
 ui-button-base mixinx
@@ -118,7 +118,7 @@ ui-button-base mixinx
 @namespace mixins
 @constructor
 */
-export default Ember.Mixin.create({
+export default Mixin.create({
     /**
      * The root component element
      *
@@ -135,7 +135,7 @@ export default Ember.Mixin.create({
      * @return  {void}
      */
     click: function() {
-        if(typeof this.attrs.action == &#x27;function&#x27;){
+        if(typeof this.attrs.action === &#x27;function&#x27;){
             this.attrs.action();
         }else {
             this.sendAction(&#x27;action&#x27;, this.param);

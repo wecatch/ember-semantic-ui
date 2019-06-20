@@ -97,7 +97,7 @@
             
             
             <div class="version-info">
-              Version: 0.1.0
+              Version: 0.2.5
             </div>
             
         </div>
@@ -108,9 +108,9 @@
 </div>
 
 <pre class="code prettyprint linenums">
-import Ember from &#x27;ember&#x27;;
 import UiCheckboxBase from &#x27;../mixins/ui-checkbox-base&#x27;;
 import layout from &#x27;../templates/components/ui-checkbox&#x27;;
+import Component from &#x27;@ember/component&#x27;;
 
 /**
 ui-checkbox component see {{#crossLink &quot;mixins.UiCheckboxBase&quot;}}{{/crossLink}}
@@ -120,7 +120,7 @@ ui-checkbox component see {{#crossLink &quot;mixins.UiCheckboxBase&quot;}}{{/cro
 @class UiCheckbox
 @constructor
 */
-export default Ember.Component.extend(UiCheckboxBase, {
+export default Component.extend(UiCheckboxBase, {
     layout: layout
 });
 

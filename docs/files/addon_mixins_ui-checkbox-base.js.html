@@ -97,7 +97,7 @@
             
             
             <div class="version-info">
-              Version: 0.1.0
+              Version: 0.2.5
             </div>
             
         </div>
@@ -108,7 +108,7 @@
 </div>
 
 <pre class="code prettyprint linenums">
-import Ember from &#x27;ember&#x27;;
+import Mixin from &#x27;@ember/object/mixin&#x27;;
 
 /**
 ui-checkbox-base mixinx
@@ -118,7 +118,7 @@ ui-checkbox-base mixinx
 @class UiCheckboxBase
 @constructor
 */
-export default Ember.Mixin.create({
+export default Mixin.create({
     /**
      * The root component element
      *
@@ -128,17 +128,23 @@ export default Ember.Mixin.create({
     tagName: &#x27;div&#x27;,
 
     /**
-     * the checkbox 
+     * the checkbox default class
+     * @private
+     * @property {Ember.String} _theme
+     */
+    _theme: &#x27;checkbox&#x27;,
+    /**
+     * the checkbox classes
      *
      * @property {Ember.String} theme
      */
-    _theme: &#x27;checkbox&#x27;,
+    class: &#x27;&#x27;,
     /**
      * Class names to apply to the button
      *
      * @property {Ember.Array} classNames
      */
-    classNameBindings: [&#x27;_uiClass&#x27;, &#x27;_theme&#x27;, &#x27;theme&#x27;, &#x27;_componentClass&#x27;],
+    classNameBindings: [&#x27;_uiClass&#x27;, &#x27;_theme&#x27;, &#x27;class&#x27;, &#x27;_componentClass&#x27;],
     _uiClass: &#x27;ui&#x27;,
     _componentClass: &#x27;checkbox&#x27;,
 
@@ -169,7 +175,7 @@ export default Ember.Mixin.create({
      */
     didInsertElement() {
         this.$().checkbox();
-        let {value, checked} = this.getProperties(&#x27;value&#x27;, &#x27;checked&#x27;);
+        let {checked} = this.getProperties(&#x27;checked&#x27;);
         let input = this.$(&#x27;input&#x27;);
 
         //set checbox stated

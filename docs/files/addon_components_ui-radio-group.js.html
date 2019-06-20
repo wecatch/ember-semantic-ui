@@ -97,7 +97,7 @@
             
             
             <div class="version-info">
-              Version: 0.1.0
+              Version: 0.2.5
             </div>
             
         </div>
@@ -108,7 +108,7 @@
 </div>
 
 <pre class="code prettyprint linenums">
-import Ember from &#x27;ember&#x27;;
+import Component from &#x27;@ember/component&#x27;;
 import UiCheckboxGroupBase from &#x27;../mixins/ui-checkbox-group-base&#x27;;
 import layout from &#x27;../templates/components/ui-radio-group&#x27;;
 
@@ -122,7 +122,7 @@ ui-radio-group component see {{#crossLink &quot;mixins.UiCheckboxGroupBase&quot;
 @namespace components
 @constructor
 */
-export default Ember.Component.extend(UiCheckboxGroupBase, {
+export default Component.extend(UiCheckboxGroupBase, {
     layout: layout,
     isOptionChecked(optionValue){
         return String(this.value) === optionValue;

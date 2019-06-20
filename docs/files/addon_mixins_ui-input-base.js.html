@@ -97,7 +97,7 @@
             
             
             <div class="version-info">
-              Version: 0.1.0
+              Version: 0.2.5
             </div>
             
         </div>
@@ -108,7 +108,7 @@
 </div>
 
 <pre class="code prettyprint linenums">
-import Ember from &#x27;ember&#x27;;
+import Mixin from &#x27;@ember/object/mixin&#x27;;
 
 
 /**
@@ -119,7 +119,7 @@ ui-input-base mixin
 @class UiInputBase 
 @constructor
 */
-export default Ember.Mixin.create({
+export default Mixin.create({
 	tagName: &#x27;div&#x27;,
 
 	/**
@@ -206,6 +206,9 @@ export default Ember.Mixin.create({
 	attributeBindings: [],
 	_updateValue() {
 		let newValue = this.$(&#x27;input&#x27;).val();
+		if (this.get(&#x27;type&#x27;) === &quot;number&quot;){
+			newValue = parseFloat(newValue)
+		}
 		if (typeof this.attrs.update === &#x27;function&#x27;) {
 			this.attrs.update(newValue);
 		}else {

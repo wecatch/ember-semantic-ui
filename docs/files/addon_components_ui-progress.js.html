@@ -97,7 +97,7 @@
             
             
             <div class="version-info">
-              Version: 0.1.0
+              Version: 0.2.5
             </div>
             
         </div>
@@ -108,7 +108,9 @@
 </div>
 
 <pre class="code prettyprint linenums">
-import Ember from &#x27;ember&#x27;;
+import Component from &#x27;@ember/component&#x27;;
+import { computed } from &#x27;@ember/object&#x27;;
+import { observer } from &#x27;@ember/object&#x27;;
 import layout from &#x27;../templates/components/ui-progress&#x27;;
 
 
@@ -121,7 +123,7 @@ ui-progress component
 @class UiProgress
 @constructor
 */
-export default Ember.Component.extend({
+export default Component.extend({
     layout: layout,
     classNameBindings: [&#x27;_uiClass&#x27;, &#x27;class&#x27;, &#x27;theme&#x27;, &#x27;loading:active:&#x27;, &#x27;_componentClass&#x27;, &#x27;success:success:&#x27;, &#x27;error:error:&#x27;],
     _uiClass: &#x27;ui&#x27;,
@@ -178,7 +180,7 @@ export default Ember.Component.extend({
             percent: this.get(&#x27;_percent&#x27;)
         });
     },
-    _percent: Ember.computed(&#x27;percent&#x27;, {
+    _percent: computed(&#x27;percent&#x27;, {
         get(){
             if(this.percent &gt; 100){
                 return 100;
@@ -191,7 +193,7 @@ export default Ember.Component.extend({
             return this.percent;
         }
     }),
-    updateProgress: Ember.observer(&#x27;percent&#x27;, function(){
+    updateProgress: observer(&#x27;percent&#x27;, function(){
         this.$().progress({
             percent: this.get(&#x27;_percent&#x27;)
         });

@@ -97,7 +97,7 @@
             
             
             <div class="version-info">
-              Version: 0.1.0
+              Version: 0.2.5
             </div>
             
         </div>
@@ -108,9 +108,9 @@
 </div>
 
 <pre class="code prettyprint linenums">
-import Ember from &#x27;ember&#x27;;
 import UiInputBase from &#x27;../mixins/ui-input-base&#x27;;
 import layout from &#x27;../templates/components/ui-form-input&#x27;;
+import Component from &#x27;@ember/component&#x27;;
 
 /**
 ui-form-input component see {{#crossLink &quot;mixins.UiInputBase&quot;}}{{/crossLink}}
@@ -120,7 +120,7 @@ ui-form-input component see {{#crossLink &quot;mixins.UiInputBase&quot;}}{{/cros
 @class UiFormInput
 @constructor
 */
-export default Ember.Component.extend(UiInputBase, {
+export default Component.extend(UiInputBase, {
     layout: layout,
     _uiClass: &#x27;&#x27;,
     _componentClass: &#x27;field&#x27;,

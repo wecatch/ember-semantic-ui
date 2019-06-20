@@ -97,7 +97,7 @@
             
             
             <div class="version-info">
-              Version: 0.1.0
+              Version: 0.2.5
             </div>
             
         </div>
@@ -108,8 +108,8 @@
 </div>
 
 <pre class="code prettyprint linenums">
-import Ember from &#x27;ember&#x27;;
 import layout from &#x27;../templates/components/ui-container&#x27;;
+import Component from &#x27;@ember/component&#x27;;
 
 /**
 ui-container component
@@ -119,7 +119,7 @@ ui-container component
 @class UiContainer
 @constructor
 */
-export default Ember.Component.extend({
+export default Component.extend({
     layout,
     classNameBindings: [&#x27;_uiClass&#x27;, &#x27;_componentClass&#x27;],
     _uiClass: &#x27;ui&#x27;,

@@ -97,7 +97,7 @@
             
             
             <div class="version-info">
-              Version: 0.1.0
+              Version: 0.2.5
             </div>
             
         </div>
@@ -108,10 +108,11 @@
 </div>
 
 <pre class="code prettyprint linenums">
-import Ember from &#x27;ember&#x27;;
+import { computed } from &#x27;@ember/object&#x27;;
+import { copy } from &#x27;@ember/object/internals&#x27;;
+import Component from &#x27;@ember/component&#x27;;
+import $ from &#x27;jquery&#x27;;
 import layout from &#x27;../templates/components/ui-popup&#x27;;
-
-const {computed, copy} = Ember;
 
 /**
 
@@ -122,16 +123,16 @@ ui-popup component
 @class UiPopup
 @constructor
 */
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
   classNameBindings: [&#x27;_class&#x27;],
   class: &#x27;ui button&#x27;,
   _class: computed(&#x27;class&#x27;, {
     get(){
       if(this.attrs.class){
-        return &#x27;&#x27;
+        return &#x27;&#x27;;
       }else {
-        return this.class;
+        return this.get(&#x27;class&#x27;);
       }
     }
   }),
@@ -216,8 +217,9 @@ export default Ember.Component.extend({
       let preserve = copy(this.preserve);
       let inline = copy(this.inline);
 
-      this.$() &amp;&amp; this.$().popup({
-          popup: self.popup &amp;&amp; Ember.$(&#x27;#&#x27;+self.popup) || false,
+      if(!this.$()) {return;}
+      this.$().popup({
+          popup: self.popup &amp;&amp; $(&#x27;#&#x27;+self.popup) || false,
           on: self.event,
           inline: inline,
           hoverable: hoverable,
@@ -236,27 +238,27 @@ export default Ember.Component.extend({
           },
           preserve: preserve,
           onCreate: function(){
-              if(typeof self.attrs.onCreate == &#x27;function&#x27;){
+              if(typeof self.attrs.onCreate === &#x27;function&#x27;){
                   self.attrs.onCreate(self);
               }
           },
           onRemove: function(){
-              if(typeof self.attrs.onRemove == &#x27;function&#x27;){
+              if(typeof self.attrs.onRemove === &#x27;function&#x27;){
                   self.attrs.onRemove(self);
               }
           },
           onShow: function(){
-              if(typeof self.attrs.onShow == &#x27;function&#x27;){
+              if(typeof self.attrs.onShow === &#x27;function&#x27;){
                   self.attrs.onShow(self);
               }
           },
           onVisible: function(){
-              if(typeof self.attrs.onVisible == &#x27;function&#x27;){
+              if(typeof self.attrs.onVisible === &#x27;function&#x27;){
                   self.attrs.onVisible(self);
               }
           },
           onHide: function(){
-              if(typeof self.attrs.onHide == &#x27;function&#x27;){
+              if(typeof self.attrs.onHide === &#x27;function&#x27;){
                   self.attrs.onHide(self);
               }
           }

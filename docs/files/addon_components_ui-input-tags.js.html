@@ -97,7 +97,7 @@
             
             
             <div class="version-info">
-              Version: 0.1.0
+              Version: 0.2.5
             </div>
             
         </div>
@@ -110,6 +110,12 @@
 <pre class="code prettyprint linenums">
 import Ember from &#x27;ember&#x27;;
 import layout from &#x27;../templates/components/ui-input-tags&#x27;;
+import Component from &#x27;@ember/component&#x27;;
+import { guidFor } from &#x27;@ember/object/internals&#x27;
+import { A } from &#x27;@ember/array&#x27;;
+import { computed } from &#x27;@ember/object&#x27;;
+import { isArray } from &#x27;@ember/array&#x27;;
+import $ from &#x27;jquery&#x27;;
 
 /**
 ui-input-tags component
@@ -119,7 +125,7 @@ ui-input-tags component
 @class UiInputTags
 @constructor
 */
-export default Ember.Component.extend({
+export default Component.extend({
     layout: layout,
     tagName: &#x27;div&#x27;,
 
@@ -143,10 +149,10 @@ export default Ember.Component.extend({
         let that = this;
         this.$().dropdown({
             allowAdditions: true,
-            onAdd: function(addedValue, addedText, $addedChoice) {
+            onAdd: function(addedValue) {
                 that._addValue(addedValue);
             },
-            onRemove: function(removedValue, removedText, $removedChoice) {
+            onRemove: function(removedValue) {
                 that._removeValue(removedValue);
             },
             onLabelCreate: function(label){
@@ -163,7 +169,7 @@ export default Ember.Component.extend({
         try{
             this.get(&#x27;value&#x27;).addObject(value);
         }catch(e){
-            let id = Ember.guidFor(this);
+            let id = guidFor(this);
             Ember.Logger.warn(&#x60;component:ui-input-tags ${id} value is not Ember.A type&#x60;);
             Ember.Logger.error(e);
         }
@@ -181,16 +187,16 @@ export default Ember.Component.extend({
         //if value do not be passed to component
         this._super(...arguments);
         if(this.value === undefined){
-            this.set(&#x27;value&#x27;, Ember.A());
+            this.set(&#x27;value&#x27;, A());
         }
 
         for (var i = this.value.length - 1; i &gt;= 0; i--) {
             this.value.set(String(i), String(this.value[i]));
-        };
+        }
     },
-    hiddenValue: Ember.computed(&#x27;value&#x27;, {
+    hiddenValue: computed(&#x27;value&#x27;, {
         get(){
-            if(Ember.isArray(this.value)){
+            if(isArray(this.value)){
                 return this.value.join(&#x27;,&#x27;);
             }else{
                 return &#x27;&#x27;;

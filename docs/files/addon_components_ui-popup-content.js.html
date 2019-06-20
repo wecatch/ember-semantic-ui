@@ -97,7 +97,7 @@
             
             
             <div class="version-info">
-              Version: 0.1.0
+              Version: 0.2.5
             </div>
             
         </div>
@@ -108,7 +108,9 @@
 </div>
 
 <pre class="code prettyprint linenums">
-import Ember from &#x27;ember&#x27;;
+import Component from &#x27;@ember/component&#x27;;
+import { scheduleOnce } from &#x27;@ember/runloop&#x27;;
+
 import layout from &#x27;../templates/components/ui-popup-content&#x27;;
 
 /**
@@ -120,7 +122,7 @@ ui-popup-content component
 @class UiPopupContent
 @constructor
 */
-export default Ember.Component.extend({
+export default Component.extend({
     layout,
     classNameBindings: [&#x27;_ui&#x27;, &#x27;class&#x27;, &#x27;_componentClass&#x27;],
     class: &#x27;flowing&#x27;,
@@ -134,7 +136,7 @@ export default Ember.Component.extend({
     init(){
         this._super(...arguments);
         if(typeof this.attrs.target){
-            Ember.run.scheduleOnce(&#x27;afterRender&#x27;, this, function(){
+            scheduleOnce(&#x27;afterRender&#x27;, this, function(){
                 this.attrs.target.update(this.elementId);
             });
         }

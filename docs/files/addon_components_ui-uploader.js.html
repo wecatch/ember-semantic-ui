@@ -97,7 +97,7 @@
             
             
             <div class="version-info">
-              Version: 0.1.0
+              Version: 0.2.5
             </div>
             
         </div>
@@ -109,12 +109,18 @@
 
 <pre class="code prettyprint linenums">
 import Ember from &#x27;ember&#x27;;
+import { isEmpty } from &#x27;@ember/utils&#x27;;
+import $ from &#x27;jquery&#x27;;
+import { A } from &#x27;@ember/array&#x27;;
+import { computed } from &#x27;@ember/object&#x27;;
+import { htmlSafe } from &#x27;@ember/template&#x27;;
+import Component from &#x27;@ember/component&#x27;;
+
 import emberUploader from &#x27;../utils/ember-uploader&#x27;;
-import { fileObject, humanReadableFileSize } from &#x27;../utils/file-object&#x27;;
+import { fileObject } from &#x27;../utils/file-object&#x27;;
 import layout from &#x27;../templates/components/ui-uploader&#x27;;
 
 
-const {get, set, computed} = Ember;
 
 /**
 ui-uploader component
@@ -124,7 +130,7 @@ ui-uploader component
 @class UiUploader
 @constructor
 */
-export default Ember.Component.extend({
+export default Component.extend({
     layout: layout,
     /**
      * file request ajax setting traditional, by default true
@@ -175,7 +181,7 @@ export default Ember.Component.extend({
                 try {
                     obj.uploader.abort();
                 } catch (e) {
-                    
+                    Ember.Logger.error(e)
                 }finally {
                     this.get(&#x27;queue&#x27;).removeObject(obj);
                 }
@@ -273,9 +279,8 @@ export default Ember.Component.extend({
     didInsertElement() {
         let self = this;
         this.$(&#x27;input&#x27;).change(function(e) {
-            let input = e.target,
-                obj = null;
-            if (!Ember.isEmpty(input.files)) {
+            let input = e.target;
+            if (!isEmpty(input.files)) {
                 for (let i = input.files.length - 1; i &gt;= 0; i--) {
                     let obj = fileObject.create({
                         fileToUpload: input.files[i]
@@ -310,7 +315,7 @@ export default Ember.Component.extend({
     init(){
         this._super(...arguments);
         if(this.queue === null){
-            this.set(&#x27;queue&#x27;, Ember.A());
+            this.set(&#x27;queue&#x27;, A());
         }
     },
     /**
@@ -318,7 +323,7 @@ export default Ember.Component.extend({
      * 
      * @returns  {string}
      */
-    inputStyle: Ember.computed({
+    inputStyle: computed({
         get(){
             let style_array = [
                 &#x27;opacity: 0&#x27;,
@@ -327,8 +332,8 @@ export default Ember.Component.extend({
                 &#x27;position:relative&#x27;,
                 &#x27;left:-100%&#x27;,
                 &#x27;display:block&#x27;,
-            ]
-            return Ember.String.htmlSafe(style_array.join(&#x27;;&#x27;));
+            ];
+            return htmlSafe(style_array.join(&#x27;;&#x27;));
         }
     }),
     /**
@@ -336,14 +341,14 @@ export default Ember.Component.extend({
      * 
      * @returns  {string}
      */
-    labelStyle: Ember.computed({
+    labelStyle: computed({
         get(){
             let style_array = [
                 &#x27;height: 6.25em&#x27;,
                 &#x27;line-height: 5.25em&#x27;,
                 &#x27;text-align: center&#x27;,
-            ]
-            return Ember.String.htmlSafe(style_array.join(&#x27;;&#x27;));
+            ];
+            return htmlSafe(style_array.join(&#x27;;&#x27;));
         }
     }),
 });

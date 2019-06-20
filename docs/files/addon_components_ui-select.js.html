@@ -97,7 +97,7 @@
             
             
             <div class="version-info">
-              Version: 0.1.0
+              Version: 0.2.5
             </div>
             
         </div>
@@ -108,68 +108,139 @@
 </div>
 
 <pre class="code prettyprint linenums">
-import Ember from &#x27;ember&#x27;;
-import UiSelectBase from &#x27;../mixins/ui-select-base&#x27;;
+import { computed } from &#x27;@ember/object&#x27;;
+import Component from &#x27;@ember/component&#x27;;
+import { A } from &#x27;@ember/array&#x27;;
+import EmberObject from &#x27;@ember/object&#x27;;
 import layout from &#x27;../templates/components/ui-select&#x27;;
 
-
 /**
-ui-select component {{#crossLink &quot;mixins.UiSelectBase&quot;}}{{/crossLink}}
+ui-select component
 
 @module components
 @namespace components 
 @class UiSelect
 @constructor
 */
-export default Ember.Component.extend(UiSelectBase, {
+export default Component.extend({
     layout: layout,
     defaultValue: null,
-    didUpdateAttrs() {
-        this.setupSelected();
-    },
-    renderDropDown() {
+    tagName: &#x27;select&#x27;,
+    didRender() {
         let that = this;
         this.$().dropdown({
-            onLabelCreate: function(label) {
-                that.$(&#x27;input.search&#x27;).val(&#x27;&#x27;);
-                return $(label);
-            },
-            action: function(text, value) {
-                that.set(&#x27;value&#x27;, value);
-                that.$().dropdown(&#x27;hide&#x27;);
-                if(that.attrs.value === undefined){
-                    that.setupSelected();
-                }
-                if(typeof that.attrs.update === &#x27;function&#x27;){
-                    that.attrs.update(value);
-                }
-                if(that.search){
-                    that.$(&#x27;.menu .item&#x27;).removeClass(&#x27;filtered&#x27;);
+            forceSelection: false,
+            onChange(value){
+                if(that.attrs.value){
+                    that.attrs.value.update(value);
                 }
             }
         });
+        if(!this.get(&#x27;value&#x27;)){
+            this.$().dropdown(&#x27;restore placeholder text&#x27;);
+        }
     },
+    /**
+     * value  for the select 
+     *
+     * @property {String} value
+     */
+    value: &#x27;&#x27;,
+    /**
+     *  label for the select radio group component
+     *
+     * @property {String} label
+     */
+    label: &#x27;&#x27;,
+
+    /**
+     * name key for option, by default name
+     *
+     * @property {String} namePath
+     * @default &#x27;value&#x27;
+     */
+    labelPath: &#x27;name&#x27;,
+
+    /**
+     * value key for option, by default value
+     *
+     * @property {String} valuePath
+     * @default &#x27;value&#x27;
+     */
+    valuePath: &#x27;value&#x27;,
+    /**
+     * placeholder for blank option
+     *
+     * @property {String} placeholder
+     */
+    placeholder: &#x27;&#x27;,
+
+    /**
+     * the select theme
+     *
+     * @property {String} theme
+     */
+    theme: &#x27;&#x27;,
+
+    /**
+     * the select theme
+     *
+     * @property {String} class
+     */
+    class: &#x27;&#x27;,
+
+    /**
+     * options for the select component
+     *
+     * @property {Array} options
+     */
+    options: null,
+
+    /**
+     * options for the select component
+     * @private
+     * @property {Array} _options
+     */
+    _options: computed(&#x27;options&#x27;, {
+        get(){
+            const _options = A();
+            for (var i = 0; i &lt; this.options.length; i++) {
+                let item = this.options[i];
+                let label = item[this.get(&#x27;labelPath&#x27;)];
+                let value = item[this.get(&#x27;valuePath&#x27;)];
+                let checked = this.isOptionChecked(value);
+                let obj = EmberObject.create({
+                    &#x27;label&#x27;: label,
+                    &#x27;value&#x27;: String(value),
+                    &#x27;selected&#x27;: checked
+                });
+                _options.pushObject(obj);
+            }
+            return _options;
+        }
+    }),
+
+    classNameBindings: [&#x27;_uiClass&#x27;, &#x27;search:search:&#x27;, &#x27;class&#x27;, &#x27;theme&#x27;, &#x27;selection&#x27;, &#x27;_componentClass&#x27;],
+    _uiClass: &#x27;ui&#x27;,
+    _componentClass: &#x27;dropdown&#x27;,
+    /**
+     * allow select to search or not , by default false
+     *
+     * @property {Boolean} search
+     * @default false
+     */
+    search: false,
+    /**
+     * @method setupOptions 
+     * @observes &quot;options&quot; property
+     * @returns  {void}
+     */
     isOptionChecked(optionValue) {
         return String(this.value) === optionValue;
     },
-    setupSelected: function() {
-        this._selectedOptions.clear();
-        for (var i = 0; i &lt; this._options.length; i++) {
-            let item = this._options[i];
-            let checked = this.isOptionChecked(item[&#x27;value&#x27;]);
-            Ember.set(item, &#x27;selected&#x27;, checked);
-            if (checked) {
-                this._selectedOptions.pushObject(item);
-            }
-        };
-    },
-    init(){
+    init() {
         this._super(...arguments);
-        this.setupSelected();
-    },
-    isDisplayHolder: Ember.computed(&#x27;_selectedOptions.[]&#x27;, function() {
-        return this._selectedOptions.filterBy(&#x27;selected&#x27;, true).length === 0;
-    })
+    }
 });
 </pre>
 

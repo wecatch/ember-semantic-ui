@@ -97,7 +97,7 @@
             
             
             <div class="version-info">
-              Version: 0.1.0
+              Version: 0.2.5
             </div>
             
         </div>
@@ -108,7 +108,7 @@
 </div>
 
 <pre class="code prettyprint linenums">
-import Ember from &#x27;ember&#x27;;
+import Component from &#x27;@ember/component&#x27;;
 import layout from &#x27;../templates/components/ui-labeled-button&#x27;;
 import uiButtonBase from &#x27;../mixins/ui-button-base&#x27;;
 
@@ -120,7 +120,7 @@ ui-labeled-button component {{#crossLink &quot;mixins.UiButtonBase&quot;}}{{/cro
 @class UiLabeledButton
 @constructor
 */
-export default Ember.Component.extend(uiButtonBase, {
+export default Component.extend(uiButtonBase, {
     tagName: &#x27;div&#x27;,
     layout: layout,
     _theme: &#x27;labeled&#x27;,

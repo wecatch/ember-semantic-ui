@@ -97,7 +97,7 @@
             
             
             <div class="version-info">
-              Version: 0.1.0
+              Version: 0.2.5
             </div>
             
         </div>
@@ -108,10 +108,10 @@
 </div>
 
 <pre class="code prettyprint linenums">
-import Ember from &#x27;ember&#x27;;
 import moment from &#x27;moment&#x27;;
 import Pikaday from &#x27;pikaday&#x27;;
 import layout from &#x27;../templates/components/ui-date-input&#x27;;
+import Component from &#x27;@ember/component&#x27;;
 
 
 let zh_cn = {
@@ -120,7 +120,7 @@ let zh_cn = {
     months        : [&#x27;一月&#x27;,&#x27;二月&#x27;,&#x27;三月&#x27;,&#x27;四月&#x27;,&#x27;五月&#x27;,&#x27;六月&#x27;,&#x27;七月&#x27;,&#x27;八月&#x27;,&#x27;九月&#x27;,&#x27;十月&#x27;,&#x27;十一月&#x27;,&#x27;十二月&#x27;],
     weekdays      : [&#x27;周日&#x27;,&#x27;星期一&#x27;,&#x27;星期二&#x27;,&#x27;星期三&#x27;,&#x27;星期四&#x27;,&#x27;星期五&#x27;,&#x27;星期六&#x27;],
     weekdaysShort : [&#x27;日&#x27;,&#x27;一&#x27;,&#x27;二&#x27;,&#x27;三&#x27;,&#x27;四&#x27;,&#x27;五&#x27;,&#x27;六&#x27;]
-}
+};
 
 /**
 ui-date-input component
@@ -130,7 +130,7 @@ ui-date-input component
 @class UiDateInput 
 @constructor
 */
-export default Ember.Component.extend({
+export default Component.extend({
     layout: layout,
     /**
     display language, by default is zh_CN 
@@ -153,12 +153,12 @@ export default Ember.Component.extend({
             format: self.format,
             position: self.position,
             onSelect: function () {
-                if(typeof self.attrs.update == &#x27;function&#x27;){
+                if(typeof self.attrs.update === &#x27;function&#x27;){
                     self.attrs.update(this.getMoment().format(self.format));
                 }
             }
-        }
-        if(self.lang == &#x27;zh_CN&#x27;){
+        };
+        if(self.lang === &#x27;zh_CN&#x27;){
             options.i18n = zh_cn;
         }
         let picker = new Pikaday(options);
