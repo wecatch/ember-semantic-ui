@@ -13,7 +13,7 @@ export default Controller.extend({
     }),
     host: computed('routeName', {
         get(){
-            let host = window.location.origin+ENV.baseURL;
+            let host = window.location.origin+ENV.rootURL;
             let routeName = this.get('routeName');
             if(routeName === 'Index' || routeName === 'Layout'){
                 return '';
