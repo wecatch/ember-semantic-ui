@@ -604,7 +604,7 @@ define('dummy/controllers/application', ['exports', 'dummy/config/environment'],
         }),
         host: Ember.computed('routeName', {
             get() {
-                let host = window.location.origin + _environment.default.baseURL;
+                let host = window.location.origin + _environment.default.rootURL;
                 let routeName = this.get('routeName');
                 if (routeName === 'Index' || routeName === 'Layout') {
                     return '';
