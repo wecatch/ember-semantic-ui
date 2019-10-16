@@ -107,6 +107,13 @@ or install the latest version from github
 npm install git+https://github.com/wecatch/ember-semantic-ui --save-dev
 ```
 
+If your ember version has remove jquery, please do as below:
+```
+ember install @ember/jquery
+ember install @ember/optional-features
+ember feature:enable jquery-integration
+```
+
 ## Dummy app
 
 ```
