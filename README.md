@@ -1,4 +1,4 @@
-# Ember-semantic-ui
+# ember-semantic-ui
 
 [![Downloads](https://img.shields.io/npm/dt/ember-semantic-ui.svg)](https://www.npmjs.com/package/ember-semantic-ui)
 [![Version](https://img.shields.io/npm/v/ember-semantic-ui.svg)](https://www.npmjs.com/package/ember-semantic-ui)
@@ -8,7 +8,6 @@ This Ember addon support many UI components based on [semantic-ui](http://semant
 
 [Demo](http://wecatch.me/ember-semantic-ui/demo/)
 [Docs](http://wecatch.me/ember-semantic-ui/docs/)
-
 
 
 ## Components
@@ -95,11 +94,9 @@ This Ember addon support many UI components based on [semantic-ui](http://semant
 
 ## Install
 
-In your ember-cli project, install this addon from npm 
+In your ember-cli project, install this addon from npm
 
-```
-ember install ember-semantic-ui
-```
+## Compatibility
 
 or install the latest version from github
 
@@ -219,6 +216,31 @@ fix dummy app
 ## 0.0.3 
 
 **2015-10-21**
+
+* Ember.js v3.24 or above
+* Ember CLI v3.24 or above
+* Node.js v12 or above
+
+
+## Installation
+
+```
+ember install ember-semantic-ui
+```
+
+
+## Usage
+
+[Longer description of how to use the addon in apps.]
+
+
+## Contributing
+
+See the [Contributing](CONTRIBUTING.md) guide for details.
+
+
+## License
+>>>>>>> bea3f6b... v3.1.4...v4.4.0
 
 - add file uploader component
 - ui-input, ui-select, ui-checkbox-group when value change, change ui render

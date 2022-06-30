@@ -48,5 +48,6 @@ module.exports = function(defaults) {
       destDir : '/assets/'
   });
 
+
   return app.toTree([themes, semantic]);
 };
