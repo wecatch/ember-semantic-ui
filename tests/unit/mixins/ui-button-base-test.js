@@ -5,7 +5,7 @@ import EmberObject from '@ember/object';
 module('Unit | Mixin | ui button');
 
 // Replace this with your real tests.
-test('it works', function(assert) {
+test('it works', function (assert) {
   var UiButtonObject = EmberObject.extend(UiButtonMixin);
   var subject = UiButtonObject.create();
   assert.ok(subject);

@@ -4,21 +4,21 @@
 const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 var Funnel = require('broccoli-funnel');
 
-module.exports = function(defaults) {
-   var options = {
+module.exports = function (defaults) {
+  var options = {
     // Add options here
     minifyJS: {
-      enabled: true
+      enabled: true,
     },
     fingerprint: {
-      enabled: false
+      enabled: false,
     },
-    storeConfigInMeta: false
-  }
+    storeConfigInMeta: false,
+  };
 
   if (process.env.EMBER_ENV === 'development') {
     options.minifyJS = {
-      enabled: false
+      enabled: false,
     };
   }
 
@@ -26,7 +26,7 @@ module.exports = function(defaults) {
   // use npm instead of bower for highlight
   app.import('node_modules/highlightjs/highlight.pack.js');
   app.import('node_modules/highlightjs/styles/default.css');
-  
+
   // app.import('bower_components/semantic/dist/semantic.min.css');
   // app.import('bower_components/semantic/dist/semantic.min.js');
 
@@ -37,17 +37,16 @@ module.exports = function(defaults) {
     behave. You most likely want to be modifying `./index.js` or app's build file
   */
   var themes = new Funnel('node_modules/semantic-ui-css', {
-      srcDir  : 'themes',
-      include   : ['**/*'],
-      destDir : '/assets/themes'
+    srcDir: 'themes',
+    include: ['**/*'],
+    destDir: '/assets/themes',
   });
 
   var semantic = new Funnel('node_modules/semantic-ui-css', {
-      srcDir  : '.',
-      include   : ['*.min.*'],
-      destDir : '/assets/'
+    srcDir: '.',
+    include: ['*.min.*'],
+    destDir: '/assets/',
   });
-
 
   return app.toTree([themes, semantic]);
 };

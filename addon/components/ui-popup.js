@@ -17,14 +17,14 @@ export default Component.extend({
   layout,
   classNameBindings: ['_class'],
   class: 'ui button',
-  _class: computed('class', {
-    get(){
-      if(this.attrs.class){
+  _class: computed('attrs.class', 'class', {
+    get() {
+      if (this.attrs.class) {
         return '';
-      }else {
-        return this.get('class');
+      } else {
+        return this.class;
       }
-    }
+    },
   }),
   /**
    * If a selector or jQuery object is specified this allows the popup to be positioned relative to that element.
@@ -81,83 +81,87 @@ export default Component.extend({
    */
   duration: 200,
   delayShow: 50,
-  delayHide: 30, 
+  delayHide: 30,
   preserve: false,
   lastResort: false,
-  didUpdateAttrs(){
-      if(this.popup || this.title || this.content || this.html){
-        this.bindPopEvent();
-      }
+  didUpdateAttrs() {
+    this._super();
+    if (this.popup || this.title || this.content || this.html) {
+      this.bindPopEvent();
+    }
   },
-  init(){
-      this._super(...arguments);
-      if(this.popup || this.title || this.content || this.html){
-        this.bindPopEvent();
-      }
+  init() {
+    this._super(...arguments);
+    if (this.popup || this.title || this.content || this.html) {
+      this.bindPopEvent();
+    }
   },
-  didInsertElement(){
-      if(this.title || this.content || this.html){
-          this.bindPopEvent();
-      }
+  didInsertElement() {
+    this._super(...arguments);
+    if (this.title || this.content || this.html) {
+      this.bindPopEvent();
+    }
   },
-  bindPopEvent(){
-      let self = this;
-      let hoverable = copy(this.hoverable);
-      let closable = copy(this.closable);
-      let preserve = copy(this.preserve);
-      let inline = copy(this.inline);
+  bindPopEvent() {
+    let self = this;
+    let hoverable = copy(this.hoverable);
+    let closable = copy(this.closable);
+    let preserve = copy(this.preserve);
+    let inline = copy(this.inline);
 
-      if(!this.$()) {return;}
-      this.$().popup({
-          popup: self.popup && $('#'+self.popup) || false,
-          on: self.event,
-          inline: inline,
-          hoverable: hoverable,
-          closable: closable,
-          target: self.target || false,
-          title: self.title,
-          variation: self.variation,
-          html: self.html,
-          content: self.content,
-          duration: self.duration,
-          position: self.position,
-          lastResort: self.lastResort,
-          delay: {
-            show: self.delayShow,
-            hide: self.delayHide
-          },
-          preserve: preserve,
-          onCreate: function(){
-              if(typeof self.attrs.onCreate === 'function'){
-                  self.attrs.onCreate(self);
-              }
-          },
-          onRemove: function(){
-              if(typeof self.attrs.onRemove === 'function'){
-                  self.attrs.onRemove(self);
-              }
-          },
-          onShow: function(){
-              if(typeof self.attrs.onShow === 'function'){
-                  self.attrs.onShow(self);
-              }
-          },
-          onVisible: function(){
-              if(typeof self.attrs.onVisible === 'function'){
-                  self.attrs.onVisible(self);
-              }
-          },
-          onHide: function(){
-              if(typeof self.attrs.onHide === 'function'){
-                  self.attrs.onHide(self);
-              }
-          }
-      });
+    if (!this.$()) {
+      return;
+    }
+    this.$().popup({
+      popup: (self.popup && $('#' + self.popup)) || false,
+      on: self.event,
+      inline: inline,
+      hoverable: hoverable,
+      closable: closable,
+      target: self.target || false,
+      title: self.title,
+      variation: self.variation,
+      html: self.html,
+      content: self.content,
+      duration: self.duration,
+      position: self.position,
+      lastResort: self.lastResort,
+      delay: {
+        show: self.delayShow,
+        hide: self.delayHide,
+      },
+      preserve: preserve,
+      onCreate: function () {
+        if (typeof self.attrs.onCreate === 'function') {
+          self.attrs.onCreate(self);
+        }
+      },
+      onRemove: function () {
+        if (typeof self.attrs.onRemove === 'function') {
+          self.attrs.onRemove(self);
+        }
+      },
+      onShow: function () {
+        if (typeof self.attrs.onShow === 'function') {
+          self.attrs.onShow(self);
+        }
+      },
+      onVisible: function () {
+        if (typeof self.attrs.onVisible === 'function') {
+          self.attrs.onVisible(self);
+        }
+      },
+      onHide: function () {
+        if (typeof self.attrs.onHide === 'function') {
+          self.attrs.onHide(self);
+        }
+      },
+    });
   },
-  hide(){
+  hide() {
     this.$().popup('hide');
   },
-  show(){
+  show() {
     this.$().popup('show');
-  }
+  },
 });

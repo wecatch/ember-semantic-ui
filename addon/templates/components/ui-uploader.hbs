@@ -21,7 +21,7 @@
                     {{q.size}}
                 </div>
                 <div class="description" >
-                    {{#ui-progress theme="indicating" loading=q.isUploading  success=q.isUploaded  percent=q.percent }}
+                    <UiProgress @theme="indicating" @loading={{q.isUploading}} @success={{q.isUploaded}} @percent={{q.percent}}>
                           {{#if q.isUploaded}}
                             <div class="label">Upload success</div>
                           {{else}}
@@ -30,15 +30,15 @@
                                 <div class="ui active small inline text loader" ></div>
                              </div>
                           {{/if}}
-                    {{/ui-progress}}
+                    </UiProgress>
                 </div>
                 <div class="extra" >
                     {{#unless q.isUploaded }}
                         {{#unless autoUpload }}
-                        {{#ui-button theme="green" loading=q.isUploading action="start" param=q }}
+                        <UiButton @theme="green" @loading={{q.isUploading}} @action="start" @param={{q}}>
                             <i class="upload icon" ></i>
                             upload
-                        {{/ui-button}}
+                        </UiButton>
                         {{/unless}}
                         <div class="ui button" {{action "abort" q }} >
                             <i class="cancel icon"></i>

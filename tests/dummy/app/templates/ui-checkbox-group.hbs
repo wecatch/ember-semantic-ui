@@ -7,21 +7,21 @@
                 </div>
                 <div class="ui segment">
                     <div class="ui form" >
-                        {{#ui-checkbox-group theme="inline fields" value=checkvalue as |valueChange| }}
+                        <UiCheckboxGroup @theme="inline fields" @value={{checkvalue}} as |valueChange|>
                             <label>choose company</label>
                             <div class="field" >
-                                {{#ui-checkbox  value="apple" action=(action valueChange) }}apple{{/ui-checkbox}}
+                                <UiCheckbox @value="apple" @action={{action valueChange}}>apple</UiCheckbox>
                             </div>
                             <div class="field" >
-                                {{#ui-checkbox  value="google" action=(action valueChange) }}google{{/ui-checkbox}}
+                                <UiCheckbox @value="google" @action={{action valueChange}}>google</UiCheckbox>
                             </div>
                             <div class="field" >
-                                {{#ui-checkbox  value="dropbox" action=(action valueChange) }}dropbox{{/ui-checkbox}}
+                                <UiCheckbox @value="dropbox" @action={{action valueChange}}>dropbox</UiCheckbox>
                             </div>
                             <div class="field">
                                 {{checkvalueShow}}
                             </div>
-                        {{/ui-checkbox-group}}
+                        </UiCheckboxGroup>
                     </div>
                 </div>
                 <div class="ui secondary segment">
@@ -30,7 +30,7 @@
 
                 <div class="ui segment">
                     <div class="ui form" >
-                        {{#ui-checkbox-group theme="grouped fields" label="choose company" options=options.options value=checkvalue2 }}{{/ui-checkbox-group}}
+                        <UiCheckboxGroup @theme="grouped fields" @label="choose company" @options={{options.options}} @value={{checkvalue2}}></UiCheckboxGroup>
                         <div class="field">
                             {{checkvalueShow2}}
                         </div>
@@ -43,7 +43,7 @@
 
                 <div class="ui segment">
                     <div class="ui form" >
-                        {{#ui-checkbox-group label="choose company" theme="inline fields" options=options.options value=checkvalue3 }}{{/ui-checkbox-group}}
+                        <UiCheckboxGroup @label="choose company" @theme="inline fields" @options={{options.options}} @value={{checkvalue3}}></UiCheckboxGroup>
                         <div class="field">
                             {{checkvalueShow3}}
                         </div>

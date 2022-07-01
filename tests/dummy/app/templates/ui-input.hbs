@@ -8,7 +8,7 @@
 					</code>
 				</div>
 				<div class="ui segment">
-					{{#ui-input focus=true}}{{/ui-input}}
+					<UiInput @focus={{true}}></UiInput>
 				</div>
 
 				<div class="ui secondary segment">
@@ -17,7 +17,7 @@
 					</code>
 				</div>
 				<div class="ui segment">
-					{{#ui-input theme="icon" loading=true}}<i class="search icon"></i>{{/ui-input}}
+					<UiInput @theme="icon" @loading={{true}}><i class="search icon"></i></UiInput>
 				</div>
 
 				<div class="ui secondary segment">
@@ -26,7 +26,7 @@
 					</code>
 				</div>
 				<div class="ui segment">
-					{{#ui-input error=true}}{{/ui-input}}
+					<UiInput @error={{true}}></UiInput>
 				</div>
 
 				<div class="ui secondary segment">
@@ -35,7 +35,7 @@
 					</code>
 				</div>
 				<div class="ui segment">
-					{{#ui-input disabled=true value="search" }}{{/ui-input}}
+					<UiInput @disabled={{true}} @value="search"></UiInput>
 				</div>
 
 				<div class="ui secondary segment">
@@ -44,7 +44,7 @@
 					</code>
 				</div>
 				<div class="ui segment">
-					{{#ui-input readonly=true value="search" }}{{/ui-input}}
+					<UiInput @readonly={{true}} @value="search"></UiInput>
 				</div>
 				
 				<div class="ui secondary segment">
@@ -54,46 +54,46 @@
 				</div>
 				<div class="ui segment">
 					<label for="">email</label>
-					{{#ui-input onFocus=(action 'onfocus')}}{{/ui-input}}
+					<UiInput @onFocus={{action 'onfocus'}}></UiInput>
 					{{result}} focus
 				</div>
           	</div>
 
           	<div class="ui segments">
           		<div class="ui segment">
-					{{#ui-input theme="fluid icon" value="search" }}
+					<UiInput @theme="fluid icon" @value="search">
 							<i class="search icon"></i>
-					{{/ui-input}}
+					</UiInput>
 				</div>
 
 				<div class="html ui segment">
-					{{#ui-input theme="fluid action" value="fluid" }}
-						{{#ui-button}}search{{/ui-button}}
-					{{/ui-input}}
+					<UiInput @theme="fluid action" @value="fluid">
+						<UiButton>search</UiButton>
+					</UiInput>
 				</div>
 
 				<div class="html ui segment">
-					{{#ui-input theme="mini icon" value="search" }}
+					<UiInput @theme="mini icon" @value="search">
 						<i class="search icon"></i>
-					{{/ui-input}}
+					</UiInput>
 				</div>
 
 				<div class="html ui segment">
-					{{#ui-input theme="small icon" value="search" }}
+					<UiInput @theme="small icon" @value="search">
 						<i class="search icon"></i>
-					{{/ui-input}}
+					</UiInput>
 				</div>
 
 				<div class="html ui segment">
-					{{#ui-input theme="big icon" value="search" }}
+					<UiInput @theme="big icon" @value="search">
 						<i class="search icon"></i>
-					{{/ui-input}}
+					</UiInput>
 				</div>
 
 				<div class="html ui segment">
-					{{#ui-input theme="huge icon" value="search" }}
+					<UiInput @theme="huge icon" @value="search">
 						<i class="search icon"></i>
-					{{/ui-input}}
+					</UiInput>
 				</div>
           	</div>
         </div>

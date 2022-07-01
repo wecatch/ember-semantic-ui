@@ -6,36 +6,36 @@
                     {{code-highlight code=(code-show 'ui-labeled-button' 0)}}
                 </div>           
                  <div class="ui segment">
-                    {{#ui-labeled-button}}
-                        {{#ui-button theme="primary" }}
+                    <UiLabeledButton>
+                        <UiButton @theme="primary">
                             <i class="heart icon" ></i>
-                        {{/ui-button}}
-                        {{#ui-label theme="basic" }}2,148{{/ui-label}}
-                    {{/ui-labeled-button}}               
+                        </UiButton>
+                        <UiLabel @theme="basic">2,148</UiLabel>
+                    </UiLabeledButton>               
                 </div>
 
                 <div class="ui secondary segment">
                     {{code-highlight code=(code-show 'ui-labeled-button' 1)}}
                 </div>           
                  <div class="ui segment">
-                    {{#ui-labeled-button}}
-                        {{#ui-button theme="red" }}
+                    <UiLabeledButton>
+                        <UiButton @theme="red">
                             <i class="heart icon" ></i>
-                        {{/ui-button}}
-                        {{#ui-pointing-label theme="basic red" direction="left" }}2,148{{/ui-pointing-label}}
-                    {{/ui-labeled-button}}
+                        </UiButton>
+                        <UiPointingLabel @theme="basic red" @direction="left">2,148</UiPointingLabel>
+                    </UiLabeledButton>
                 </div>
 
                 <div class="ui secondary segment">
                     {{code-highlight code=(code-show 'ui-labeled-button' 2)}}
                 </div>           
                 <div class="ui segment">
-                    {{#ui-labeled-button}}
-                        {{#ui-button theme="basic blue" }}
+                    <UiLabeledButton>
+                        <UiButton @theme="basic blue">
                             <i class="heart icon" ></i>
-                        {{/ui-button}}
-                        {{#ui-pointing-label theme="basic blue" direction="left" }}2,148{{/ui-pointing-label}}
-                    {{/ui-labeled-button}}
+                        </UiButton>
+                        <UiPointingLabel @theme="basic blue" @direction="left">2,148</UiPointingLabel>
+                    </UiLabeledButton>
                 </div>
             </div>
         </div>

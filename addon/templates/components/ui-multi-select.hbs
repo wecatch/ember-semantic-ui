@@ -3,7 +3,7 @@
 {{#each _selectedOptions as |item|}}
     {{#if item.selected}}
     <a class="ui transition label visible" data-value="{{item.value}}" style="display: inline-block !important;"  >
-        {{#if hasBlockParams}}
+        {{#if (has-block-params)}}
             {{yield item}}
         {{else}}
             {{item.label}}
@@ -20,7 +20,7 @@
     {{! Executed in the when custome label display. }}
     {{#each _options as |item|}}
         <div class="item {{if item.selected 'active filtered' ''}}"  data-value="{{item.value}}">
-            {{#if hasBlockParams}}
+            {{#if (has-block-params)}}
                 {{yield item}}
             {{else}}
                 {{item.label}}

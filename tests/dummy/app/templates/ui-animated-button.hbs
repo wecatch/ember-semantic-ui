@@ -6,12 +6,12 @@
                     {{code-highlight code=(code-show 'ui-animated-button' 0) }}
                 </div>          
                 <div class="ui segment">
-                    {{#ui-animated-button as |ab| }}
+                    <UiAnimatedButton as |ab|>
                         <div class="{{ab.visible}}">Next</div>
                         <div class="{{ab.hidden}}">
                             <i class="right arrow icon"></i>
                         </div>
-                    {{/ui-animated-button}}
+                    </UiAnimatedButton>
                 </div>
             </div>
         </div>

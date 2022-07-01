@@ -15,7 +15,7 @@
 <div class="html ui top attached segment">
     <div class="ui right labeled input">
       {{!-- {{#input placeholder="Find domain" value="search" }}{{/input}} --}}
-      {{#ui-dropdown theme="label" }}
+      <UiDropdown @theme="label">
             <div class="text">.com</div>
             <i class="dropdown icon"></i>
             <div class="menu">
@@ -23,6 +23,6 @@
               <div class="item">.net</div>
               <div class="item">.org</div>
             </div>
-      {{/ui-dropdown}}
+      </UiDropdown>
     </div>
 </div>

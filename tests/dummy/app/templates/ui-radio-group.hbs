@@ -7,21 +7,21 @@
                 </div>           
                 <div class="ui segment">
                     <div class="ui form" >
-                        {{#ui-radio-group theme="grouped" value=checkvalue name="co1" as |vc| }}
+                        <UiRadioGroup @theme="grouped" @value={{checkvalue}} @name="co1" as |vc|>
                             <label>choose company</label>
                         <div class="field" >
-                            {{#ui-radio  value="apple" action=vc }}apple{{/ui-radio}}
+                            <UiRadio @value="apple" @action={{vc}}>apple</UiRadio>
                         </div>
                         <div class="field" >
-                            {{#ui-radio  value="google" action=vc }}google{{/ui-radio}}
+                            <UiRadio @value="google" @action={{vc}}>google</UiRadio>
                         </div>
                         <div class="field" >
-                            {{#ui-radio  value="dropbox" action=vc }}dropbox{{/ui-radio}}
+                            <UiRadio @value="dropbox" @action={{vc}}>dropbox</UiRadio>
                         </div>
                         <div class="field">
                             {{checkvalue}}
                         </div>
-                        {{/ui-radio-group}}
+                        </UiRadioGroup>
                     </div>
                 </div>
                 <div class="ui secondary segment">
@@ -29,8 +29,8 @@
                 </div>           
                 <div class="ui segment">
                     <div class="ui form" >
-                        {{#ui-radio-group name="co3" labelPath="name" label="choose company" theme="inline fields" options=options.options value=checkvalue3 }}
-                        {{/ui-radio-group}}
+                        <UiRadioGroup @name="co3" @labelPath="name" @label="choose company" @theme="inline fields" @options={{options.options}} @value={{checkvalue3}}>
+                        </UiRadioGroup>
                         <div class="field">
                             {{checkvalue3}}
                         </div>

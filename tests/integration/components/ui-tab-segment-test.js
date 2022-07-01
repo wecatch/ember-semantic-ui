@@ -1,11 +1,15 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('ui-tab-segment', 'Integration | Component | ui tab segment', {
-  integration: true
-});
+moduleForComponent(
+  'ui-tab-segment',
+  'Integration | Component | ui tab segment',
+  {
+    integration: true,
+  }
+);
 
-test('it renders', function(assert) {
+test('it renders', function (assert) {
   assert.expect(2);
 
   // Set any properties with this.set('myProperty', 'value');

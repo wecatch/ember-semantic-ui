@@ -1,4 +1,4 @@
-{{#if hasBlockParams}}
+{{#if (has-block-params)}}
     {{yield (hash date=(component 'ui-date-input' value=d update=(action (mut d)))  hour=(component 'ui-select' options=hours value=h update=(action (mut h))) minute=(component 'ui-select' options=minutes value=m update=(action (mut m)) ))}}
 {{else}}
     {{ui-date-input value=d update=(action (mut d)) }}

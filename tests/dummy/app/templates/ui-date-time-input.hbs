@@ -15,7 +15,7 @@
                 </div>
                 <div class="ui segment">
                     <div class="ui form">
-                        {{#ui-date-time-input update=(action (mut value2)) class="three fields" as |datetime| }}
+                        <UiDateTimeInput @update={{action (mut value2)}} @class="three fields" as |datetime|>
                             <div class="field">
                                 <label>日期</label>
                                 {{component datetime.date  }}
@@ -28,7 +28,7 @@
                                 <label>分钟</label>
                                 {{component datetime.minute}}
                             </div>
-                        {{/ui-date-time-input}}
+                        </UiDateTimeInput>
                     </div>
                     <span>{{value2}}</span>
                 </div>

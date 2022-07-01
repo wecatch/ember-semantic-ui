@@ -10,7 +10,7 @@ ui-row component
 @constructor
 */
 export default Component.extend({
-    layout,
-    classNameBindings: ['_componentClass'],
-    _componentClass: 'row',
+  layout,
+  classNameBindings: ['_componentClass'],
+  _componentClass: 'row',
 });

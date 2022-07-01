@@ -10,7 +10,7 @@ ui-modal-title component
 @constructor
 */
 export default Component.extend({
-    layout: layout,
-	tagName: 'div',
-    classNames: [ 'header'],
+  layout: layout,
+  tagName: 'div',
+  classNames: ['header'],
 });

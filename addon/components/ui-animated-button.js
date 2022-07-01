@@ -2,7 +2,6 @@ import Component from '@ember/component';
 import layout from '../templates/components/ui-animated-button';
 import uiButtonBase from '../mixins/ui-button-base';
 
-
 /**
 ui-animated-button component see {{#crossLink "mixins.UiButtonBase"}}{{/crossLink}}
 
@@ -16,5 +15,5 @@ export default Component.extend(uiButtonBase, {
   tagName: 'div',
   _theme: 'animated',
   hidden: 'hidden content',
-  visible: 'visible content'
+  visible: 'visible content',
 });

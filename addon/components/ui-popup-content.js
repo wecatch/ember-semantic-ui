@@ -13,22 +13,22 @@ ui-popup-content component
 @constructor
 */
 export default Component.extend({
-    layout,
-    classNameBindings: ['_ui', 'class', '_componentClass'],
-    class: 'flowing',
-    _ui: 'ui',
-    _componentClass: 'popup',
-    /**
+  layout,
+  classNameBindings: ['_ui', 'class', '_componentClass'],
+  class: 'flowing',
+  _ui: 'ui',
+  _componentClass: 'popup',
+  /**
     target which pop this component
     @property {function} target
     */
-    target: null,
-    init(){
-        this._super(...arguments);
-        if(typeof this.attrs.target){
-            scheduleOnce('afterRender', this, function(){
-                this.attrs.target.update(this.elementId);
-            });
-        }
+  target: null,
+  init() {
+    this._super(...arguments);
+    if (typeof this.attrs.target) {
+      scheduleOnce('afterRender', this, function () {
+        this.attrs.target.update(this.elementId);
+      });
     }
+  },
 });

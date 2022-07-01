@@ -4,19 +4,19 @@
 	<div class="column">
 		<div class="ui items">
 			<h3>normal</h3>
-			{{#ui-button action=(action "clickHandler")}}click me{{/ui-button}}
-			{{#ui-button action=(action "clickHandler" "horizontal flip")}}Horizontal Flip{{/ui-button}}
-			{{#ui-button action=(action "clickHandler" "vertical flip")}}Vertical Flip{{/ui-button}}
-			{{#ui-button action=(action "clickHandler" "fade up")}}Fade Up{{/ui-button}}
-			{{#ui-button action=(action "clickHandler" "fade")}}Fade{{/ui-button}}
-			{{#ui-button action=(action "clickHandler" "scale")}}Scale{{/ui-button}}
+			<UiButton @action={{action "clickHandler"}}>click me</UiButton>
+			<UiButton @action={{action "clickHandler" "horizontal flip"}}>Horizontal Flip</UiButton>
+			<UiButton @action={{action "clickHandler" "vertical flip"}}>Vertical Flip</UiButton>
+			<UiButton @action={{action "clickHandler" "fade up"}}>Fade Up</UiButton>
+			<UiButton @action={{action "clickHandler" "fade"}}>Fade</UiButton>
+			<UiButton @action={{action "clickHandler" "scale"}}>Scale</UiButton>
 			<div class="item">
                 {{code-highlight code=(code-show 'ui-modal' 0)}}
 			</div>
 			<div class="item">
-				{{#ui-modal show=display onShow=(action "onShow") onApprove=(action "onApprove") onHide=(action "onHide") onDeny=(action "onDeny") transition=transition }}
-					{{#ui-modal-title }}modal 1{{/ui-modal-title}}
-					{{#ui-modal-content theme="image"}}
+				<UiModal @show={{display}} @onShow={{action "onShow"}} @onApprove={{action "onApprove"}} @onHide={{action "onHide"}} @onDeny={{action "onDeny"}} @transition={{transition}}>
+					<UiModalTitle>modal 1</UiModalTitle>
+					<UiModalContent @theme="image">
 						<div class="ui small image" >
 							<img src="//www.baidu.com/img/bd_logo1.png">
 						</div>
@@ -25,16 +25,16 @@
 								<p>first role</p>
 							</div>
 						</div>
-					{{/ui-modal-content}}
-					{{#ui-modal-foot}}
+					</UiModalContent>
+					<UiModalFoot>
 						<div class="ui black deny button">
 						    Nope
 						</div>
 						<div class="ui positive right labeled icon button">
 						    Yep, that's me <i class="checkmark icon"></i>
 						</div>
-					{{/ui-modal-foot}}
-				{{/ui-modal}}
+					</UiModalFoot>
+				</UiModal>
 		    </div>
 		</div>
 	</div>

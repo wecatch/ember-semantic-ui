@@ -11,7 +11,7 @@
                 </div>
             </div>
             <div class="column" >
-                {{#ui-radio }}normal{{/ui-radio}}
+                <UiRadio>normal</UiRadio>
             </div>
         </div>
         <div class="row" >
@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div class="column" >
-                {{#ui-radio  checked=true }}normal{{/ui-radio}}
+                <UiRadio @checked={{true}}>normal</UiRadio>
             </div>
         </div>
         <div class="row" >
@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="column" >
-                {{#ui-radio theme="toggle"}}toggle{{/ui-radio}}
+                <UiRadio @theme="toggle">toggle</UiRadio>
             </div>
         </div>
         <div class="row" >
@@ -41,7 +41,7 @@
                 </div>
             </div>
             <div class="column" >
-                {{#ui-radio checked=true theme="toggle"}}toggle{{/ui-radio}}
+                <UiRadio @checked={{true}} @theme="toggle">toggle</UiRadio>
             </div>
         </div>
         <div class="row" >
@@ -51,7 +51,7 @@
                 </div>
             </div>
             <div class="column" >
-                {{#ui-radio theme="slider" }}slider{{/ui-radio}}
+                <UiRadio @theme="slider">slider</UiRadio>
             </div>
         </div>
     </div>
@@ -64,7 +64,7 @@
                 </div>
             </div>
             <div class="column" >
-                {{#ui-radio checked=isChecked  value="apple"  theme="slider" }}slider{{/ui-radio}}
+                <UiRadio @checked={{isChecked}} @value="apple" @theme="slider">slider</UiRadio>
                 <div class="ui left pointing  label" >{{isChecked}}</div>
             </div>
         </div>

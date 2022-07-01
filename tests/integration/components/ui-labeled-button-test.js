@@ -1,11 +1,15 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('ui-labeled-button', 'Integration | Component | ui labeled button', {
-  integration: true
-});
+moduleForComponent(
+  'ui-labeled-button',
+  'Integration | Component | ui labeled button',
+  {
+    integration: true,
+  }
+);
 
-test('it renders', function(assert) {
+test('it renders', function (assert) {
   assert.expect(2);
 
   // Set any properties with this.set('myProperty', 'value');

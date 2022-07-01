@@ -11,5 +11,5 @@ ui-checkbox component see {{#crossLink "mixins.UiCheckboxBase"}}{{/crossLink}}
 @constructor
 */
 export default Component.extend(UiCheckboxBase, {
-    layout: layout
+  layout: layout,
 });

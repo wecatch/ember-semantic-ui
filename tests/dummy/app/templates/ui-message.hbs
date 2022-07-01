@@ -4,7 +4,7 @@
             {{code-highlight code=(code-show 'ui-message' 0)}}
 		</div>
 		<div class="item" >
-			{{#ui-message type="info" header="这是一条提示消息"}}{{/ui-message}}
+			<UiMessage @type="info" @header="这是一条提示消息"></UiMessage>
 		</div>
 		
 		<br><br>
@@ -12,7 +12,7 @@
             {{code-highlight code=(code-show 'ui-message' 1)}}
 		</div>
 		<div class="item" >
-			{{#ui-message type="success" header="这是一条成功消息"}}{{/ui-message}}
+			<UiMessage @type="success" @header="这是一条成功消息"></UiMessage>
 		</div>
 		
 		<br><br>
@@ -20,7 +20,7 @@
             {{code-highlight code=(code-show 'ui-message' 2)}}
 		</div>
 		<div class="item" >
-			{{#ui-message type="error" header="这是一条错误消息"}}{{/ui-message}}
+			<UiMessage @type="error" @header="这是一条错误消息"></UiMessage>
 		</div>
 		
 		<br><br>
@@ -28,7 +28,7 @@
             {{code-highlight code=(code-show 'ui-message' 3)}}
 		</div>
 		<div class="item" >
-			{{#ui-message type="warning" header="这是一条警告消息"}}{{/ui-message}}
+			<UiMessage @type="warning" @header="这是一条警告消息"></UiMessage>
 		</div>
 		
 		<br><br>
@@ -36,7 +36,7 @@
             {{code-highlight code=(code-show 'ui-message' 4)}}
 		</div>
 		<div class="item" >
-			{{#ui-message header="这是一条消息"}}{{/ui-message}}
+			<UiMessage @header="这是一条消息"></UiMessage>
 		</div>
 		
 		<br><br>
@@ -44,7 +44,7 @@
             {{code-highlight code=(code-show 'ui-message' 5)}}
 		</div>
 		<div class="item" >
-			{{#ui-message header="这是超大号消息" size="massive"}}{{/ui-message}}
+			<UiMessage @header="这是超大号消息" @size="massive"></UiMessage>
 		</div>
 		
 		<br><br>
@@ -52,7 +52,7 @@
             {{code-highlight code=(code-show 'ui-message' 6)}}
 		</div>
 		<div class="item" >
-			{{#ui-message close=true header="这是一条可清除的消息"}}{{/ui-message}}
+			<UiMessage @close={{true}} @header="这是一条可清除的消息"></UiMessage>
 		</div>
 		
 		<br><br>
@@ -60,7 +60,7 @@
             {{code-highlight code=(code-show 'ui-message' 7)}}
 		</div>
 		<div class="item" >
-			{{#ui-message header="这是一条可自动消除的消息" timeout=20000 }}{{/ui-message}}
+			<UiMessage @header="这是一条可自动消除的消息" @timeout={{20000}}></UiMessage>
 		</div>
 		
 		<br><br>
@@ -68,7 +68,7 @@
             {{code-highlight code=(code-show 'ui-message' 8)}}
 		</div>
 		<div class="item" >
-			{{#ui-message header="这是一条带内容的消息"}}
+			<UiMessage @header="这是一条带内容的消息">
 				<ul>
 					<li>
 						<p>第一点</p>
@@ -77,7 +77,7 @@
 						<p>第二点</p>
 					</li>
 				</ul>
-			{{/ui-message}}
+			</UiMessage>
 		</div>
 	</div>
 </div>

@@ -6,12 +6,12 @@
                     {{code-highlight code=(code-show 'ui-left-labeled-button' 0)}}
                 </div>           
                 <div class="ui segment">
-                     {{#ui-left-labeled-button}}
-                        {{#ui-pointing-label theme="basic blue" direction="right" }}2,148{{/ui-pointing-label}}
-                        {{#ui-button theme="blue" }}
+                     <UiLeftLabeledButton>
+                        <UiPointingLabel @theme="basic blue" @direction="right">2,148</UiPointingLabel>
+                        <UiButton @theme="blue">
                             <i class="heart icon" ></i>
-                        {{/ui-button}}
-                    {{/ui-left-labeled-button}}
+                        </UiButton>
+                    </UiLeftLabeledButton>
                 </div>
             </div>
         </div>

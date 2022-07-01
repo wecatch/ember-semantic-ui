@@ -2,87 +2,85 @@
   left menu + right content
 </div>
 <div class="ui divider"></div>
-{{#ui-grid}}
-    {{#ui-column wide=4 }}
-        <div class="ui segment">
-           left
-        </div>
-    {{/ui-column}}
-    {{#ui-column wide=12 }}
-        <div class="ui segment">
-           main content
-        </div>
-    {{/ui-column}}
-{{/ui-grid}}
-<div style="height:20px;" ></div>
+<UiGrid>
+  <UiColumn @wide={{4}}>
+    <div class="ui segment">
+      left
+    </div>
+  </UiColumn>
+  <UiColumn @wide={{12}}>
+    <div class="ui segment">
+      main content
+    </div>
+  </UiColumn>
+</UiGrid>
+<div style="height:20px;"></div>
 {{code-highlight code=(code-show 'layout' 0) }}
 <div class="ui header">
-  example 
+  example
 </div>
-{{#ui-container}}
-    {{#ui-grid}}
-        {{#ui-column wide=6 }}
-            {{#ui-vertical-menu}}
-              <a class="active teal item">
-                Inbox
-                <div class="ui teal pointing left label">1</div>
-              </a>
-              <a class="item">
-                Spam
-                <div class="ui label">51</div>
-              </a>
-              <a class="item">
-                Updates
-                <div class="ui label">1</div>
-              </a>
-              <div class="item">
-                <div class="ui transparent icon input">
-                  <input type="text" placeholder="Search mail...">
-                  <i class="search icon"></i>
-                </div>
-              </div>
-            {{/ui-vertical-menu}}
-        {{/ui-column}}
-        {{#ui-column wide=10 }}
-            {{#ui-segment}}
-                    {{#ui-form}}
-                        <div class="field">
-                            <label for="">name</label>
-                            <input type="text">
-                        </div>
-                        <button class="ui button">submit</button>
-                    {{/ui-form}}
-            {{/ui-segment}}
-        {{/ui-column}}
-    {{/ui-grid}}
-{{/ui-container}}
+<UiContainer>
+  <UiGrid>
+    <UiColumn @wide={{6}}>
+      <UiVerticalMenu>
+        <a class="active teal item">
+          Inbox
+          <div class="ui teal pointing left label">1</div>
+        </a>
+        <a class="item">
+          Spam
+          <div class="ui label">51</div>
+        </a>
+        <a class="item">
+          Updates
+          <div class="ui label">1</div>
+        </a>
+        <div class="item">
+          <div class="ui transparent icon input">
+            <input type="text" placeholder="Search mail...">
+            <i class="search icon"></i>
+          </div>
+        </div>
+      </UiVerticalMenu>
+    </UiColumn>
+    <UiColumn @wide={{10}}>
+      <UiSegment>
+        <div class="ui form">
+          <div class="field">
+            <label for="">name</label>
+            <input type="text">
+          </div>
+          <button class="ui button" type="button">submit</button>
+        </div>
+      </UiSegment>
+    </UiColumn>
+  </UiGrid>
+</UiContainer>
 
 <div class="ui header">
-    top menu+left menu + right content
+  top menu+left menu + right content
 </div>
 <div class="ui divider"></div>
-{{#ui-grid}}
-    {{#ui-row}}
-      {{#ui-column wide=16 }}
-        {{#ui-menu}}
-          <div class="item">
-            Home
-          </div>
-        {{/ui-menu}}
-      {{/ui-column}}
-    {{/ui-row}}
-    {{#ui-column wide=4 }}
-        <div class="ui segment">
-           left
+<UiGrid>
+  <UiRow>
+    <UiColumn @wide={{16}}>
+      <UiMenu>
+        <div class="item">
+          Home
         </div>
-    {{/ui-column}}
-    {{#ui-column wide=12 }}
-        <div class="ui segment">
-           main content
-        </div>
-    {{/ui-column}}
-{{/ui-grid}}
-<div style="height:20px;" ></div>
+      </UiMenu>
+    </UiColumn>
+  </UiRow>
+  <UiColumn @wide={{4}}>
+    <div class="ui segment">
+      left
+    </div>
+  </UiColumn>
+  <UiColumn @wide={{12}}>
+    <div class="ui segment">
+      main content
+    </div>
+  </UiColumn>
+</UiGrid>
+<div style="height:20px;"></div>
 {{code-highlight code=(code-show 'layout' 1) }}
-
-

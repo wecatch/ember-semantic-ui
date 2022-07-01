@@ -4,10 +4,10 @@
     <input type="file" name="file" >
 {{/if}}
 
-{{#if hasBlockParams}}
+{{#if (has-block-params)}}
     {{yield uploader (action "start") (action "abort") fileObject}}
 {{else}}
     {{#unless autoUpload}}
-        {{#ui-button loading=isUploading theme=theme action="start"}}upload{{/ui-button}}
+        <UiButton @loading={{isUploading}} @theme={{theme}} @action="start">upload</UiButton>
     {{/unless}}
 {{/if}}

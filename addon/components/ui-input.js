@@ -2,7 +2,6 @@ import UiInputBase from '../mixins/ui-input-base';
 import layout from '../templates/components/ui-input';
 import Component from '@ember/component';
 
-
 /**
 ui-input component see {{#crossLink "mixins.UiInputBase"}}{{/crossLink}}
 
@@ -12,5 +11,5 @@ ui-input component see {{#crossLink "mixins.UiInputBase"}}{{/crossLink}}
 @constructor
 */
 export default Component.extend(UiInputBase, {
-    layout: layout
+  layout: layout,
 });

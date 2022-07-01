@@ -11,9 +11,9 @@ ui-labeled-button component {{#crossLink "mixins.UiButtonBase"}}{{/crossLink}}
 @constructor
 */
 export default Component.extend(uiButtonBase, {
-    tagName: 'div',
-    layout: layout,
-    _theme: 'labeled',
-    attributeBindings: ['tabindex'],
-    tabindex: 0
+  tagName: 'div',
+  layout: layout,
+  _theme: 'labeled',
+  attributeBindings: ['tabindex'],
+  tabindex: 0,
 });

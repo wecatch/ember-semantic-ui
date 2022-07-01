@@ -10,8 +10,8 @@ ui-menu component
 @constructor
 */
 export default Component.extend({
-    layout,
-    classNameBindings: ['_uiClass', '_componentClass'],
-    _uiClass: 'ui',
-    _componentClass: 'menu',
+  layout,
+  classNameBindings: ['_uiClass', '_componentClass'],
+  _uiClass: 'ui',
+  _componentClass: 'menu',
 });

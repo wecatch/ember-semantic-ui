@@ -12,14 +12,14 @@ ui-left-labeled-button component {{#crossLink "mixins.UiButtonBase"}}{{/crossLin
 @constructor
 */
 export default Component.extend(uiButtonBase, {
-    tagName: 'div',
-    layout: layout,
-    _theme: 'left labeled',
-    /**
-     * Attribute bindings for containing div
-     *
-     * @property {Ember.Array} attributeBindings
-     */
-    attributeBindings: ['tabindex'],
-    tabindex: 0
+  tagName: 'div',
+  layout: layout,
+  _theme: 'left labeled',
+  /**
+   * Attribute bindings for containing div
+   *
+   * @property {Ember.Array} attributeBindings
+   */
+  attributeBindings: ['tabindex'],
+  tabindex: 0,
 });

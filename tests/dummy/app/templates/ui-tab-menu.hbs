@@ -6,15 +6,15 @@
                     {{code-highlight code=(code-show 'ui-tab-menu' 0) }}
                 </div>           
                 <div class="ui segment">
-                	{{#ui-tab-menu tabs='first,second' active='first' }}
+                	<UiTabMenu @tabs="first,second" @active="first">
                 		
-                	{{/ui-tab-menu}}
-                	{{#ui-tab-segment tab='first' active=true}}
+                	</UiTabMenu>
+                	<UiTabSegment @tab="first" @active={{true}}>
                 		first
-                	{{/ui-tab-segment}}
-                	{{#ui-tab-segment tab='second'}}
+                	</UiTabSegment>
+                	<UiTabSegment @tab="second">
                 		second
-                	{{/ui-tab-segment}}
+                	</UiTabSegment>
                 </div>
             </div>
         </div>

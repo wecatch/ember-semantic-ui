@@ -9,9 +9,6 @@ import { Promise } from 'rsvp';
 import { run } from '@ember/runloop';
 import $ from 'jquery';
 
-
-
-
 /**
 EmberUploader class
 
@@ -22,11 +19,11 @@ EmberUploader class
 */
 export default EmberObject.extend(Evented, {
   /**
-     * upload url
-     * 
-     * @property {String} url
-     * 
-  */
+   * upload url
+   *
+   * @property {String} url
+   *
+   */
   url: null,
   paramNamespace: null,
   /**
@@ -34,7 +31,7 @@ export default EmberObject.extend(Evented, {
    *
    * @property {String} paramName
    * @default 'file'
-  */
+   */
   paramName: 'file',
   /**
    * ajax request settings traditional, by default false
@@ -67,17 +64,17 @@ export default EmberObject.extend(Evented, {
    * @param  {array} extra
    * @return {object}       jquery promise from ajax object
    */
-  upload: function(files, extra) {
+  upload: function (files, extra) {
     extra = extra || {};
     var data = this.setupFormData(files, extra);
-    var url  = get(this, 'url');
-    var type = get(this, 'type');
+    var url = this.url;
+    var type = this.type;
     set(this, 'isUploading', true);
 
     return this.ajax(url, data, type);
   },
 
-  setupFormData: function(files, extra) {
+  setupFormData: function (files, extra) {
     var formData = new FormData();
 
     for (var prop in extra) {
@@ -91,12 +88,12 @@ export default EmberObject.extend(Evented, {
       var paramName;
 
       for (var i = files.length - 1; i >= 0; i--) {
-        if(get(this, 'traditional')){
+        if (this.traditional) {
           paramName = this.toNamespacedParam(this.paramName);
-        }else {
+        } else {
           paramName = this.toNamespacedParam(this.paramName) + '[' + i + ']';
         }
-        formData.append(paramName , files[i]);
+        formData.append(paramName, files[i]);
       }
     } else {
       // if has only one file object ...
@@ -106,7 +103,7 @@ export default EmberObject.extend(Evented, {
     return formData;
   },
 
-  toNamespacedParam: function(name) {
+  toNamespacedParam: function (name) {
     if (this.paramNamespace) {
       return this.paramNamespace + '[' + name + ']';
     }
@@ -114,13 +111,13 @@ export default EmberObject.extend(Evented, {
     return name;
   },
 
-  didUpload: function(data) {
+  didUpload: function (data) {
     set(this, 'isUploading', false);
     this.trigger('didUpload', data);
     return data;
   },
 
-  didError: function(jqXHR, textStatus, errorThrown) {
+  didError: function (jqXHR, textStatus, errorThrown) {
     set(this, 'isUploading', false);
 
     // Borrowed from Ember Data
@@ -142,55 +139,57 @@ export default EmberObject.extend(Evented, {
     return jqXHR;
   },
 
-  didProgress: function(e) {
-    e.percent = e.loaded / e.total * 100;
+  didProgress: function (e) {
+    e.percent = (e.loaded / e.total) * 100;
     this.trigger('progress', e);
   },
 
-  abort: function() {
+  abort: function () {
     set(this, 'isUploading', false);
 
     this.trigger('isAborting');
   },
 
-  ajaxSettings: function(url, params, method) {
+  ajaxSettings: function (url, params, method) {
     var self = this;
     return {
       url: url,
       type: method || 'POST',
       contentType: false,
       processData: false,
-      traditional: get(self, 'traditional'),
+      traditional: self.traditional,
       dataType: 'json',
-      xhr: function() {
+      xhr: function () {
         var xhr = $.ajaxSettings.xhr();
-        xhr.upload.onprogress = function(e) {
+        xhr.upload.onprogress = function (e) {
           self.didProgress(e);
         };
-        self.one('isAborting', function() { xhr.abort(); });
+        self.one('isAborting', function () {
+          xhr.abort();
+        });
         return xhr;
       },
-      data: params
+      data: params,
     };
   },
 
-  ajax: function(url, params, method) {
+  ajax: function (url, params, method) {
     return this._ajax(this.ajaxSettings(url, params, method));
   },
 
-  _ajax: function(settings) {
+  _ajax: function (settings) {
     var self = this;
 
-    return new Promise(function(resolve, reject) {
-      settings.success = function(data) {
+    return new Promise(function (resolve, reject) {
+      settings.success = function (data) {
         run(null, resolve, self.didUpload(data));
       };
 
-      settings.error = function(jqXHR, responseText, errorThrown) {
+      settings.error = function (jqXHR, responseText, errorThrown) {
         run(null, reject, self.didError(jqXHR, responseText, errorThrown));
       };
 
       $.ajax(settings);
     });
-  }
+  },
 });

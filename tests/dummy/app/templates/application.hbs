@@ -1,106 +1,104 @@
 <div class="ui container">
     <div class="ui grid">
-        {{#ui-column wide=4 }}
-        <div class="four wide column" >
-            <div class="ui visible secondary vertical menu" style="top:70px;left:inherit" >
-                <div class="ui red header item">
-                    Layout
-                </div>
-                {{#link-to "ui-container" class="item"}}ui-container{{/link-to}} 
-                {{#link-to "ui-text-container" class="item"}}ui-text-container{{/link-to}}
-                {{#link-to "layout" class="item"}}layout{{/link-to}} 
+        <UiColumn @wide={{4}}>
+            <div class="four wide column">
+                <div class="ui visible secondary vertical menu" style="top:70px;left:inherit">
+                    <div class="ui red header item">
+                        Layout
+                    </div>
+                    <LinkTo @route="ui-container" class="item">ui-container</LinkTo>
+                    <LinkTo @route="ui-text-container" class="item">ui-text-container</LinkTo>
+                    <LinkTo @route="layout" class="item">layout</LinkTo>
 
-                <div class="ui red header item">
-                    Button
-                </div>
-                {{#link-to "ui-button" class="item"}}ui-button{{/link-to}} 
-                {{#link-to "ui-animated-button" class="item"}}ui-animated-button{{/link-to}} 
-                {{#link-to "ui-labeled-button" class="item"}}ui-labeled-button{{/link-to}}
-                {{#link-to "ui-left-labeled-button" class="item"}}ui-left-labeled-button{{/link-to}} 
+                    <div class="ui red header item">
+                        Button
+                    </div>
+                    <LinkTo @route="ui-button" class="item">ui-button</LinkTo>
+                    <LinkTo @route="ui-animated-button" class="item">ui-animated-button</LinkTo>
+                    <LinkTo @route="ui-labeled-button" class="item">ui-labeled-button</LinkTo>
+                    <LinkTo @route="ui-left-labeled-button" class="item">ui-left-labeled-button</LinkTo>
 
-                <div class="ui red header item">
-                    Menu
-                </div>
-                {{#link-to "ui-menu" class="item"}}ui-menu{{/link-to}} 
-                {{#link-to "ui-vertical-menu" class="item"}}ui-vertical-menu{{/link-to}} 
-                {{#link-to "ui-tab-menu" class="item"}}ui-tab-menu{{/link-to}} 
-                {{#link-to "ui-dropdown-menu" class="item"}}ui-dropdown-menu{{/link-to}} 
-                
-                <div class="ui red header item">
-                    Select
-                </div>
-                {{#link-to "ui-select" class="item"}}ui-select{{/link-to}} 
-                {{#link-to "ui-multi-select" class="item"}}ui-multi-select{{/link-to}} 
-                
-                <div class="ui red header item">
-                    Input
-                </div>
-                {{#link-to "ui-input" class="item"}}ui-input{{/link-to}}
-                {{#link-to "ui-date-input" class="item"}}ui-date-input{{/link-to}}
-                {{#link-to "ui-date-time-input" class="item"}}ui-date-time-input{{/link-to}} 
-                {{#link-to "ui-input-tags" class="item"}}ui-input-tags{{/link-to}} 
-                
-                <div class="ui red header item">
-                    Segment
-                </div>
-                {{#link-to "ui-segment" class="item"}}ui-segment{{/link-to}} 
-                                
-                <div class="ui red header item">
-                    Checkbox
-                </div>
-                {{#link-to "ui-checkbox" class="item"}}ui-checkbox{{/link-to}} 
-                {{#link-to "ui-checkbox-group" class="item"}}ui-checkbox-group{{/link-to}} 
-                {{#link-to "ui-radio-group" class="item"}}ui-radio-group{{/link-to}} 
-                
-                <div class="ui red header item">
-                    Label
-                </div>
-                {{#link-to "ui-label" class="item"}}ui-label{{/link-to}} 
-                {{#link-to "ui-pointing-label" class="item"}}ui-pointing-label{{/link-to}} 
-                
-                <div class="ui red header item">
-                    Form
-                </div>
-                {{#link-to "ui-form" class="item"}}ui-form{{/link-to}} 
-                {{#link-to "ui-form-input" class="item"}}ui-form-input{{/link-to}} 
-                
-                <div class="ui red header item">
-                    Modal
-                </div>
-                {{#link-to "ui-modal" class="item"}}ui-modal{{/link-to}}
-                
-                <div class="ui red header item">
-                    Popup
-                </div>
-                {{#link-to "ui-popup" class="item"}}ui-popup{{/link-to}} 
+                    <div class="ui red header item">
+                        Menu
+                    </div>
+                    <LinkTo @route="ui-menu" class="item">ui-menu</LinkTo>
+                    <LinkTo @route="ui-vertical-menu" class="item">ui-vertical-menu</LinkTo>
+                    <LinkTo @route="ui-tab-menu" class="item">ui-tab-menu</LinkTo>
+                    <LinkTo @route="ui-dropdown-menu" class="item">ui-dropdown-menu</LinkTo>
 
-                
-                <div class="ui red header item">
-                    Progress
-                </div>
-                {{#link-to "ui-progress" class="item"}}ui-progress{{/link-to}}
+                    <div class="ui red header item">
+                        Select
+                    </div>
+                    <LinkTo @route="ui-select" class="item">ui-select</LinkTo>
+                    <LinkTo @route="ui-multi-select" class="item">ui-multi-select</LinkTo>
 
-                <div class="ui red header item">
-                    Message
-                </div>
-                {{#link-to "ui-message" class="item"}}ui-message{{/link-to}} 
+                    <div class="ui red header item">
+                        Input
+                    </div>
+                    <LinkTo @route="ui-input" class="item">ui-input</LinkTo>
+                    <LinkTo @route="ui-date-input" class="item">ui-date-input</LinkTo>
+                    <LinkTo @route="ui-date-time-input" class="item">ui-date-time-input</LinkTo>
+                    <LinkTo @route="ui-input-tags" class="item">ui-input-tags</LinkTo>
 
-                <div class="ui red header item">
-                    File
+                    <div class="ui red header item">
+                        Segment
+                    </div>
+                    <LinkTo @route="ui-segment" class="item">ui-segment</LinkTo>
+
+                    <div class="ui red header item">
+                        Checkbox
+                    </div>
+                    <LinkTo @route="ui-checkbox" class="item">ui-checkbox</LinkTo>
+                    <LinkTo @route="ui-checkbox-group" class="item">ui-checkbox-group</LinkTo>
+                    <LinkTo @route="ui-radio-group" class="item">ui-radio-group</LinkTo>
+
+                    <div class="ui red header item">
+                        Label
+                    </div>
+                    <LinkTo @route="ui-label" class="item">ui-label</LinkTo>
+                    <LinkTo @route="ui-pointing-label" class="item">ui-pointing-label</LinkTo>
+
+                    <div class="ui red header item">
+                        Form
+                    </div>
+                    <LinkTo @route="ui-form-input" class="item">ui-form-input</LinkTo>
+
+                    <div class="ui red header item">
+                        Modal
+                    </div>
+                    <LinkTo @route="ui-modal" class="item">ui-modal</LinkTo>
+
+                    <div class="ui red header item">
+                        Popup
+                    </div>
+                    <LinkTo @route="ui-popup" class="item">ui-popup</LinkTo>
+
+
+                    <div class="ui red header item">
+                        Progress
+                    </div>
+                    <LinkTo @route="ui-progress" class="item">ui-progress</LinkTo>
+
+                    <div class="ui red header item">
+                        Message
+                    </div>
+                    <LinkTo @route="ui-message" class="item">ui-message</LinkTo>
+
+                    <div class="ui red header item">
+                        File
+                    </div>
+                    <LinkTo @route="file-input" class="item">file-input</LinkTo>
+                    <LinkTo @route="ui-uploader" class="item">ui-uploader</LinkTo>
                 </div>
-                {{#link-to "file-input" class="item"}}file-input{{/link-to}} 
-                {{#link-to "ui-uploader" class="item"}}ui-uploader{{/link-to}} 
             </div>
-        </div>
-        {{/ui-column}}
-        {{#ui-column wide=12 }}
-            {{#if host}}
+        </UiColumn>
+        <UiColumn @wide={{12}}>
+            {{#if this.host}}
             <div class="ui segment">
-                <a href="{{host}}" target="_blank" >See {{routeName}} Doc</a>
+                <a href="{{this.host}}" target="_blank" rel="noopener noreferrer">See {{this.routeName}} Doc</a>
             </div>
             {{/if}}
-          {{outlet}}
-        {{/ui-column}}
+            {{outlet}}
+        </UiColumn>
     </div>
 </div>
-

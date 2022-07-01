@@ -6,37 +6,37 @@
                     {{code-highlight code=(code-show 'ui-checkbox' 0) }}
                 </div>           
                 <div class="ui segment">
-                    {{#ui-checkbox checked=isChecked }}normal{{/ui-checkbox}}
-                    {{#ui-pointing-label theme="basic blue" direction="left"}}
+                    <UiCheckbox @checked={{isChecked}}>normal</UiCheckbox>
+                    <UiPointingLabel @theme="basic blue" @direction="left">
                         {{isChecked}}
-                    {{/ui-pointing-label}}
+                    </UiPointingLabel>
                 </div>
 
                 <div class="ui secondary segment">
                     {{code-highlight code=(code-show 'ui-checkbox' 1) }}
                 </div>           
                 <div class="ui segment">
-                    {{#ui-checkbox  checked=true }}normal{{/ui-checkbox}}
+                    <UiCheckbox @checked={{true}}>normal</UiCheckbox>
                 </div>
 
                 <div class="ui secondary segment">
                     {{code-highlight code=(code-show 'ui-checkbox' 2) }}
                 </div>           
                 <div class="ui segment">
-                    {{#ui-checkbox theme="toggle" }}toggle{{/ui-checkbox}}
+                    <UiCheckbox @theme="toggle">toggle</UiCheckbox>
                 </div>
                 <div class="ui secondary segment">
                     {{code-highlight code=(code-show 'ui-checkbox' 3) }}
                 </div>           
                 <div class="ui segment">
-                    {{#ui-checkbox checked=true theme="toggle"}}toggle{{/ui-checkbox}}
+                    <UiCheckbox @checked={{true}} @theme="toggle">toggle</UiCheckbox>
                 </div>
 
                 <div class="ui secondary segment">
                     {{code-highlight code=(code-show 'ui-checkbox' 4) }}
                 </div>           
                 <div class="ui segment">
-                    {{#ui-checkbox theme="slider" }}slider{{/ui-checkbox}}
+                    <UiCheckbox @theme="slider">slider</UiCheckbox>
                 </div>
 
 

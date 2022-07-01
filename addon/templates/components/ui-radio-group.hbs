@@ -2,7 +2,7 @@
     <label>{{label}}</label>
 {{/if}}
 {{#each _options as |op|}}
-    {{#ui-radio value=op.value action=(action "childChange") name=name checked=op.checked }}{{op.label}}{{/ui-radio}}
+    <UiRadio @value={{op.value}} @action={{action "childChange"}} @name={{name}} @checked={{op.checked}}>{{op.label}}</UiRadio>
 {{/each}}
 
 {{yield (action "childChange") }}

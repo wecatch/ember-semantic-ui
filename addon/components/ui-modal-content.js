@@ -10,20 +10,20 @@ ui-modal-content component
 @constructor
 */
 export default Component.extend({
-    layout: layout,
-	tagName: 'div',
-    classNameBindings: ['theme', '_componentClass'],
-    /**
-     * Class name to apply to the modal-content
-     *
-     * @property {String} theme
-     */
-    theme: '',
-    /**
-     * Class name to apply to modal-content
-     *
-     * @property {String} class
-     */
-    class: '',
-    _componentClass:'content'
+  layout: layout,
+  tagName: 'div',
+  classNameBindings: ['theme', '_componentClass'],
+  /**
+   * Class name to apply to the modal-content
+   *
+   * @property {String} theme
+   */
+  theme: '',
+  /**
+   * Class name to apply to modal-content
+   *
+   * @property {String} class
+   */
+  class: '',
+  _componentClass: 'content',
 });

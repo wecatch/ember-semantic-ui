@@ -11,7 +11,7 @@ ui-form-input component see {{#crossLink "mixins.UiInputBase"}}{{/crossLink}}
 @constructor
 */
 export default Component.extend(UiInputBase, {
-    layout: layout,
-    _uiClass: '',
-    _componentClass: 'field',
+  layout: layout,
+  _uiClass: '',
+  _componentClass: 'field',
 });

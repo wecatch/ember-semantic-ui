@@ -8,7 +8,7 @@
 
                 <div class="ui segment">
                     <div class="ui form">
-                        {{#ui-form-input}}email{{/ui-form-input}}
+                        <UiFormInput>email</UiFormInput>
                     </div>
                 </div>
 
@@ -18,7 +18,7 @@
 
                 <div class="ui segment">
                     <div class="ui form">
-                    {{#ui-form-input onChange=(action 'onchange') onFocus=(action 'onfocus') onFocusin=(action 'onfocusin') onFocusout=(action 'onfocusout') }}email{{/ui-form-input}}
+                    <UiFormInput @onChange={{action 'onchange'}} @onFocus={{action 'onfocus'}} @onFocusin={{action 'onfocusin'}} @onFocusout={{action 'onfocusout'}}>email</UiFormInput>
                     </div>
                     <table class="ui table">
                         <thead>

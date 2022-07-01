@@ -5,7 +5,7 @@ import { module, test } from 'qunit';
 module('Unit | Mixin | ui label base');
 
 // Replace this with your real tests.
-test('it works', function(assert) {
+test('it works', function (assert) {
   var UiLabelBaseObject = EmberObject.extend(UiLabelBaseMixin);
   var subject = UiLabelBaseObject.create();
   assert.ok(subject);

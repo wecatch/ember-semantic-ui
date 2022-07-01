@@ -10,7 +10,7 @@ ui-modal-foot component
 @constructor
 */
 export default Component.extend({
-    layout: layout,
-	tagName: 'div',
-	classNames: ['actions'],
+  layout: layout,
+  tagName: 'div',
+  classNames: ['actions'],
 });

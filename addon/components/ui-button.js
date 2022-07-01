@@ -11,5 +11,5 @@ ui-button component see {{#crossLink "mixins.UiButtonBase"}}{{/crossLink}}
 @constructor
 */
 export default Component.extend(uiButtonBase, {
-  layout: layout
+  layout: layout,
 });

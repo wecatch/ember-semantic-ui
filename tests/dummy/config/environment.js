@@ -49,7 +49,7 @@ module.exports = function (environment) {
   }
 
   if (environment === 'gh-pages') {
-    ENV.APP.rootElement = '#ember-semantic-ui-demo' ;
+    ENV.APP.rootElement = '#ember-semantic-ui-demo';
     ENV.rootURL = '/ember-semantic-ui/';
     ENV.modulePrefix = 'dummy';
     ENV.locationType = 'hash';
