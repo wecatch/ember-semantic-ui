@@ -14,21 +14,15 @@ This Ember addon support many UI components based on [semantic-ui](http://semant
 
 **Layout**
 
-- [ui-container](http://wecatch.me/ember-semantic-ui/demo/#/ui-container)
-- [ui-text-container](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-text-container)
-
+- [ui-column](http://wecatch.me/ember-semantic-ui/demo/#/ui-column)
 
 **Button**
 
 - [ui-button](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-button)
-- [ui-labeled-button](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-labeled-button)
-- [ui-left-labeled-button](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-left-labeled-button)
 
 **Menu**
 
 - [ui-dropdown-menu](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-dropdown-menu)
-- [ui-menu](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-menu)
-- [ui-vertical-menu](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-vertical-menu)
 - [ui-tab-menu](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-tab-menu)
 
 
@@ -65,12 +59,6 @@ This Ember addon support many UI components based on [semantic-ui](http://semant
 - [ui-select](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-select)
 - [ui-multi-select](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-multi-select)
 - [ui-select](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-select)
-
-
-**Label**
-
-- [ui-label](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-label)
-- [ui-pointing-label](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-pointing-label)
 
 **File**
 
@@ -144,7 +132,7 @@ ember server
 
 
 ```
-{{ui-input}}
+<UiInput/>
 ```
 
 
@@ -154,6 +142,11 @@ The [ember-uploader](https://github.com/benefitcloud/ember-uploader) project sup
 
 # Release notes
 
+
+## 1.0.0
+
+- upgrade ember-cli to 4.4, this version is not compatible, please take caution
+- only support glimmer component
 
 ## 0.2.3
 

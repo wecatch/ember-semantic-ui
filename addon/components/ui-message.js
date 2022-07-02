@@ -3,7 +3,6 @@ import { action } from '@ember/object';
 import $ from 'jquery';
 import { run } from '@ember/runloop';
 
-
 export default class UiMessageComponent extends Component {
   /**
    * close message event
