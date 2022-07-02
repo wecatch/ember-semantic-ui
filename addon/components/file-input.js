@@ -1,5 +1,4 @@
 import fileInputBase from '../mixins/file-input-base';
-import layout from '../templates/components/file-input';
 import Component from '@ember/component';
 
 /**
@@ -11,6 +10,4 @@ file-input component, see {{#crossLink "mixins.FileInputBase"}}{{/crossLink}}
 @constructor
 
 */
-export default Component.extend(fileInputBase, {
-  layout: layout,
-});
+export default class FileInputCompnent extends Component.extend(fileInputBase) {};

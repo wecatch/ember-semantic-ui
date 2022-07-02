@@ -1,7 +1,7 @@
+import Component from '@glimmer/component';
 import moment from 'moment';
+import { action } from '@ember/object';
 import Pikaday from 'pikaday';
-import layout from '../templates/components/ui-date-input';
-import Component from '@ember/component';
 
 let zh_cn = {
   previousMonth: '上一月',
@@ -40,61 +40,55 @@ ui-date-input component
 @class UiDateInput 
 @constructor
 */
-export default Component.extend({
-  layout: layout,
-  /**
-    display language, by default is zh_CN 
-    @property {String} lang
-    @default 'zh_CN'
-    */
-  lang: 'zh_CN',
-  tagName: 'div',
-  classNameBindings: ['class'],
-  /**
-    class apply to this component
-    @property {String} class
-    @default 'ui input'
-    */
-  class: 'ui input',
-  didInsertElement() {
-    this._super(...arguments);
-    let self = this;
+export default class UiDateInputComponent extends Component {
+  picker = null;
+
+  @action
+  register(element) {
     let options = {
-      field: self.$('input')[0],
-      format: self.format,
-      position: self.position,
-      onSelect: function () {
-        if (typeof self.attrs.update === 'function') {
-          self.attrs.update(this.getMoment().format(self.format));
+      field: element,
+      format: this.format,
+      position: this.position,
+      i18n: zh_cn,
+      onSelect: () => {
+        if (typeof this.args.onChange === 'function') {
+          this.args.onChange(this.getMoment().format(self.format));
         }
       },
     };
-    if (self.lang === 'zh_CN') {
-      options.i18n = zh_cn;
-    }
-    let picker = new Pikaday(options);
-    this.set('picker', picker);
-  },
+    this.picker = new Pikaday(options);
+  }
+
   /**
-    pikaday position 'bottom right', 'bottom left', 'top left', 'top right'
-    @property {String} position
-    @default 'bottom left'
+   * pikaday position 'bottom right', 'bottom left', 'top left', 'top right'
+   * @property {String} position
+   * @default 'bottom left'
     */
-  position: 'bottom left',
+  get position() {
+    return this.args.position ?? 'bottom left';
+  }
+
   /**
-    moment format
-    @property {String} format
-    @default 'YYYY-MM-DD'
-    */
-  format: 'YYYY-MM-DD',
-  init() {
-    this._super(...arguments);
-    if (this.value && moment(this.value).isValid()) {
-      this.set('valueDisplay', moment(this.value).format(this.format));
-    }
-  },
+   * moment format
+   * @property {String} format
+   * @default 'YYYY-MM-DD'
+   * */
+  get format() {
+    return this.args.format ?? 'YYYY-MM-DD';
+  }
+
+  get valueDisplay() {
+    return (
+      moment(this.args.value).isValid() &&
+      moment(this.args.value).format(this.format)
+    );
+  }
+
+  constructor() {
+    super(...arguments);
+  }
+
   willDestory() {
-    this._super(...arguments);
     this.picker.destroy();
-  },
-});
+  }
+}

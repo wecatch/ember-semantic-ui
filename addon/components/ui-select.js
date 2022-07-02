@@ -2,7 +2,7 @@ import { computed } from '@ember/object';
 import Component from '@ember/component';
 import { A } from '@ember/array';
 import EmberObject from '@ember/object';
-import layout from '../templates/components/ui-select';
+import layout from './ui-select';
 
 /**
 ui-select component

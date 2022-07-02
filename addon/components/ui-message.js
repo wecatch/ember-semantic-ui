@@ -1,9 +1,19 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import $ from 'jquery';
-import { run } from '@ember/runloop';
 
 export default class UiMessageComponent extends Component {
+  /**
+   * component dom element
+   */
+  element = null;
+  /**
+   *
+   */
+  @action
+  register(element) {
+    this.element = element;
+  }
   /**
    * close message event
    * @event closeMessage
@@ -11,13 +21,8 @@ export default class UiMessageComponent extends Component {
   @action
   closeMessage() {
     $(this.element).transition('fade');
-    run.next(this, () => {
-      if (this) {
-        this.destroy();
-      }
-    });
-    if (typeof this.attrs.onClose === 'function') {
-      this.attrs.onClose();
+    if (typeof this.args.onClose === 'function') {
+      this.args.onClose();
     }
   }
 }

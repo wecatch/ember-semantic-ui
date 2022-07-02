@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import layout from '../templates/components/ui-modal-title';
+import layout from './ui-modal-title';
 
 /**
 ui-modal-title component

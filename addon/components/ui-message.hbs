@@ -1,4 +1,4 @@
-<div ...attributes class="ui {{this.args.type}} {{this.args.class}} message" >
+<div class="ui {{this.args.type}} {{this.args.class}} message" ...attributes {{did-insert this.register }}  >
   {{#if this.args.close}}
   <i class="close icon" {{on "click" this.closeMessage }}></i>
   {{/if}}

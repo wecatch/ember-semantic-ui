@@ -1,13 +1,13 @@
-{{#if multiple }}
+{{#if this.multiple }}
     <input type="file" name="file" multiple>
 {{else}}
     <input type="file" name="file" >
 {{/if}}
 
 {{#if (has-block-params)}}
-    {{yield uploader (action "start") (action "abort") fileObject}}
+    {{yield this.uploader this.start this.abort this.fileObject}}
 {{else}}
-    {{#unless autoUpload}}
-        <UiButton @loading={{isUploading}} @theme={{theme}} @action="start">upload</UiButton>
+    {{#unless this.autoUpload}}
+        <UiButton @loading={{this.isUploading}} @class={{this.theme}} @click={{this.start}}>upload</UiButton>
     {{/unless}}
 {{/if}}

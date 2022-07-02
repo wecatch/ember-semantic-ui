@@ -1,5 +1,5 @@
 import moment from 'moment';
-import layout from '../templates/components/ui-date-time-input';
+import layout from './ui-date-time-input';
 import Component from '@ember/component';
 import { observer } from '@ember/object';
 

@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import layout from '../templates/components/ui-modal';
+import layout from './ui-modal';
 import { observer } from '@ember/object';
 
 /**

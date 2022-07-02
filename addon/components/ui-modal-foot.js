@@ -1,4 +1,4 @@
-import layout from '../templates/components/ui-modal-foot';
+import layout from './ui-modal-foot';
 import Component from '@ember/component';
 
 /**

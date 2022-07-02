@@ -1,6 +1,6 @@
 import Component from '@ember/component';
 import UiCheckboxGroupBase from '../mixins/ui-checkbox-group-base';
-import layout from '../templates/components/ui-radio-group';
+import layout from './ui-radio-group';
 
 /**
 

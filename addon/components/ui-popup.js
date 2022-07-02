@@ -2,7 +2,7 @@ import { computed } from '@ember/object';
 import { copy } from '@ember/object/internals';
 import Component from '@ember/component';
 import $ from 'jquery';
-import layout from '../templates/components/ui-popup';
+import layout from './ui-popup';
 
 /**
 

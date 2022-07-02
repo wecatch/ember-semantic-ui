@@ -8,7 +8,7 @@ import Component from '@ember/component';
 
 import emberUploader from '../utils/ember-uploader';
 import { fileObject } from '../utils/file-object';
-import layout from '../templates/components/ui-uploader';
+import layout from './ui-uploader';
 
 /**
 ui-uploader component

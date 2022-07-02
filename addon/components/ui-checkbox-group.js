@@ -1,5 +1,5 @@
 import UiCheckboxGroupBase from '../mixins/ui-checkbox-group-base';
-import layout from '../templates/components/ui-checkbox-group';
+import layout from './ui-checkbox-group';
 import Component from '@ember/component';
 import { isArray } from '@ember/array';
 

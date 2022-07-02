@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import layout from '../templates/components/ui-tab-segment';
+import layout from './ui-tab-segment';
 import uiSegmentBase from '../mixins/ui-segment-base';
 
 /**

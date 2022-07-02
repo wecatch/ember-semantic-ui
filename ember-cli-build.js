@@ -36,17 +36,29 @@ module.exports = function (defaults) {
     This build file does *not* influence how the addon or the app using it
     behave. You most likely want to be modifying `./index.js` or app's build file
   */
-  var themes = new Funnel('node_modules/semantic-ui-css', {
-    srcDir: 'themes',
-    include: ['**/*'],
-    destDir: '/assets/themes',
-  });
+  // var themes = new Funnel('node_modules/semantic-ui-css', {
+  //   srcDir: 'themes',
+  //   include: ['**/*'],
+  //   destDir: '/assets/themes',
+  // });
 
-  var semantic = new Funnel('node_modules/semantic-ui-css', {
-    srcDir: '.',
-    include: ['*.min.*'],
-    destDir: '/assets/',
-  });
+  // var semantic = new Funnel('node_modules/semantic-ui-css', {
+  //   srcDir: '.',
+  //   include: ['*.min.*'],
+  //   destDir: '/assets/',
+  // });
 
-  return app.toTree([themes, semantic]);
+  // return app.toTree([themes, semantic]);
+
+  app.import('node_modules/semantic-ui-css/semantic.min.js');
+  app.import('node_modules/semantic-ui-css/semantic.min.css');
+
+  const { maybeEmbroider } = require('@embroider/test-setup');
+  return maybeEmbroider(app, {
+    skipBabel: [
+      {
+        package: 'qunit',
+      },
+    ],
+  });
 };

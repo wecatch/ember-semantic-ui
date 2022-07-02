@@ -1,4 +1,4 @@
-import layout from '../templates/components/ui-dropdown-menu';
+import layout from './ui-dropdown-menu';
 import Component from '@ember/component';
 
 /**

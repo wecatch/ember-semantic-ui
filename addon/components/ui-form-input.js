@@ -1,5 +1,5 @@
 import UiInputBase from '../mixins/ui-input-base';
-import layout from '../templates/components/ui-form-input';
+import layout from './ui-form-input';
 import Component from '@ember/component';
 
 /**

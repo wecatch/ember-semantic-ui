@@ -1,5 +1,5 @@
 import UiCheckboxBase from '../mixins/ui-checkbox-base';
-import layout from '../templates/components/ui-checkbox';
+import layout from './ui-checkbox';
 import Component from '@ember/component';
 
 /**

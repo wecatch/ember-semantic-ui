@@ -1,7 +1,7 @@
 import Component from '@ember/component';
 import { scheduleOnce } from '@ember/runloop';
 
-import layout from '../templates/components/ui-popup-content';
+import layout from './ui-popup-content';
 
 /**
 

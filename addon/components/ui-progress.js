@@ -1,7 +1,7 @@
 import Component from '@ember/component';
 import { computed } from '@ember/object';
 import { observer } from '@ember/object';
-import layout from '../templates/components/ui-progress';
+import layout from './ui-progress';
 
 /**
 

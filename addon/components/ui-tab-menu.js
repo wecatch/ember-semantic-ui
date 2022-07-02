@@ -1,7 +1,7 @@
 import { computed } from '@ember/object';
 import { isArray } from '@ember/array';
 import Component from '@ember/component';
-import layout from '../templates/components/ui-tab-menu';
+import layout from './ui-tab-menu';
 
 /**
 ui-tab-menu component

@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import layout from '../templates/components/ui-input-tags';
+import layout from './ui-input-tags';
 import Component from '@ember/component';
 import { guidFor } from '@ember/object/internals';
 import { A } from '@ember/array';

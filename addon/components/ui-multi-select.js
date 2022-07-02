@@ -1,5 +1,5 @@
 import UiSelectBase from '../mixins/ui-select-base';
-import layout from '../templates/components/ui-multi-select';
+import layout from './ui-multi-select';
 import Component from '@ember/component';
 import { observer } from '@ember/object';
 import { set } from '@ember/object';
