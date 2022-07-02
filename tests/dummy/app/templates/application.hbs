@@ -1,6 +1,6 @@
 <div class="ui container">
     <div class="ui grid">
-        {{!-- <UiColumn @wide={{4}}> --}}
+        <UiColumn @wide={{4}}>
             <div class="four wide column">
                 <div class="ui visible secondary vertical menu" style="top:70px;left:inherit">
                     <div class="ui red header item">
@@ -82,14 +82,14 @@
                     <LinkTo @route="ui-uploader" class="item">ui-uploader</LinkTo>
                 </div>
             </div>
-        {{!-- </UiColumn> --}}
-        {{!-- <UiColumn @wide={{12}}> --}}
+        </UiColumn> --}}
+        <UiColumn @wide={{12}}>
             {{#if this.host}}
             <div class="ui segment">
                 <a href="{{this.host}}" target="_blank" rel="noopener noreferrer">See {{this.routeName}} Doc</a>
             </div>
             {{/if}}
             {{outlet}}
-        {{!-- </UiColumn> --}}
+        </UiColumn>
     </div>
 </div>
