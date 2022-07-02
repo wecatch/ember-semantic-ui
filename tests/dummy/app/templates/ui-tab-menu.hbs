@@ -6,8 +6,9 @@
                     {{code-highlight code=(code-show 'ui-tab-menu' 0) }}
                 </div>           
                 <div class="ui segment">
-                	<UiTabMenu @tabs="first,second" @active="first">
-                		
+                	<UiTabMenu  @active={{"first"}}>
+                		<a class="item" data-tab="first" >first</a>
+                        <a class="item" data-tab="second" >second</a>
                 	</UiTabMenu>
                 	<UiTabSegment @tab="first" @active={{true}}>
                 		first

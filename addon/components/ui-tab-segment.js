@@ -1,6 +1,6 @@
-import Component from '@ember/component';
-import layout from './ui-tab-segment';
-import uiSegmentBase from '../mixins/ui-segment-base';
+import Component from '@glimmer/component';
+import { action } from '@ember/object';
+import $ from 'jquery';
 
 /**
 ui-tab-segment component  {{#crossLink "mixins.uiSegmentBase"}}{{/crossLink}}
@@ -11,20 +11,18 @@ ui-tab-segment component  {{#crossLink "mixins.uiSegmentBase"}}{{/crossLink}}
 @class UiTabSegment
 @constructor
 */
-export default Component.extend(uiSegmentBase, {
-  layout: layout,
-  _theme: 'tab',
-  theme: 'bottom attached',
-  attributeBindings: ['tab:data-tab'],
+export default class UiTabSegment extends Component {
   /**
-    tab name
-    @property {String} tab
-    */
-  tab: '',
-  didInsertElement() {
-    this._super(...arguments);
-    if (this.active) {
-      this.$().addClass('active');
+  * tab name
+  * @property {String} tab
+  */
+  get tab() {
+    return this.args.tab ?? '';
+  }
+  @action
+  register(element) {
+    if (this.args.active) {
+      $(element).addClass('active');
     }
-  },
-});
+  }
+}
