@@ -2,7 +2,7 @@
   left menu + right content
 </div>
 <div class="ui divider"></div>
-<UiGrid>
+<div class="ui grid">
   <UiColumn @wide={{4}}>
     <div class="ui segment">
       left
@@ -13,16 +13,16 @@
       main content
     </div>
   </UiColumn>
-</UiGrid>
+</div>
 <div style="height:20px;"></div>
 {{code-highlight code=(code-show 'layout' 0) }}
 <div class="ui header">
   example
 </div>
-<UiContainer>
-  <UiGrid>
+<div class="ui contianer">
+  <div class="ui grid">
     <UiColumn @wide={{6}}>
-      <UiVerticalMenu>
+      <div class="ui vertical menu">
         <a class="active teal item">
           Inbox
           <div class="ui teal pointing left label">1</div>
@@ -41,10 +41,10 @@
             <i class="search icon"></i>
           </div>
         </div>
-      </UiVerticalMenu>
+      </div>
     </UiColumn>
     <UiColumn @wide={{10}}>
-      <UiSegment>
+      <div class="ui segment">
         <div class="ui form">
           <div class="field">
             <label for="">name</label>
@@ -52,25 +52,23 @@
           </div>
           <button class="ui button" type="button">submit</button>
         </div>
-      </UiSegment>
+      </div>
     </UiColumn>
-  </UiGrid>
-</UiContainer>
+  </div>
+</div>
 
 <div class="ui header">
   top menu+left menu + right content
 </div>
 <div class="ui divider"></div>
-<UiGrid>
-  <UiRow>
-    <UiColumn @wide={{16}}>
-      <UiMenu>
-        <div class="item">
-          Home
-        </div>
-      </UiMenu>
-    </UiColumn>
-  </UiRow>
+<div class="ui grid">
+  <UiColumn @wide={{16}}>
+    <div class="ui menu">
+      <div class="item">
+        Home
+      </div>
+    </div>
+  </UiColumn>
   <UiColumn @wide={{4}}>
     <div class="ui segment">
       left
@@ -81,6 +79,6 @@
       main content
     </div>
   </UiColumn>
-</UiGrid>
+</div>
 <div style="height:20px;"></div>
 {{code-highlight code=(code-show 'layout' 1) }}

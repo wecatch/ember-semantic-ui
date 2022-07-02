@@ -1,0 +1,3 @@
+<button class="ui {{this.args.class}} {{if this.args.active "active" ""}} {{if this.args.loading "loading" ""}} {{if this.args.disabled "disabled" ""}} button" {{on "click" this.click }} >
+  {{yield}}
+</button>

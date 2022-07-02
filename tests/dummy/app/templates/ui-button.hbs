@@ -6,14 +6,14 @@
                     {{code-highlight code=(code-show 'ui-button' 0)}}
                 </div>           
                 <div class="ui segment">
-                     <UiButton @theme="basic">button</UiButton>
+                     <UiButton @class="basic">button</UiButton>
                 </div>
 
                 <div class="ui secondary segment">
                     {{code-highlight code=(code-show 'ui-button' 1)}}
                 </div>           
                 <div class="ui segment">
-                     <UiButton @theme="basic" @loading={{true}}>button</UiButton>
+                     <UiButton @class="basic" @loading={{true}}>button</UiButton>
                 </div>
 
                 <div class="ui secondary segment">
@@ -28,26 +28,26 @@
                     {{code-highlight code=(code-show 'ui-button' 3)}}
                 </div>
                 <div class="ui segment">
-                    <UiButton @theme="primary">button</UiButton>
+                    <UiButton @class="primary">button</UiButton>
                 </div>
                 <div class="ui secondary segment">
                     {{code-highlight code=(code-show 'ui-button' 4)}}
                 </div>
                 <div class="ui segment">
-                    <UiButton @theme="secondary">button</UiButton>
+                    <UiButton @class="secondary">button</UiButton>
                 </div>
                 <div class="ui secondary segment">
                     {{code-highlight code=(code-show 'ui-button' 5)}}
                 </div>
                 <div class="ui segment">
-                    <UiButton @theme="red">button</UiButton>
+                    <UiButton @class="red">button</UiButton>
                 </div>
 
                 <div class="ui secondary segment">
                     {{code-highlight code=(code-show 'ui-button' 6)}}
                 </div>
                 <div class="ui segment">
-                    <UiButton @theme="compact" @action={{action "clickMe" 'value'}}>
+                    <UiButton @class="compact" @click={{(fn this.clickMe 'value')}}>
                         <i class="icon heart"></i>
                         heart
                     </UiButton>
