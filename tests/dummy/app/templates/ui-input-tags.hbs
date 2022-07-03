@@ -7,11 +7,11 @@
                   {{code-highlight code=(code-show 'ui-input-tags' 0) }}
               </div>
               <div class="ui segment">
-                {{ui-input-tags value=value}}
-                <p>{{valueShow}}</p>
+                <UiInputTags @value={{this.value}} @onChange={{set this "value"}} />
+                <p>{{this.valueShow}}</p>
               </div>
 
-              
+{{!--               
               <div class="ui secondary segment">
                   {{code-highlight code=(code-show 'ui-input-tags' 1) }}
               </div>
@@ -29,7 +29,7 @@
                     </div>
                     <UiButton @action={{action "changeValue2"}}>dynamic change value</UiButton>
                 </div>
-              </div>
+              </div> --}}
             </div>
         </div>
     </div>
