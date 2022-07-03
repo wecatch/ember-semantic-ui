@@ -1,51 +1,48 @@
-<div class="ui grid" >
+<div class="ui grid">
     <div class="row">
         <div class="column">
             <div class="ui segments">
                 <div class="ui secondary segment">
                     {{code-highlight code=(code-show 'ui-checkbox' 0) }}
-                </div>           
+                </div>
                 <div class="ui segment">
-                    <UiCheckbox @checked={{isChecked}}>normal</UiCheckbox>
-                    <UiPointingLabel @theme="basic blue" @direction="left">
-                        {{isChecked}}
-                    </UiPointingLabel>
+                    <UiCheckbox @checked={{this.isChecked}} @onCheck={{set this "isChecked"}} >normal</UiCheckbox>
+                    {{this.isChecked}}
                 </div>
 
                 <div class="ui secondary segment">
                     {{code-highlight code=(code-show 'ui-checkbox' 1) }}
-                </div>           
+                </div>
                 <div class="ui segment">
                     <UiCheckbox @checked={{true}}>normal</UiCheckbox>
                 </div>
 
                 <div class="ui secondary segment">
                     {{code-highlight code=(code-show 'ui-checkbox' 2) }}
-                </div>           
+                </div>
                 <div class="ui segment">
-                    <UiCheckbox @theme="toggle">toggle</UiCheckbox>
+                    <UiCheckbox @class="toggle">toggle</UiCheckbox>
                 </div>
                 <div class="ui secondary segment">
                     {{code-highlight code=(code-show 'ui-checkbox' 3) }}
-                </div>           
+                </div>
                 <div class="ui segment">
-                    <UiCheckbox @checked={{true}} @theme="toggle">toggle</UiCheckbox>
+                    <UiCheckbox @checked={{true}} @class="toggle">toggle</UiCheckbox>
                 </div>
 
                 <div class="ui secondary segment">
                     {{code-highlight code=(code-show 'ui-checkbox' 4) }}
-                </div>           
-                <div class="ui segment">
-                    <UiCheckbox @theme="slider">slider</UiCheckbox>
                 </div>
-
+                <div class="ui segment">
+                    <UiCheckbox @class="slider">slider</UiCheckbox>
+                </div>
 
                 <div class="ui secondary segment">
                     {{code-highlight code=(code-show 'ui-checkbox' 5) }}
-                </div>           
+                </div>
                 <div class="ui segment">
-                    {{ui-checkbox value='i am checked' action=(action "checkedCheck") checked=true update=(action (mut value))}}
-                    {{value}}
+                    <UiCheckbox @value={{"i am checked"}} @onCheck={{this.onCheck}} @checked={{true}} @onChange={{this.onChange}}  />
+                    {{this.value}}
                 </div>
             </div>
         </div>
