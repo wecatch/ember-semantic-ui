@@ -1,7 +1,16 @@
-{{#if (has-block-params)}}
-    {{yield (hash date=(component 'ui-date-input' value=d update=(action (mut d)))  hour=(component 'ui-select' options=hours value=h update=(action (mut h))) minute=(component 'ui-select' options=minutes value=m update=(action (mut m)) ))}}
-{{else}}
-    {{ui-date-input value=d update=(action (mut d)) }}
-    {{ui-select options=hours value=h}}
-    {{ui-select options=minutes value=m}}
-{{/if}}
+<div class="ui form">
+    <div class="ui three fields" ...attributes>
+        <div class="field">
+            <label>日期</label>
+            <UiDateInput @value={{this.d}} @onChange={{fn this.change "d" }} />
+        </div>
+        <div class="field">
+            <label>小时</label>
+            <UiSelect @value={{this.h}} @options={{this.hours}} @onChange={{fn this.change "h" }} />
+        </div>
+        <div class="field">
+            <label>分钟</label>
+            <UiSelect @value={{this.m}} @options={{this.minutes}} @onChange={{fn this.change "m" }} />
+        </div>
+    </div>
+</div>

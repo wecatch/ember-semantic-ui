@@ -1,7 +1,7 @@
-<div class="ui grid" >
-    <div class="row">
-        <div class="column">
-            <div class="ui segments">
+<div class="ui grid">
+	<div class="row">
+		<div class="column">
+			<div class="ui segments">
 				<div class="ui secondary segment">
 					<code class="code xml">
 						\{{#ui-input focus=true}}\{{/ui-input}}
@@ -17,7 +17,7 @@
 					</code>
 				</div>
 				<div class="ui segment">
-					<UiInput @theme="icon" @loading={{true}}><i class="search icon"></i></UiInput>
+					<UiInput @class={{"icon"}} @loading={{true}}><i class="search icon"></i></UiInput>
 				</div>
 
 				<div class="ui secondary segment">
@@ -35,7 +35,7 @@
 					</code>
 				</div>
 				<div class="ui segment">
-					<UiInput @disabled={{true}} @value="search"></UiInput>
+					<UiInput @disabled={{true}} @value={{"search"}}></UiInput>
 				</div>
 
 				<div class="ui secondary segment">
@@ -44,58 +44,58 @@
 					</code>
 				</div>
 				<div class="ui segment">
-					<UiInput @readonly={{true}} @value="search"></UiInput>
+					<UiInput @readonly={{true}} @value={{"search"}}></UiInput>
 				</div>
-				
+
 				<div class="ui secondary segment">
 					<code class="code xml">
-		                \{{#ui-input onFocus=(action 'onfocus')}}\{{/ui-input}}
+		        \{{#ui-input onFocus=(action 'onfocus')}}\{{/ui-input}}
 					</code>
 				</div>
 				<div class="ui segment">
 					<label for="">email</label>
-					<UiInput @onFocus={{action 'onfocus'}}></UiInput>
-					{{result}} focus
+					<UiInput @onFocus={{this.onfocus}}></UiInput>
+					{{this.result}}
 				</div>
-          	</div>
+			</div>
 
-          	<div class="ui segments">
-          		<div class="ui segment">
-					<UiInput @theme="fluid icon" @value="search">
-							<i class="search icon"></i>
+			<div class="ui segments">
+				<div class="ui segment">
+					<UiInput @class="fluid icon" @value={{"search"}}>
+						<i class="search icon"></i>
 					</UiInput>
 				</div>
 
 				<div class="html ui segment">
-					<UiInput @theme="fluid action" @value="fluid">
+					<UiInput @class="fluid action" @value={{"fluid"}}>
 						<UiButton>search</UiButton>
 					</UiInput>
 				</div>
 
 				<div class="html ui segment">
-					<UiInput @theme="mini icon" @value="search">
+					<UiInput @class="mini icon" @value={{"search"}}>
 						<i class="search icon"></i>
 					</UiInput>
 				</div>
 
 				<div class="html ui segment">
-					<UiInput @theme="small icon" @value="search">
+					<UiInput @class="small icon" @value={{"search"}}>
 						<i class="search icon"></i>
 					</UiInput>
 				</div>
 
 				<div class="html ui segment">
-					<UiInput @theme="big icon" @value="search">
+					<UiInput @class="big icon" @value={{"search"}}>
 						<i class="search icon"></i>
 					</UiInput>
 				</div>
 
 				<div class="html ui segment">
-					<UiInput @theme="huge icon" @value="search">
+					<UiInput @class="huge icon" @value={{"search"}}>
 						<i class="search icon"></i>
 					</UiInput>
 				</div>
-          	</div>
-        </div>
-    </div>
+			</div>
+		</div>
+	</div>
 </div>

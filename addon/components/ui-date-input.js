@@ -50,9 +50,9 @@ export default class UiDateInputComponent extends Component {
       format: this.format,
       position: this.position,
       i18n: zh_cn,
-      onSelect: () => {
+      onSelect: (value) => {
         if (typeof this.args.onChange === 'function') {
-          this.args.onChange(this.getMoment().format(self.format));
+          this.args.onChange(moment(value).format(self.format));
         }
       },
     };

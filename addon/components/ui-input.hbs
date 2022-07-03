@@ -1,2 +1,6 @@
-<input type="{{type}}" placeholder={{placeholder}} value="{{value}}" />
-{{yield}}
+<div ...attributes class="ui {{this.statusClass}} input" >
+  <input type="{{this.type}}" placeholder={{this.placeholder}} value="{{this.value}}" />
+  {{yield}}
+</div>
+
+
