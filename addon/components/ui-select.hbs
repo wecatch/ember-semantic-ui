@@ -1,10 +1,15 @@
-{{#if placeholder}}
-    <option value="">{{placeholder}}</option> 
-{{/if}}
-{{#each _options as |item| }}
-    {{#if item.selected }}
-        <option value="{{item.value}}" selected="selected" >{{item.label}}</option> 
-    {{else}}
-        <option value="{{item.value}}">{{item.label}}</option> 
-    {{/if}}
-{{/each}}
+<select class="ui selection {{if this.search " search" "" }} dropdown" ...attributes {{did-insert this.register }}>
+
+  {{#if (has-block)}}
+  {{yield}}
+  {{else}}
+  {{#each this.options as |item| }}
+  {{#if item.selected }}
+  <option value="{{item.value}}" selected="selected">{{item.label}}</option>
+  {{else}}
+  <option value="{{item.value}}">{{item.label}}</option>
+  {{/if}}
+  {{/each}}
+  {{/if}}
+
+</select>

@@ -1,8 +1,7 @@
-import { computed } from '@ember/object';
-import Component from '@ember/component';
+import Component from '@glimmer/component';
 import { A } from '@ember/array';
-import EmberObject from '@ember/object';
-import layout from './ui-select';
+import EmberObject, { action } from '@ember/object';
+import $ from 'jquery';
 
 /**
 ui-select component
@@ -12,45 +11,38 @@ ui-select component
 @class UiSelect
 @constructor
 */
-export default Component.extend({
-  layout: layout,
-  defaultValue: null,
-  tagName: 'select',
-  didRender() {
-    this._super(...arguments);
-    let that = this;
-    this.$().dropdown({
+export default class UiSelectComponent extends Component {
+
+  @action
+  register(element) {
+    $(element).dropdown({
       forceSelection: false,
-      onChange(value) {
-        if (that.attrs.value) {
-          that.attrs.value.update(value);
+      onChange: (value) => {
+        if (this.args.onChange) {
+          this.args.onChange(value);
         }
       },
-    });
-    if (!this.value) {
-      this.$().dropdown('restore placeholder text');
-    }
-  },
+    })
+  }
+
   /**
    * value  for the select
    *
    * @property {String} value
    */
-  value: '',
-  /**
-   *  label for the select radio group component
-   *
-   * @property {String} label
-   */
-  label: '',
+  get value() {
+    return this.args.value ?? '';
+  }
 
   /**
    * name key for option, by default name
    *
    * @property {String} namePath
-   * @default 'value'
+   * @default 'name'
    */
-  labelPath: 'name',
+  get labelPath() {
+    return this.args.labelPath ?? 'name';
+  }
 
   /**
    * value key for option, by default value
@@ -58,85 +50,43 @@ export default Component.extend({
    * @property {String} valuePath
    * @default 'value'
    */
-  valuePath: 'value',
-  /**
-   * placeholder for blank option
-   *
-   * @property {String} placeholder
-   */
-  placeholder: '',
-
-  /**
-   * the select theme
-   *
-   * @property {String} theme
-   */
-  theme: '',
-
-  /**
-   * the select theme
-   *
-   * @property {String} class
-   */
-  class: '',
+  get valuePath() {
+    return this.args.valuePath ?? 'value';
+  }
 
   /**
    * options for the select component
    *
    * @property {Array} options
    */
-  options: null,
+  get options() {
+    const _options = A();
+    for (var i = 0; i < this.args.options.length; i++) {
+      let item = this.args.options[i];
+      let label = item[this.labelPath];
+      let value = item[this.valuePath];
+      let checked = this.isOptionChecked(value);
+      let obj = EmberObject.create({
+        label: label,
+        value: String(value),
+        selected: checked,
+      });
+      _options.pushObject(obj);
+    }
 
-  /**
-   * options for the select component
-   * @private
-   * @property {Array} _options
-   */
-  _options: computed('labelPath', 'options.length', 'valuePath', {
-    get() {
-      const _options = A();
-      for (var i = 0; i < this.options.length; i++) {
-        let item = this.options[i];
-        let label = item[this.labelPath];
-        let value = item[this.valuePath];
-        let checked = this.isOptionChecked(value);
-        let obj = EmberObject.create({
-          label: label,
-          value: String(value),
-          selected: checked,
-        });
-        _options.pushObject(obj);
-      }
-      return _options;
-    },
-  }),
-
-  classNameBindings: [
-    '_uiClass',
-    'search:search:',
-    'class',
-    'theme',
-    'selection',
-    '_componentClass',
-  ],
-  _uiClass: 'ui',
-  _componentClass: 'dropdown',
+    return _options;
+  }
   /**
    * allow select to search or not , by default false
    *
    * @property {Boolean} search
    * @default false
    */
-  search: false,
-  /**
-   * @method setupOptions
-   * @observes "options" property
-   * @returns  {void}
-   */
+  get search() {
+    return this.args.search ?? false;
+  }
+  
   isOptionChecked(optionValue) {
     return String(this.value) === optionValue;
-  },
-  init() {
-    this._super(...arguments);
-  },
-});
+  }
+}

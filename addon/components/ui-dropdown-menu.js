@@ -1,5 +1,6 @@
-import layout from './ui-dropdown-menu';
-import Component from '@ember/component';
+
+import Component from '@glimmer/component';
+import { action } from '@ember/object';
 
 /**
 ui-dropdown-menu component
@@ -9,44 +10,15 @@ ui-dropdown-menu component
 @class UiDropdownMenu
 @constructor
 */
-export default Component.extend({
-  layout: layout,
-  /**
-   * the component style class
-   *
-   * @property {String} theme
-   * @default ''
-   */
-  theme: '',
-  /**
-   * the component style class
-   *
-   * @property {String} class
-   */
-  class: '',
-  classNameBindings: ['_uiClass', 'class', 'theme', '_componentClass'],
-  _uiClass: 'ui',
-  _componentClass: 'dropdown',
-
-  didInsertElement() {
-    this._super(...arguments);
-    this.renderDropDown();
-  },
-  renderDropDown() {
-    let that = this;
-    this.$().dropdown({
-      onChange(value) {
-        if (that.attrs.value) {
-          that.attrs.value.update(value);
+export default class UiDropdonwMenuComponent extends Component {
+  @action
+  register(element) {
+    $(element).dropdown({
+      onChange: (value) => {
+        if (this.args.onChange) {
+          that.args.onChange(value);
         }
-      },
-    });
-  },
-  didRender() {
-    this._super(...arguments);
-    // re render component then restore default texts
-    if (!this.attrs.value.value) {
-      this.$().dropdown('restore defaults');
-    }
-  },
-});
+      }
+    })
+  }
+}

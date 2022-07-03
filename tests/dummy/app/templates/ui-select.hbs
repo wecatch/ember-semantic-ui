@@ -1,17 +1,17 @@
-<div class="ui grid" >
-    <div class="row">
-        <div class="column">
-            <div class="ui segments">
-            	<div class="ui secondary segment">
-                    {{code-highlight code=(code-show 'ui-select' 0) }}
-            	</div>
-            	<div class="ui segment">
-					<div class="meta" >
-						{{value}}
+<div class="ui grid">
+	<div class="row">
+		<div class="column">
+			<div class="ui segments">
+				<div class="ui secondary segment">
+					{{code-highlight code=(code-show 'ui-select' 0) }}
+				</div>
+				<div class="ui segment">
+					<div class="meta">
+						{{this.value}}
 					</div>
-            		{{ui-select label="select brand" placeholder="select brand" search=true options=options.options value=(mut value)}}
-            	</div>
+					<UiSelect @search={{true}} @options={{this.options}} @onChange={{(mut this.value)}} />
+				</div>
 			</div>
 		</div>
-    </div>
+	</div>
 </div>

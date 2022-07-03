@@ -13,12 +13,17 @@ ui-tab-menu component
 */
 export default class UiTabMenu extends Component {
 
+
+  get selector() {
+    return this.args.active ? `.item[data-tab="${this.args.active}"]` : '';
+  }
+
   @action
   register(element) {
     $(element).find(".item").tab();
-    const selector = `.item[data-tab="${this.args.active}"]`;
-    console.log(selector);
-    $(element).find(selector).addClass('active');
+    if (this.selector) {
+      $(element).find(this.selector).addClass('active');
+    }
   }
 }
 
