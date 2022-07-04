@@ -2,6 +2,8 @@ import Controller from '@ember/controller';
 import { A } from '@ember/array';
 import { computed, action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
+import { inject as service } from '@ember/service';
+
 
 export default class UIMultiSelectController extends Controller {
   @tracked value = A();
@@ -9,20 +11,7 @@ export default class UIMultiSelectController extends Controller {
     return  this.value.map(item=>item.value).join(' ');
   }
 
-  options = [
-    {
-      name: 'Google',
-      value: 'Google'
-    },
-    {
-      name: 'Apple',
-      value: 'Apple'
-    },
-    {
-      name: 'Meta',
-      value: 'Meta'
-    },
-  ]
+  @service options;
 
   @action
   onChange(value){

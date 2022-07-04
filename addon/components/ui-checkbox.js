@@ -15,8 +15,8 @@ export default class UiCheckboxComponent extends Component {
 
   constructor(){
     super(...arguments);
-    if(this.checked && this.args.onChange ){
-      this.args.onChange(this.value);
+    if(this.args.onChange){
+      this.args.onChange(this.checked, this.value);
     }
   }
 
@@ -49,11 +49,9 @@ export default class UiCheckboxComponent extends Component {
   _updateValue(checked) {
     if (typeof this.args.onChange === 'function') {
       if (checked) {
-        this.args.onChange(this.value);
-        this.args.onCheck(true);
+        this.args.onChange(true, this.value);
       } else {
-        this.args.onChange('');
-        this.args.onCheck(false);
+        this.args.onChange(false, this.value);
       }
     }
   }

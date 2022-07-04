@@ -6,7 +6,7 @@
                     {{code-highlight code=(code-show 'ui-checkbox' 0) }}
                 </div>
                 <div class="ui segment">
-                    <UiCheckbox @checked={{this.isChecked}} @onCheck={{set this "isChecked"}} >normal</UiCheckbox>
+                    <UiCheckbox @checked={{this.isChecked}} @onChange={{this.onChange}} >normal</UiCheckbox>
                     {{this.isChecked}}
                 </div>
 
@@ -41,7 +41,7 @@
                     {{code-highlight code=(code-show 'ui-checkbox' 5) }}
                 </div>
                 <div class="ui segment">
-                    <UiCheckbox @value={{"i am checked"}} @onCheck={{this.onCheck}} @checked={{true}} @onChange={{this.onChange}}  />
+                    <UiCheckbox @value={{"i am checked"}} @checked={{true}} @onChange={{this.onChange}}  />
                     {{this.value}}
                 </div>
             </div>

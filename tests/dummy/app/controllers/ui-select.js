@@ -1,15 +1,9 @@
 import Controller from '@ember/controller';
+import { inject as service } from '@ember/service';
 
-export default Controller.extend({
-  value: '',
-  options: [
-    {
-      name: 'Google',
-      value: 'Google'
-    },
-    {
-      name: 'Apple',
-      value: 'Apple'
-    },
-  ]
-});
+export default class UiSelect extends Controller {
+
+  @service options;
+
+  value = '';
+}

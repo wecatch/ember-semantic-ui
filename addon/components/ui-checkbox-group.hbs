@@ -1,8 +1,11 @@
-<div class="ui fields">
+<div class="ui {{if this.args.class ""}} fields" ...attributes >
     {{#if this.args.label}}
     <label>{{this.args.label}}</label>
     {{/if}}
     {{#each this.options as |op|}}
-    <UiCheckbox @value={{op.value}} @onChange={{this.childChange}} @checked={{op.checked}}>{{op.label}}</UiCheckbox>
+    <UiCheckbox @value={{op.value}} @onChange={{this.childOnChange}} @checked={{op.checked}}>{{op.label}}</UiCheckbox>
     {{/each}}
+
+{{yield this.childOnChange}}
+
 </div>

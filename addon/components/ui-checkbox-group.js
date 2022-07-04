@@ -1,6 +1,6 @@
 import Component from '@glimmer/component';
-import { isArray } from '@ember/array';
-import { action } from '@ember/object';
+import { isArray, A } from '@ember/array';
+import EmberObject, { action } from '@ember/object';
 
 /**
 ui-checkbox-group component see {{#crossLink "mixins.UiCheckboxGroupBase"}}{{/crossLink}}
@@ -14,20 +14,7 @@ export default class UiCheckboxGroupComponent extends Component {
 
   constructor() {
     super(...arguments);
-    this._selectedOptions = this.args.value ?? A();
-  }
-
-  @action
-  register(element) {
-  }
-
-  /**
-   * value  for the select
-   *
-   * @property {String} value
-   */
-  get value() {
-    return this.args.value ?? '';
+    this.value = this.args.value ?? A();
   }
 
   /**
@@ -56,6 +43,7 @@ export default class UiCheckboxGroupComponent extends Component {
    * @property {Array} options
    */
   get options() {
+    if(!this.args.options) return A();
     const _options = A();
     for (var i = 0; i < this.args.options.length; i++) {
       let item = this.args.options[i];
@@ -74,16 +62,20 @@ export default class UiCheckboxGroupComponent extends Component {
   }
 
   isOptionChecked(optionValue) {
-    return Boolean(this._selectedOptions.findBy(this.valuePath, optionValue));
+    return this.value.includes(optionValue);
   }
 
   @action
-  childOnChange(value) {
+  childOnChange(checked, value) {
     if (checked && !this.value.includes(value)) {
       this.value.pushObject(value);
     }
     if (!checked && this.value.includes(value)) {
       this.value.removeObject(value);
+    }
+
+    if(this.args.onChange){
+      this.args.onChange(checked, value, this.value);
     }
   }
 }
