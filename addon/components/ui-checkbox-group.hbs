@@ -1,8 +1,8 @@
-{{#if label}}
-	<label>{{label}}</label>
-{{/if}}
-{{#each _options as |op|}}
-    <UiCheckbox @value={{op.value}} @action={{action "childChange"}} @checked={{op.checked}}>{{op.label}}</UiCheckbox>
-{{/each}}
-
-{{yield (action "childChange") }}
+<div class="ui fields">
+    {{#if this.args.label}}
+    <label>{{this.args.label}}</label>
+    {{/if}}
+    {{#each this.options as |op|}}
+    <UiCheckbox @value={{op.value}} @onChange={{this.childChange}} @checked={{op.checked}}>{{op.label}}</UiCheckbox>
+    {{/each}}
+</div>
