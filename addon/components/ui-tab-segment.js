@@ -13,9 +13,9 @@ ui-tab-segment component  {{#crossLink "mixins.uiSegmentBase"}}{{/crossLink}}
 */
 export default class UiTabSegment extends Component {
   /**
-  * tab name
-  * @property {String} tab
-  */
+   * tab name
+   * @property {String} tab
+   */
   get tab() {
     return this.args.tab ?? '';
   }

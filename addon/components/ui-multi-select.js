@@ -13,7 +13,6 @@ ui-multi-select component see {{#crossLink "mixins.UiSelectBase"}}{{/crossLink}}
 @constructor
 */
 export default class UiMultiSelectComponent extends Component {
-
   constructor() {
     super(...arguments);
     this._selectedOptions = this.args.value ?? A();
@@ -23,7 +22,7 @@ export default class UiMultiSelectComponent extends Component {
   register(element) {
     $(element).dropdown({
       onAdd: (addedValue) => {
-        if(this.isOptionChecked(addedValue)) return;
+        if (this.isOptionChecked(addedValue)) return;
         for (var i = 0; i < this.options.length; i++) {
           let item = this.options[i];
           if (item[this.valuePath] === addedValue) {
@@ -46,7 +45,7 @@ export default class UiMultiSelectComponent extends Component {
         if (this.args.onChange) {
           this.args.onChange(this._selectedOptions);
         }
-      }
+      },
     });
   }
 
@@ -55,7 +54,7 @@ export default class UiMultiSelectComponent extends Component {
    *
    * @property {String} value
    */
-   get value() {
+  get value() {
     return this.args.value ?? '';
   }
 
@@ -79,13 +78,12 @@ export default class UiMultiSelectComponent extends Component {
     return this.args.valuePath ?? 'value';
   }
 
-
   /**
    * options for the select component
    *
    * @property {Array} options
    */
-   get options() {
+  get options() {
     const _options = A();
     for (var i = 0; i < this.args.options.length; i++) {
       let item = this.args.options[i];
@@ -104,6 +102,6 @@ export default class UiMultiSelectComponent extends Component {
   }
 
   isOptionChecked(optionValue) {
-    return  Boolean(this._selectedOptions.findBy(this.valuePath, optionValue));
+    return Boolean(this._selectedOptions.findBy(this.valuePath, optionValue));
   }
 }

@@ -1,4 +1,3 @@
-
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
 
@@ -18,7 +17,7 @@ export default class UiDropdonwMenuComponent extends Component {
         if (this.args.onChange) {
           that.args.onChange(value);
         }
-      }
-    })
+      },
+    });
   }
 }

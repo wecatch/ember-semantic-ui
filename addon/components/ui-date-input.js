@@ -63,7 +63,7 @@ export default class UiDateInputComponent extends Component {
    * pikaday position 'bottom right', 'bottom left', 'top left', 'top right'
    * @property {String} position
    * @default 'bottom left'
-    */
+   */
   get position() {
     return this.args.position ?? 'bottom left';
   }

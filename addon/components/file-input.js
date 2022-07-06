@@ -10,4 +10,6 @@ file-input component, see {{#crossLink "mixins.FileInputBase"}}{{/crossLink}}
 @constructor
 
 */
-export default class FileInputCompnent extends Component.extend(fileInputBase) {};
+export default class FileInputCompnent extends Component.extend(
+  fileInputBase
+) {}

@@ -13,7 +13,6 @@ ui-input-tags component
 @constructor
 */
 export default class UiInputTagsComponent extends Component {
-
   @tracked value = A();
 
   @action
@@ -34,7 +33,7 @@ export default class UiInputTagsComponent extends Component {
     });
   }
   _addValue(value) {
-    this.value.addObject(value)
+    this.value.addObject(value);
     if (typeof this.args.onChange === 'function') {
       this.args.onChange(this.value);
     }
@@ -58,4 +57,3 @@ export default class UiInputTagsComponent extends Component {
     return this.value.join(',');
   }
 }
-

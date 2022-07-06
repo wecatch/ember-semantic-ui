@@ -12,7 +12,6 @@ ui-select component
 @constructor
 */
 export default class UiSelectComponent extends Component {
-
   @action
   register(element) {
     $(element).dropdown({
@@ -22,7 +21,7 @@ export default class UiSelectComponent extends Component {
           this.args.onChange(value);
         }
       },
-    })
+    });
   }
 
   /**
@@ -85,7 +84,7 @@ export default class UiSelectComponent extends Component {
   get search() {
     return this.args.search ?? false;
   }
-  
+
   isOptionChecked(optionValue) {
     return String(this.value) === optionValue;
   }

@@ -1,5 +1,5 @@
 import Component from '@glimmer/component';
-import {action} from '@ember/object';
+import { action } from '@ember/object';
 
 /**
 ui-input component see {{#crossLink "mixins.UiInputBase"}}{{/crossLink}}
@@ -9,14 +9,14 @@ ui-input component see {{#crossLink "mixins.UiInputBase"}}{{/crossLink}}
 @class UiInput
 @constructor
 */
-export default class UiIputComponent extends Component  {
+export default class UiIputComponent extends Component {
   /**
    * the input type
    *
    * @property {String} type
    * @default text
    */
-  get type(){
+  get type() {
     return this.args.type ?? 'text';
   }
 
@@ -25,8 +25,8 @@ export default class UiIputComponent extends Component  {
    *
    * @property {String} value
    */
-  get value(){
-    return this.args.value ?? "";
+  get value() {
+    return this.args.value ?? '';
   }
 
   /**
@@ -34,8 +34,8 @@ export default class UiIputComponent extends Component  {
    *
    * @property {String} placeholder
    */
-  get placeholder(){
-    return this.args.placeholder ?? "";
+  get placeholder() {
+    return this.args.placeholder ?? '';
   }
 
   /**
@@ -43,8 +43,8 @@ export default class UiIputComponent extends Component  {
    *
    * @property {String} label
    */
-  get label(){
-    return this.args.placeholder ?? "";
+  get label() {
+    return this.args.placeholder ?? '';
   }
 
   /**
@@ -53,7 +53,7 @@ export default class UiIputComponent extends Component  {
    * @property {Boolean} focus
    * @default false
    */
-  get focus(){
+  get focus() {
     return this.args.focus ?? false;
   }
 
@@ -63,7 +63,7 @@ export default class UiIputComponent extends Component  {
    * @property {Boolean} loading
    * @default false
    */
-  get loading(){
+  get loading() {
     return this.args.loading ?? false;
   }
 
@@ -73,7 +73,7 @@ export default class UiIputComponent extends Component  {
    * @property {Boolean} error
    * @default false
    */
-  get error(){
+  get error() {
     return this.args.error ?? false;
   }
 
@@ -83,7 +83,7 @@ export default class UiIputComponent extends Component  {
    * @property {Boolean} error
    * @default false
    */
-  get disabled(){
+  get disabled() {
     return this.args.disabled ?? false;
   }
 
@@ -93,29 +93,29 @@ export default class UiIputComponent extends Component  {
    * @property {Boolean} readonly
    * @default false
    */
-  get readonly(){
+  get readonly() {
     return this.args.readonly ?? false;
   }
 
-  get statusClass(){
+  get statusClass() {
     const classList = this.args.class ? [this.args.class] : [];
-    if(this.disabled){
-      classList.push("disabled");
+    if (this.disabled) {
+      classList.push('disabled');
     }
 
-    if(this.focus){
-      classList.push("focus");
+    if (this.focus) {
+      classList.push('focus');
     }
 
-    if(this.loading){
-      classList.push("loading");
+    if (this.loading) {
+      classList.push('loading');
     }
 
-    if(this.error){
-      classList.push("error");
+    if (this.error) {
+      classList.push('error');
     }
 
-    return classList.join(" ");
+    return classList.join(' ');
   }
 
   @action
@@ -124,28 +124,36 @@ export default class UiIputComponent extends Component  {
       $(element).find('input').attr('readonly', 'readonly');
     }
 
-    $(element).find('input').change((e) => {
-      if (typeof this.args.onChange === 'function') {
-        this.args.onChange(e);
-      }
-    });
+    $(element)
+      .find('input')
+      .change((e) => {
+        if (typeof this.args.onChange === 'function') {
+          this.args.onChange(e);
+        }
+      });
 
-    $(element).find('input').focus((e) => {
-      if (typeof this.args.onFocus === 'function') {
-        this.args.onFocus(e);
-      }
-    });
+    $(element)
+      .find('input')
+      .focus((e) => {
+        if (typeof this.args.onFocus === 'function') {
+          this.args.onFocus(e);
+        }
+      });
 
-    $(element).find('input').focusin((e) => {
-      if (typeof this.args.onFocusin === 'function') {
-        this.args.onFocusin(e);
-      }
-    });
+    $(element)
+      .find('input')
+      .focusin((e) => {
+        if (typeof this.args.onFocusin === 'function') {
+          this.args.onFocusin(e);
+        }
+      });
 
-    $(element).find('input').focusout((e) => {
-      if (typeof this.args.onFocusout === 'function') {
-        this.args.onFocusout(e);
-      }
-    });
+    $(element)
+      .find('input')
+      .focusout((e) => {
+        if (typeof this.args.onFocusout === 'function') {
+          this.args.onFocusout(e);
+        }
+      });
   }
 }

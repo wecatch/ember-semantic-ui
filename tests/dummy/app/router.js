@@ -36,7 +36,6 @@ Router.map(function () {
 
   this.route('ui-checkbox');
   this.route('ui-checkbox-group');
-  this.route('ui-radio-group');
 
   this.route('ui-pointing-label');
 

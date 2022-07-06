@@ -1,5 +1,5 @@
 import moment from 'moment';
-import {action} from '@ember/object';
+import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 
@@ -24,7 +24,6 @@ ui-date-time-input component
 @constructor
 */
 export default class UiDateTimeInputComponent extends Component {
-
   @tracked h;
   @tracked d;
   @tracked m;
@@ -37,7 +36,7 @@ export default class UiDateTimeInputComponent extends Component {
     @default null
     */
   get value() {
-    return this.args.value ?? "";
+    return this.args.value ?? '';
   }
 
   rtime() {
@@ -58,13 +57,13 @@ export default class UiDateTimeInputComponent extends Component {
   @action
   change(type, value) {
     switch (type) {
-      case "d":
+      case 'd':
         this.d = value;
         break;
-      case "h":
+      case 'h':
         this.h = value;
         break;
-      case "m":
+      case 'm':
         this.m = value;
         break;
     }

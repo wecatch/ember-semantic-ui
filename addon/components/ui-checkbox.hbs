@@ -1,4 +1,4 @@
-<div class="ui {{this.args.class}} checkbox" {{did-insert this.register}}>
-  <input type="checkbox" tabindex="0" name="{{this.name}}" class="hidden" value="{{this.value}}">
+<div class="ui {{this.args.class}} {{this.type}}" {{did-insert this.register}}>
+  <input type="{{this.type}}" tabindex="0" name="{{this.name}}" class="hidden" value="{{this.value}}">
   <label>{{yield}}</label>
 </div>

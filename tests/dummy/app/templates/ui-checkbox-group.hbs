@@ -24,6 +24,27 @@
                         </UiCheckboxGroup>
                     </div>
                 </div>
+
+                <div class="ui segment">
+                    <div class="ui header" >radio group</div>
+                    <div class="ui form" >
+                        <UiCheckboxGroup @class="inline fields" @type={{"radio"}} @onChange={{this.onChangeRadio1}} as |valueChange name|>
+                            <label>choose company</label>
+                            <div class="field" >
+                                <UiCheckbox @value="apple" @name={{name}} @type={{"radio"}} @onChange={{valueChange}}>apple</UiCheckbox>
+                            </div>
+                            <div class="field" >
+                                <UiCheckbox @value="google" @name={{name}} @type={{"radio"}} @onChange={{valueChange}}>google</UiCheckbox>
+                            </div>
+                            <div class="field" >
+                                <UiCheckbox @value="dropbox" @name={{name}} @type={{"radio"}} @onChange={{valueChange}}>dropbox</UiCheckbox>
+                            </div>
+                            <div class="field">
+                                {{this.radioValue1}}
+                            </div>
+                        </UiCheckboxGroup>
+                    </div>
+                </div>
                 <div class="ui secondary segment">
                     {{code-highlight code=(code-show 'ui-checkbox-group' 1) }}
                 </div>

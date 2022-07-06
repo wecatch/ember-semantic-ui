@@ -11,16 +11,4 @@ ui-radio-group component see {{#crossLink "mixins.UiCheckboxGroupBase"}}{{/cross
 @namespace components
 @constructor
 */
-export default Component.extend(UiCheckboxGroupBase, {
-  layout: layout,
-  isOptionChecked(optionValue) {
-    return String(this.value) === optionValue;
-  },
-  actions: {
-    childChange(checked, value) {
-      if (checked) {
-        this.set('value', value);
-      }
-    },
-  },
-});
+export default class UiRadioGroupComponent extends Component {}

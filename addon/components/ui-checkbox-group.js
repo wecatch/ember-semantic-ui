@@ -1,6 +1,7 @@
 import Component from '@glimmer/component';
 import { isArray, A } from '@ember/array';
 import EmberObject, { action } from '@ember/object';
+import { guidFor } from '@ember/object/internals';
 
 /**
 ui-checkbox-group component see {{#crossLink "mixins.UiCheckboxGroupBase"}}{{/crossLink}}
@@ -11,10 +12,17 @@ ui-checkbox-group component see {{#crossLink "mixins.UiCheckboxGroupBase"}}{{/cr
 @constructor
 */
 export default class UiCheckboxGroupComponent extends Component {
-
   constructor() {
     super(...arguments);
     this.value = this.args.value ?? A();
+  }
+
+  get type() {
+    return this.args.type ?? 'checkbox';
+  }
+
+  get name() {
+    return this.args.name ?? guidFor(this);
   }
 
   /**
@@ -43,7 +51,7 @@ export default class UiCheckboxGroupComponent extends Component {
    * @property {Array} options
    */
   get options() {
-    if(!this.args.options) return A();
+    if (!this.args.options) return A();
     const _options = A();
     for (var i = 0; i < this.args.options.length; i++) {
       let item = this.args.options[i];
@@ -53,7 +61,7 @@ export default class UiCheckboxGroupComponent extends Component {
       let obj = EmberObject.create({
         label: label,
         value: String(value),
-        selected: checked,
+        checked: checked,
       });
       _options.pushObject(obj);
     }
@@ -62,20 +70,38 @@ export default class UiCheckboxGroupComponent extends Component {
   }
 
   isOptionChecked(optionValue) {
-    return this.value.includes(optionValue);
+    if (this.type === 'checkbox') {
+      return this.value.includes(optionValue);
+    }
+
+    if (this.type === 'radio') {
+      return this.value === optionValue;
+    }
   }
 
   @action
   childOnChange(checked, value) {
-    if (checked && !this.value.includes(value)) {
-      this.value.pushObject(value);
-    }
-    if (!checked && this.value.includes(value)) {
-      this.value.removeObject(value);
+    if (this.type === 'checkbox') {
+      if (checked && !this.value.includes(value)) {
+        this.value.pushObject(value);
+      }
+      if (!checked && this.value.includes(value)) {
+        this.value.removeObject(value);
+      }
+
+      if (this.args.onChange) {
+        this.args.onChange(checked, value, this.value);
+      }
     }
 
-    if(this.args.onChange){
-      this.args.onChange(checked, value, this.value);
+    if (this.type === 'radio') {
+      if (checked) {
+        this.value = value;
+      }
+
+      if (this.args.onChange) {
+        this.args.onChange(checked, value);
+      }
     }
   }
 }
