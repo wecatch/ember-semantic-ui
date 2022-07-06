@@ -1,30 +1,38 @@
 import Controller from '@ember/controller';
+import {action} from '@ember/object';
+import { tracked } from '@glimmer/tracking';
 
-export default Controller.extend({
-  actions: {
+export default class UiModalController extends Controller {
+
+    @tracked display = false;
+    @tracked display1 = false;
+
+    @action
     clickHandler(value) {
-      console.log(`display: ${this.display}`);
-      if (value) {
-        this.set('transition', value);
-      }
-      this.set('display', true);
-      console.log(`display: ${this.display}`);
-    },
+      this.toggleProperty('display');
+    }
+    @action
     clickHandler1() {
       this.toggleProperty('display1');
-    },
+    }
+
+    @action
     onShow() {
       console.log('callback==>onShow');
-    },
+    }
+
+    @action
     onHide() {
-      console.log('callback==>onHide');
-    },
+      this.display = false;
+    }
+
+    @action
     onApprove() {
-      console.log('callback==>onApprove');
-    },
+      this.display = false;
+    }
+
+    @action
     onDeny() {
-      console.log('callback==>onDeny');
-      return false;
-    },
-  },
-});
+      this.display = false;
+    }
+}

@@ -39,8 +39,6 @@ Router.map(function () {
 
   this.route('ui-pointing-label');
 
-  this.route('ui-form-input');
-
   this.route('ui-modal');
   this.route('ui-popup');
 

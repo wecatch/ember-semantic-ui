@@ -1,19 +1,23 @@
-<div ...attributes class="ui {{this.args.type}} {{this.args.class}} message" {{did-insert this.register }}  >
+<div
+  ...attributes
+  class="ui {{this.args.type}} {{this.args.class}} message"
+  {{did-insert this.register}}
+>
   {{#if this.args.close}}
-  <i class="close icon" {{on "click" this.closeMessage }}></i>
+    <i class="close icon" {{on "click" this.closeMessage}}></i>
   {{/if}}
   {{#if this.args.header}}
-  <div class="header">{{this.args.header}}</div>
+    <div class="header">{{this.args.header}}</div>
   {{/if}}
   {{#if this.args.message}}
-  <p>{{this.args.message}}</p>
+    <p>{{this.args.message}}</p>
   {{/if}}
   {{#if this.args.messages}}
-  <ul class="list">
-    {{#each messages as |m|}}
-    <li>{{m}}</li>
-    {{/each}}
-  </ul>
+    <ul class="list">
+      {{#each messages as |m|}}
+        <li>{{m}}</li>
+      {{/each}}
+    </ul>
   {{/if}}
 
   {{yield}}

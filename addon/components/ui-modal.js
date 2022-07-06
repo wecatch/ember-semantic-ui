@@ -1,6 +1,7 @@
-import Component from '@ember/component';
-import layout from './ui-modal';
-import { observer } from '@ember/object';
+import Component from '@glimmer/component';
+import { tracked } from '@glimmer/tracking';
+import { action } from '@ember/object';
+import $ from 'jquery';
 
 /**
 
@@ -11,112 +12,99 @@ ui-modal component
 @class UiModal
 @constructor
 */
-export default Component.extend({
-  layout: layout,
-  actions: {
-    /**
-        when modal show, this action will be triggered
-        @event onShow
-        */
-    onShow() {
-      if (typeof this.attrs.onShow === 'function') {
-        this.attrs.onShow();
-      } else {
-        this.sendAction('onShow');
-      }
-    },
-    /**
-        when modal hide, this action will be triggered
-        @event onShow
-        */
-    onHide() {
-      if (typeof this.attrs.onHide === 'function') {
-        this.attrs.onHide();
-      } else {
-        this.sendAction('onHide');
-      }
-    },
-  },
-  tagName: 'div',
+export default class UiModalComponent extends Component {
+  @tracked _show = false;
 
+  constructor() {
+    super(...arguments);
+  }
+
+  @action
+  updateAttr(element) {
+    if (this.show) {
+      $(element).modal('setting', 'transition', this.transition);
+      $(element).modal('setting', 'closable', this.closable);
+      $(element).modal('show');
+    } else {
+      $(element).modal('hide');
+    }
+  }
+
+  /**
+   *   when modal show, this action will be triggered
+   *   @event onShow
+   */
+  @action
+  onShow() {
+    if (typeof this.args.onShow === 'function') {
+      this.args.onShow();
+    }
+  }
+  /**
+   * when modal hide, this action will be triggered
+   * @event onShow
+   */
+  @action
+  onHide() {
+    if (typeof this.args.onHide === 'function') {
+      this.args.onHide();
+    }
+  }
   /**
    * modal status
    * @property {Boolean} show
    * @default  false
    */
-  show: false,
+  get show() {
+    console.log(this.args.show);
+    return this.args.show ?? false;
+  }
 
   /**
    * Setting to false will not allow you to close the modal by clicking on the dimmer
    * @property {Boolean} closable
    * @default  true
    */
-  closable: true,
+
+  get closable() {
+    return this.args.closable ?? true;
+  }
 
   /**
    * transition
    * @property {String} transition
    * @default  'scale'
    */
-  transition: 'scale',
 
-  classNameBindings: ['_uiClass', 'theme', 'class', '_componentClass'],
-  _uiClass: 'ui',
-  _componentClass: 'modal',
+  get transition() {
+    return this.args.transition ?? 'scale';
+  }
 
-  /**
-   * Class names to apply to the modal
-   *
-   * @property {String} class
-   */
-  class: '',
-  /**
-   * Class names to apply to the modal
-   *
-   * @property {String} theme
-   */
-  theme: '',
-  /**
-   * @method showModal
-   * @observes "show" property
-   * @returns  {void}
-   */
-  showModal: observer('show', function () {
-    if (this.show) {
-      this.$().modal('setting', 'transition', this.transition);
-      this.$().modal('setting', 'closable', this.closable);
-      this.$().modal('show');
-    } else {
-      this.$().modal('hide');
-    }
-  }),
-  didInsertElement() {
-    this._super(...arguments);
-    let that = this,
-      closable = this.closable;
-
-    this.$().modal({
-      closable: closable,
+  @action
+  register(element) {
+    $(element).modal({
+      closable: this.closable,
       observeChanges: true,
-      onHide() {
-        if (that.get('show')) {
-          that.set('show', false);
-          that.send('onHide');
+      onHide: () => {
+        if (typeof this.args.onHide === 'function') {
+          return this.args.onHide();
         }
       },
-      onShow() {
-        that.send('onShow');
-      },
-      onApprove() {
-        if (typeof that.attrs.onApprove === 'function') {
-          return that.attrs.onApprove();
+      onShow: () => {
+        if (typeof this.args.onShow === 'function') {
+          return this.args.onShow();
         }
       },
-      onDeny() {
-        if (typeof that.attrs.onDeny === 'function') {
-          return that.attrs.onDeny();
+      onApprove: () => {
+        if (typeof this.args.onApprove === 'function') {
+          return this.args.onApprove();
+        }
+      },
+      onDeny: () => {
+        if (typeof this.args.onDeny === 'function') {
+          return this.args.onDeny();
         }
       },
     });
-  },
-});
+  }
+}

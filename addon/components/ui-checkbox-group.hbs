@@ -1,11 +1,17 @@
-<div class="ui {{if this.args.class ""}} fields" ...attributes >
-    {{#if this.args.label}}
+<div class="ui {{if this.args.class ''}} fields" ...attributes>
+  {{#if this.args.label}}
     <label>{{this.args.label}}</label>
-    {{/if}}
-    {{#each this.options as |op|}}
-    <UiCheckbox @value={{op.value}} @name={{this.name}} @type={{this.type}} @onChange={{this.childOnChange}} @checked={{op.checked}}>{{op.label}}</UiCheckbox>
-    {{/each}}
+  {{/if}}
+  {{#each this.options as |op|}}
+    <UiCheckbox
+      @value={{op.value}}
+      @name={{this.name}}
+      @type={{this.type}}
+      @onChange={{this.childOnChange}}
+      @checked={{op.checked}}
+    >{{op.label}}</UiCheckbox>
+  {{/each}}
 
-{{yield this.childOnChange this.name}}
+  {{yield this.childOnChange this.name}}
 
 </div>

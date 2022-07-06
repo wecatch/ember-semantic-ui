@@ -21,7 +21,6 @@ export default class UiCheckboxGroup extends Controller {
 
   @action
   onChange1(checked, value, valueList) {
-    console.log(valueList);
     this.value1 = valueList;
   }
 
@@ -36,8 +35,8 @@ export default class UiCheckboxGroup extends Controller {
   }
 
   @action
-  onChangeRadio1(checked, value){
-    if(checked){
+  onChangeRadio1(checked, value) {
+    if (checked) {
       this.radioValue1 = value;
     }
   }

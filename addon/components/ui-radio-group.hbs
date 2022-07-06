@@ -1,8 +1,0 @@
-{{#if label}}
-    <label>{{label}}</label>
-{{/if}}
-{{#each _options as |op|}}
-    <UiRadio @value={{op.value}} @action={{action "childChange"}} @name={{name}} @checked={{op.checked}}>{{op.label}}</UiRadio>
-{{/each}}
-
-{{yield (action "childChange") }}

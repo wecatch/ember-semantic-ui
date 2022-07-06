@@ -3,7 +3,6 @@ import Component from '@glimmer/component';
 import $ from 'jquery';
 import { guidFor } from '@ember/object/internals';
 
-
 /**
 ui-checkbox component see {{#crossLink "mixins.UiCheckboxBase"}}{{/crossLink}}
 
@@ -20,7 +19,7 @@ export default class UiCheckboxComponent extends Component {
     }
   }
 
-  get type(){
+  get type() {
     return this.args.type ?? 'checkbox';
   }
 
