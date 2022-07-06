@@ -7,7 +7,7 @@
                 </div>
 
                 <div class="ui segment">
-                    <UiPopup @popup={{this.popup}} class="ui button" @onShow={{fn this.onPopupShow 'hello pop'}}>show me</UiPopup>
+                    <UiPopup @popup={{this.popup}} class="ui button" @onShow={{fn this.onPopupShow 'hello pop'}}>hover show me</UiPopup>
                     <UiPopup::Content @popup={{set this "popup"}}>
                         <div class="header">
                             {{this.value}}
@@ -19,7 +19,7 @@
                 </div>
 
                 <div class="ui secondary segment" id="boundary" >
-                    <UiPopup @popup={{this.popup1}} @event={{"click"}} @boundary={{"boundary"}} class="ui button" @onShow={{fn  this.onPopupShow 'hello pop'}}>show me</UiPopup>
+                    <UiPopup @popup={{this.popup1}} @event={{"click"}} @boundary={{"boundary"}} class="ui button" @onShow={{fn  this.onPopupShow 'hello pop'}}>click show me</UiPopup>
                     <UiPopup::Content @popup={{set this "popup1"}} class="fluid">
                         <div class="ui grid">
                             <div class="ui form six column">
@@ -39,8 +39,8 @@
                     {{code-highlight code=(code-show 'ui-popup' 2)}}
                 </div>
                 <div class="ui secondary segment">
-                    <UiPopup class="ui button" @hoverable={{true}} @title="i am popup title" @content="i am popup content">show me</UiPopup>
-                </div>      
+                    <UiPopup class="ui button" @hoverable={{true}} @title="i am popup title" @content="i am popup content">hover show me</UiPopup>
+                </div>
             </div>
         </div>
     </div>

@@ -1,7 +1,7 @@
-import Component from '@ember/component';
-import { computed } from '@ember/object';
-import { observer } from '@ember/object';
-import layout from './ui-progress';
+/* eslint-disable ember/no-jquery */
+import Component from '@glimmer/component';
+import { action } from '@ember/object';
+import $ from 'jquery';
 
 /**
 
@@ -12,43 +12,20 @@ ui-progress component
 @class UiProgress
 @constructor
 */
-export default Component.extend({
-  layout: layout,
-  classNameBindings: [
-    '_uiClass',
-    'class',
-    'theme',
-    'loading:active:',
-    '_componentClass',
-    'success:success:',
-    'error:error:',
-  ],
-  _uiClass: 'ui',
-  _componentClass: 'progress',
-
-  /**
-   * progress theme, indicating
-   *
-   * @property {String} theme
-   * @default  ''
-   */
-  theme: '',
-
-  /**
-   * progress theme
-   *
-   * @property {String} class
-   * @default  ''
-   */
-  class: '',
-
+export default class UiProgressComponent extends Component {
   /**
    * progress loading status, by default false
    *
    * @property {Boolean} loading
    * @default  false
    */
-  loading: false,
+  get loading() {
+    if (this.args.loading) {
+      return 'active';
+    }
+
+    return '';
+  }
 
   /**
    * progress success status, by default false
@@ -56,44 +33,54 @@ export default Component.extend({
    * @property {Boolean} success
    * @default  false
    */
-  success: false,
+  get success() {
+    if (this.args.success) {
+      return 'success';
+    }
 
+    return '';
+  }
   /**
    * progress error status, by default false
    *
    * @property {Boolean} error
    * @default  false
    */
-  error: false,
+  get error() {
+    if (this.args.error) {
+      return 'error';
+    }
+
+    return '';
+  }
+
   /**
    * progress percent
    *
    * @property {Number} percent
    * @default  0
    */
-  percent: 0,
-  didInsertElement() {
-    this._super(...arguments);
-    this.$().progress({
-      percent: this._percent,
-    });
-  },
-  _percent: computed('percent', {
-    get() {
-      if (this.percent > 100) {
-        return 100;
-      }
+  get percent() {
+    let percent = Number(this.args.percent);
+    if (isNaN(percent)) {
+      return 0;
+    }
 
-      if (this.percent < 0) {
-        return 0;
-      }
+    if (percent > 100) {
+      return 100;
+    }
 
-      return this.percent;
-    },
-  }),
-  updateProgress: observer('percent', function () {
-    this.$().progress({
-      percent: this._percent,
+    if (percent < 0) {
+      return 0;
+    }
+
+    return percent;
+  }
+
+  @action
+  register(element) {
+    $(element).progress({
+      percent: this.percent,
     });
-  }),
-});
+  }
+}

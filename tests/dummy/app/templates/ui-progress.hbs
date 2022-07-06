@@ -1,15 +1,13 @@
-<div class="ui container" >
-    <div class="ui dividing header" >ui progress</div>
-    <div class="ui segment">
-        {{code-highlight code=(code-show 'ui-progress' 0)}}
+<div class="ui container">
+  <div class="ui dividing header">ui progress</div>
+  <div class="ui segment">
+    {{code-highlight code=(code-show 'ui-progress' 0)}}
+  </div>
+  <UiProgress @percent={{this.value}} ></UiProgress>
+  <div class="ui grid">
+    <div class="row">
+      <button class="ui green button" type="button" {{on "click" this.plus }}>+</button>
+      <button class="ui button" type="button" {{on "click" this.minus }}>-</button>
     </div>
-    {{ui-progress percent=value }}
-    {{ui-progress percent=value class="indicating" }}
-    {{ui-progress percent=value class="red" }}
-    <div class="ui grid" >
-        <div class="row" >
-            <button class="ui green button" type="button" {{action "plus" }} >+</button>
-            <button class="ui button" type="button" {{action "minus" }} >-</button>
-        </div>
-    </div>
+  </div>
 </div>

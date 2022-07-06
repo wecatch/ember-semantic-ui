@@ -1,6 +1,8 @@
-<div class="bar">
-    <div class="progress">{{_percent}}%</div>
+<div class="ui progress" ...attributes {{did-insert this.register}} {{did-update this.register @percent}}>
+  <div class="bar">
+    <div class="progress">{{this.percent}}%</div>
+  </div>
+  {{#if @lable}}
+    <div class="label">{{@label}}</div>
+  {{/if}}
 </div>
-{{#if lable}}
-  <div class="label">{{label}}</div>
-{{/if}}

@@ -12,11 +12,8 @@ ui-popup component
 @constructor
 */
 export default class UiPopupComponent extends Component {
-
   element = null;
-
-
-  get boundary(){
+  get boundary() {
     return this.args.boundary ?? window;
   }
 
@@ -26,7 +23,7 @@ export default class UiPopupComponent extends Component {
    * @property {String} target
    * @default  ""
    */
-  get popup(){
+  get popup() {
     return this.args.popup ?? false;
   }
 
@@ -45,14 +42,16 @@ export default class UiPopupComponent extends Component {
   */
   get content() {
     return this.args.content ?? '';
-  };
+  }
+
   /**
   the pop html content
   @property {String} html
   */
   get html() {
     return this.args.html ?? '';
-  };
+  }
+
   /**
   the pop title
   @property {String} title
@@ -60,6 +59,7 @@ export default class UiPopupComponent extends Component {
   get title() {
     return this.args.title ?? '';
   }
+
   get variation() {
     return this.args.variation ?? '';
   }
@@ -117,7 +117,6 @@ export default class UiPopupComponent extends Component {
   get delayShow() {
     return this.args.delayShow ?? 50;
   }
-
 
   get delayHide() {
     return this.args.delayHide ?? 30;
@@ -194,12 +193,11 @@ export default class UiPopupComponent extends Component {
     });
   }
 
-  hide(){
+  hide() {
     $(this.element).popup('hide');
   }
 
-  show(){
+  show() {
     $(this.element).popup('hide');
   }
-
 }
