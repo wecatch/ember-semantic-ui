@@ -21,8 +21,6 @@ Router.map(function () {
 
   this.route('ui-button');
 
-  this.route('ui-dropdown');
-
   this.route('ui-dropdown-menu');
   this.route('ui-tab-menu');
 

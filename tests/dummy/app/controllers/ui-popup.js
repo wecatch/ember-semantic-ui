@@ -1,18 +1,22 @@
 import Controller from '@ember/controller';
+import { tracked } from '@glimmer/tracking';
+import {action} from '@ember/object';
 
-export default Controller.extend({
-  value: null,
-  currentPopup: null,
-  actions: {
-    onPopupShow(value, popup) {
-      this.set('value', new Date());
-      this.set('currentPopup', popup);
-    },
-    save() {
-      this.currentPopup.hide();
-    },
-    cancel() {
-      this.currentPopup.hide();
-    },
-  },
-});
+export default class UiPopupController extends Controller {
+  @tracked value = null;
+  @tracked currentPopup = null;
+
+  @action
+  onPopupShow(value, popup) {
+    this.value = new Date();
+    this.currentPopup = popup;
+  }
+  @action
+  save() {
+    this.currentPopup.hide();
+  }
+  @action
+  cancel() {
+    this.currentPopup.hide();
+  }
+}

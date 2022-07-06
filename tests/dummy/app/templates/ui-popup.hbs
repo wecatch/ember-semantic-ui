@@ -7,39 +7,39 @@
                 </div>
 
                 <div class="ui segment">
-                    <UiPopup @popup={{target}} @tagName="button" @class="ui button" @onShow={{action "onPopupShow" 'hello pop'}}>show me</UiPopup>
-                    <UiPopupContent @target={{mut target}}>
+                    <UiPopup @popup={{this.popup}} class="ui button" @onShow={{fn this.onPopupShow 'hello pop'}}>show me</UiPopup>
+                    <UiPopup::Content @popup={{set this "popup"}}>
                         <div class="header">
-                            {{value}}
+                            {{this.value}}
                         </div>
-                    </UiPopupContent>
+                    </UiPopup::Content>
                 </div>
                 <div class="ui secondary segment">
                     {{code-highlight code=(code-show 'ui-popup' 1)}}
                 </div>
 
-                <div class="ui secondary segment">
-                    <UiPopup @popup={{target1}} @tagName="button" @event="click" @hoverable={{true}} @class="ui button" @onShow={{action "onPopupShow" 'hello pop'}}>show me</UiPopup>
-                    <UiPopupContent @target={{mut target1}} @class="fluid">
+                <div class="ui secondary segment" id="boundary" >
+                    <UiPopup @popup={{this.popup1}} @event={{"click"}} @boundary={{"boundary"}} class="ui button" @onShow={{fn  this.onPopupShow 'hello pop'}}>show me</UiPopup>
+                    <UiPopup::Content @popup={{set this "popup1"}} class="fluid">
                         <div class="ui grid">
                             <div class="ui form six column">
                               <div class="field">
                                 <textarea name="" id="" cols="30" rows="10"></textarea>
                               </div>
                               <div class="field">
-                                  <button class="ui button save" type="button" {{action "save"}} >save</button>
-                                  <button class="ui button cancel" type="button" {{action "cancel"}} >cancel</button>
+                                  <button class="ui button save" type="button" {{on "click" this.save}} >save</button>
+                                  <button class="ui button cancel" type="button" {{on "click" this.cancel}} >cancel</button>
                               </div>
                             </div>
                         </div>
-                    </UiPopupContent>
-                </div> 
+                    </UiPopup::Content>
+                </div>
 
                 <div class="ui secondary segment">
                     {{code-highlight code=(code-show 'ui-popup' 2)}}
                 </div>
                 <div class="ui secondary segment">
-                    <UiPopup @tagName="span" @hoverable={{true}} @title="i am popup title" @content="i am popup content">show me</UiPopup>
+                    <UiPopup class="ui button" @hoverable={{true}} @title="i am popup title" @content="i am popup content">show me</UiPopup>
                 </div>      
             </div>
         </div>

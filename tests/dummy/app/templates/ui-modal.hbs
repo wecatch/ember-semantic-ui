@@ -5,18 +5,18 @@
 		<div class="ui items">
 			<h3>normal</h3>
 			<UiButton @click={{this.clickHandler}}>click me</UiButton>
-			<UiButton @click={{fn this.clickHandler "horizontal flip"}}>Horizontal Flip</UiButton>
-			<UiButton @click={{fn this.clickHandler "vertical flip"}}>Vertical Flip</UiButton>
-			<UiButton @click={{fn this.clickHandler "fade up"}}>Fade Up</UiButton>
-			<UiButton @click={{fn this.clickHandler "fade"}}>Fade</UiButton>
-			<UiButton @click={{fn this.clickHandler "scale"}}>Scale</UiButton>
+			<UiButton @click={{fn this.clickHandler "fullscreen"}}>Full Screen</UiButton>
+			<UiButton @click={{fn this.clickHandler "overlay fullscreen"}}>Overlay Full Screen</UiButton>
+			<UiButton @click={{fn this.clickHandler "mini"}}>mini</UiButton>
+			<UiButton @click={{fn this.clickHandler "large"}}>large</UiButton>
+			<UiButton @click={{fn this.clickHandler "longer"}}>longer</UiButton>
 			<div class="item">
           {{code-highlight code=(code-show 'ui-modal' 0)}}
 			</div>
 			<div class="item">
-				<UiModal @show={{this.display}} @onShow={{this.onShow}} @onApprove={{this.onApprove}} @onHide={{this.onHide}} @onDeny={{this.onDeny}} @transition={{this.transition}}>
+				<UiModal @show={{this.display}}  @onShow={{this.onShow}} @onApprove={{this.onApprove}} @onHide={{this.onHide}} @onDeny={{this.onDeny}} @class={{this.class}}>
 					<UiModal::Title>modal 1</UiModal::Title>
-					<UiModal::Content @class="image">
+					<UiModal::Content class="image">
 						<div class="ui small image" >
 							<img src="//www.baidu.com/img/bd_logo1.png">
 						</div>
