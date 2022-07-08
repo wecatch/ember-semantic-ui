@@ -1,50 +1,61 @@
 <div class="ui grid">
-    <div class="row">
-        <div class="column">
-            <div class="ui segments">
-                <div class="ui secondary segment">
-                    {{code-highlight code=(code-show 'ui-checkbox' 0) }}
-                </div>
-                <div class="ui segment">
-                    <UiCheckbox @checked={{this.isChecked}} @onChange={{this.onChange}} >normal</UiCheckbox>
-                    {{this.isChecked}}
-                </div>
+  <div class="row">
+    <div class="column">
 
-                <div class="ui secondary segment">
-                    {{code-highlight code=(code-show 'ui-checkbox' 1) }}
-                </div>
-                <div class="ui segment">
-                    <UiCheckbox @checked={{true}}>normal</UiCheckbox>
-                </div>
+      <CodeHighlight @lang={{"javascript"}} >
+import Controller from '@ember/controller';
+import { action } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
+import { inject as service } from '@ember/service';
 
-                <div class="ui secondary segment">
-                    {{code-highlight code=(code-show 'ui-checkbox' 2) }}
-                </div>
-                <div class="ui segment">
-                    <UiCheckbox @class="toggle">toggle</UiCheckbox>
-                </div>
-                <div class="ui secondary segment">
-                    {{code-highlight code=(code-show 'ui-checkbox' 3) }}
-                </div>
-                <div class="ui segment">
-                    <UiCheckbox @checked={{true}} @class="toggle">toggle</UiCheckbox>
-                </div>
+export default class UiCheckboxController extends Controller {
+  @service options;
+  @tracked value = null;
+  @tracked checked = false;
 
-                <div class="ui secondary segment">
-                    {{code-highlight code=(code-show 'ui-checkbox' 4) }}
-                </div>
-                <div class="ui segment">
-                    <UiCheckbox @class="slider">slider</UiCheckbox>
-                </div>
+  @action
+  onChange(checked, value) {
+    this.checked = checked;
+    if (checked) {
+      this.value = value;
+    } else {
+      this.value = '';
+    }
+  }
+}
+      </CodeHighlight>
 
-                <div class="ui secondary segment">
-                    {{code-highlight code=(code-show 'ui-checkbox' 5) }}
-                </div>
-                <div class="ui segment">
-                    <UiCheckbox @value={{"i am checked"}} @checked={{true}} @onChange={{this.onChange}}  />
-                    {{this.value}}
-                </div>
-            </div>
-        </div>
+      <CodeHighlight @code={{code-show 'ui-checkbox' 0}} />
+      <div class="ui segment">
+        <UiCheckbox @checked={{this.isChecked}} @onChange={{this.onChange}}>normal</UiCheckbox>
+        {{this.isChecked}}
+      </div>
+
+      <CodeHighlight @code={{code-show 'ui-checkbox' 1}} />
+      <div class="ui segment">
+        <UiCheckbox @checked={{true}}>normal</UiCheckbox>
+      </div>
+
+      <CodeHighlight @code={{code-show 'ui-checkbox' 2}} />
+      <div class="ui segment">
+        <UiCheckbox @class="toggle">toggle</UiCheckbox>
+      </div>
+
+      <CodeHighlight @code={{code-show 'ui-checkbox' 3}} />
+      <div class="ui segment">
+        <UiCheckbox @checked={{true}} @class="toggle">toggle</UiCheckbox>
+      </div>
+
+      <CodeHighlight @code={{code-show 'ui-checkbox' 4}} />
+      <div class="ui segment">
+        <UiCheckbox @class="slider">slider</UiCheckbox>
+      </div>
+
+      <CodeHighlight @code={{code-show 'ui-checkbox' 5}} />
+      <div class="ui segment">
+        <UiCheckbox @value={{"i am checked"}} @checked={{true}} @onChange={{this.onChange}} />
+        {{this.value}}
+      </div>
     </div>
+  </div>
 </div>

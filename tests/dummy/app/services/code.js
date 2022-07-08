@@ -46,16 +46,26 @@ const uiCheckboxGroup = [
   `,
   `
 <div class="ui form" >
-  <UiCheckboxGroup @class="inline fields" @type={{"radio"}} @onChange={{this.onChangeRadio1}} as |valueChange name|>
+  <UiCheckboxGroup @class="inline fields" @type={{"radio"}}
+    @onChange={{this.onChangeRadio1}} as |valueChange name|>
       <label>choose company</label>
       <div class="field" >
-          <UiCheckbox @value="apple" @name={{name}} @type={{"radio"}} @onChange={{valueChange}}>apple</UiCheckbox>
+          <UiCheckbox
+          @value="apple"
+          @name={{name}}
+          @type={{"radio"}}
+          @onChange={{valueChange}}>apple</UiCheckbox>
       </div>
       <div class="field" >
-          <UiCheckbox @value="google" @name={{name}} @type={{"radio"}} @onChange={{valueChange}}>google</UiCheckbox>
+          <UiCheckbox
+          @value="google"
+          @name={{name}}
+          @type={{"radio"}}
+          @onChange={{valueChange}}>google</UiCheckbox>
       </div>
       <div class="field" >
-          <UiCheckbox @value="dropbox" @name={{name}} @type={{"radio"}} @onChange={{valueChange}}>dropbox</UiCheckbox>
+          <UiCheckbox @value="dropbox" @name={{name}}
+          @type={{"radio"}} @onChange={{valueChange}}>dropbox</UiCheckbox>
       </div>
       <div class="field">
           {{this.radioValue1}}
@@ -65,7 +75,9 @@ const uiCheckboxGroup = [
   `,
 `
 <div class="ui form" >
-  <UiCheckboxGroup @class="grouped fields" @label="choose company" @options={{this.options.options}} @onChange={{this.onChange2}}></UiCheckboxGroup>
+  <UiCheckboxGroup @class="grouped fields"
+  @label="choose company" @options={{this.options.options}}
+  @onChange={{this.onChange2}}></UiCheckboxGroup>
   <div class="field">
       {{this.valueShow2}}
   </div>
@@ -73,7 +85,9 @@ const uiCheckboxGroup = [
   `,
 `
 <div class="ui form" >
-  <UiCheckboxGroup @label="choose company" @class="inline fields" @options={{this.options.options}} @onChange={{this.onChange3}}></UiCheckboxGroup>
+  <UiCheckboxGroup @label="choose company"
+    @class="inline fields" @options={{this.options.options}}
+    @onChange={{this.onChange3}}></UiCheckboxGroup>
   <div class="field">
       {{this.valueShow3}}
   </div>
@@ -83,15 +97,13 @@ const uiCheckboxGroup = [
 
 const uiCheckbox = [
   `
-{{#ui-checkbox checked=isChecked }}normal{{/ui-checkbox}}
-{{#ui-pointing-label theme="basic blue" direction="left"}}
-    {{isChecked}}
-{{/ui-pointing-label}}`,
-  `{{#ui-checkbox checked=true }}normal{{/ui-checkbox}}`,
-  `{{#ui-checkbox theme="toggle"}}toggle{{/ui-checkbox}}`,
-  `{{#ui-checkbox checked=true theme="toggle"}}toggle{{/ui-checkbox}}`,
-  `{{#ui-checkbox theme="slider"}}slider{{/ui-checkbox}}`,
-  `{{ui-checkbox value='i am checked' checked=true action=(action "someAction") update=(action (mut value))}}`,
+  <UiCheckbox @checked={{this.isChecked}} @onChange={{this.onChange}}>normal</UiCheckbox>
+  `,
+  `<UiCheckbox @checked={{true}}>normal</UiCheckbox>`,
+  `<UiCheckbox @class="toggle">toggle</UiCheckbox>`,
+  `<UiCheckbox @checked={{true}} @class="toggle">toggle</UiCheckbox>`,
+  `<UiCheckbox @class="slider">slider</UiCheckbox>`,
+  `<UiCheckbox @value={{"i am checked"}} @checked={{true}} @onChange={{this.onChange}} />`,
 ];
 
 const uiDropdownMenu = [
@@ -201,8 +213,7 @@ const uiForm = [
 const uiInput = [];
 
 const uiInputTags = [
-  `{{ui-input-tags value=value}}`,
-  `{{ui-input-tags update=(action (mut value)) }}`,
+  `<UiInputTags @value={{this.value}} @onChange={{set this "value"}} />`,
 ];
 
 const uiLabel = [
@@ -330,7 +341,8 @@ const uiModal = [
 ];
 
 const uiMultiSelect = [
-  `<UiMultiSelect
+  `
+<UiMultiSelect
   @label={{"品牌选择"}}
   @options={{this.options.options}}
   @value={{this.value}}
@@ -406,24 +418,12 @@ const uiUploader = [
 ];
 
 const uiDateTimeInput = [
-  `{{ui-date-time-input value='2016-03-04 12:12' update=(action (mut value))}}`,
+  `<UiDateInput @value={{"2016-03-04"}} ></UiDateInput>`,
   `
-<div class="ui form">
-{{#ui-date-time-input value=value update=(action (mut value)) class="three fields" as |datetime| }}
-      <div class="field">
-          <label>日期</label>
-          {{component datetime.date  }}
-      </div>
-      <div class="field">
-          <label>小时</label>
-          {{component datetime.hour}}
-      </div>
-      <div class="field">
-          <label>分钟</label>
-          {{component datetime.minute}}
-      </div>
-{{/ui-date-time-input}}
-</div>
+<UiDateTimeInput
+  @value="2016-03-04 12:12"
+  @onChange={{set this "value"}}
+/>
 `,
 ];
 

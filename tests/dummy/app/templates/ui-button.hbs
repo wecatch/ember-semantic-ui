@@ -1,6 +1,17 @@
 <div class="ui grid">
   <div class="row">
     <div class="column">
+      <CodeHighlight @lang={{"javascript"}} >
+import Controller from '@ember/controller';
+import { action } from '@ember/object';
+
+export default class UiButtonController extends Controller {
+  @action
+  clickMe(value) {
+    alert(value);
+  }
+}
+      </CodeHighlight>
       <CodeHighlight @code={{code-show 'ui-button' 0}} />
       <div class="ui segment">
         <UiButton @class="basic">button</UiButton>

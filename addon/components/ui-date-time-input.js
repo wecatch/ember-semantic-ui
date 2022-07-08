@@ -20,7 +20,7 @@ ui-date-time-input component
 
 @module components
 @namespace components
-@class UiDateTimeInput 
+@class UiDateTimeInput
 @constructor
 */
 export default class UiDateTimeInputComponent extends Component {
@@ -49,6 +49,7 @@ export default class UiDateTimeInputComponent extends Component {
       minute: this.m,
     };
     let time = moment(options).format('YYYY-MM-DD HH:mm');
+    console.log(time);
     if (typeof this.args.onChange === 'function') {
       this.args.onChange(time);
     }

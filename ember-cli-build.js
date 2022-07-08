@@ -23,9 +23,9 @@ module.exports = function (defaults) {
   }
 
   var app = new EmberAddon(defaults, options);
-  // use npm instead of bower for highlight
-  app.import('node_modules/highlightjs/highlight.pack.js');
-  app.import('node_modules/highlightjs/styles/default.css');
+
+  app.import('node_modules/highlight.js/styles/github.css');
+  app.import('node_modules/pikaday/css/pikaday.css');
 
   // app.import('bower_components/semantic/dist/semantic.min.css');
   // app.import('bower_components/semantic/dist/semantic.min.js');

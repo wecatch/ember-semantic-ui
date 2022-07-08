@@ -1,7 +1,7 @@
 <div class="ui grid" >
     <div class="row">
         <div class="column">
-            <CodeHighlight></CodeHighlight>
+            <CodeHighlight @code={{code-show 'ui-date-time-input' 0}} />
             <div class="ui segment">
                 <UiDateInput @value={{"2016-03-04"}} ></UiDateInput>
                 <span>{{this.value}}</span>

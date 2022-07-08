@@ -11,6 +11,10 @@ export default class UiCheckboxController extends Controller {
   @action
   onChange(checked, value) {
     this.checked = checked;
-    this.value = value;
+    if (checked) {
+      this.value = value;
+    } else {
+      this.value = '';
+    }
   }
 }

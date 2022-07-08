@@ -1,8 +1,9 @@
-/*global hljs*/
 // import Ember from 'ember';
 import { action } from '@ember/object';
 import { htmlSafe } from '@ember/template';
+import hljs from 'highlight.js';
 import Component from '@glimmer/component';
+
 // import Handlebars from 'handlebars';
 
 // const { Utils } = Handlebars;
@@ -16,14 +17,13 @@ export default class CodeHighlightComponent extends Component {
 
   @action
   register(element) {
-    // hljs.highlightElement(element);
-    // hljs.initHighlightingOnLoad();
+    hljs.highlightElement(element);
   }
 
   get codeBlock() {
     if (this.args.code) {
       return htmlSafe(
-        hljs.highlightAuto(this.args.code, ['handlebars', 'js']).value
+        hljs.highlightAuto(this.args.code, ['handlebars', 'javascript']).value
       );
     }
 

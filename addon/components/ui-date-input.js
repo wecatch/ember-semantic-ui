@@ -37,7 +37,7 @@ ui-date-input component
 
 @module components
 @namespace components
-@class UiDateInput 
+@class UiDateInput
 @constructor
 */
 export default class UiDateInputComponent extends Component {
@@ -52,7 +52,7 @@ export default class UiDateInputComponent extends Component {
       i18n: zh_cn,
       onSelect: (value) => {
         if (typeof this.args.onChange === 'function') {
-          this.args.onChange(moment(value).format(self.format));
+          this.args.onChange(moment(value).format(this.format));
         }
       },
     };

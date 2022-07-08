@@ -7,7 +7,7 @@ import $ from 'jquery';
 ui-select component
 
 @module components
-@namespace components 
+@namespace components
 @class UiSelect
 @constructor
 */
@@ -86,6 +86,6 @@ export default class UiSelectComponent extends Component {
   }
 
   isOptionChecked(optionValue) {
-    return String(this.value) === optionValue;
+    return String(this.value) === String(optionValue);
   }
 }
