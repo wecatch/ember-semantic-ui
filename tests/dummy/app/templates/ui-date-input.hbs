@@ -1,16 +1,10 @@
 <div class="ui grid" >
     <div class="row">
         <div class="column">
-            <div class="ui segments">
-                <div class="ui secondary segment">
-                    <code class="code xml">
-                        \{{ui-date-input update=(action (mut value))}}
-                    </code>
-                </div>
-                <div class="ui segment">
-                    <UiDateInput @value={{"2016-03-04"}} ></UiDateInput>
-                    <span>{{this.value}}</span>
-                </div>
+            <CodeHighlight></CodeHighlight>
+            <div class="ui segment">
+                <UiDateInput @value={{"2016-03-04"}} ></UiDateInput>
+                <span>{{this.value}}</span>
             </div>
         </div>
     </div>

@@ -4,14 +4,14 @@
 	<div class="column">
 		<div class="ui items">
 			<h3>normal</h3>
-			<UiButton @click={{this.clickHandler}}>click me</UiButton>
-			<UiButton @click={{fn this.clickHandler "fullscreen"}}>Full Screen</UiButton>
-			<UiButton @click={{fn this.clickHandler "overlay fullscreen"}}>Overlay Full Screen</UiButton>
-			<UiButton @click={{fn this.clickHandler "mini"}}>mini</UiButton>
-			<UiButton @click={{fn this.clickHandler "large"}}>large</UiButton>
-			<UiButton @click={{fn this.clickHandler "longer"}}>longer</UiButton>
+			<UiButton @onClick={{this.clickHandler}}>click me</UiButton>
+			<UiButton @onClick={{fn this.clickHandler "fullscreen"}}>Full Screen</UiButton>
+			<UiButton @onClick={{fn this.clickHandler "overlay fullscreen"}}>Overlay Full Screen</UiButton>
+			<UiButton @onClick={{fn this.clickHandler "mini"}}>mini</UiButton>
+			<UiButton @onClick={{fn this.clickHandler "large"}}>large</UiButton>
+			<UiButton @onClick={{fn this.clickHandler "longer"}}>longer</UiButton>
 			<div class="item">
-          {{code-highlight code=(code-show 'ui-modal' 0)}}
+				<CodeHighlight @code={{code-show 'ui-modal' 0}} />
 			</div>
 			<div class="item">
 				<UiModal @show={{this.display}}  @onShow={{this.onShow}} @onApprove={{this.onApprove}} @onHide={{this.onHide}} @onDeny={{this.onDeny}} @class={{this.class}}>

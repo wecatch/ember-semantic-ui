@@ -1,10 +1,7 @@
 <div class="ui grid" >
     <div class="row">
         <div class="column">
-            <div class="ui segments">
-                <div class="ui secondary segment">
-                    {{code-highlight code=(code-show 'ui-checkbox-group' 0) }}
-                </div>
+                <CodeHighlight @code={{code-show 'ui-checkbox-group' 0}} />
                 <div class="ui segment">
                     <div class="ui form" >
                         <UiCheckboxGroup @class="inline fields" @onChange={{this.onChange1}} as |valueChange|>
@@ -25,6 +22,7 @@
                     </div>
                 </div>
 
+                <CodeHighlight @code={{code-show 'ui-checkbox-group' 1}} />
                 <div class="ui segment">
                     <div class="ui header" >radio group</div>
                     <div class="ui form" >
@@ -45,10 +43,8 @@
                         </UiCheckboxGroup>
                     </div>
                 </div>
-                <div class="ui secondary segment">
-                    {{code-highlight code=(code-show 'ui-checkbox-group' 1) }}
-                </div>
 
+                <CodeHighlight @code={{code-show 'ui-checkbox-group' 1}} />
                 <div class="ui segment">
                     <div class="ui form" >
                         <UiCheckboxGroup @class="grouped fields" @label="choose company" @options={{this.options.options}} @onChange={{this.onChange2}}></UiCheckboxGroup>
@@ -57,11 +53,8 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="ui secondary segment">
-                    {{code-highlight code=(code-show 'ui-checkbox-group' 2) }}
-                </div>
 
+                <CodeHighlight @code={{code-show 'ui-checkbox-group' 2}} />
                 <div class="ui segment">
                     <div class="ui form" >
                         <UiCheckboxGroup @label="choose company" @class="inline fields" @options={{this.options.options}} @onChange={{this.onChange3}}></UiCheckboxGroup>
@@ -70,7 +63,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            
         </div>
     </div>
 </div>

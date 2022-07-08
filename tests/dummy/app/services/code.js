@@ -26,20 +26,59 @@ const uiAnimatedButton = [
 
 const uiCheckboxGroup = [
   `
-{{#ui-checkbox-group theme="inline fields" value=checkvalue as |valueChange| }}
-    <label>choose company</label>
-    <div class="field" >
-        {{#ui-checkbox  value="apple" action=(action valueChange) }}apple{{/ui-checkbox}}
-    </div>
-    <div class="field" >
-        {{#ui-checkbox  value="google" action=(action valueChange) }}google{{/ui-checkbox}}
-    </div>
-    <div class="field" >
-        {{#ui-checkbox  value="dropbox" action=(action valueChange) }}dropbox{{/ui-checkbox}}
-    </div>
-{{/ui-checkbox-group}}`,
-  `{{ui-checkbox-group theme="grouped fields" label="choose company" options=options value=value }}`,
-  `{{ui-checkbox-group label="choose company" theme="inline fields" options=options value=value }}`,
+<div class="ui form" >
+  <UiCheckboxGroup @class="inline fields" @onChange={{this.onChange1}} as |valueChange|>
+      <label>choose company</label>
+      <div class="field" >
+          <UiCheckbox @value="apple" @onChange={{valueChange}}>apple</UiCheckbox>
+      </div>
+      <div class="field" >
+          <UiCheckbox @value="google" @onChange={{valueChange}}>google</UiCheckbox>
+      </div>
+      <div class="field" >
+          <UiCheckbox @value="dropbox" @onChange={{valueChange}}>dropbox</UiCheckbox>
+      </div>
+      <div class="field">
+          {{this.valueShow1}}
+      </div>
+  </UiCheckboxGroup>
+</div>
+  `,
+  `
+<div class="ui form" >
+  <UiCheckboxGroup @class="inline fields" @type={{"radio"}} @onChange={{this.onChangeRadio1}} as |valueChange name|>
+      <label>choose company</label>
+      <div class="field" >
+          <UiCheckbox @value="apple" @name={{name}} @type={{"radio"}} @onChange={{valueChange}}>apple</UiCheckbox>
+      </div>
+      <div class="field" >
+          <UiCheckbox @value="google" @name={{name}} @type={{"radio"}} @onChange={{valueChange}}>google</UiCheckbox>
+      </div>
+      <div class="field" >
+          <UiCheckbox @value="dropbox" @name={{name}} @type={{"radio"}} @onChange={{valueChange}}>dropbox</UiCheckbox>
+      </div>
+      <div class="field">
+          {{this.radioValue1}}
+      </div>
+  </UiCheckboxGroup>
+</div>
+  `,
+`
+<div class="ui form" >
+  <UiCheckboxGroup @class="grouped fields" @label="choose company" @options={{this.options.options}} @onChange={{this.onChange2}}></UiCheckboxGroup>
+  <div class="field">
+      {{this.valueShow2}}
+  </div>
+</div>
+  `,
+`
+<div class="ui form" >
+  <UiCheckboxGroup @label="choose company" @class="inline fields" @options={{this.options.options}} @onChange={{this.onChange3}}></UiCheckboxGroup>
+  <div class="field">
+      {{this.valueShow3}}
+  </div>
+</div>
+  `
 ];
 
 const uiCheckbox = [
@@ -267,41 +306,40 @@ const uiMessage = [
 
 const uiModal = [
   `
-{{#ui-modal show=display onShow=(action "onShow") onApprove=(action "onApprove") onHide=(action "onHide") onDeny=(action "onDeny") transition=transition }}
-    {{#ui-modal-title }}modal 1{{/ui-modal-title}}
-    {{#ui-modal-content theme="image"}}
-      <div class="ui small image" >
-        <img src="//www.baidu.com/img/bd_logo1.png">
+<UiModal @show={{this.display}}  @onShow={{this.onShow}} @onApprove={{this.onApprove}} @onHide={{this.onHide}} @onDeny={{this.onDeny}} @class={{this.class}}>
+  <UiModal::Title>modal 1</UiModal::Title>
+  <UiModal::Content class="image">
+    <div class="ui small image" >
+      <img src="//www.baidu.com/img/bd_logo1.png">
+    </div>
+    <div class="description" >
+      <div class="ui header" >
+        <p>first role</p>
       </div>
-      <div class="description" >
-        <div class="ui header" >
-          <p>first role</p>
-        </div>
-      </div>
-    {{/ui-modal-content}}
-    {{#ui-modal-foot}}
-      <div class="ui black deny button">
-          Nope
-      </div>
-      <div class="ui positive right labeled icon button">
-          Yep, that's me <i class="checkmark icon"></i>
-      </div>
-    {{/ui-modal-foot}}
-  {{/ui-modal}}`,
+    </div>
+  </UiModal::Content>
+  <UiModal::Foot>
+    <div class="ui black deny button">
+        Nope
+    </div>
+    <div class="ui positive right labeled icon button">
+        Yep, that's me <i class="checkmark icon"></i>
+    </div>
+  </UiModal::Foot>
+</UiModal>`,
 ];
 
 const uiMultiSelect = [
-  `
-{{#ui-multi-select label="品牌选择" options=options value=value}}
-    <label>品牌选择</label>
-{{/ui-multi-select}}`,
+  `<UiMultiSelect
+  @label={{"品牌选择"}}
+  @options={{this.options.options}}
+  @value={{this.value}}
+  @onChange={{this.onChange}}
+/>`,
 ];
 
 const uiProgress = [
-  `
-{{ui-progress percent=value }}
-{{ui-progress percent=value class="indicating" }}
-{{ui-progress percent=value class="red" }}
+  `<UiProgress @percent={{this.value}} ></UiProgress>
 `,
 ];
 
@@ -391,31 +429,34 @@ const uiDateTimeInput = [
 
 const uiPopup = [
   `
-{{#ui-popup popup=target tagName='button' class="ui button" onShow=(action "onPopupShow" 'hello pop')}}show me{{/ui-popup}}
-{{#ui-popup-content target=(mut target) }}
-    <div class="header">
-        {{value}}
-    </div>
-{{/ui-popup-content}}
+<UiPopup
+  @popup={{this.popup}}
+  class="ui button"
+  @onShow={{fn this.onPopupShow "hello pop"}}
+>hover show me</UiPopup>
+<UiPopup::Content @popup={{set this "popup"}}>
+  <div class="header">
+    {{this.value}}
+  </div>
+</UiPopup::Content>
 `,
   `
-{{#ui-popup popup=target1 tagName='button' event='click' hoverable=true class="ui button" onShow=(action "onPopupShow" 'hello pop')}}show me{{/ui-popup}}
-{{#ui-popup-content target=(mut target1) class="fluid"}}
-    <div class="ui grid">
-        <div class="ui form six column">
-          <div class="field">
-            <textarea name="" id="" cols="30" rows="10"></textarea>
-          </div>
-          <div class="field">
-              <button class="ui button save" {{action "save"}} >save</button>
-              <button class="ui button cancel" {{action "cancel"}} >cancel</button>
-          </div>
-        </div>
-    </div>
-{{/ui-popup-content}}
+<UiPopup
+  @popup={{this.popup1}}
+  @event={{"click"}}
+  @boundary={{"boundary"}}
+  class="ui button"
+  @onShow={{fn this.onPopupShow "hello pop"}}
+>click show me</UiPopup>
+<UiPopup::Content @popup={{set this "popup1"}} class="fluid">
 `,
-  `
-{{#ui-popup tagName='span' hoverable=true title='i am popup title' content='i am popup content'}}show me{{/ui-popup}}
+`
+<UiPopup
+  class="ui button"
+  @hoverable={{true}}
+  @title="i am popup title"
+  @content="i am popup content"
+>hover show me</UiPopup>
 `,
 ];
 

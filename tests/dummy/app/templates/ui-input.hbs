@@ -2,56 +2,26 @@
 	<div class="row">
 		<div class="column">
 			<div class="ui segments">
-				<div class="ui secondary segment">
-					<code class="code xml">
-						\{{#ui-input focus=true}}\{{/ui-input}}
-					</code>
-				</div>
 				<div class="ui segment">
 					<UiInput @focus={{true}}></UiInput>
 				</div>
 
-				<div class="ui secondary segment">
-					<code class="code xml">
-						\{{#ui-input theme="icon" loading=true}}<i class="search icon"></i>\{{/ui-input}}
-					</code>
-				</div>
 				<div class="ui segment">
 					<UiInput @class={{"icon"}} @loading={{true}}><i class="search icon"></i></UiInput>
 				</div>
 
-				<div class="ui secondary segment">
-					<code class="code xml">
-						\{{#ui-input error=true}}\{{/ui-input}}
-					</code>
-				</div>
 				<div class="ui segment">
 					<UiInput @error={{true}}></UiInput>
 				</div>
 
-				<div class="ui secondary segment">
-					<code class="code xml">
-						\{{#ui-input disabled=true}}\{{/ui-input}}
-					</code>
-				</div>
 				<div class="ui segment">
 					<UiInput @disabled={{true}} @value={{"search"}}></UiInput>
 				</div>
 
-				<div class="ui secondary segment">
-					<code class="code xml">
-						\{{#ui-input readonly=true}}\{{/ui-input}}
-					</code>
-				</div>
 				<div class="ui segment">
 					<UiInput @readonly={{true}} @value={{"search"}}></UiInput>
 				</div>
 
-				<div class="ui secondary segment">
-					<code class="code xml">
-		        \{{#ui-input onFocus=(action 'onfocus')}}\{{/ui-input}}
-					</code>
-				</div>
 				<div class="ui segment">
 					<label for="">email</label>
 					<UiInput @onFocus={{this.onfocus}}></UiInput>

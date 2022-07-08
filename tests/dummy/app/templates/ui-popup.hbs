@@ -1,47 +1,62 @@
-<div class="ui grid" >
-    <div class="row">
-        <div class="column">
-            <div class="ui segments">
-                <div class="ui secondary segment">
-                    {{code-highlight code=(code-show 'ui-popup' 0)}}
-                </div>
+<div class="ui grid">
+  <div class="row">
+    <div class="column">
+      <CodeHighlight @code={{code-show "ui-popup" 0}} />
+      <div class="ui segment">
+        <UiPopup
+          @popup={{this.popup}}
+          class="ui button"
+          @onShow={{fn this.onPopupShow "hello pop"}}
+        >hover show me</UiPopup>
+        <UiPopup::Content @popup={{set this "popup"}}>
+          <div class="header">
+            {{this.value}}
+          </div>
+        </UiPopup::Content>
+      </div>
 
-                <div class="ui segment">
-                    <UiPopup @popup={{this.popup}} class="ui button" @onShow={{fn this.onPopupShow 'hello pop'}}>hover show me</UiPopup>
-                    <UiPopup::Content @popup={{set this "popup"}}>
-                        <div class="header">
-                            {{this.value}}
-                        </div>
-                    </UiPopup::Content>
-                </div>
-                <div class="ui secondary segment">
-                    {{code-highlight code=(code-show 'ui-popup' 1)}}
-                </div>
-
-                <div class="ui secondary segment" id="boundary" >
-                    <UiPopup @popup={{this.popup1}} @event={{"click"}} @boundary={{"boundary"}} class="ui button" @onShow={{fn  this.onPopupShow 'hello pop'}}>click show me</UiPopup>
-                    <UiPopup::Content @popup={{set this "popup1"}} class="fluid">
-                        <div class="ui grid">
-                            <div class="ui form six column">
-                              <div class="field">
-                                <textarea name="" id="" cols="30" rows="10"></textarea>
-                              </div>
-                              <div class="field">
-                                  <button class="ui button save" type="button" {{on "click" this.save}} >save</button>
-                                  <button class="ui button cancel" type="button" {{on "click" this.cancel}} >cancel</button>
-                              </div>
-                            </div>
-                        </div>
-                    </UiPopup::Content>
-                </div>
-
-                <div class="ui secondary segment">
-                    {{code-highlight code=(code-show 'ui-popup' 2)}}
-                </div>
-                <div class="ui secondary segment">
-                    <UiPopup class="ui button" @hoverable={{true}} @title="i am popup title" @content="i am popup content">hover show me</UiPopup>
-                </div>
+      <CodeHighlight @code={{code-show "ui-popup" 1}} />
+      <div class="ui secondary segment" id="boundary">
+        <UiPopup
+          @popup={{this.popup1}}
+          @event={{"click"}}
+          @boundary={{"boundary"}}
+          class="ui button"
+          @onShow={{fn this.onPopupShow "hello pop"}}
+        >click show me</UiPopup>
+        <UiPopup::Content @popup={{set this "popup1"}} class="fluid">
+          <div class="ui grid">
+            <div class="ui form six column">
+              <div class="field">
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+              </div>
+              <div class="field">
+                <button
+                  class="ui button save"
+                  type="button"
+                  {{on "click" this.save}}
+                >save</button>
+                <button
+                  class="ui button cancel"
+                  type="button"
+                  {{on "click" this.cancel}}
+                >cancel</button>
+              </div>
             </div>
-        </div>
+          </div>
+        </UiPopup::Content>
+      </div>
+
+      <CodeHighlight @code={{code-show "ui-popup" 2}} />
+      <div class="ui secondary segment">
+        <UiPopup
+          class="ui button"
+          @hoverable={{true}}
+          @title="i am popup title"
+          @content="i am popup content"
+        >hover show me</UiPopup>
+      </div>
+
     </div>
+  </div>
 </div>

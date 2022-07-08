@@ -1,8 +1,6 @@
 <div class="ui container">
   <div class="ui dividing header">ui progress</div>
-  <div class="ui segment">
-    {{code-highlight code=(code-show 'ui-progress' 0)}}
-  </div>
+  <CodeHighlight @code={{(code-show 'ui-progress' 0)}} />
   <UiProgress @percent={{this.value}} ></UiProgress>
   <div class="ui grid">
     <div class="row">

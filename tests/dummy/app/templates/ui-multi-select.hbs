@@ -1,17 +1,18 @@
 <div class="ui grid">
-	<div class="row">
-		<div class="column">
-			<div class="ui segments">
-				<div class="ui secondary segment">
-					{{code-highlight code=(code-show 'ui-multi-select' 0) }}
-				</div>
-				<div class="ui segment">
-					<div class="meta">
-						{{this.valueShow}}
-					</div>
-					<UiMultiSelect @label={{"品牌选择"}} @options={{this.options.options}} @value={{this.value}} @onChange={{this.onChange}} />
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="row">
+    <div class="column">
+      <CodeHighlight @code={{code-show "ui-multi-select" 0}} />
+      <div class="ui segment">
+        <div class="meta">
+          {{this.valueShow}}
+        </div>
+        <UiMultiSelect
+          @label={{"品牌选择"}}
+          @options={{this.options.options}}
+          @value={{this.value}}
+          @onChange={{this.onChange}}
+        />
+      </div>
+    </div>
+  </div>
 </div>
