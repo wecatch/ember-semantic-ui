@@ -1,13 +1,12 @@
 <div class="ui grid" >
     <div class="row">
         <div class="column">
+                  <CodeHighlight @code={{code-show 'ui-tab-menu' 0}} ></CodeHighlight>
             <div class="ui segments">
-                <div class="ui secondary segment">
-                    {{code-highlight code=(code-show 'ui-tab-menu' 0) }}
-                </div>           
                 <div class="ui segment">
                 	<UiTabMenu  @active={{"first"}}>
-                		<a class="item" data-tab="first" >first</a>
+                		{{!-- template-lint-disable link-href-attributes --}}
+                  <a class="item" data-tab="first" >first</a>
                         <a class="item" data-tab="second" >second</a>
                 	</UiTabMenu>
                 	<UiTabSegment @tab="first" @active={{true}}>

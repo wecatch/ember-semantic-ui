@@ -1,8 +1,8 @@
 import Service from '@ember/service';
 
-export default Service.extend({
-  init() {
-    this._super(...arguments);
+export default class OptionService extends Service {
+  constructor() {
+    super(...arguments);
     this.options = [
       { name: 'google', value: 'google' },
       { name: 'apple', value: 'apple' },
@@ -10,5 +10,5 @@ export default Service.extend({
       { name: 'twitter', value: 'twitter' },
       { name: 'facebook', value: 'facebook' },
     ];
-  },
-});
+  }
+}

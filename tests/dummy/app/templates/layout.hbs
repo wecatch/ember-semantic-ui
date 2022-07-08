@@ -1,5 +1,5 @@
 <div class="ui header">
-  left menu + right content
+  Left menu + Right content
 </div>
 <div class="ui divider"></div>
 <div class="ui grid">
@@ -14,15 +14,18 @@
     </div>
   </UiColumn>
 </div>
+{{!-- template-lint-disable no-inline-styles --}}
 <div style="height:20px;"></div>
-{{code-highlight code=(code-show 'layout' 0) }}
+<CodeHighlight @code={{code-show 'layout' 0}} />
 <div class="ui header">
-  example
+  Left menu + Right content
 </div>
+<div class="ui divider"></div>
 <div class="ui contianer">
   <div class="ui grid">
     <UiColumn @wide={{6}}>
       <div class="ui vertical menu">
+        {{!-- template-lint-disable link-href-attributes --}}
         <a class="active teal item">
           Inbox
           <div class="ui teal pointing left label">1</div>
@@ -37,6 +40,7 @@
         </a>
         <div class="item">
           <div class="ui transparent icon input">
+            {{!-- template-lint-disable require-input-label --}}
             <input type="text" placeholder="Search mail...">
             <i class="search icon"></i>
           </div>
@@ -48,6 +52,7 @@
         <div class="ui form">
           <div class="field">
             <label for="">name</label>
+            {{!-- template-lint-disable require-input-label --}}
             <input type="text">
           </div>
           <button class="ui button" type="button">submit</button>
@@ -56,7 +61,8 @@
     </UiColumn>
   </div>
 </div>
-
+<div style="height:20px;"></div>
+<CodeHighlight @code={{code-show 'layout' 1}} />
 <div class="ui header">
   top menu+left menu + right content
 </div>
@@ -81,4 +87,4 @@
   </UiColumn>
 </div>
 <div style="height:20px;"></div>
-{{code-highlight code=(code-show 'layout' 1) }}
+<CodeHighlight @code={{code-show 'layout' 2}}/>

@@ -26,12 +26,6 @@ This Ember addon support many UI components based on [semantic-ui](http://semant
 - [ui-tab-menu](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-tab-menu)
 
 
-**Form**
-
-- [ui-form-input](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-form-input)
-- [ui-form](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-form)
-
-
 **Input**
 
 - [ui-input-tags](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-input-tags)
@@ -42,7 +36,6 @@ This Ember addon support many UI components based on [semantic-ui](http://semant
 
 **Checkbox**
 
-- [ui-radio-group](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-radio-group)
 - [ui-checkbox-group](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-checkbox-group)
 - [ui-checkbox](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-checkbox)
 
@@ -50,15 +43,11 @@ This Ember addon support many UI components based on [semantic-ui](http://semant
 **Modal**
 
 - [ui-modal](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-modal)
-- [ui-modal-title](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-modal-title)
-- [ui-modal-content](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-modal-content)
-- [ui-modal-foot](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-modal-foot)
 
 **Select**
 
 - [ui-select](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-select)
 - [ui-multi-select](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-multi-select)
-- [ui-select](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-select)
 
 **File**
 
@@ -73,10 +62,6 @@ This Ember addon support many UI components based on [semantic-ui](http://semant
 **Message**
 
 - [ui-message](http://wecatch.me/ember-semantic-ui/demo/ui-message)
-
-**Panel**
-
-- [ui-panel](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-panel)
 
 # Getting Started
 

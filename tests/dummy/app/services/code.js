@@ -1,17 +1,17 @@
 import Service from '@ember/service';
 
 const uiButton = [
-  `{{#ui-button theme="basic"}}button{{/ui-button}}`,
-  `{{#ui-button theme="basic" loading=true}}button{{/ui-button}}`,
-  `{{#ui-button disabled="true" }}button{{/ui-button}}`,
-  `{{#ui-button theme="primary" }}button{{/ui-button}}`,
-  `{{#ui-button theme="secondary" }}button{{/ui-button}}`,
-  `{{#ui-button theme="red" }}button{{/ui-button}}`,
+  `<UiButton @class="basic">button</UiButton>`,
+  `<UiButton @class="basic" @loading={{true}}>button</UiButton>`,
+  `<UiButton @disabled={{true}}>button</UiButton>`,
+  `<UiButton @class="primary">button</UiButton>`,
+  `<UiButton @class="secondary">button</UiButton>`,
+  `<UiButton @class="red">button</UiButton>`,
   `
-{{#ui-button theme="compact" action=(action "clickMe" 'value') }}
-    <i class="icon heart"></i>
-    heart
-{{/ui-button}}`,
+<UiButton @class="compact" @onClick={{(fn this.clickMe 'My Heart')}}>
+  <i class="icon heart"></i>
+  heart
+</UiButton>`,
 ];
 
 const uiAnimatedButton = [
@@ -57,49 +57,49 @@ const uiCheckbox = [
 
 const uiDropdownMenu = [
   `
-{{#ui-dropdown-menu}}
-    <div class="text">File</div>
-    <i class="dropdown icon"></i>
-    <div class="menu">
-        <div class="item">New</div>
-        <div class="item">
-          <span class="description">ctrl + o</span>
-          Open...
+<UiDropdownMenu>
+  <div class="text">File</div>
+  <i class="dropdown icon"></i>
+  <div class="menu">
+      <div class="item">New</div>
+      <div class="item">
+        <span class="description">ctrl + o</span>
+        Open...
+      </div>
+      <div class="item">
+        <span class="description">ctrl + s</span>
+        Save as...
+      </div>
+      <div class="item">
+        <span class="description">ctrl + r</span>
+        Rename
+      </div>
+      <div class="item">Make a copy</div>
+      <div class="item">
+        <i class="folder icon"></i>
+        Move to folder
+      </div>
+      <div class="item">
+        <i class="trash icon"></i>
+        Move to trash
+      </div>
+      <div class="divider"></div>
+      <div class="item">Download As...</div>
+      <div class="item">
+        <i class="dropdown icon"></i>
+        Publish To Web
+        <div class="menu">
+          <div class="item">Google Docs</div>
+          <div class="item">Google Drive</div>
+          <div class="item">Dropbox</div>
+          <div class="item">Adobe Creative Cloud</div>
+          <div class="item">Private FTP</div>
+          <div class="item">Another Service...</div>
         </div>
-        <div class="item">
-          <span class="description">ctrl + s</span>
-          Save as...
-        </div>
-        <div class="item">
-          <span class="description">ctrl + r</span>
-          Rename
-        </div>
-        <div class="item">Make a copy</div>
-        <div class="item">
-          <i class="folder icon"></i>
-          Move to folder
-        </div>
-        <div class="item">
-          <i class="trash icon"></i>
-          Move to trash
-        </div>
-        <div class="divider"></div>
-        <div class="item">Download As...</div>
-        <div class="item">
-          <i class="dropdown icon"></i>
-          Publish To Web
-          <div class="menu">
-            <div class="item">Google Docs</div>
-            <div class="item">Google Drive</div>
-            <div class="item">Dropbox</div>
-            <div class="item">Adobe Creative Cloud</div>
-            <div class="item">Private FTP</div>
-            <div class="item">Another Service...</div>
-          </div>
-        </div>
-        <div class="item">E-mail Collaborators</div>
-    </div>
-{{/ui-dropdown-menu}}`,
+      </div>
+      <div class="item">E-mail Collaborators</div>
+  </div>
+</UiDropdownMenu>`,
 ];
 
 // const uiDropDown = [];
@@ -167,7 +167,7 @@ const uiInputTags = [
 ];
 
 const uiLabel = [
-  `                 
+  `
 {{#ui-label theme="rblue image" }}
      i am label
     <div class="detail" >detail</div>
@@ -331,21 +331,29 @@ const uiSegment = [];
 
 const uiSelect = [
   `
-{{ui-select label="select brand" placeholder="select brand" search=true options=options value=value}}
+<div class="ui segment">
+  <div class="meta">
+    {{this.value}}
+  </div>
+  <UiSelect @search={{true}} @options={{this.options.options}} @onChange={{(set this "value")}} />
+</div>
 `,
 ];
 
 const uiTabMenu = [
   `
-{{#ui-tab-menu tabs='first,second' active='first' }}
-  
-{{/ui-tab-menu}}
-{{#ui-tab-segment tab='first' active=true}}
-  first
-{{/ui-tab-segment}}
-{{#ui-tab-segment tab='second'}}
-  second
-{{/ui-tab-segment}}
+<div class="ui segment">
+  <UiTabMenu  @active={{"first"}}>
+    <a class="item" data-tab="first" >first</a>
+        <a class="item" data-tab="second" >second</a>
+  </UiTabMenu>
+  <UiTabSegment @tab="first" @active={{true}}>
+    first
+  </UiTabSegment>
+  <UiTabSegment @tab="second">
+    second
+  </UiTabSegment>
+</div>
 `,
 ];
 
@@ -413,42 +421,79 @@ const uiPopup = [
 
 const layout = [
   `
-{{#ui-grid}}
-    {{#ui-column wide=4 }}
-        <div class="ui segment">
-           left
-        </div>
-    {{/ui-column}}
-    {{#ui-column wide=12 }}
-        <div class="ui segment">
-           main content
-        </div>
-    {{/ui-column}}
-{{/ui-grid}}
+<div class="ui grid">
+    <UiColumn @wide={{4}}>
+      <div class="ui segment">
+        left
+      </div>
+    </UiColumn>
+    <UiColumn @wide={{12}}>
+      <div class="ui segment">
+        main content
+      </div>
+    </UiColumn>
+</div>
 `,
   `
-{{#ui-grid}}
-    {{#ui-row}}
-      {{#ui-column wide=16 }}
-        {{#ui-menu}}
-          <div class="item">
-            Home
+<div class="ui contianer">
+  <div class="ui grid">
+    <UiColumn @wide={{6}}>
+      <div class="ui vertical menu">
+        <a class="active teal item">
+          Inbox
+          <div class="ui teal pointing left label">1</div>
+        </a>
+        <a class="item">
+          Spam
+          <div class="ui label">51</div>
+        </a>
+        <a class="item">
+          Updates
+          <div class="ui label">1</div>
+        </a>
+        <div class="item">
+          <div class="ui transparent icon input">
+            <input type="text" placeholder="Search mail...">
+            <i class="search icon"></i>
           </div>
-        {{/ui-menu}}
-      {{/ui-column}}
-    {{/ui-row}}
-    {{#ui-column wide=4 }}
-        <div class="ui segment">
-           left
         </div>
-    {{/ui-column}}
-    {{#ui-column wide=12 }}
-        <div class="ui segment">
-           main content
+      </div>
+    </UiColumn>
+    <UiColumn @wide={{10}}>
+      <div class="ui segment">
+        <div class="ui form">
+          <div class="field">
+            <label for="">name</label>
+            <input type="text">
+          </div>
+          <button class="ui button" type="button">submit</button>
         </div>
-    {{/ui-column}}
-{{/ui-grid}}
+      </div>
+    </UiColumn>
+  </div>
+</div>
+`,
 
+  `
+<div class="ui grid">
+  <UiColumn @wide={{16}}>
+    <div class="ui menu">
+      <div class="item">
+        Home
+      </div>
+    </div>
+  </UiColumn>
+  <UiColumn @wide={{4}}>
+    <div class="ui segment">
+      left
+    </div>
+  </UiColumn>
+  <UiColumn @wide={{12}}>
+    <div class="ui segment">
+      main content
+    </div>
+  </UiColumn>
+</div>
 `,
 ];
 

@@ -1,58 +1,42 @@
-<div class="ui grid" >
-    <div class="row">
-        <div class="column">
-            <div class="ui segments">
-                <div class="ui secondary segment">
-                    {{code-highlight code=(code-show 'ui-button' 0)}}
-                </div>           
-                <div class="ui segment">
-                     <UiButton @class="basic">button</UiButton>
-                </div>
+<div class="ui grid">
+  <div class="row">
+    <div class="column">
+      <CodeHighlight @code={{code-show 'ui-button' 0}} />
+      <div class="ui segment">
+        <UiButton @class="basic">button</UiButton>
+      </div>
 
-                <div class="ui secondary segment">
-                    {{code-highlight code=(code-show 'ui-button' 1)}}
-                </div>           
-                <div class="ui segment">
-                     <UiButton @class="basic" @loading={{true}}>button</UiButton>
-                </div>
+      <CodeHighlight @code={{code-show 'ui-button' 1}} />
+      <div class="ui segment">
+        <UiButton @class="basic" @loading={{true}}>button</UiButton>
+      </div>
 
-                <div class="ui secondary segment">
-                    {{code-highlight code=(code-show 'ui-button' 2)}}
-                </div>           
-                <div class="ui segment">
-                     <UiButton @disabled={{true}}>button</UiButton>
-                </div>
+      <CodeHighlight @code={{code-show 'ui-button' 2}} />
+      <div class="ui segment">
+        <UiButton @disabled={{true}}>button</UiButton>
+      </div>
 
-                
-                <div class="ui secondary segment">
-                    {{code-highlight code=(code-show 'ui-button' 3)}}
-                </div>
-                <div class="ui segment">
-                    <UiButton @class="primary">button</UiButton>
-                </div>
-                <div class="ui secondary segment">
-                    {{code-highlight code=(code-show 'ui-button' 4)}}
-                </div>
-                <div class="ui segment">
-                    <UiButton @class="secondary">button</UiButton>
-                </div>
-                <div class="ui secondary segment">
-                    {{code-highlight code=(code-show 'ui-button' 5)}}
-                </div>
-                <div class="ui segment">
-                    <UiButton @class="red">button</UiButton>
-                </div>
 
-                <div class="ui secondary segment">
-                    {{code-highlight code=(code-show 'ui-button' 6)}}
-                </div>
-                <div class="ui segment">
-                    <UiButton @class="compact" @click={{(fn this.clickMe 'My Heart')}}>
-                        <i class="icon heart"></i>
-                        heart
-                    </UiButton>
-                </div>
-            </div>
-        </div>
+      <CodeHighlight @code={{code-show 'ui-button' 3}} />
+      <div class="ui segment">
+        <UiButton @class="primary">button</UiButton>
+      </div>
+      <CodeHighlight @code={{code-show 'ui-button' 4}} />
+      <div class="ui segment">
+        <UiButton @class="secondary">button</UiButton>
+      </div>
+      <CodeHighlight @code={{code-show 'ui-button' 5}} />
+      <div class="ui segment">
+        <UiButton @class="red">button</UiButton>
+      </div>
+
+      <CodeHighlight @code={{code-show 'ui-button' 6}} />
+      <div class="ui segment">
+        <UiButton @class="compact" @onClick={{(fn this.clickMe 'My Heart' )}}>
+          <i class="icon heart"></i>
+          heart
+        </UiButton>
+      </div>
     </div>
+  </div>
 </div>
