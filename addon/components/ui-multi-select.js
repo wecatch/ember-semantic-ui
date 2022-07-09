@@ -1,3 +1,4 @@
+/* eslint-disable ember/no-jquery */
 import Component from '@glimmer/component';
 import { A } from '@ember/array';
 import EmberObject, { action } from '@ember/object';

@@ -1,5 +1,7 @@
+/* eslint-disable ember/no-jquery */
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
+import $ from 'jquery';
 
 /**
 ui-dropdown-menu component
@@ -15,7 +17,7 @@ export default class UiDropdonwMenuComponent extends Component {
     $(element).dropdown({
       onChange: (value) => {
         if (this.args.onChange) {
-          that.args.onChange(value);
+          this.args.onChange(value);
         }
       },
     });

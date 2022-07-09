@@ -1,7 +1,9 @@
+/* eslint-disable ember/no-jquery */
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import $ from 'jquery';
 import { guidFor } from '@ember/object/internals';
+import { bind } from '@ember/runloop';
 
 /**
 ui-checkbox component see {{#crossLink "mixins.UiCheckboxBase"}}{{/crossLink}}
@@ -12,6 +14,8 @@ ui-checkbox component see {{#crossLink "mixins.UiCheckboxBase"}}{{/crossLink}}
 @constructor
 */
 export default class UiCheckboxComponent extends Component {
+  element = null;
+
   constructor() {
     super(...arguments);
     if (this.args.onChange) {
@@ -37,19 +41,18 @@ export default class UiCheckboxComponent extends Component {
 
   @action
   register(element) {
+    this.element = element;
     $(element).checkbox();
     let input = $(element).find('input');
 
     //set checbox stated
     input.prop('checked', this.checked);
     //bind input change event
-    $(element).on('click', () => {
-      let isChecked = input.is(':checked');
-      this._updateValue(isChecked);
-    });
+    $(element).on('click', bind(this, this._updateValue));
   }
 
-  _updateValue(checked) {
+  _updateValue() {
+    let checked = $(this.element).find('input').is(':checked');
     if (typeof this.args.onChange === 'function') {
       if (checked) {
         this.args.onChange(true, this.value);

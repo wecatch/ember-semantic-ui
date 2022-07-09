@@ -1,26 +1,26 @@
-import { moduleForComponent, test } from 'ember-qunit';
-import hbs from 'htmlbars-inline-precompile';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'dummy/tests/helpers';
+import { render } from '@ember/test-helpers';
+import { hbs } from 'ember-cli-htmlbars';
 
-moduleForComponent('file-input', 'Integration | Component | file input', {
-  integration: true,
-});
+module('Integration | Component | file-input', function (hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function (assert) {
-  assert.expect(2);
+  test('it renders', async function (assert) {
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.set('myAction', function(val) { ... });
 
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+    await render(hbs`<FileInput />`);
 
-  this.render(hbs`{{file-input}}`);
+    assert.dom(this.element).hasText('');
 
-  assert.equal(this.$().text().trim(), '');
+    // Template block usage:
+    await render(hbs`
+      <FileInput>
+        template block text
+      </FileInput>
+    `);
 
-  // Template block usage:
-  this.render(hbs`
-    {{#file-input}}
-      template block text
-    {{/file-input}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+    assert.dom(this.element).hasText('template block text');
+  });
 });

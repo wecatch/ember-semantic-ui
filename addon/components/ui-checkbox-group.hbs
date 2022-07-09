@@ -1,6 +1,6 @@
-<div class="ui {{if this.args.class ''}} fields" ...attributes>
-  {{#if this.args.label}}
-    <label>{{this.args.label}}</label>
+<div class="ui {{@class}} fields" ...attributes>
+  {{#if @label}}
+    <label>{{@label}}</label>
   {{/if}}
   {{#each this.options as |op|}}
     <UiCheckbox

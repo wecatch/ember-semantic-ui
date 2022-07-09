@@ -82,7 +82,7 @@ const uiCheckboxGroup = [
       {{this.valueShow3}}
   </div>
 </div>
-  `
+  `,
 ];
 
 const uiCheckbox = [
@@ -312,7 +312,7 @@ const uiPopup = [
   class="ui button"
   @onShow={{fn this.onPopupShow "hello pop"}}
 >hover show me</UiPopup>
-<UiPopup::Content @popup={{set this "popup"}}>
+<UiPopup::Content @onAttach={{set this "popup"}}>
   <div class="header">
     {{this.value}}
   </div>
@@ -326,7 +326,7 @@ const uiPopup = [
   class="ui button"
   @onShow={{fn this.onPopupShow "hello pop"}}
 >click show me</UiPopup>
-<UiPopup::Content @popup={{set this "popup1"}} class="fluid">
+<UiPopup::Content @onAttach={{set this "popup1"}} class="fluid">
 `,
   `
 <UiPopup

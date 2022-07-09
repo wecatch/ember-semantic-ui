@@ -1,5 +1,7 @@
+/* eslint-disable ember/no-jquery */
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
+import $ from 'jquery';
 
 /**
 ui-input component see {{#crossLink "mixins.UiInputBase"}}{{/crossLink}}
@@ -126,7 +128,7 @@ export default class UiIputComponent extends Component {
 
     $(element)
       .find('input')
-      .change((e) => {
+      .on('onchange', (e) => {
         if (typeof this.args.onChange === 'function') {
           this.args.onChange(e);
         }

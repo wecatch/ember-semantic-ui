@@ -7,11 +7,11 @@ export default class UiProgressController extends Controller {
 
   @action
   plus() {
-    this.value += 5
+    this.value += 5;
   }
 
   @action
   minus() {
-    this.value -= 5
+    this.value -= 5;
   }
 }
