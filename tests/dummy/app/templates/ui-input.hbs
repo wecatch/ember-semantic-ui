@@ -2,26 +2,33 @@
 	<div class="row">
 		<div class="column">
 			<div class="ui segments">
+        <CodeHighlight @code={{code-show 'ui-input' 0}} />
 				<div class="ui segment">
 					<UiInput @focus={{true}}></UiInput>
 				</div>
 
+        <CodeHighlight @code={{code-show 'ui-input' 1}} />
 				<div class="ui segment">
 					<UiInput @class={{"icon"}} @loading={{true}}><i class="search icon"></i></UiInput>
 				</div>
 
+        <CodeHighlight @code={{code-show 'ui-input' 2}} />
 				<div class="ui segment">
 					<UiInput @error={{true}}></UiInput>
 				</div>
 
+
+        <CodeHighlight @code={{code-show 'ui-input' 3}} />
 				<div class="ui segment">
 					<UiInput @disabled={{true}} @value={{"search"}}></UiInput>
 				</div>
 
+        <CodeHighlight @code={{code-show 'ui-input' 4}} />
 				<div class="ui segment">
 					<UiInput @readonly={{true}} @value={{"search"}}></UiInput>
 				</div>
 
+        <CodeHighlight @code={{code-show 'ui-input' 5}} />
 				<div class="ui segment">
 					<label for="">email</label>
 					<UiInput @onFocus={{this.onfocus}}></UiInput>
@@ -29,37 +36,44 @@
 				</div>
 			</div>
 
+
 			<div class="ui segments">
+        <CodeHighlight @code={{code-show 'ui-input' 6}} />
 				<div class="ui segment">
 					<UiInput @class="fluid icon" @value={{"search"}}>
 						<i class="search icon"></i>
 					</UiInput>
 				</div>
 
+        <CodeHighlight @code={{code-show 'ui-input' 7}} />
 				<div class="html ui segment">
 					<UiInput @class="fluid action" @value={{"fluid"}}>
 						<UiButton>search</UiButton>
 					</UiInput>
 				</div>
 
+        <CodeHighlight @code={{code-show 'ui-input' 8}} />
 				<div class="html ui segment">
 					<UiInput @class="mini icon" @value={{"search"}}>
 						<i class="search icon"></i>
 					</UiInput>
 				</div>
 
+        <CodeHighlight @code={{code-show 'ui-input' 9}} />
 				<div class="html ui segment">
 					<UiInput @class="small icon" @value={{"search"}}>
 						<i class="search icon"></i>
 					</UiInput>
 				</div>
 
+        <CodeHighlight @code={{code-show 'ui-input' 10}} />
 				<div class="html ui segment">
 					<UiInput @class="big icon" @value={{"search"}}>
 						<i class="search icon"></i>
 					</UiInput>
 				</div>
 
+        <CodeHighlight @code={{code-show 'ui-input' 11}} />
 				<div class="html ui segment">
 					<UiInput @class="huge icon" @value={{"search"}}>
 						<i class="search icon"></i>

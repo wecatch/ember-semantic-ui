@@ -1,4 +1,4 @@
-import EmberObject from '@ember/object';
+import { tracked } from '@glimmer/tracking';
 
 /**
 FileObject class
@@ -8,78 +8,76 @@ FileObject class
 @class FileObject
 @constructor
 */
-let fileObject = EmberObject.extend({
+class FileObject {
   // ...........................................
   // Name is used for the upload property
-  name: '',
+  name = '';
 
   // {Property} Human readable size of the selected file
-  size: '0 KB',
+  size = '0 KB';
 
   // {Property} Raw file size of the selected file
-  rawSize: 0,
+  rawSize = 0;
 
   // {Property} Indicates if this file is an image we can display
-  isDisplayableImage: false,
+  isDisplayableImage = false;
 
   // {Property} String representation of the file
-  base64Image: '',
+  base64Image = '';
 
   // {Property} Will be an HTML5 File
-  fileToUpload: null,
+  fileToUpload = null;
 
   // {Property} Will be a $.ajax jqXHR
-  uploadJqXHR: null,
+  uploadJqXHR = null;
 
   // {Property} Promise for when a file was uploaded
-  uploadPromise: null,
+  uploadPromise = null;
 
   // {Property} the object that upload a file
-  uploader: null,
+  uploader = null;
 
   // {Property} Upload progress 0-100
-  percent: null,
+  percent = null;
 
   // {Property} If a file is currently being uploaded
-  isUploading: false,
+  @tracked isUploading = false;
 
   // {Property} If a file is currently being uploaded
-  isDeleted: false,
+  isDeleted = false;
 
   // {Property} If the file was uploaded successfully
-  isUploaded: false,
+  isUploaded = false;
 
   // {Property} when the file was uploaded successfully, response data from server
-  data: null,
+  data = null;
 
-  readFile: function () {
-    let self = this;
+  readFile() {
     let fileToUpload = this.fileToUpload;
     let isImage = fileToUpload.type.indexOf('image') === 0;
 
-    this.set('name', fileToUpload.name);
-    this.set('rawSize', fileToUpload.size);
-    this.set('size', humanReadableFileSize(fileToUpload.size));
+    this.name = fileToUpload.name;
+    this.rawSize = fileToUpload.size;
+    this.size = humanReadableFileSize(fileToUpload.size);
 
     // Don't read anything bigger than 5 MB
     if (isImage && fileToUpload.size < 1 * 1024 * 1024) {
-      this.set('isDisplayableImage', isImage);
+      this.isDisplayableImage = isImage;
 
       // Create a reader and read the file.
       var reader = new FileReader();
       reader.onload = function (e) {
-        self.set('base64Image', e.target.result);
+        this.base64Image = e.target.result;
       };
 
       // Read in the image file as a data URL.
       reader.readAsDataURL(fileToUpload);
     }
-  },
-  init() {
-    this._super(...arguments);
+  }
+  constructor() {
     this.readFile();
-  },
-});
+  }
+}
 
 function humanReadableFileSize(size) {
   var label = '';
@@ -99,4 +97,4 @@ function humanReadableFileSize(size) {
   return label;
 }
 
-export { fileObject, humanReadableFileSize };
+export { FileObject, humanReadableFileSize };

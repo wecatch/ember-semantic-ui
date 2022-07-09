@@ -1,13 +1,14 @@
+/* eslint-disable ember/no-jquery */
 // this file contains source code from  https://github.com/benefitcloud/ember-uploader
 // thanks to this great project
 
-import { get, set } from '@ember/object';
+import { isArray } from '@ember/array';
 import EmberObject from '@ember/object';
 import Evented from '@ember/object/evented';
-import { isArray } from '@ember/array';
-import { Promise } from 'rsvp';
 import { run } from '@ember/runloop';
 import $ from 'jquery';
+import { Promise } from 'rsvp';
+import { tracked } from '@glimmer/tracking';
 
 /**
 EmberUploader class
@@ -17,29 +18,29 @@ EmberUploader class
 @class EmberUploader
 @constructor
 */
-export default EmberObject.extend(Evented, {
+export default class EmberUploader extends EmberObject.extend(Evented) {
   /**
    * upload url
    *
    * @property {String} url
    *
    */
-  url: null,
-  paramNamespace: null,
+  url = null;
+  paramNamespace = null;
   /**
    * upload file parameter name
    *
    * @property {String} paramName
    * @default 'file'
    */
-  paramName: 'file',
+  paramName = 'file';
   /**
    * ajax request settings traditional, by default false
    *
    * @property {Boolean} traditional
    * @default true
    */
-  traditional: true,
+  traditional = true;
 
   /**
    * ajax request status
@@ -47,7 +48,7 @@ export default EmberObject.extend(Evented, {
    * @property {Boolean} isUploading
    * @default false
    */
-  isUploading: false,
+  @tracked isUploading = false;
 
   /**
    * ajax request type (method), by default it will be POST
@@ -55,7 +56,7 @@ export default EmberObject.extend(Evented, {
    * @property {String} type
    * @default 'POST'
    */
-  type: 'POST',
+  type = 'POST';
 
   /**
    * Start upload of files and extra data
@@ -64,23 +65,20 @@ export default EmberObject.extend(Evented, {
    * @param  {array} extra
    * @return {object}       jquery promise from ajax object
    */
-  upload: function (files, extra) {
+  upload(files, extra) {
     extra = extra || {};
     var data = this.setupFormData(files, extra);
     var url = this.url;
     var type = this.type;
-    set(this, 'isUploading', true);
-
+    this.isUploading = true;
     return this.ajax(url, data, type);
-  },
+  }
 
-  setupFormData: function (files, extra) {
+  setupFormData(files, extra) {
     var formData = new FormData();
 
-    for (var prop in extra) {
-      if (extra.hasOwnProperty(prop)) {
-        formData.append(this.toNamespacedParam(prop), extra[prop]);
-      }
+    for (var prop of Object.keys(extra)) {
+      formData.append(this.toNamespacedParam(prop), extra[prop]);
     }
 
     // if is a array of files ...
@@ -101,25 +99,24 @@ export default EmberObject.extend(Evented, {
     }
 
     return formData;
-  },
+  }
 
-  toNamespacedParam: function (name) {
+  toNamespacedParam(name) {
     if (this.paramNamespace) {
       return this.paramNamespace + '[' + name + ']';
     }
 
     return name;
-  },
+  }
 
-  didUpload: function (data) {
-    set(this, 'isUploading', false);
+  didUpload(data) {
+    this.isUploading = false;
     this.trigger('didUpload', data);
     return data;
-  },
+  }
 
-  didError: function (jqXHR, textStatus, errorThrown) {
-    set(this, 'isUploading', false);
-
+  didError(jqXHR, textStatus, errorThrown) {
+    this.isUploading = false;
     // Borrowed from Ember Data
     var isObject = jqXHR !== null && typeof jqXHR === 'object';
 
@@ -137,20 +134,19 @@ export default EmberObject.extend(Evented, {
     this.trigger('didError', jqXHR, textStatus, errorThrown);
 
     return jqXHR;
-  },
+  }
 
-  didProgress: function (e) {
+  didProgress(e) {
     e.percent = (e.loaded / e.total) * 100;
     this.trigger('progress', e);
-  },
+  }
 
-  abort: function () {
-    set(this, 'isUploading', false);
-
+  abort() {
+    this.isUploading = false;
     this.trigger('isAborting');
-  },
+  }
 
-  ajaxSettings: function (url, params, method) {
+  ajaxSettings(url, params, method) {
     var self = this;
     return {
       url: url,
@@ -171,13 +167,13 @@ export default EmberObject.extend(Evented, {
       },
       data: params,
     };
-  },
+  }
 
-  ajax: function (url, params, method) {
+  ajax(url, params, method) {
     return this._ajax(this.ajaxSettings(url, params, method));
-  },
+  }
 
-  _ajax: function (settings) {
+  _ajax(settings) {
     var self = this;
 
     return new Promise(function (resolve, reject) {
@@ -191,5 +187,5 @@ export default EmberObject.extend(Evented, {
 
       $.ajax(settings);
     });
-  },
-});
+  }
+}

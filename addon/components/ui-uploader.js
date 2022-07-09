@@ -1,14 +1,12 @@
-import Ember from 'ember';
-import { isEmpty } from '@ember/utils';
-import $ from 'jquery';
-import { A } from '@ember/array';
-import { computed } from '@ember/object';
+/* eslint-disable ember/no-jquery */
+import { action, computed } from '@ember/object';
 import { htmlSafe } from '@ember/template';
-import Component from '@ember/component';
+import { isEmpty } from '@ember/utils';
+import Component from '@glimmer/component';
+import $ from 'jquery';
 
-import emberUploader from '../utils/ember-uploader';
-import { fileObject } from '../utils/file-object';
-import layout from './ui-uploader';
+import EmberUploader from '../utils/ember-uploader';
+import { FileObject } from '../utils/file-object';
 
 /**
 ui-uploader component
@@ -18,75 +16,91 @@ ui-uploader component
 @class UiUploader
 @constructor
 */
-export default Component.extend({
-  layout: layout,
+export default class UiUploaderComponent extends Component {
+  element = null;
+
   /**
    * file request ajax setting traditional, by default true
    * @property {boolean} traditional
    *
    */
-  traditional: true,
-  actions: {
-    /** 
-        activate upload action
-        @event start
-        @param {Object} obj fileInput instance see {{#crossLink " fileInput"}}{{/crossLink}}
-        **/
-    start: function (obj) {
-      let url = this.url,
-        self = this;
+  get traditional() {
+    return this.args.traditional ?? true;
+  }
+  /**
+      activate upload action
+      @event start
+      @param {Object} obj fileInput instance see {{#crossLink " fileInput"}}{{/crossLink}}
+      **/
+  @action
+  start(obj) {
+    let url = this.url,
+      self = this;
 
-      obj.uploader = emberUploader.create({
-        url: url,
-        traditional: self.get('traditional'),
-      });
+    obj.uploader = new EmberUploader({
+      url: url,
+      traditional: self.get('traditional'),
+    });
 
-      obj.uploadPromise = obj.uploader.upload(obj.fileToUpload, this.params);
+    obj.uploadPromise = obj.uploader.upload(obj.fileToUpload, this.params);
 
-      self.sendAction('uploadStart', obj);
-      obj.set('isUploading', computed.alias('uploader.isUploading'));
+    if (this.args.uploadStart) {
+      this.args.uploadStart(obj);
+    }
 
-      obj.uploader.on('progress', function (e) {
-        obj.set('percent', parseInt(e.percent));
-        self.sendAction('uploadProgress', e);
-      });
+    obj.set('isUploading', obj.uploader.isUploading);
 
-      obj.uploader.on('didUpload', function (data) {
-        obj.set('isUploaded', true);
-        obj.set('data', data);
+    obj.uploader.on('progress', function (e) {
+      obj.set('percent', parseInt(e.percent));
+      if (this.args.uploadProgress) {
+        this.args.uploadProgress(e);
+      }
+    });
 
-        self.sendAction('uploadSuccess', obj);
-      });
-    },
-    /** 
-        deactivate upload action
-        @event abort
-        @param {Object} obj fileInput instance see {{#crossLink " fileInput"}}{{/crossLink}}
-        **/
-    abort: function (obj) {
-      this.sendAction('uploadAbort', obj);
-      if (obj.uploader) {
-        try {
-          obj.uploader.abort();
-        } catch (e) {
-          Ember.Logger.error(e);
-        } finally {
-          this.queue.removeObject(obj);
-        }
-      } else {
+    obj.uploader.on('didUpload', function (data) {
+      obj.set('isUploaded', true);
+      obj.set('data', data);
+
+      if (this.args.uploadSuccess) {
+        this.args.uploadSuccess(obj);
+      }
+    });
+  }
+  /**
+      deactivate upload action
+      @event abort
+      @param {Object} obj fileInput instance see {{#crossLink " fileInput"}}{{/crossLink}}
+      **/
+  @action
+  abort(obj) {
+    if (this.args.uploadAbort) {
+      this.args.uploadAbort(obj);
+    }
+    if (obj.uploader) {
+      try {
+        obj.uploader.abort();
+      } catch (e) {
+        console.error(e);
+      } finally {
         this.queue.removeObject(obj);
       }
-    },
-    /** 
-        delete file from queue
-        @event 
-        @param {Object} obj fileInput instance see {{#crossLink " fileInput"}}{{/crossLink}}
-        **/
-    deleteFile: function (obj) {
+    } else {
       this.queue.removeObject(obj);
-      this.sendAction('deleteFile', obj);
-    },
-  },
+    }
+  }
+  /**
+      delete file from queue
+      @event
+      @param {Object} obj fileInput instance see {{#crossLink " fileInput"}}{{/crossLink}}
+      **/
+  @action
+  deleteFile(obj) {
+    this.queue.removeObject(obj);
+    if (this.args.deleteFile) {
+      this.args.deleteFile(obj);
+    }
+  }
+
   /**
    * The upload url
    *
@@ -94,25 +108,9 @@ export default Component.extend({
    * @type String
    * @default  ""
    */
-  url: '',
-
-  /**
-   * The root component element
-   *
-   * @property tagName
-   * @type String
-   * @default  "div"
-   */
-  tagName: 'div',
-
-  /**
-   * A array contain class names apply to root element
-   *
-   * @property classNames
-   * @type Array
-   * @default  ['ui', 'segment']
-   */
-  classNames: ['ui', 'segment'],
+  get url() {
+    return this.args.url ?? '';
+  }
 
   /**
    * To allow  file autoUpload
@@ -121,7 +119,9 @@ export default Component.extend({
    * @type boolean
    * @default  true
    */
-  autoUpload: true,
+  get autoUpload() {
+    return this.args.autoUpload ?? true;
+  }
 
   /**
    * upload file queue
@@ -130,7 +130,7 @@ export default Component.extend({
    * @type Array
    * @default  []
    */
-  queue: null,
+  queue = [];
 
   /**
    * upload multiple file
@@ -139,7 +139,9 @@ export default Component.extend({
    * @type boolean
    * @default  false
    */
-  multiple: false,
+  get multiple() {
+    return this.args.multiple ?? false;
+  }
 
   /**
    * extra params
@@ -148,96 +150,90 @@ export default Component.extend({
    * @type params
    * @default  null
    */
-  params: null,
+  get params() {
+    return this.args.params ?? null;
+  }
 
   /**
    * file accept
    *
    * @property accept
    * @type String
-   * @default  null
+   * @default  audio/*,video/*,image/*
    */
-  accept: 'audio/*,video/*,image/*',
+  get accept() {
+    return this.args.accept ?? 'audio/*,video/*,image/*';
+  }
 
   /**
-   * @method didInsertElement
-   * @observes "didInsertElement" event
+   * @method register
+   * @observes "register" event
    * @returns  {void}
    */
-  didInsertElement() {
-    this._super(...arguments);
+  @action
+  register(element) {
+    this.element = element;
     let self = this;
-    this.$('input').change(function (e) {
-      let input = e.target;
-      if (!isEmpty(input.files)) {
-        for (let i = input.files.length - 1; i >= 0; i--) {
-          let obj = fileObject.create({
-            fileToUpload: input.files[i],
-          });
-          self.queue.pushObject(obj);
-          if (self.autoUpload) {
-            self.send('start', obj);
+    $(this.element)
+      .find('input')
+      .on('onchange', function (e) {
+        let input = e.target;
+        if (!isEmpty(input.files)) {
+          for (let i = input.files.length - 1; i >= 0; i--) {
+            let obj = new FileObject({
+              fileToUpload: input.files[i],
+            });
+            self.queue.pushObject(obj);
+            if (self.autoUpload) {
+              self.start(obj);
+            }
           }
         }
 
         //$(this).after($(this).clone().val(""));
         //empty input files
-        $(this).val('');
-      }
-    });
-  },
+        $(self.element).find('input').val('');
+      });
+  }
+
   /**
    * @function willDestroy empty queue
    *
    * @returns  null
    */
   willDestroy() {
-    this._super();
+    super.willDestroy(...arguments);
     this.queue.clear(); //clear input file
-  },
+  }
 
-  /**
-   * @function willDestroy empty queue
-   *
-   * @returns  null
-   */
-  init() {
-    this._super(...arguments);
-    if (this.queue === null) {
-      this.set('queue', A());
-    }
-  },
   /**
    * @function inputStyle
    *
    * @returns  {string}
    */
-  inputStyle: computed({
-    get() {
-      let style_array = [
-        'opacity: 0',
-        'width:100% !important',
-        'overflow:hidden',
-        'position:relative',
-        'left:-100%',
-        'display:block',
-      ];
-      return htmlSafe(style_array.join(';'));
-    },
-  }),
+  get inputStyle() {
+    let style_array = [
+      'opacity: 0',
+      'width:100% !important',
+      'overflow:hidden',
+      'position:relative',
+      'left:-100%',
+      'display:block',
+    ];
+    return htmlSafe(style_array.join(';'));
+  }
+
   /**
    * @function labelStyle
    *
    * @returns  {string}
    */
-  labelStyle: computed({
-    get() {
-      let style_array = [
-        'height: 6.25em',
-        'line-height: 5.25em',
-        'text-align: center',
-      ];
-      return htmlSafe(style_array.join(';'));
-    },
-  }),
-});
+  get labelStyle() {
+    let style_array = [
+      'height: 6.25em',
+      'line-height: 5.25em',
+      'text-align: center',
+    ];
+    return htmlSafe(style_array.join(';'));
+  }
+}

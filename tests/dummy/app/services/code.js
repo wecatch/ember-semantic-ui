@@ -14,16 +14,6 @@ const uiButton = [
 </UiButton>`,
 ];
 
-const uiAnimatedButton = [
-  `
-{{#ui-animated-button as |ab| }}
-    <div class="{{ab.visible}}">Next</div>
-    <div class="{{ab.hidden}}">
-        <i class="right arrow icon"></i>
-    </div>
-{{/ui-animated-button}}`,
-];
-
 const uiCheckboxGroup = [
   `
 <div class="ui form" >
@@ -73,7 +63,7 @@ const uiCheckboxGroup = [
   </UiCheckboxGroup>
 </div>
   `,
-`
+  `
 <div class="ui form" >
   <UiCheckboxGroup @class="grouped fields"
   @label="choose company" @options={{this.options.options}}
@@ -83,7 +73,7 @@ const uiCheckboxGroup = [
   </div>
 </div>
   `,
-`
+  `
 <div class="ui form" >
   <UiCheckboxGroup @label="choose company"
     @class="inline fields" @options={{this.options.options}}
@@ -153,144 +143,44 @@ const uiDropdownMenu = [
 </UiDropdownMenu>`,
 ];
 
-// const uiDropDown = [];
-
-const uiFormInput = [
+const uiInput = [
+  `<UiInput @focus={{true}}></UiInput>`,
+  `<UiInput @class={{"icon"}} @loading={{true}}><i class="search icon"></i></UiInput>`,
+  `<UiInput @error={{true}}></UiInput>`,
+  `<UiInput @disabled={{true}} @value={{"search"}}></UiInput>`,
+  `<UiInput @readonly={{true}} @value={{"search"}}></UiInput>`,
   `
-<div class="ui form">
-    {{#ui-form-input}}email{{/ui-form-input}}
-</div>
-`,
+<label for="">email</label>
+  <UiInput @onFocus={{this.onfocus}}></UiInput>
+{{this.result}}`,
   `
-<div class="ui form">
-{{#ui-form-input onChange=(action 'onchange') onFocus=(action 'onfocus') onFocusin=(action 'onfocusin') onFocusout=(action 'onfocusout') }}email{{/ui-form-input}}
-</div>
-`,
+<UiInput @class="fluid icon" @value={{"search"}}>
+    <i class="search icon"></i>
+</UiInput>`,
+  `
+<UiInput @class="fluid action" @value={{"fluid"}}>
+    <UiButton>search</UiButton>
+</UiInput>`,
+  `
+<UiInput @class="mini icon" @value={{"search"}}>
+    <i class="search icon"></i>
+</UiInput>`,
+  `
+<UiInput @class="small icon" @value={{"search"}}>
+    <i class="search icon"></i>
+</UiInput>`,
+  `
+<UiInput @class="big icon" @value={{"search"}}>
+    <i class="search icon"></i>
+</UiInput>`,
+  `
+<UiInput @class="huge icon" @value={{"search"}}>
+  <i class="search icon"></i>
+</UiInput>`,
 ];
-
-const uiForm = [
-  `
-{{#ui-form }}
-    {{ui-form-input}}
-    {{#ui-button}}save{{/ui-button}}
-{{/ui-form}}`,
-  `
-{{#ui-form loading=true }}
-   {{ui-form-input}}
-   {{#ui-button}}save{{/ui-button}}
-{{/ui-form}}`,
-  `
-{{#ui-form success=true }}
-  {{#ui-form-input}}email{{/ui-form-input}}
-  <div class="ui success message">
-      <div class="header">Form Completed</div>
-      <p>You're all signed up for the newsletter.</p>
-  </div>
-  {{#ui-button}}save{{/ui-button}}
-{{/ui-form}}`,
-  `
-{{#ui-form error=true }}
-    {{#ui-form-input}}email{{/ui-form-input}}
-    <div class="ui error message">
-        <div class="header">Form Completed</div>
-        <p>You're all signed up for the newsletter.</p>
-    </div>
-    {{#ui-button}}save{{/ui-button}}
-{{/ui-form}}`,
-  `
-{{#ui-form theme="fluid" }}
-    {{#ui-form-input}}email{{/ui-form-input}}
-    {{#ui-button}}save{{/ui-button}}
-{{/ui-form}}
-`,
-  `
-{{#ui-form theme="huge" }}
-    {{#ui-form-input}}email{{/ui-form-input}}
-    {{#ui-button}}save{{/ui-button}}
-{{/ui-form}}`,
-];
-
-const uiInput = [];
 
 const uiInputTags = [
   `<UiInputTags @value={{this.value}} @onChange={{set this "value"}} />`,
-];
-
-const uiLabel = [
-  `
-{{#ui-label theme="rblue image" }}
-     i am label
-    <div class="detail" >detail</div>
-{{/ui-label}}`,
-  `
-{{#ui-label theme="raised segment" }}
-      <div class="ribbon" >i am label</div>
-{{/ui-label}}`,
-  `{{#ui-label theme="basic" }}label{{/ui-label}}`,
-  `{{#ui-label theme="basic red" }}label{{/ui-label}}`,
-  `{{#ui-label theme="red" }}label{{/ui-label}}`,
-  `
-{{#ui-label theme="red image" }}
-  <img src="//www.baidu.com/img/bd_logo1.png">
-   baidu
-{{/ui-label}}`,
-];
-
-const uiPointingLabel = [
-  `
-{{#ui-pointing-label theme="red" direction="left" }}
-    below label
-{{/ui-pointing-label}}`,
-  `
-{{#ui-pointing-label theme="tag blue" direction="below" }}
-    label
-{{/ui-pointing-label}}`,
-  `
-{{#ui-pointing-label direction="below" }}
-    below label
-{{/ui-pointing-label}}`,
-  `
-{{#ui-pointing-label direction="left" }}
-    left label
-{{/ui-pointing-label}}`,
-  `
-{{#ui-pointing-label direction="right" }}
-    right lbale
-{{/ui-pointing-label}}`,
-];
-
-const uiLabeledButton = [
-  `
-{{#ui-labeled-button}}
-    {{#ui-button theme="primary" }}
-        <i class="heart icon" ></i>
-    {{/ui-button}}
-    {{#ui-label theme="basic" }}2,148{{/ui-label}}
-{{/ui-labeled-button}}`,
-  `
-{{#ui-labeled-button}}
-  {{#ui-button theme="red" }}
-      <i class="heart icon" ></i>
-  {{/ui-button}}
-  {{#ui-pointing-label theme="basic red" direction="left" }}2,148{{/ui-pointing-label}}
-{{/ui-labeled-button}}`,
-  `
-{{#ui-labeled-button}}
-    {{#ui-button theme="basic blue" }}
-        <i class="heart icon" ></i>
-    {{/ui-button}}
-    {{#ui-pointing-label theme="basic blue" direction="left" }}2,148{{/ui-pointing-label}}
-{{/ui-labeled-button}}`,
-];
-
-const uiLeftLabeledButton = [
-  `
-{{#ui-left-labeled-button}}
-  {{#ui-pointing-label theme="basic blue" direction="right" }}2,148{{/ui-pointing-label}}
-  {{#ui-button theme="blue" }}
-      <i class="heart icon" ></i>
-  {{/ui-button}}
-{{/ui-left-labeled-button}}`,
 ];
 
 const uiMessage = [
@@ -355,30 +245,6 @@ const uiProgress = [
 `,
 ];
 
-const uiRadioGroup = [
-  `
-{{#ui-radio-group theme="grouped" value=checkvalue name="co1" as |vc| }}
-  <label>choose company</label>
-  <div class="field" >
-      {{#ui-radio  value="apple" action=vc }}apple{{/ui-radio}}
-  </div>
-  <div class="field" >
-      {{#ui-radio  value="google" action=vc }}google{{/ui-radio}}
-  </div>
-  <div class="field" >
-      {{#ui-radio  value="dropbox" action=vc }}dropbox{{/ui-radio}}
-  </div>
-  <div class="field">
-      {{checkvalue}}
-  </div>
-{{/ui-radio-group}}`,
-  `
- {{ui-radio-group name="co3" labelPath="name" label="choose company" theme="inline fields" options=options value=value }}
-`,
-];
-
-const uiSegment = [];
-
 const uiSelect = [
   `
 <div class="ui segment">
@@ -408,12 +274,24 @@ const uiTabMenu = [
 ];
 
 const fileInput = [
-  `{{file-input url="/upload" autoUpload=false extra=extra uploadProgress="uploadProgress" fileObject=fileObject uploadStart="uploadStart" uploadSucess="uploadSucess" }}`,
+  `
+<FileInput @url={{"/upload"}}
+  @autoUpload={{false}}
+  @extra={{this.extra}}
+  @uploadProgress={{this.uploadProgress}}
+  @fileObject={{this.fileObject}}
+  @uploadStart={{this.uploadStart}} @uploadSucess={{this.uploadSucess}}/>`,
 ];
 
 const uiUploader = [
   `
-{{ui-uploader multiple=true url="/upload" autoUpload=true uploadStart="uploadStart" uploadProgress="uploadProgress" uploadSucess="uploadSucess" deleteFile="deleteFile" }}
+<UiUploader
+  @multiple={{true}}
+  @url={{"/upload"}}
+  @autoUpload={{true}}
+  @uploadStart={{this.uploadStart}}
+  @uploadProgress={{this.uploadProgress}}
+  @uploadSucess={{this.uploadSucess}} @deleteFile={{this.deleteFile}}></UiUploader>
 `,
 ];
 
@@ -450,7 +328,7 @@ const uiPopup = [
 >click show me</UiPopup>
 <UiPopup::Content @popup={{set this "popup1"}} class="fluid">
 `,
-`
+  `
 <UiPopup
   class="ui button"
   @hoverable={{true}}
@@ -542,22 +420,13 @@ const code = {
   'ui-uploader': uiUploader,
   'ui-tab-menu': uiTabMenu,
   'ui-select': uiSelect,
-  'ui-segment': uiSegment,
-  'ui-radio-group': uiRadioGroup,
   'ui-progress': uiProgress,
   'ui-multi-select': uiMultiSelect,
   'ui-modal': uiModal,
   'ui-message': uiMessage,
-  'ui-left-labeled-button': uiLeftLabeledButton,
-  'ui-labeled-button': uiLabeledButton,
-  'ui-label': uiLabel,
-  'ui-pointing-label': uiPointingLabel,
   'ui-input-tags': uiInputTags,
   'ui-input': uiInput,
-  'ui-form': uiForm,
-  'ui-form-input': uiFormInput,
   'ui-button': uiButton,
-  'ui-animated-button': uiAnimatedButton,
   'ui-checkbox-group': uiCheckboxGroup,
   'ui-checkbox': uiCheckbox,
   'ui-dropdown-menu': uiDropdownMenu,
@@ -567,6 +436,6 @@ const code = {
   layout: layout,
 };
 
-export default Service.extend({
-  code: code,
-});
+export default class CodeService extends Service {
+  code = code;
+}

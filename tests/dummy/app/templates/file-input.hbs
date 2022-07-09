@@ -4,13 +4,14 @@
         <div class="row" >
             <div class="ui form" >
                     <div class="field">
-                        {{code-highlight code=(code-show 'file-input' 0)}}
+                      <CodeHighlight @code={{code-show 'file-input' 0}} />
                     </div>
                     <div class="field" >
-                        {{file-input url="/upload" autoUpload=false extra=extra uploadProgress="uploadProgress" fileObject=fileObject uploadStart="uploadStart" uploadSucess="uploadSucess" }}
-                     {{!--    {{#if fileObject}}
-                            <img src="{{fileObject.base64Image}}">
-                        {{/if}} --}}
+                        <FileInput @url={{"/upload"}} @autoUpload={{false}} @extra={{this.extra}} @uploadProgress={{this.uploadProgress}} @fileObject={{this.fileObject}} @uploadStart={{this.uploadStart}} @uploadSucess={{this.uploadSucess}}/>
+                        {{#if this.fileObject}}
+                            {{!-- template-lint-disable require-valid-alt-text --}}
+                            <img src={{this.fileObject.base64Image}}>
+                        {{/if}}
                     </div>
             </div>
         </div>

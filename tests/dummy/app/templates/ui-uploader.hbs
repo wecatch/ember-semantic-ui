@@ -4,9 +4,9 @@
         <div class="column" >
             <div class="ui form" >
                 <div class="field">
-                    {{code-highlight code=(code-show 'ui-uploader' 0)}}
+                  <CodeHighlight @code={{code-show 'ui-uploader' 0}} />
                 </div>
-                <UiUploader @multiple={{true}} @url="/upload" @autoUpload={{true}} @uploadStart="uploadStart" @uploadProgress="uploadProgress" @uploadSucess="uploadSucess" @deleteFile="deleteFile"></UiUploader>
+                <UiUploader @multiple={{true}} @url={{"/upload"}} @autoUpload={{true}} @uploadStart={{this.uploadStart}} @uploadProgress={{this.uploadProgress}} @uploadSucess={{this.uploadSucess}} @deleteFile={{this.deleteFile}}></UiUploader>
             </div>
         </div>
     </div>

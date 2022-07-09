@@ -1,4 +1,5 @@
 <div class="ui {{@class}} {{this.type}}" {{did-insert this.register}}>
+  {{!-- template-lint-disable require-input-label --}}
   <input type="{{this.type}}" tabindex="0" name="{{this.name}}" class="hidden" value="{{this.value}}">
   <label>{{yield}}</label>
 </div>
