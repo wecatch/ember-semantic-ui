@@ -251,7 +251,7 @@ const uiSelect = [
   <div class="meta">
     {{this.value}}
   </div>
-  <UiSelect @search={{true}} @options={{this.options.options}} @onChange={{(set this "value")}} />
+  <UiSelect @search={{true}} @options={{this.options.options}} @onChange={{set this "value"}} />
 </div>
 `,
 ];

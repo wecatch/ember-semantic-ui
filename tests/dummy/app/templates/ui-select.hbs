@@ -22,7 +22,7 @@ export default class OptionService extends Service {
 					<div class="meta">
 						{{this.value}}
 					</div>
-					<UiSelect @search={{true}} @options={{this.options.options}} @onChange={{(set this "value")}} />
+					<UiSelect @search={{true}} @options={{this.options.options}} @onChange={{set this "value"}} />
 				</div>
 			</div>
 		</div>
