@@ -32,6 +32,7 @@ const htmlBody = `
         </ul>
         <ul class="nav internal">
             <li><a href="/ember-semantic-ui/docs/">Docs</a></li>
+            <li><a href="/ember-semantic-ui/demo/">Demo</a></li>
         </ul>
     </div>
 </div>
