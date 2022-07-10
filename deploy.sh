@@ -5,7 +5,7 @@ rm -rf demo
 rm -rf docs
 cd $source
 yarn gh-pages
-node readme_to_html.js
+node readme.js
 cp -r dist docs $target/.
 mv index.html $target/.
 cd $target
