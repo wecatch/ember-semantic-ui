@@ -43,7 +43,7 @@ export default class UiButtonController extends Controller {
 
       <CodeHighlight @code={{code-show 'ui-button' 6}} />
       <div class="ui segment">
-        <UiButton @class="compact" @onClick={{(fn this.clickMe 'My Heart' )}}>
+        <UiButton @class="compact" @onClick={{fn this.clickMe 'My Heart'}}>
           <i class="icon heart"></i>
           heart
         </UiButton>

@@ -8,7 +8,7 @@ const uiButton = [
   `<UiButton @class="secondary">button</UiButton>`,
   `<UiButton @class="red">button</UiButton>`,
   `
-<UiButton @class="compact" @onClick={{(fn this.clickMe 'My Heart')}}>
+<UiButton @class="compact" @onClick={{fn this.clickMe 'My Heart'}}>
   <i class="icon heart"></i>
   heart
 </UiButton>`,
