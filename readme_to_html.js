@@ -10,12 +10,35 @@ const htmlBody = `
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/ember-semantic-ui/demo/assets/vendor.css">
+  <link rel="stylesheet" href="./demo/assets/vendor.css">
+  <link rel="stylesheet" href="./assets/app.css">
   <title>Ember Semantic Ui</title>
+  <style>
+  </style>
 </head>
 <body>
-${html}
-<script src="/ember-semantic-ui/demo/assets/vendor.js"></script>
+<div class="m-nav">
+    <div class="wrap">
+        <a class="home" href="/ember-semantic-ui/">
+          ember-semantic-ui
+        </a>
+        <ul class="nav external">
+            <li>
+                <a href="https://github.com/wecatch/ember-semantic-uid">Github</a>
+            </li>
+            <li>
+                <a href="https://wecatch.me">Wecatch</a>
+            </li>
+        </ul>
+        <ul class="nav internal">
+            <li><a href="/ember-semantic-ui/docs/">Docs</a></li>
+        </ul>
+    </div>
+</div>
+<div class="container" >
+  ${html}
+</div>
+<script src="./assets/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
 </body>
 </html>

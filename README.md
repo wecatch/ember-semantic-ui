@@ -101,8 +101,8 @@ ember server
 
 
 ```
-<link rel="stylesheet" href="assets/semantic.min.css">
-<script src="assets/semantic.min.js"></script>
+<link rel="stylesheet" href="{{rootURL}}assets/semantic.min.css">
+<script src="{{rootURL}}assets/semantic.min.js"></script>
 ```
 
 
@@ -131,8 +131,8 @@ The [ember-uploader](https://github.com/benefitcloud/ember-uploader) project sup
 
 ## 1.0.0
 
-- upgrade ember-cli to 4.4, this version is not compatible, please take caution
-- only support glimmer component
+- Upgrade ember-cli to 4.4, this version is not compatible, please take caution
+- Only support glimmer component
 
 ## 0.2.3
 
@@ -199,26 +199,3 @@ fix dummy app
 * Ember.js v3.24 or above
 * Ember CLI v3.24 or above
 * Node.js v12 or above
-
-
-## Installation
-
-```
-ember install ember-semantic-ui
-```
-
-
-## Usage
-
-[Longer description of how to use the addon in apps.]
-
-
-## Contributing
-
-See the [Contributing](CONTRIBUTING.md) guide for details.
-
-
-## License
-
-- add file uploader component
-- ui-input, ui-select, ui-checkbox-group when value change, change ui render

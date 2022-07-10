@@ -10,6 +10,9 @@ module.exports = function (defaults) {
     minifyJS: {
       enabled: true,
     },
+    minifyCSS: {
+      enabled: true,
+    },
     fingerprint: {
       enabled: false,
     },
@@ -17,9 +20,8 @@ module.exports = function (defaults) {
   };
 
   if (process.env.EMBER_ENV === 'development') {
-    options.minifyJS = {
-      enabled: false,
-    };
+    options.minifyJS.enabled = false;
+    options.minifyCSS.enabled = false;
   }
 
   var app = new EmberAddon(defaults, options);
