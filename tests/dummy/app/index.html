@@ -10,8 +10,8 @@
     {{content-for 'head'}}
 
     <!-- <link rel="stylesheet" href="assets/semantic.min.css"> -->
-    <link rel="stylesheet" href="assets/vendor.css">
-    <link rel="stylesheet" href="assets/dummy.css">
+    <link rel="stylesheet" href="{{rootURL}}assets/vendor.css">
+    <link rel="stylesheet" href="{{rootURL}}assets/dummy.css">
 
     {{content-for 'head-footer'}}
     <style type="text/css">
@@ -37,13 +37,8 @@
   </head>
   <body>
     {{content-for 'body'}}
-    <script src="assets/vendor.js"></script>
-    <!-- <script src="assets/semantic.min.js"></script> -->
-    <script src="assets/dummy.js"></script>
-    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script> -->
-    <script type="text/javascript">
-        $('.ui.sidebar').sidebar('toggle');
-    </script>
+    <script src="{{rootURL}}assets/vendor.js"></script>
+    <script src="{{rootURL}}assets/dummy.js"></script>
 
     {{content-for 'body-footer'}}
   </body>
