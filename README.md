@@ -1,5 +1,6 @@
 # ember-semantic-ui
 
+[![Build Status](https://github.com/wecatch/ember-semantic-ui/actions/workflows/ci.yml/badge.svg)](https://github.com/wecatch/ember-semantic-ui/actions)
 [![Downloads](https://img.shields.io/npm/dt/ember-semantic-ui.svg)](https://www.npmjs.com/package/ember-semantic-ui)
 [![Version](https://img.shields.io/npm/v/ember-semantic-ui.svg)](https://www.npmjs.com/package/ember-semantic-ui)
 
