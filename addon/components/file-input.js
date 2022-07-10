@@ -1,14 +1,13 @@
 /* eslint-disable ember/no-jquery */
 /* eslint-disable ember/no-new-mixins */
-import { isEmpty } from '@ember/utils';
-import Evented from '@ember/object/evented';
-import { isArray, A } from '@ember/array';
+import { A, isArray } from '@ember/array';
 import { action } from '@ember/object';
+import { isEmpty } from '@ember/utils';
 import $ from 'jquery';
 
+import Component from '@glimmer/component';
 import EmberUploader from '../utils/ember-uploader';
 import { FileObject } from '../utils/file-object';
-import Component from '@glimmer/component';
 
 /**
 file-input-base mixinx

@@ -1,26 +1,26 @@
-import { moduleForComponent, test } from 'ember-qunit';
-import hbs from 'htmlbars-inline-precompile';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'dummy/tests/helpers';
+import { render } from '@ember/test-helpers';
+import { hbs } from 'ember-cli-htmlbars';
 
-moduleForComponent('ui-input-tags', 'Integration | Component | ui input tags', {
-  integration: true,
-});
+module('Integration | Component | ui-input-tags', function (hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function (assert) {
-  assert.expect(2);
+  test('it renders', async function (assert) {
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.set('myAction', function(val) { ... });
 
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+    await render(hbs`<UiInputTags />`);
 
-  this.render(hbs`{{ui-input-tags}}`);
+    assert.dom(this.element).hasText('');
 
-  assert.equal(this.$().text().trim(), '');
+    // Template block usage:
+    await render(hbs`
+      <UiInputTags>
+        template block text
+      </UiInputTags>
+    `);
 
-  // Template block usage:
-  this.render(hbs`
-    {{#ui-input-tags}}
-      template block text
-    {{/ui-input-tags}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+    assert.dom(this.element).hasText('template block text');
+  });
 });

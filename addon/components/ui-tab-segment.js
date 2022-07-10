@@ -1,3 +1,4 @@
+/* eslint-disable ember/no-jquery */
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import $ from 'jquery';
@@ -5,7 +6,7 @@ import $ from 'jquery';
 /**
 ui-tab-segment component  {{#crossLink "mixins.uiSegmentBase"}}{{/crossLink}}
 
- 
+
 @module components
 @namespace components
 @class UiTabSegment

@@ -2,11 +2,14 @@
     <input type="hidden" value="{{this.hiddenValue}}">
     <i class="dropdown icon"></i>
     {{#each this.value as |op|}}
+    {{!-- template-lint-disable link-href-attributes --}}
+    {{!-- template-lint-disable no-inline-styles --}}
     <a class="ui transition label visible" data-value="{{op}}" style="display: inline-block !important;">
         {{op}}
         <i class="delete icon"></i>
     </a>
     {{/each}}
+    {{!-- template-lint-disable require-input-label --}}
     <input class="search">
     <div class="menu">
     </div>

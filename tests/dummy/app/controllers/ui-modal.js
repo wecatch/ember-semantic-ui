@@ -10,11 +10,11 @@ export default class UiModalController extends Controller {
   @action
   clickHandler(value) {
     this.class = value;
-    this.toggleProperty('display');
+    this.display = !this.display;
   }
   @action
   clickHandler1() {
-    this.toggleProperty('display1');
+    this.display1 = !this.display1;
   }
 
   @action

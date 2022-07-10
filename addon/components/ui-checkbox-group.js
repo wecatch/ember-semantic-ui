@@ -1,7 +1,7 @@
-import Component from '@glimmer/component';
-import { isArray, A } from '@ember/array';
+import { A } from '@ember/array';
 import EmberObject, { action } from '@ember/object';
 import { guidFor } from '@ember/object/internals';
+import Component from '@glimmer/component';
 
 /**
 ui-checkbox-group component see {{#crossLink "mixins.UiCheckboxGroupBase"}}{{/crossLink}}

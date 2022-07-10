@@ -1,28 +1,26 @@
-import { moduleForComponent, test } from 'ember-qunit';
-import hbs from 'htmlbars-inline-precompile';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'dummy/tests/helpers';
+import { render } from '@ember/test-helpers';
+import { hbs } from 'ember-cli-htmlbars';
 
-moduleForComponent(
-  'ui-date-time-input',
-  'Integration | Component | ui date time input',
-  {
-    integration: true,
-  }
-);
+module('Integration | Component | ui-date-time-input', function (hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function (assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });"
+  test('it renders', async function (assert) {
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.set('myAction', function(val) { ... });
 
-  this.render(hbs`{{ui-date-time-input}}`);
+    await render(hbs`<UiDateTimeInput />`);
 
-  assert.equal(this.$().text().trim(), '');
+    assert.dom(this.element).hasText('');
 
-  // Template block usage:"
-  this.render(hbs`
-    {{#ui-date-time-input}}
-      template block text
-    {{/ui-date-time-input}}
-  `);
+    // Template block usage:
+    await render(hbs`
+      <UiDateTimeInput>
+        template block text
+      </UiDateTimeInput>
+    `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+    assert.dom(this.element).hasText('template block text');
+  });
 });

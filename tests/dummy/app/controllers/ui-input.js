@@ -1,13 +1,17 @@
 import Controller from '@ember/controller';
+import { action } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
 
-export default Controller.extend({
-  result: 0,
-  actions: {
-    onfocus(e) {
-      this.send('log', e);
-    },
-    log() {
-      this.set('result', this.result + 1);
-    },
-  },
-});
+export default class UiInputController extends Controller {
+  @tracked result = 0;
+
+  @action
+  onfocus(e) {
+    this.send('log', e);
+  }
+
+  @action
+  log() {
+    this.result += 1;
+  }
+}

@@ -9,6 +9,7 @@ export default class Router extends EmberRouter {
   constructor() {
     super(...arguments);
     this.on('routeDidChange', () => {
+      // eslint-disable-next-line ember/no-jquery
       $('html,body').animate({ scrollTop: '0px' }, 200);
     });
   }

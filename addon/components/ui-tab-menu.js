@@ -1,5 +1,5 @@
+/* eslint-disable ember/no-jquery */
 import { action } from '@ember/object';
-import { isArray } from '@ember/array';
 import Component from '@glimmer/component';
 import $ from 'jquery';
 

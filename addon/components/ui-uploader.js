@@ -1,5 +1,5 @@
 /* eslint-disable ember/no-jquery */
-import { action, computed } from '@ember/object';
+import { action } from '@ember/object';
 import { htmlSafe } from '@ember/template';
 import { isEmpty } from '@ember/utils';
 import Component from '@glimmer/component';
