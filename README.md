@@ -219,7 +219,6 @@ See the [Contributing](CONTRIBUTING.md) guide for details.
 
 
 ## License
->>>>>>> bea3f6b... v3.1.4...v4.4.0
 
 - add file uploader component
 - ui-input, ui-select, ui-checkbox-group when value change, change ui render

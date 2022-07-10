@@ -8,6 +8,7 @@
   },
   "scripts": {
     "build": "ember build --environment=production",
+    "gh-pages": "ember build --environment=gh-pages",
     "lint": "npm-run-all --aggregate-output --continue-on-error --parallel \"lint:!(fix)\"",
     "lint:fix": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*:fix",
     "lint:hbs": "ember-template-lint .",
@@ -81,6 +82,7 @@
     "prettier": "^2.6.2",
     "qunit": "^2.19.1",
     "qunit-dom": "^2.0.0",
+    "showdown": "^2.1.0",
     "webpack": "^5.72.1",
     "yuidoc-ember-cli-theme": "^1.0.2"
   },
