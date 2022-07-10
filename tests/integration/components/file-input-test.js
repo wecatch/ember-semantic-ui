@@ -13,14 +13,5 @@ module('Integration | Component | file-input', function (hooks) {
     await render(hbs`<FileInput />`);
 
     assert.dom(this.element).hasText('');
-
-    // Template block usage:
-    await render(hbs`
-      <FileInput>
-        template block text
-      </FileInput>
-    `);
-
-    assert.dom(this.element).hasText('template block text');
   });
 });

@@ -4,6 +4,7 @@ import { htmlSafe } from '@ember/template';
 import { isEmpty } from '@ember/utils';
 import Component from '@glimmer/component';
 import $ from 'jquery';
+import { A } from '@ember/array';
 
 import EmberUploader from '../utils/ember-uploader';
 import { FileObject } from '../utils/file-object';
@@ -130,7 +131,7 @@ export default class UiUploaderComponent extends Component {
    * @type Array
    * @default  []
    */
-  queue = [];
+  queue = A([]);
 
   /**
    * upload multiple file

@@ -10,17 +10,17 @@ module('Integration | Component | ui-progress', function (hooks) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`<UiProgress />`);
+    await render(hbs`<UiProgress @percent={{10}} />`);
 
-    assert.dom(this.element).hasText('');
+    assert.dom(this.element.querySelector('div')).hasClass('ui');
+    assert.dom(this.element.querySelector('div')).hasClass('progress');
 
-    // Template block usage:
-    await render(hbs`
-      <UiProgress>
-        template block text
-      </UiProgress>
-    `);
+    const bar = this.element.querySelector('div').querySelector('div');
 
-    assert.dom(this.element).hasText('template block text');
+    const progress = bar.querySelector('div');
+
+    assert.dom(bar).hasClass('bar');
+    assert.dom(progress).hasClass('progress');
+    assert.dom(progress).hasText('10%');
   });
 });

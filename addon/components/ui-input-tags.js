@@ -12,6 +12,9 @@ ui-input-tags component
 @namespace components
 @class UiInputTags
 @constructor
+
+value must be required
+
 */
 export default class UiInputTagsComponent extends Component {
   @tracked value = A();

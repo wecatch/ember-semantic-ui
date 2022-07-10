@@ -1,6 +1,6 @@
 <div class="ui segment">
   <div class="ui fluid labeled input">
-    <label class="ui fluid huge label" style={{this.labelStyle}} >
+    <label class="ui fluid huge label" style={{this.labelStyle}}>
       <i class="big cloud upload icon"></i>
       upload files
     </label>
@@ -10,54 +10,54 @@
   </div>
   <div class="ui divided items">
     {{#each this.queue as |q| }}
-    <div class="item">
-      {{#if q.isDisplayableImage}}
-      <div class="image">
-        {{!-- template-lint-disable require-valid-alt-text --}}
-        <img src="{{q.base64Image}}" alt="">
-      </div>
-      {{/if}}
-      <div class="content">
-        <div class="header">
-          {{q.name}} {{q.progress}}
-        </div>
-        <div class="meta">
-          {{q.size}}
-        </div>
-        <div class="description">
-          <UiProgress @class="indicating" @loading={{q.isUploading}} @success={{q.isUploaded}} @percent={{q.percent}}>
+      <div class="item">
+        {{#if q.isDisplayableImage}}
+          <div class="image">
+            {{!-- template-lint-disable require-valid-alt-text --}}
+            <img src="{{q.base64Image}}" alt="">
+          </div>
+        {{/if}}
+        <div class="content">
+          <div class="header">
+            {{q.name}} {{q.progress}}
+          </div>
+          <div class="meta">
+            {{q.size}}
+          </div>
+          <div class="description">
+            <UiProgress @class="indicating" @loading={{q.isUploading}} @success={{q.isUploaded}} @percent={{q.percent}}>
+              {{#if q.isUploaded}}
+                <div class="label">Upload success</div>
+              {{else}}
+                <div class="label">
+                  Uploading file
+                  <div class="ui active small inline text loader"></div>
+                </div>
+              {{/if}}
+            </UiProgress>
+          </div>
+          <div class="extra">
+            {{#unless q.isUploaded }}
+              {{#unless this.autoUpload }}
+                <UiButton @class="green" @loading={{q.isUploading}} @action="start" @param={{q}}>
+                  <i class="upload icon"></i>
+                  upload
+                </UiButton>
+              {{/unless}}
+              <UiButton @onClick={{fn this.abort q}}>
+                <i class="cancel icon"></i>
+                cancel
+              </UiButton>
+            {{/unless}}
             {{#if q.isUploaded}}
-            <div class="label">Upload success</div>
-            {{else}}
-            <div class="label">
-              Uploading file
-              <div class="ui active small inline text loader"></div>
-            </div>
+              <UiButton @class={{"red"}} @onClick={{fn this.deleteFile q}}>
+                <i class="delete icon"></i>
+                delete
+              </UiButton>
             {{/if}}
-          </UiProgress>
-        </div>
-        <div class="extra">
-          {{#unless q.isUploaded }}
-          {{#unless this.autoUpload }}
-          <UiButton @class="green" @loading={{q.isUploading}} @action="start" @param={{q}}>
-            <i class="upload icon"></i>
-            upload
-          </UiButton>
-          {{/unless}}
-          <UiButton @onClick={{fn this.abort q}}>
-            <i class="cancel icon"></i>
-            cancel
-          </UiButton>
-          {{/unless}}
-          {{#if q.isUploaded}}
-          <UiButton @class={{"red"}} @onClick={{fn this.deleteFile q}}>
-            <i class="delete icon"></i>
-            delete
-          </UiButton>
-          {{/if}}
+          </div>
         </div>
       </div>
-    </div>
     {{/each}}
   </div>
 </div>

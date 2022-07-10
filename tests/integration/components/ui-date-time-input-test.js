@@ -12,15 +12,10 @@ module('Integration | Component | ui-date-time-input', function (hooks) {
 
     await render(hbs`<UiDateTimeInput />`);
 
-    assert.dom(this.element).hasText('');
+    const form = this.element.querySelector('div');
+    const fileds = form.querySelector('div');
 
-    // Template block usage:
-    await render(hbs`
-      <UiDateTimeInput>
-        template block text
-      </UiDateTimeInput>
-    `);
-
-    assert.dom(this.element).hasText('template block text');
+    assert.dom(form).hasClass('form');
+    assert.dom(fileds).hasClass('fields');
   });
 });

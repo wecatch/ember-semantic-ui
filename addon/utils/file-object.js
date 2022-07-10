@@ -74,7 +74,8 @@ class FileObject {
       reader.readAsDataURL(fileToUpload);
     }
   }
-  constructor() {
+  constructor({ fileToUpload }) {
+    this.fileToUpload = fileToUpload;
     this.readFile();
   }
 }
@@ -97,4 +98,4 @@ function humanReadableFileSize(size) {
   return label;
 }
 
-export { FileObject, humanReadableFileSize };
+export default { FileObject, humanReadableFileSize };

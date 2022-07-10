@@ -19,6 +19,14 @@ EmberUploader class
 @constructor
 */
 export default class EmberUploader extends EmberObject.extend(Evented) {
+  constructor({ url, paramName, type, traditional }) {
+    super();
+    this.url = url;
+    this.paramName = paramName;
+    this.type = type;
+    this.traditional = traditional;
+  }
+
   /**
    * upload url
    *

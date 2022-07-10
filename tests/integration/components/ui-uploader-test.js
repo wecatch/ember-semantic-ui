@@ -12,15 +12,6 @@ module('Integration | Component | ui-uploader', function (hooks) {
 
     await render(hbs`<UiUploader />`);
 
-    assert.dom(this.element).hasText('');
-
-    // Template block usage:
-    await render(hbs`
-      <UiUploader>
-        template block text
-      </UiUploader>
-    `);
-
-    assert.dom(this.element).hasText('template block text');
+    assert.dom(this.element.querySelector('div')).hasClass('segment');
   });
 });
