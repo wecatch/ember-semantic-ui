@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>addon/mixins/ui-checkbox-group-base.js - ember-semantic-ui</title>
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <script src="http://yui.yahooapis.com/combo?3.8.0pr2/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div class="yui3-g">
+        <div id="sidebar" class="yui3-u">
+            <div class="logo">
+              <a href="../index.html">
+                  ember-semantic-ui
+              </a>
+            </div>
+            
+            <div id="modules" class="sidebox">
+                <div class="hd">
+                    <h2 class="no-toc">Modules</h2>
+                </div>
+                <div class="bd">
+                    <ul>
+                            <li><a href="../modules/components.html">components</a>
+                            </li>
+                            <li><a href="../modules/mixins.html">mixins</a>
+                            </li>
+                            <li><a href="../modules/utils.html">utils</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="classes" class="sidebox">
+                <div class="hd">
+                    <h2 class="no-toc">Classes</h2>
+                </div>
+                <div class="bd">
+                    <ul>
+                            <li><a href="../classes/components.FileInput.html">components.FileInput</a></li>
+                            <li><a href="../classes/components.UiAnimatedButton.html">components.UiAnimatedButton</a></li>
+                            <li><a href="../classes/components.UiButton.html">components.UiButton</a></li>
+                            <li><a href="../classes/components.UiCheckbox.html">components.UiCheckbox</a></li>
+                            <li><a href="../classes/components.UiCheckboxGroup.html">components.UiCheckboxGroup</a></li>
+                            <li><a href="../classes/components.UiContainer.html">components.UiContainer</a></li>
+                            <li><a href="../classes/components.UiDateInput.html">components.UiDateInput</a></li>
+                            <li><a href="../classes/components.UiDateTimeInput.html">components.UiDateTimeInput</a></li>
+                            <li><a href="../classes/components.UiDropdownMenu.html">components.UiDropdownMenu</a></li>
+                            <li><a href="../classes/components.UiForm.html">components.UiForm</a></li>
+                            <li><a href="../classes/components.UiFormInput.html">components.UiFormInput</a></li>
+                            <li><a href="../classes/components.UiGrid.html">components.UiGrid</a></li>
+                            <li><a href="../classes/components.UiInput.html">components.UiInput</a></li>
+                            <li><a href="../classes/components.UiInputTags.html">components.UiInputTags</a></li>
+                            <li><a href="../classes/components.UiLabel.html">components.UiLabel</a></li>
+                            <li><a href="../classes/components.UiLabeledButton.html">components.UiLabeledButton</a></li>
+                            <li><a href="../classes/components.UiLeftLabeledButton.html">components.UiLeftLabeledButton</a></li>
+                            <li><a href="../classes/components.UiMenu.html">components.UiMenu</a></li>
+                            <li><a href="../classes/components.UiMessage.html">components.UiMessage</a></li>
+                            <li><a href="../classes/components.UiModal.html">components.UiModal</a></li>
+                            <li><a href="../classes/components.UiModalContent.html">components.UiModalContent</a></li>
+                            <li><a href="../classes/components.UiModalFoot.html">components.UiModalFoot</a></li>
+                            <li><a href="../classes/components.UiModalTitle.html">components.UiModalTitle</a></li>
+                            <li><a href="../classes/components.UiMultiSelect.html">components.UiMultiSelect</a></li>
+                            <li><a href="../classes/components.UiPointingLabel.html">components.UiPointingLabel</a></li>
+                            <li><a href="../classes/components.UiPopup.html">components.UiPopup</a></li>
+                            <li><a href="../classes/components.UiPopupContent.html">components.UiPopupContent</a></li>
+                            <li><a href="../classes/components.UiProgress.html">components.UiProgress</a></li>
+                            <li><a href="../classes/components.UiRadio.html">components.UiRadio</a></li>
+                            <li><a href="../classes/components.UiRadioGroup.html">components.UiRadioGroup</a></li>
+                            <li><a href="../classes/components.UiRow.html">components.UiRow</a></li>
+                            <li><a href="../classes/components.UiSegment.html">components.UiSegment</a></li>
+                            <li><a href="../classes/components.UiSelect.html">components.UiSelect</a></li>
+                            <li><a href="../classes/components.UiTabMenu.html">components.UiTabMenu</a></li>
+                            <li><a href="../classes/components.UiTabSegment.html">components.UiTabSegment</a></li>
+                            <li><a href="../classes/components.UiTextContainer.html">components.UiTextContainer</a></li>
+                            <li><a href="../classes/components.UiUploader.html">components.UiUploader</a></li>
+                            <li><a href="../classes/components.UiVerticalMenu.html">components.UiVerticalMenu</a></li>
+                            <li><a href="../classes/mixins.FileInputBase.html">mixins.FileInputBase</a></li>
+                            <li><a href="../classes/mixins.UiButtonBase.html">mixins.UiButtonBase</a></li>
+                            <li><a href="../classes/mixins.UiCheckboxBase.html">mixins.UiCheckboxBase</a></li>
+                            <li><a href="../classes/mixins.UiCheckboxGroupBase.html">mixins.UiCheckboxGroupBase</a></li>
+                            <li><a href="../classes/mixins.UiInputBase.html">mixins.UiInputBase</a></li>
+                            <li><a href="../classes/mixins.UiLabelBase.html">mixins.UiLabelBase</a></li>
+                            <li><a href="../classes/mixins.uiSegmentBase.html">mixins.uiSegmentBase</a></li>
+                            <li><a href="../classes/mixins.UiSelectBase.html">mixins.UiSelectBase</a></li>
+                            <li><a href="../classes/utils.EmberUploader.html">utils.EmberUploader</a></li>
+                            <li><a href="../classes/utils.FileObject.html">utils.FileObject</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            
+            
+            
+            
+            <div class="version-info">
+              Version: 0.2.5
+            </div>
+            
+        </div>
+
+        <div id="main" class="yui3-u">
+            <div class="content"><div class="title">
+  <h1 class="file-name">addon/mixins/ui-checkbox-group-base.js</h1>
+</div>
+
+<pre class="code prettyprint linenums">
+import $ from &#x27;jquery&#x27;;
+import Mixin from &#x27;@ember/object/mixin&#x27;;
+import { observer } from &#x27;@ember/object&#x27;;
+import { bool } from &#x27;@ember/object/computed&#x27;;
+import { set } from &#x27;@ember/object&#x27;;
+import { guidFor } from &#x27;@ember/object/internals&#x27;;
+
+
+/**
+ui-checkbox-base mixinx
+
+@module mixins
+@namespace mixins
+@class UiCheckboxGroupBase
+@constructor
+*/
+export default Mixin.create({
+    /**
+     * The root component element
+     *
+     * @property {Ember.String} tagName
+     * @default  &quot;div&quot;
+     */
+    tagName: &#x27;div&#x27;,
+
+    /**
+     * value  for the checkbox radio group component
+     *
+     * @property {Ember.Array} value
+     */
+    value: null,
+
+    /**
+     * name for the checkbox radio group component
+     *
+     * @property {Ember.String} name
+     */
+    name: &#x27;&#x27;,
+
+    /**
+     *  label for the checkbox radio group component
+     *
+     * @property {Ember.String} label
+     */
+    label: &#x27;&#x27;,
+
+    /**
+     * label key for option
+     *
+     * @property {Ember.String} labelPath
+     */
+    labelPath: &#x27;name&#x27;,
+
+    /**
+     * value key for option
+     *
+     * @property {Ember.String} valuePath
+     */
+    valuePath: &#x27;value&#x27;,
+
+    /**
+     * Class bindings for the checkbox component
+     *
+     * @property {Ember.Array} classNameBindings
+     */
+    classNameBindings: [&#x27;theme&#x27;, &#x27;_componentClass&#x27;],
+    theme: &#x27;inline&#x27;,
+    _componentClass: &#x27;fields&#x27;,
+
+    /**
+     * options for the checkbox component
+     *
+     * @property {Ember.Array} options
+     */
+    options: null,
+
+    /**
+     * options for the checkbox component
+     *
+     * @property {Ember.Array} options
+     */
+    _options: null,
+    valueChange: observer(&#x27;value&#x27;, function() {
+        if (this._options) {
+            for (var i = 0; i &lt; this._options.length; i++) {
+                let item = this._options[i];
+                set(item, &#x27;checked&#x27;, this.isOptionChecked(item[&#x27;value&#x27;]));
+            }
+        }
+        this.setupBlockOptions();
+    }),
+    /**
+     * @function initOptions connect options and _options step one
+     * @observes &quot;didInsertElement&quot; event
+     * @returns  {void}
+     */
+    init: function() {
+        this._super(...arguments);
+        this.setupOptions();
+        if (!this.name) {
+            this.set(&#x27;name&#x27;, guidFor(this));
+        }
+    },
+    didInsertElement() {
+        this.setupBlockOptions();
+    },
+    setupBlockOptions() {
+        if (this.hasBlock &amp;&amp; !this.options) {
+            let name = this.name;
+            this.$(&#x27;input&#x27;).each((index, item) =&gt; {
+                if (!$(item).attr(&#x27;name&#x27;)) {
+                    $(item).attr(&#x27;name&#x27;, name);
+                }
+                let checked = this.isOptionChecked($(item).val());
+                $(item).prop(&#x27;checked&#x27;, checked);
+            });
+        }
+    },
+    setupOptions() {
+        let _options = [];
+        if (this.options) {
+            for (var i = 0; i &lt; this.options.length; i++) {
+                let item = this.options[i];
+                let label = item[this.get(&#x27;labelPath&#x27;)];
+                let value = item[this.get(&#x27;valuePath&#x27;)];
+                let checked = this.isOptionChecked(value);
+                _options.push({
+                    &#x27;label&#x27;: label,
+                    &#x27;value&#x27;: String(value),
+                    &#x27;checked&#x27;: checked
+                });
+            }
+            this.set(&#x27;_options&#x27;, _options);
+        }
+    },
+    optionsChange: observer(&#x27;options&#x27;, function() {
+        this.setupOptions();
+    }),
+    hasBlock: bool(&#x27;template&#x27;).readOnly()
+});
+</pre>
+
+</div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+</body>
+</html>

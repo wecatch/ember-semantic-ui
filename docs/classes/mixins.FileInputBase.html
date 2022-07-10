@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>mixins.FileInputBase - ember-semantic-ui</title>
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <script src="http://yui.yahooapis.com/combo?3.8.0pr2/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div class="yui3-g">
+        <div id="sidebar" class="yui3-u">
+            <div class="logo">
+              <a href="../index.html">
+                  ember-semantic-ui
+              </a>
+            </div>
+            
+            <div id="modules" class="sidebox">
+                <div class="hd">
+                    <h2 class="no-toc">Modules</h2>
+                </div>
+                <div class="bd">
+                    <ul>
+                            <li><a href="../modules/components.html">components</a>
+                            </li>
+                            <li><a href="../modules/mixins.html">mixins</a>
+                            </li>
+                            <li><a href="../modules/utils.html">utils</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="classes" class="sidebox">
+                <div class="hd">
+                    <h2 class="no-toc">Classes</h2>
+                </div>
+                <div class="bd">
+                    <ul>
+                            <li><a href="../classes/components.FileInput.html">components.FileInput</a></li>
+                            <li><a href="../classes/components.UiAnimatedButton.html">components.UiAnimatedButton</a></li>
+                            <li><a href="../classes/components.UiButton.html">components.UiButton</a></li>
+                            <li><a href="../classes/components.UiCheckbox.html">components.UiCheckbox</a></li>
+                            <li><a href="../classes/components.UiCheckboxGroup.html">components.UiCheckboxGroup</a></li>
+                            <li><a href="../classes/components.UiContainer.html">components.UiContainer</a></li>
+                            <li><a href="../classes/components.UiDateInput.html">components.UiDateInput</a></li>
+                            <li><a href="../classes/components.UiDateTimeInput.html">components.UiDateTimeInput</a></li>
+                            <li><a href="../classes/components.UiDropdownMenu.html">components.UiDropdownMenu</a></li>
+                            <li><a href="../classes/components.UiForm.html">components.UiForm</a></li>
+                            <li><a href="../classes/components.UiFormInput.html">components.UiFormInput</a></li>
+                            <li><a href="../classes/components.UiGrid.html">components.UiGrid</a></li>
+                            <li><a href="../classes/components.UiInput.html">components.UiInput</a></li>
+                            <li><a href="../classes/components.UiInputTags.html">components.UiInputTags</a></li>
+                            <li><a href="../classes/components.UiLabel.html">components.UiLabel</a></li>
+                            <li><a href="../classes/components.UiLabeledButton.html">components.UiLabeledButton</a></li>
+                            <li><a href="../classes/components.UiLeftLabeledButton.html">components.UiLeftLabeledButton</a></li>
+                            <li><a href="../classes/components.UiMenu.html">components.UiMenu</a></li>
+                            <li><a href="../classes/components.UiMessage.html">components.UiMessage</a></li>
+                            <li><a href="../classes/components.UiModal.html">components.UiModal</a></li>
+                            <li><a href="../classes/components.UiModalContent.html">components.UiModalContent</a></li>
+                            <li><a href="../classes/components.UiModalFoot.html">components.UiModalFoot</a></li>
+                            <li><a href="../classes/components.UiModalTitle.html">components.UiModalTitle</a></li>
+                            <li><a href="../classes/components.UiMultiSelect.html">components.UiMultiSelect</a></li>
+                            <li><a href="../classes/components.UiPointingLabel.html">components.UiPointingLabel</a></li>
+                            <li><a href="../classes/components.UiPopup.html">components.UiPopup</a></li>
+                            <li><a href="../classes/components.UiPopupContent.html">components.UiPopupContent</a></li>
+                            <li><a href="../classes/components.UiProgress.html">components.UiProgress</a></li>
+                            <li><a href="../classes/components.UiRadio.html">components.UiRadio</a></li>
+                            <li><a href="../classes/components.UiRadioGroup.html">components.UiRadioGroup</a></li>
+                            <li><a href="../classes/components.UiRow.html">components.UiRow</a></li>
+                            <li><a href="../classes/components.UiSegment.html">components.UiSegment</a></li>
+                            <li><a href="../classes/components.UiSelect.html">components.UiSelect</a></li>
+                            <li><a href="../classes/components.UiTabMenu.html">components.UiTabMenu</a></li>
+                            <li><a href="../classes/components.UiTabSegment.html">components.UiTabSegment</a></li>
+                            <li><a href="../classes/components.UiTextContainer.html">components.UiTextContainer</a></li>
+                            <li><a href="../classes/components.UiUploader.html">components.UiUploader</a></li>
+                            <li><a href="../classes/components.UiVerticalMenu.html">components.UiVerticalMenu</a></li>
+                            <li><a href="../classes/mixins.FileInputBase.html">mixins.FileInputBase</a></li>
+                            <li><a href="../classes/mixins.UiButtonBase.html">mixins.UiButtonBase</a></li>
+                            <li><a href="../classes/mixins.UiCheckboxBase.html">mixins.UiCheckboxBase</a></li>
+                            <li><a href="../classes/mixins.UiCheckboxGroupBase.html">mixins.UiCheckboxGroupBase</a></li>
+                            <li><a href="../classes/mixins.UiInputBase.html">mixins.UiInputBase</a></li>
+                            <li><a href="../classes/mixins.UiLabelBase.html">mixins.UiLabelBase</a></li>
+                            <li><a href="../classes/mixins.uiSegmentBase.html">mixins.uiSegmentBase</a></li>
+                            <li><a href="../classes/mixins.UiSelectBase.html">mixins.UiSelectBase</a></li>
+                            <li><a href="../classes/utils.EmberUploader.html">utils.EmberUploader</a></li>
+                            <li><a href="../classes/utils.FileObject.html">utils.FileObject</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            
+            <div id="sections" class="sidebox">
+              <div class="hd">
+                <h2 class="no-toc">mixins.FileInputBase</h2>
+              </div>
+              <div class="bd">
+            
+            
+            
+                  <div><a href="#property-summary">Property Summary</a></div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  <div><a href="#public-properties">Public Properties</a></div>
+                  <ul>
+                      <li><a href="#props_autoUpload">autoUpload</a></li>
+                      <li><a href="#props_extra">extra</a></li>
+                      <li><a href="#props_fileObject">fileObject</a></li>
+                      <li><a href="#props_isUploaded">isUploaded</a></li>
+                      <li><a href="#props_isUploading">isUploading</a></li>
+                      <li><a href="#props_method">method</a></li>
+                      <li><a href="#props_multiple">multiple</a></li>
+                      <li><a href="#props_paramName">paramName</a></li>
+                      <li><a href="#props_style">style</a></li>
+                      <li><a href="#props_traditional">traditional</a></li>
+                      <li><a href="#props_uploader">uploader</a></li>
+                      <li><a href="#props_url">url</a></li>
+                  </ul>
+            
+            
+            
+            
+            
+              </div>
+            </div>
+            
+            <div id="events-on-page" class="sidebox on-page">
+                <div class="hd">
+                    <h2 class="no-toc">Events On Page</h2>
+                </div>
+                <div class="bd">
+                    <ul>
+                            <li><a href="#events_abort">abort</a></li>
+                            <li><a href="#events_start">start</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            
+            <div class="version-info">
+              Version: 0.2.5
+            </div>
+            
+        </div>
+
+        <div id="main" class="yui3-u">
+            <div class="content"><div class="title">
+    <span class="source-link"><a href="../files/addon_mixins_file-input-base.js.html#l11"><code>addon&#x2F;mixins&#x2F;file-input-base.js:11</code></a></span>
+    <h1 class="class-name">mixins.FileInputBase</h1>
+</div>
+
+
+
+
+<div class="class-description"><p>file-input-base mixinx</p>
+</div>
+
+
+
+
+
+
+
+  <h2 id="property-summary">Property Summary</h2>
+
+    <table class="summary">
+      <thead>
+      <tr>
+        <th colspan="2">Public Properties</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            public
+            
+            
+          </td>
+          <td>
+            <div class="property-name ">
+              <a href="#props_autoUpload">autoUpload</a>: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a>
+            </div>
+            <div class="short-description">
+              <p>allow autoUpload</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            public
+            
+            
+          </td>
+          <td>
+            <div class="property-name ">
+              <a href="#props_extra">extra</a>: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a>
+            </div>
+            <div class="short-description">
+              <p>extra parameters for upload</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            public
+            
+            
+          </td>
+          <td>
+            <div class="property-name ">
+              <a href="#props_fileObject">fileObject</a>: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a>
+            </div>
+            <div class="short-description">
+              <p>file object instance see file-object</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            public
+            
+            
+          </td>
+          <td>
+            <div class="property-name ">
+              <a href="#props_isUploaded">isUploaded</a>: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a>
+            </div>
+            <div class="short-description">
+              <p>the upload file is finished</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            public
+            
+            
+          </td>
+          <td>
+            <div class="property-name ">
+              <a href="#props_isUploading">isUploading</a>: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a>
+            </div>
+            <div class="short-description">
+              <p>the upload request status</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            public
+            
+            
+          </td>
+          <td>
+            <div class="property-name ">
+              <a href="#props_method">method</a>: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a>
+            </div>
+            <div class="short-description">
+              <p>upload request method</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            public
+            
+            
+          </td>
+          <td>
+            <div class="property-name ">
+              <a href="#props_multiple">multiple</a>: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a>
+            </div>
+            <div class="short-description">
+              <p>multiple file or not, by default false</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            public
+            
+            
+          </td>
+          <td>
+            <div class="property-name ">
+              <a href="#props_paramName">paramName</a>: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a>
+            </div>
+            <div class="short-description">
+              <p>the upload file parameter name</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            public
+            
+            
+          </td>
+          <td>
+            <div class="property-name ">
+              <a href="#props_style">style</a>: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a>
+            </div>
+            <div class="short-description">
+              <p>style</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            public
+            
+            
+          </td>
+          <td>
+            <div class="property-name ">
+              <a href="#props_traditional">traditional</a>: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a>
+            </div>
+            <div class="short-description">
+              <p>file request ajax setting traditional, by default true</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            public
+            
+            
+          </td>
+          <td>
+            <div class="property-name ">
+              <a href="#props_uploader">uploader</a>: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a>
+            </div>
+            <div class="short-description">
+              <p>ember uploader instance see <a href="../classes/utils.EmberUploader.html" class="crosslink">utils.EmberUploader</a></p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            public
+            
+            
+          </td>
+          <td>
+            <div class="property-name ">
+              <a href="#props_url">url</a>: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a>
+            </div>
+            <div class="short-description">
+              <p>upload url</p>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="properties public">
+        <h2 id="public-properties">Public Properties</h2>
+<div class="property item">
+  <div id="props_autoUpload" class="title">
+    <span class="source-link"><a href="../files/addon_mixins_file-input-base.js.html#l93"><code>addon&#x2F;mixins&#x2F;file-input-base.js:93</code></a></span>
+    <h3 class="">
+      public
+      
+      
+      autoUpload: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a>
+    </h3>
+  </div>
+
+
+  <div class="property-description"><p>allow autoUpload</p>
+</div>
+
+</div>
+<div class="property item">
+  <div id="props_extra" class="title">
+    <span class="source-link"><a href="../files/addon_mixins_file-input-base.js.html#l61"><code>addon&#x2F;mixins&#x2F;file-input-base.js:61</code></a></span>
+    <h3 class="">
+      public
+      
+      
+      extra: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a>
+    </h3>
+  </div>
+
+
+  <div class="property-description"><p>extra parameters for upload</p>
+</div>
+
+</div>
+<div class="property item">
+  <div id="props_fileObject" class="title">
+    <span class="source-link"><a href="../files/addon_mixins_file-input-base.js.html#l27"><code>addon&#x2F;mixins&#x2F;file-input-base.js:27</code></a></span>
+    <h3 class="">
+      public
+      
+      
+      fileObject: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a>
+    </h3>
+  </div>
+
+
+  <div class="property-description"><p>file object instance see file-object</p>
+</div>
+
+</div>
+<div class="property item">
+  <div id="props_isUploaded" class="title">
+    <span class="source-link"><a href="../files/addon_mixins_file-input-base.js.html#l77"><code>addon&#x2F;mixins&#x2F;file-input-base.js:77</code></a></span>
+    <h3 class="">
+      public
+      
+      
+      isUploaded: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a>
+    </h3>
+  </div>
+
+
+  <div class="property-description"><p>the upload file is finished</p>
+</div>
+
+</div>
+<div class="property item">
+  <div id="props_isUploading" class="title">
+    <span class="source-link"><a href="../files/addon_mixins_file-input-base.js.html#l85"><code>addon&#x2F;mixins&#x2F;file-input-base.js:85</code></a></span>
+    <h3 class="">
+      public
+      
+      
+      isUploading: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a>
+    </h3>
+  </div>
+
+
+  <div class="property-description"><p>the upload request status</p>
+</div>
+
+</div>
+<div class="property item">
+  <div id="props_method" class="title">
+    <span class="source-link"><a href="../files/addon_mixins_file-input-base.js.html#l53"><code>addon&#x2F;mixins&#x2F;file-input-base.js:53</code></a></span>
+    <h3 class="">
+      public
+      
+      
+      method: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a>
+    </h3>
+  </div>
+
+
+  <div class="property-description"><p>upload request method</p>
+</div>
+
+</div>
+<div class="property item">
+  <div id="props_multiple" class="title">
+    <span class="source-link"><a href="../files/addon_mixins_file-input-base.js.html#l102"><code>addon&#x2F;mixins&#x2F;file-input-base.js:102</code></a></span>
+    <h3 class="">
+      public
+      
+      
+      multiple: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a>
+    </h3>
+  </div>
+
+
+  <div class="property-description"><p>multiple file or not, by default false</p>
+</div>
+
+</div>
+<div class="property item">
+  <div id="props_paramName" class="title">
+    <span class="source-link"><a href="../files/addon_mixins_file-input-base.js.html#l69"><code>addon&#x2F;mixins&#x2F;file-input-base.js:69</code></a></span>
+    <h3 class="">
+      public
+      
+      
+      paramName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a>
+    </h3>
+  </div>
+
+
+  <div class="property-description"><p>the upload file parameter name</p>
+</div>
+
+</div>
+<div class="property item">
+  <div id="props_style" class="title">
+    <span class="source-link"><a href="../files/addon_mixins_file-input-base.js.html#l33"><code>addon&#x2F;mixins&#x2F;file-input-base.js:33</code></a></span>
+    <h3 class="">
+      public
+      
+      
+      style: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a>
+    </h3>
+  </div>
+
+
+  <div class="property-description"><p>style</p>
+</div>
+
+</div>
+<div class="property item">
+  <div id="props_traditional" class="title">
+    <span class="source-link"><a href="../files/addon_mixins_file-input-base.js.html#l21"><code>addon&#x2F;mixins&#x2F;file-input-base.js:21</code></a></span>
+    <h3 class="">
+      public
+      
+      
+      traditional: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a>
+    </h3>
+  </div>
+
+
+  <div class="property-description"><p>file request ajax setting traditional, by default true</p>
+</div>
+
+</div>
+<div class="property item">
+  <div id="props_uploader" class="title">
+    <span class="source-link"><a href="../files/addon_mixins_file-input-base.js.html#l39"><code>addon&#x2F;mixins&#x2F;file-input-base.js:39</code></a></span>
+    <h3 class="">
+      public
+      
+      
+      uploader: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a>
+    </h3>
+  </div>
+
+
+  <div class="property-description"><p>ember uploader instance see <a href="../classes/utils.EmberUploader.html" class="crosslink">utils.EmberUploader</a></p>
+</div>
+
+</div>
+<div class="property item">
+  <div id="props_url" class="title">
+    <span class="source-link"><a href="../files/addon_mixins_file-input-base.js.html#l46"><code>addon&#x2F;mixins&#x2F;file-input-base.js:46</code></a></span>
+    <h3 class="">
+      public
+      
+      
+      url: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a>
+    </h3>
+  </div>
+
+
+  <div class="property-description"><p>upload url</p>
+</div>
+
+</div>
+    </div>
+
+
+
+
+
+
+
+    <div id="events">
+        <h2>Events</h2>
+<a name="events_abort"></a>
+<div class="events item">
+    <code>abort</code> 
+    
+    
+    <br>
+    <span class="foundat"><a href="../files/addon_mixins_file-input-base.js.html#l171"><code>addon&#x2F;mixins&#x2F;file-input-base.js:171</code></a></span>
+    <p>abort upload action</p>
+
+</div>
+
+<a name="events_start"></a>
+<div class="events item">
+    <code>start</code> 
+    
+    
+    <br>
+    <span class="foundat"><a href="../files/addon_mixins_file-input-base.js.html#l132"><code>addon&#x2F;mixins&#x2F;file-input-base.js:132</code></a></span>
+    <p>start upload action</p>
+
+</div>
+
+    </div>
+</div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+</body>
+</html>

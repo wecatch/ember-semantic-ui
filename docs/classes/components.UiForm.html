@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>components.UiForm - ember-semantic-ui</title>
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <script src="http://yui.yahooapis.com/combo?3.8.0pr2/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div class="yui3-g">
+        <div id="sidebar" class="yui3-u">
+            <div class="logo">
+              <a href="../index.html">
+                  ember-semantic-ui
+              </a>
+            </div>
+            
+            <div id="modules" class="sidebox">
+                <div class="hd">
+                    <h2 class="no-toc">Modules</h2>
+                </div>
+                <div class="bd">
+                    <ul>
+                            <li><a href="../modules/components.html">components</a>
+                            </li>
+                            <li><a href="../modules/mixins.html">mixins</a>
+                            </li>
+                            <li><a href="../modules/utils.html">utils</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="classes" class="sidebox">
+                <div class="hd">
+                    <h2 class="no-toc">Classes</h2>
+                </div>
+                <div class="bd">
+                    <ul>
+                            <li><a href="../classes/components.FileInput.html">components.FileInput</a></li>
+                            <li><a href="../classes/components.UiAnimatedButton.html">components.UiAnimatedButton</a></li>
+                            <li><a href="../classes/components.UiButton.html">components.UiButton</a></li>
+                            <li><a href="../classes/components.UiCheckbox.html">components.UiCheckbox</a></li>
+                            <li><a href="../classes/components.UiCheckboxGroup.html">components.UiCheckboxGroup</a></li>
+                            <li><a href="../classes/components.UiContainer.html">components.UiContainer</a></li>
+                            <li><a href="../classes/components.UiDateInput.html">components.UiDateInput</a></li>
+                            <li><a href="../classes/components.UiDateTimeInput.html">components.UiDateTimeInput</a></li>
+                            <li><a href="../classes/components.UiDropdownMenu.html">components.UiDropdownMenu</a></li>
+                            <li><a href="../classes/components.UiForm.html">components.UiForm</a></li>
+                            <li><a href="../classes/components.UiFormInput.html">components.UiFormInput</a></li>
+                            <li><a href="../classes/components.UiGrid.html">components.UiGrid</a></li>
+                            <li><a href="../classes/components.UiInput.html">components.UiInput</a></li>
+                            <li><a href="../classes/components.UiInputTags.html">components.UiInputTags</a></li>
+                            <li><a href="../classes/components.UiLabel.html">components.UiLabel</a></li>
+                            <li><a href="../classes/components.UiLabeledButton.html">components.UiLabeledButton</a></li>
+                            <li><a href="../classes/components.UiLeftLabeledButton.html">components.UiLeftLabeledButton</a></li>
+                            <li><a href="../classes/components.UiMenu.html">components.UiMenu</a></li>
+                            <li><a href="../classes/components.UiMessage.html">components.UiMessage</a></li>
+                            <li><a href="../classes/components.UiModal.html">components.UiModal</a></li>
+                            <li><a href="../classes/components.UiModalContent.html">components.UiModalContent</a></li>
+                            <li><a href="../classes/components.UiModalFoot.html">components.UiModalFoot</a></li>
+                            <li><a href="../classes/components.UiModalTitle.html">components.UiModalTitle</a></li>
+                            <li><a href="../classes/components.UiMultiSelect.html">components.UiMultiSelect</a></li>
+                            <li><a href="../classes/components.UiPointingLabel.html">components.UiPointingLabel</a></li>
+                            <li><a href="../classes/components.UiPopup.html">components.UiPopup</a></li>
+                            <li><a href="../classes/components.UiPopupContent.html">components.UiPopupContent</a></li>
+                            <li><a href="../classes/components.UiProgress.html">components.UiProgress</a></li>
+                            <li><a href="../classes/components.UiRadio.html">components.UiRadio</a></li>
+                            <li><a href="../classes/components.UiRadioGroup.html">components.UiRadioGroup</a></li>
+                            <li><a href="../classes/components.UiRow.html">components.UiRow</a></li>
+                            <li><a href="../classes/components.UiSegment.html">components.UiSegment</a></li>
+                            <li><a href="../classes/components.UiSelect.html">components.UiSelect</a></li>
+                            <li><a href="../classes/components.UiTabMenu.html">components.UiTabMenu</a></li>
+                            <li><a href="../classes/components.UiTabSegment.html">components.UiTabSegment</a></li>
+                            <li><a href="../classes/components.UiTextContainer.html">components.UiTextContainer</a></li>
+                            <li><a href="../classes/components.UiUploader.html">components.UiUploader</a></li>
+                            <li><a href="../classes/components.UiVerticalMenu.html">components.UiVerticalMenu</a></li>
+                            <li><a href="../classes/mixins.FileInputBase.html">mixins.FileInputBase</a></li>
+                            <li><a href="../classes/mixins.UiButtonBase.html">mixins.UiButtonBase</a></li>
+                            <li><a href="../classes/mixins.UiCheckboxBase.html">mixins.UiCheckboxBase</a></li>
+                            <li><a href="../classes/mixins.UiCheckboxGroupBase.html">mixins.UiCheckboxGroupBase</a></li>
+                            <li><a href="../classes/mixins.UiInputBase.html">mixins.UiInputBase</a></li>
+                            <li><a href="../classes/mixins.UiLabelBase.html">mixins.UiLabelBase</a></li>
+                            <li><a href="../classes/mixins.uiSegmentBase.html">mixins.uiSegmentBase</a></li>
+                            <li><a href="../classes/mixins.UiSelectBase.html">mixins.UiSelectBase</a></li>
+                            <li><a href="../classes/utils.EmberUploader.html">utils.EmberUploader</a></li>
+                            <li><a href="../classes/utils.FileObject.html">utils.FileObject</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            
+            <div id="sections" class="sidebox">
+              <div class="hd">
+                <h2 class="no-toc">components.UiForm</h2>
+              </div>
+              <div class="bd">
+            
+            
+            
+                  <div><a href="#property-summary">Property Summary</a></div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  <div><a href="#public-properties">Public Properties</a></div>
+                  <ul>
+                      <li><a href="#props_classNames">classNames</a></li>
+                      <li><a href="#props_error">error</a></li>
+                      <li><a href="#props_error">error</a></li>
+                      <li><a href="#props_loading">loading</a></li>
+                      <li><a href="#props_tagName">tagName</a></li>
+                      <li><a href="#props_theme">theme</a></li>
+                      <li><a href="#props_warning">warning</a></li>
+                  </ul>
+            
+            
+            
+            
+            
+              </div>
+            </div>
+            
+            
+            
+            <div class="version-info">
+              Version: 0.2.5
+            </div>
+            
+        </div>
+
+        <div id="main" class="yui3-u">
+            <div class="content"><div class="title">
+    <span class="source-link"><a href="../files/addon_components_ui-form.js.html#l4"><code>addon&#x2F;components&#x2F;ui-form.js:4</code></a></span>
+    <h1 class="class-name">components.UiForm</h1>
+</div>
+
+
+
+
+<div class="class-description"><p>ui-form component</p>
+</div>
+
+
+
+
+
+
+
+  <h2 id="property-summary">Property Summary</h2>
+
+    <table class="summary">
+      <thead>
+      <tr>
+        <th colspan="2">Public Properties</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            public
+            
+            
+          </td>
+          <td>
+            <div class="property-name ">
+              <a href="#props_classNames">classNames</a>: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a>
+            </div>
+            <div class="short-description">
+              <p>Class names to apply to the button</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            public
+            
+            
+          </td>
+          <td>
+            <div class="property-name ">
+              <a href="#props_error">error</a>: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a>
+            </div>
+            <div class="short-description">
+              <p>the form error status</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            public
+            
+            
+          </td>
+          <td>
+            <div class="property-name ">
+              <a href="#props_error">error</a>: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a>
+            </div>
+            <div class="short-description">
+              <p>the form success status</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            public
+            
+            
+          </td>
+          <td>
+            <div class="property-name ">
+              <a href="#props_loading">loading</a>: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a>
+            </div>
+            <div class="short-description">
+              <p>the form loading status</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            public
+            
+            
+          </td>
+          <td>
+            <div class="property-name ">
+              <a href="#props_tagName">tagName</a>: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a>
+            </div>
+            <div class="short-description">
+              <p>The root component element</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            public
+            
+            
+          </td>
+          <td>
+            <div class="property-name ">
+              <a href="#props_theme">theme</a>: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a>
+            </div>
+            <div class="short-description">
+              <p>the form theme</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            public
+            
+            
+          </td>
+          <td>
+            <div class="property-name ">
+              <a href="#props_warning">warning</a>: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a>
+            </div>
+            <div class="short-description">
+              <p>the form warning status</p>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="properties public">
+        <h2 id="public-properties">Public Properties</h2>
+<div class="property item">
+  <div id="props_classNames" class="title">
+    <span class="source-link"><a href="../files/addon_components_ui-form.js.html#l57"><code>addon&#x2F;components&#x2F;ui-form.js:57</code></a></span>
+    <h3 class="">
+      public
+      
+      
+      classNames: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a>
+    </h3>
+  </div>
+
+
+  <div class="property-description"><p>Class names to apply to the button</p>
+</div>
+
+</div>
+<div class="property item">
+  <div id="props_error" class="title">
+    <span class="source-link"><a href="../files/addon_components_ui-form.js.html#l36"><code>addon&#x2F;components&#x2F;ui-form.js:36</code></a></span>
+    <h3 class="">
+      public
+      
+      
+      error: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a>
+    </h3>
+  </div>
+
+
+  <div class="property-description"><p>the form error status</p>
+</div>
+
+</div>
+<div class="property item">
+  <div id="props_error" class="title">
+    <span class="source-link"><a href="../files/addon_components_ui-form.js.html#l43"><code>addon&#x2F;components&#x2F;ui-form.js:43</code></a></span>
+    <h3 class="">
+      public
+      
+      
+      error: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a>
+    </h3>
+  </div>
+
+
+  <div class="property-description"><p>the form success status</p>
+</div>
+
+</div>
+<div class="property item">
+  <div id="props_loading" class="title">
+    <span class="source-link"><a href="../files/addon_components_ui-form.js.html#l29"><code>addon&#x2F;components&#x2F;ui-form.js:29</code></a></span>
+    <h3 class="">
+      public
+      
+      
+      loading: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a>
+    </h3>
+  </div>
+
+
+  <div class="property-description"><p>the form loading status</p>
+</div>
+
+</div>
+<div class="property item">
+  <div id="props_tagName" class="title">
+    <span class="source-link"><a href="../files/addon_components_ui-form.js.html#l14"><code>addon&#x2F;components&#x2F;ui-form.js:14</code></a></span>
+    <h3 class="">
+      public
+      
+      
+      tagName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a>
+    </h3>
+  </div>
+
+
+  <div class="property-description"><p>The root component element</p>
+</div>
+
+</div>
+<div class="property item">
+  <div id="props_theme" class="title">
+    <span class="source-link"><a href="../files/addon_components_ui-form.js.html#l22"><code>addon&#x2F;components&#x2F;ui-form.js:22</code></a></span>
+    <h3 class="">
+      public
+      
+      
+      theme: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a>
+    </h3>
+  </div>
+
+
+  <div class="property-description"><p>the form theme</p>
+</div>
+
+</div>
+<div class="property item">
+  <div id="props_warning" class="title">
+    <span class="source-link"><a href="../files/addon_components_ui-form.js.html#l50"><code>addon&#x2F;components&#x2F;ui-form.js:50</code></a></span>
+    <h3 class="">
+      public
+      
+      
+      warning: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a>
+    </h3>
+  </div>
+
+
+  <div class="property-description"><p>the form warning status</p>
+</div>
+
+</div>
+    </div>
+
+
+
+
+
+
+
+</div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+</body>
+</html>

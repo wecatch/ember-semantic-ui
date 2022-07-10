@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./demo/assets/vendor.css">
+  <link rel="stylesheet" href="./assets/app.css">
+  <title>Ember Semantic Ui</title>
+  <style>
+  </style>
+</head>
+<body>
+<div class="m-nav">
+    <div class="wrap">
+        <a class="home" href="/ember-semantic-ui/">
+          ember-semantic-ui
+        </a>
+        <ul class="nav external">
+            <li>
+                <a href="https://github.com/wecatch/ember-semantic-uid">Github</a>
+            </li>
+            <li>
+                <a href="https://wecatch.me">Wecatch</a>
+            </li>
+        </ul>
+        <ul class="nav internal">
+            <li><a href="/ember-semantic-ui/docs/">Docs</a></li>
+        </ul>
+    </div>
+</div>
+<div class="container" >
+  <h1 id="embersemanticui">ember-semantic-ui</h1>
+<p><a href="https://github.com/wecatch/ember-semantic-ui/actions"><img src="https://github.com/wecatch/ember-semantic-ui/actions/workflows/ci.yml/badge.svg" alt="Build Status" /></a>
+<a href="https://www.npmjs.com/package/ember-semantic-ui"><img src="https://img.shields.io/npm/dt/ember-semantic-ui.svg" alt="Downloads" /></a>
+<a href="https://www.npmjs.com/package/ember-semantic-ui"><img src="https://img.shields.io/npm/v/ember-semantic-ui.svg" alt="Version" /></a></p>
+<p>This Ember addon support many UI components based on <a href="http://semantic-ui.com">semantic-ui</a>, Anyone can use this addon in their Ember project. </p>
+<p><a href="http://wecatch.me/ember-semantic-ui/demo/">Demo</a>
+<a href="http://wecatch.me/ember-semantic-ui/docs/">Docs</a></p>
+<h2 id="components">Components</h2>
+<p><strong>Layout</strong></p>
+<ul>
+<li><a href="http://wecatch.me/ember-semantic-ui/demo/#/ui-column">ui-column</a></li>
+</ul>
+<p><strong>Button</strong></p>
+<ul>
+<li><a href="http://wecatch.github.io/ember-semantic-ui/demo/#/ui-button">ui-button</a></li>
+</ul>
+<p><strong>Menu</strong></p>
+<ul>
+<li><a href="http://wecatch.github.io/ember-semantic-ui/demo/#/ui-dropdown-menu">ui-dropdown-menu</a></li>
+<li><a href="http://wecatch.github.io/ember-semantic-ui/demo/#/ui-tab-menu">ui-tab-menu</a></li>
+</ul>
+<p><strong>Input</strong></p>
+<ul>
+<li><a href="http://wecatch.github.io/ember-semantic-ui/demo/#/ui-input-tags">ui-input-tags</a></li>
+<li><a href="http://wecatch.github.io/ember-semantic-ui/demo/#/ui-input">ui-input</a></li>
+<li><a href="http://wecatch.github.io/ember-semantic-ui/demo/#/ui-date-input">ui-date-input</a></li>
+<li><a href="http://wecatch.github.io/ember-semantic-ui/demo/#/ui-date-time-input">ui-date-time-input</a></li>
+</ul>
+<p><strong>Checkbox</strong></p>
+<ul>
+<li><a href="http://wecatch.github.io/ember-semantic-ui/demo/#/ui-checkbox-group">ui-checkbox-group</a></li>
+<li><a href="http://wecatch.github.io/ember-semantic-ui/demo/#/ui-checkbox">ui-checkbox</a></li>
+</ul>
+<p><strong>Modal</strong></p>
+<ul>
+<li><a href="http://wecatch.github.io/ember-semantic-ui/demo/#/ui-modal">ui-modal</a></li>
+</ul>
+<p><strong>Select</strong></p>
+<ul>
+<li><a href="http://wecatch.github.io/ember-semantic-ui/demo/#/ui-select">ui-select</a></li>
+<li><a href="http://wecatch.github.io/ember-semantic-ui/demo/#/ui-multi-select">ui-multi-select</a></li>
+</ul>
+<p><strong>File</strong></p>
+<ul>
+<li><a href="http://wecatch.github.io/ember-semantic-ui/demo/#/ui-uploader">ui-uploader</a></li>
+<li><a href="http://wecatch.github.io/ember-semantic-ui/demo/#/file-input">file-input</a></li>
+</ul>
+<p><strong>Popup</strong></p>
+<ul>
+<li><a href="http://wecatch.github.io/ember-semantic-ui/demo/#/ui-popup">ui-popup</a></li>
+</ul>
+<p><strong>Message</strong></p>
+<ul>
+<li><a href="http://wecatch.me/ember-semantic-ui/demo/ui-message">ui-message</a></li>
+</ul>
+<h1 id="gettingstarted">Getting Started</h1>
+<h2 id="install">Install</h2>
+<p>In your ember-cli project, install this addon from npm</p>
+<h2 id="compatibility">Compatibility</h2>
+<p>or install the latest version from github</p>
+<pre><code>npm install git+https://github.com/wecatch/ember-semantic-ui --save-dev
+</code></pre>
+<p>If your ember version has remove jquery, please do as below:</p>
+<pre><code>ember install @ember/jquery
+ember install @ember/optional-features
+ember feature:enable jquery-integration
+</code></pre>
+<h2 id="dummyapp">Dummy app</h2>
+<pre><code>git clone https://github.com/wecatch/ember-semantic-ui
+npm install
+bower install
+ember server
+</code></pre>
+<h2 id="usethisaddoninyouremberapplication">Use this addon in your ember application</h2>
+<p>1.Modify app/index.html and import semanti-ui js file and css file</p>
+<pre><code>&lt;link rel="stylesheet" href="{{rootURL}}assets/semantic.min.css"&gt;
+&lt;script src="{{rootURL}}assets/semantic.min.js"&gt;&lt;/script&gt;
+</code></pre>
+<p>2.Start ember app </p>
+<pre><code>ember server 
+</code></pre>
+<p>3.Then you can use this addon components in your ember app </p>
+<pre><code>&lt;UiInput/&gt;
+</code></pre>
+<h1 id="thanks">Thanks</h1>
+<p>The <a href="https://github.com/benefitcloud/ember-uploader">ember-uploader</a> project support this addon file-uploader. Thanks to their <a href="https://github.com/benefitcloud">author</a></p>
+<h1 id="releasenotes">Release notes</h1>
+<h2 id="100">1.0.0</h2>
+<ul>
+<li>Upgrade ember-cli to 4.4, this version is not compatible, please take caution</li>
+<li>Only support glimmer component</li>
+</ul>
+<h2 id="023">0.2.3</h2>
+<ul>
+<li>bump babel</li>
+</ul>
+<h2 id="022">0.2.2</h2>
+<ul>
+<li>remove bower, install npm package semantic-ui-css for semantic-ui</li>
+</ul>
+<h2 id="021">0.2.1</h2>
+<ul>
+<li>fix <a href="https://github.com/wecatch/ember-semantic-ui/issues/34">34</a></li>
+</ul>
+<h2 id="020">0.2.0</h2>
+<ul>
+<li>upgrade ember-cli to 3.1, support ember to latest 3.0</li>
+<li>upgrade semantic-ui to 2.3.2</li>
+</ul>
+<h2 id="012">0.1.2</h2>
+<p>upgrade ember-cli to 2.11, upgrade ember to latest 2.11</p>
+<h2 id="011">0.1.1</h2>
+<p>fix dummy app</p>
+<h2 id="010">0.1.0</h2>
+<ul>
+<li>add docs</li>
+<li>file-input support multiple files upload</li>
+<li>add menu component</li>
+<li>add row, column, container component</li>
+</ul>
+<h2 id="008">0.0.8</h2>
+<ul>
+<li>added ui-pop-up, ui-date-input, ui-date-time-input</li>
+<li>fix many bugs</li>
+<li>rework some component according to <a href="https://poteto.github.io/component-best-practices/">component-best-practices</a></li>
+</ul>
+<h2 id="007">0.0.7</h2>
+<ul>
+<li>remove ui-remote-select, ui-link, ui-dropdown</li>
+<li>added ui-label, ui-labeled-button, ui-animated-button, ui-dropdown-menu, ui-left-labeled-button, ui-pointing-label</li>
+<li>redesign ui-select, ui-multi-select, ui-checkbox-group, ui-radio-group</li>
+<li>ui-alter renamed to ui-message</li>
+</ul>
+<p><strong>Tip</strong></p>
+<p>0.0.7 is not backward compatible, be careful to update</p>
+<h2 id="005">0.0.5</h2>
+<p><strong>2015-12-09</strong></p>
+<ul>
+<li>ui-uploader,ui-checkbox,file-object fix some bugs </li>
+</ul>
+<h2 id="003">0.0.3</h2>
+<p><strong>2015-10-21</strong></p>
+<ul>
+<li>Ember.js v3.24 or above</li>
+<li>Ember CLI v3.24 or above</li>
+<li>Node.js v12 or above</li>
+</ul>
+</div>
+<script src="./demo/assets/vendor.js"></script>
+<script src="./assets/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</body>
+</html>

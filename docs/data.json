@@ -1,0 +1,3274 @@
+{
+    "project": {
+        "name": "ember-semantic-ui",
+        "description": "Ember ui components based on semantic-ui",
+        "version": "0.2.5"
+    },
+    "files": {
+        "addon/components/file-input.js": {
+            "name": "addon/components/file-input.js",
+            "modules": {
+                "components": 1
+            },
+            "classes": {
+                "components.FileInput": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-animated-button.js": {
+            "name": "addon/components/ui-animated-button.js",
+            "modules": {},
+            "classes": {
+                "components.UiAnimatedButton": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-button.js": {
+            "name": "addon/components/ui-button.js",
+            "modules": {},
+            "classes": {
+                "components.UiButton": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-checkbox-group.js": {
+            "name": "addon/components/ui-checkbox-group.js",
+            "modules": {},
+            "classes": {
+                "components.UiCheckboxGroup": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-checkbox.js": {
+            "name": "addon/components/ui-checkbox.js",
+            "modules": {},
+            "classes": {
+                "components.UiCheckbox": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-container.js": {
+            "name": "addon/components/ui-container.js",
+            "modules": {},
+            "classes": {
+                "components.UiContainer": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-date-input.js": {
+            "name": "addon/components/ui-date-input.js",
+            "modules": {},
+            "classes": {
+                "components.UiDateInput": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-date-time-input.js": {
+            "name": "addon/components/ui-date-time-input.js",
+            "modules": {},
+            "classes": {
+                "components.UiDateTimeInput": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-dropdown-menu.js": {
+            "name": "addon/components/ui-dropdown-menu.js",
+            "modules": {},
+            "classes": {
+                "components.UiDropdownMenu": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-form-input.js": {
+            "name": "addon/components/ui-form-input.js",
+            "modules": {},
+            "classes": {
+                "components.UiFormInput": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-form.js": {
+            "name": "addon/components/ui-form.js",
+            "modules": {},
+            "classes": {
+                "components.UiForm": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-grid.js": {
+            "name": "addon/components/ui-grid.js",
+            "modules": {},
+            "classes": {
+                "components.UiGrid": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-input-tags.js": {
+            "name": "addon/components/ui-input-tags.js",
+            "modules": {},
+            "classes": {
+                "components.UiInputTags": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-input.js": {
+            "name": "addon/components/ui-input.js",
+            "modules": {},
+            "classes": {
+                "components.UiInput": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-label.js": {
+            "name": "addon/components/ui-label.js",
+            "modules": {},
+            "classes": {
+                "components.UiLabel": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-labeled-button.js": {
+            "name": "addon/components/ui-labeled-button.js",
+            "modules": {},
+            "classes": {
+                "components.UiLabeledButton": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-left-labeled-button.js": {
+            "name": "addon/components/ui-left-labeled-button.js",
+            "modules": {},
+            "classes": {
+                "components.UiLeftLabeledButton": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-menu.js": {
+            "name": "addon/components/ui-menu.js",
+            "modules": {},
+            "classes": {
+                "components.UiMenu": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-message.js": {
+            "name": "addon/components/ui-message.js",
+            "modules": {},
+            "classes": {
+                "components.UiMessage": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-modal-content.js": {
+            "name": "addon/components/ui-modal-content.js",
+            "modules": {},
+            "classes": {
+                "components.UiModalContent": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-modal-foot.js": {
+            "name": "addon/components/ui-modal-foot.js",
+            "modules": {},
+            "classes": {
+                "components.UiModalFoot": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-modal-title.js": {
+            "name": "addon/components/ui-modal-title.js",
+            "modules": {},
+            "classes": {
+                "components.UiModalTitle": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-modal.js": {
+            "name": "addon/components/ui-modal.js",
+            "modules": {},
+            "classes": {
+                "components.UiModal": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-multi-select.js": {
+            "name": "addon/components/ui-multi-select.js",
+            "modules": {},
+            "classes": {
+                "components.UiMultiSelect": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-pointing-label.js": {
+            "name": "addon/components/ui-pointing-label.js",
+            "modules": {},
+            "classes": {
+                "components.UiPointingLabel": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-popup-content.js": {
+            "name": "addon/components/ui-popup-content.js",
+            "modules": {},
+            "classes": {
+                "components.UiPopupContent": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-popup.js": {
+            "name": "addon/components/ui-popup.js",
+            "modules": {},
+            "classes": {
+                "components.UiPopup": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-progress.js": {
+            "name": "addon/components/ui-progress.js",
+            "modules": {},
+            "classes": {
+                "components.UiProgress": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-radio-group.js": {
+            "name": "addon/components/ui-radio-group.js",
+            "modules": {},
+            "classes": {
+                "components.UiRadioGroup": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-radio.js": {
+            "name": "addon/components/ui-radio.js",
+            "modules": {},
+            "classes": {
+                "components.UiRadio": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-row.js": {
+            "name": "addon/components/ui-row.js",
+            "modules": {},
+            "classes": {
+                "components.UiRow": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-segment.js": {
+            "name": "addon/components/ui-segment.js",
+            "modules": {},
+            "classes": {
+                "components.UiSegment": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-select.js": {
+            "name": "addon/components/ui-select.js",
+            "modules": {},
+            "classes": {
+                "components.UiSelect": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-tab-menu.js": {
+            "name": "addon/components/ui-tab-menu.js",
+            "modules": {},
+            "classes": {
+                "components.UiTabMenu": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-tab-segment.js": {
+            "name": "addon/components/ui-tab-segment.js",
+            "modules": {},
+            "classes": {
+                "components.UiTabSegment": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-text-container.js": {
+            "name": "addon/components/ui-text-container.js",
+            "modules": {},
+            "classes": {
+                "components.UiTextContainer": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-uploader.js": {
+            "name": "addon/components/ui-uploader.js",
+            "modules": {},
+            "classes": {
+                "components.UiUploader": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/components/ui-vertical-menu.js": {
+            "name": "addon/components/ui-vertical-menu.js",
+            "modules": {},
+            "classes": {
+                "components.UiVerticalMenu": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            }
+        },
+        "addon/mixins/file-input-base.js": {
+            "name": "addon/mixins/file-input-base.js",
+            "modules": {
+                "mixins": 1
+            },
+            "classes": {
+                "mixins.FileInputBase": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "mixins": 1
+            }
+        },
+        "addon/mixins/ui-button-base.js": {
+            "name": "addon/mixins/ui-button-base.js",
+            "modules": {},
+            "classes": {
+                "mixins.UiButtonBase": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "mixins": 1
+            }
+        },
+        "addon/mixins/ui-checkbox-base.js": {
+            "name": "addon/mixins/ui-checkbox-base.js",
+            "modules": {},
+            "classes": {
+                "mixins.UiCheckboxBase": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "mixins": 1
+            }
+        },
+        "addon/mixins/ui-checkbox-group-base.js": {
+            "name": "addon/mixins/ui-checkbox-group-base.js",
+            "modules": {},
+            "classes": {
+                "mixins.UiCheckboxGroupBase": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "mixins": 1
+            }
+        },
+        "addon/mixins/ui-input-base.js": {
+            "name": "addon/mixins/ui-input-base.js",
+            "modules": {},
+            "classes": {
+                "mixins.UiInputBase": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "mixins": 1
+            }
+        },
+        "addon/mixins/ui-label-base.js": {
+            "name": "addon/mixins/ui-label-base.js",
+            "modules": {},
+            "classes": {
+                "mixins.UiLabelBase": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "mixins": 1
+            }
+        },
+        "addon/mixins/ui-segment-base.js": {
+            "name": "addon/mixins/ui-segment-base.js",
+            "modules": {},
+            "classes": {
+                "mixins.uiSegmentBase": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "mixins": 1
+            }
+        },
+        "addon/mixins/ui-select-base.js": {
+            "name": "addon/mixins/ui-select-base.js",
+            "modules": {},
+            "classes": {
+                "mixins.UiSelectBase": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "mixins": 1
+            }
+        },
+        "addon/utils/ember-uploader.js": {
+            "name": "addon/utils/ember-uploader.js",
+            "modules": {
+                "utils": 1
+            },
+            "classes": {
+                "utils.EmberUploader": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "utils": 1
+            }
+        },
+        "addon/utils/file-object.js": {
+            "name": "addon/utils/file-object.js",
+            "modules": {},
+            "classes": {
+                "utils.FileObject": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "utils": 1
+            }
+        }
+    },
+    "modules": {
+        "components": {
+            "name": "components",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "components.FileInput": 1,
+                "components.UiAnimatedButton": 1,
+                "components.UiButton": 1,
+                "components.UiCheckboxGroup": 1,
+                "components.UiCheckbox": 1,
+                "components.UiContainer": 1,
+                "components.UiDateInput": 1,
+                "components.UiDateTimeInput": 1,
+                "components.UiDropdownMenu": 1,
+                "components.UiFormInput": 1,
+                "components.UiForm": 1,
+                "components.UiGrid": 1,
+                "components.UiInputTags": 1,
+                "components.UiInput": 1,
+                "components.UiLabel": 1,
+                "components.UiLabeledButton": 1,
+                "components.UiLeftLabeledButton": 1,
+                "components.UiMenu": 1,
+                "components.UiMessage": 1,
+                "components.UiModalContent": 1,
+                "components.UiModalFoot": 1,
+                "components.UiModalTitle": 1,
+                "components.UiModal": 1,
+                "components.UiMultiSelect": 1,
+                "components.UiPointingLabel": 1,
+                "components.UiPopupContent": 1,
+                "components.UiPopup": 1,
+                "components.UiProgress": 1,
+                "components.UiRadioGroup": 1,
+                "components.UiRadio": 1,
+                "components.UiRow": 1,
+                "components.UiSegment": 1,
+                "components.UiSelect": 1,
+                "components.UiTabMenu": 1,
+                "components.UiTabSegment": 1,
+                "components.UiTextContainer": 1,
+                "components.UiUploader": 1,
+                "components.UiVerticalMenu": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "components": 1
+            },
+            "tag": "module",
+            "file": "addon/components/ui-vertical-menu.js",
+            "line": 4,
+            "description": "file-input component, see {{#crossLink \"mixins.FileInputBase\"}}{{/crossLink}}",
+            "is_constructor": 1
+        },
+        "mixins": {
+            "name": "mixins",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "mixins.FileInputBase": 1,
+                "mixins.UiButtonBase": 1,
+                "mixins.UiCheckboxBase": 1,
+                "mixins.UiCheckboxGroupBase": 1,
+                "mixins.UiInputBase": 1,
+                "mixins.UiLabelBase": 1,
+                "mixins.uiSegmentBase": 1,
+                "mixins.UiSelectBase": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "mixins": 1
+            },
+            "tag": "module",
+            "file": "addon/mixins/ui-select-base.js",
+            "line": 7,
+            "description": "file-input-base mixinx",
+            "extends": "Ember.Evented",
+            "is_constructor": 1
+        },
+        "utils": {
+            "name": "utils",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "utils.EmberUploader": 1,
+                "utils.FileObject": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "utils": 1
+            },
+            "tag": "module",
+            "file": "addon/utils/file-object.js",
+            "line": 3,
+            "description": "EmberUploader class",
+            "is_constructor": 1
+        }
+    },
+    "classes": {
+        "components.FileInput": {
+            "name": "components.FileInput",
+            "shortname": "components.FileInput",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/file-input.js",
+            "line": 6,
+            "description": "file-input component, see {{#crossLink \"mixins.FileInputBase\"}}{{/crossLink}}"
+        },
+        "components.UiAnimatedButton": {
+            "name": "components.UiAnimatedButton",
+            "shortname": "components.UiAnimatedButton",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-animated-button.js",
+            "line": 6,
+            "description": "ui-animated-button component see {{#crossLink \"mixins.UiButtonBase\"}}{{/crossLink}}"
+        },
+        "components.UiButton": {
+            "name": "components.UiButton",
+            "shortname": "components.UiButton",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-button.js",
+            "line": 5,
+            "description": "ui-button component see {{#crossLink \"mixins.UiButtonBase\"}}{{/crossLink}}"
+        },
+        "components.UiCheckboxGroup": {
+            "name": "components.UiCheckboxGroup",
+            "shortname": "components.UiCheckboxGroup",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-checkbox-group.js",
+            "line": 6,
+            "description": "ui-checkbox-group component see {{#crossLink \"mixins.UiCheckboxGroupBase\"}}{{/crossLink}}"
+        },
+        "components.UiCheckbox": {
+            "name": "components.UiCheckbox",
+            "shortname": "components.UiCheckbox",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-checkbox.js",
+            "line": 5,
+            "description": "ui-checkbox component see {{#crossLink \"mixins.UiCheckboxBase\"}}{{/crossLink}}"
+        },
+        "components.UiContainer": {
+            "name": "components.UiContainer",
+            "shortname": "components.UiContainer",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-container.js",
+            "line": 4,
+            "description": "ui-container component"
+        },
+        "components.UiDateInput": {
+            "name": "components.UiDateInput",
+            "shortname": "components.UiDateInput",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-date-input.js",
+            "line": 15,
+            "description": "ui-date-input component"
+        },
+        "components.UiDateTimeInput": {
+            "name": "components.UiDateTimeInput",
+            "shortname": "components.UiDateTimeInput",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-date-time-input.js",
+            "line": 18,
+            "description": "ui-date-time-input component"
+        },
+        "components.UiDropdownMenu": {
+            "name": "components.UiDropdownMenu",
+            "shortname": "components.UiDropdownMenu",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-dropdown-menu.js",
+            "line": 4,
+            "description": "ui-dropdown-menu component"
+        },
+        "components.UiFormInput": {
+            "name": "components.UiFormInput",
+            "shortname": "components.UiFormInput",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-form-input.js",
+            "line": 5,
+            "description": "ui-form-input component see {{#crossLink \"mixins.UiInputBase\"}}{{/crossLink}}"
+        },
+        "components.UiForm": {
+            "name": "components.UiForm",
+            "shortname": "components.UiForm",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-form.js",
+            "line": 4,
+            "description": "ui-form component"
+        },
+        "components.UiGrid": {
+            "name": "components.UiGrid",
+            "shortname": "components.UiGrid",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-grid.js",
+            "line": 4,
+            "description": "ui-grid component"
+        },
+        "components.UiInputTags": {
+            "name": "components.UiInputTags",
+            "shortname": "components.UiInputTags",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-input-tags.js",
+            "line": 10,
+            "description": "ui-input-tags component"
+        },
+        "components.UiInput": {
+            "name": "components.UiInput",
+            "shortname": "components.UiInput",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-input.js",
+            "line": 6,
+            "description": "ui-input component see {{#crossLink \"mixins.UiInputBase\"}}{{/crossLink}}"
+        },
+        "components.UiLabel": {
+            "name": "components.UiLabel",
+            "shortname": "components.UiLabel",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-label.js",
+            "line": 6,
+            "description": "ui-label component {{#crossLink \"mixins.UiLabelBase\"}}{{/crossLink}}"
+        },
+        "components.UiLabeledButton": {
+            "name": "components.UiLabeledButton",
+            "shortname": "components.UiLabeledButton",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-labeled-button.js",
+            "line": 5,
+            "description": "ui-labeled-button component {{#crossLink \"mixins.UiButtonBase\"}}{{/crossLink}}"
+        },
+        "components.UiLeftLabeledButton": {
+            "name": "components.UiLeftLabeledButton",
+            "shortname": "components.UiLeftLabeledButton",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-left-labeled-button.js",
+            "line": 5,
+            "description": "ui-left-labeled-button component {{#crossLink \"mixins.UiButtonBase\"}}{{/crossLink}}"
+        },
+        "components.UiMenu": {
+            "name": "components.UiMenu",
+            "shortname": "components.UiMenu",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-menu.js",
+            "line": 4,
+            "description": "ui-menu component"
+        },
+        "components.UiMessage": {
+            "name": "components.UiMessage",
+            "shortname": "components.UiMessage",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-message.js",
+            "line": 9,
+            "description": "ui-message component"
+        },
+        "components.UiModalContent": {
+            "name": "components.UiModalContent",
+            "shortname": "components.UiModalContent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-modal-content.js",
+            "line": 4,
+            "description": "ui-modal-content component"
+        },
+        "components.UiModalFoot": {
+            "name": "components.UiModalFoot",
+            "shortname": "components.UiModalFoot",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-modal-foot.js",
+            "line": 4,
+            "description": "ui-modal-foot component"
+        },
+        "components.UiModalTitle": {
+            "name": "components.UiModalTitle",
+            "shortname": "components.UiModalTitle",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-modal-title.js",
+            "line": 4,
+            "description": "ui-modal-title component"
+        },
+        "components.UiModal": {
+            "name": "components.UiModal",
+            "shortname": "components.UiModal",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-modal.js",
+            "line": 5,
+            "description": "ui-modal component"
+        },
+        "components.UiMultiSelect": {
+            "name": "components.UiMultiSelect",
+            "shortname": "components.UiMultiSelect",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-multi-select.js",
+            "line": 9,
+            "description": "ui-multi-select component see {{#crossLink \"mixins.UiSelectBase\"}}{{/crossLink}}"
+        },
+        "components.UiPointingLabel": {
+            "name": "components.UiPointingLabel",
+            "shortname": "components.UiPointingLabel",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-pointing-label.js",
+            "line": 7,
+            "description": "ui-pointing-label component see {{#crossLink \"mixins.uiLabelBase\"}}{{/crossLink}}"
+        },
+        "components.UiPopupContent": {
+            "name": "components.UiPopupContent",
+            "shortname": "components.UiPopupContent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-popup-content.js",
+            "line": 6,
+            "description": "ui-popup-content component"
+        },
+        "components.UiPopup": {
+            "name": "components.UiPopup",
+            "shortname": "components.UiPopup",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-popup.js",
+            "line": 7,
+            "description": "ui-popup component"
+        },
+        "components.UiProgress": {
+            "name": "components.UiProgress",
+            "shortname": "components.UiProgress",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-progress.js",
+            "line": 7,
+            "description": "ui-progress component"
+        },
+        "components.UiRadioGroup": {
+            "name": "components.UiRadioGroup",
+            "shortname": "components.UiRadioGroup",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-radio-group.js",
+            "line": 6,
+            "description": "ui-radio-group component see {{#crossLink \"mixins.UiCheckboxGroupBase\"}}{{/crossLink}}"
+        },
+        "components.UiRadio": {
+            "name": "components.UiRadio",
+            "shortname": "components.UiRadio",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-radio.js",
+            "line": 6,
+            "description": "ui-radio component see {{#crossLink \"mixins.UiCheckboxBase\"}}{{/crossLink}}"
+        },
+        "components.UiRow": {
+            "name": "components.UiRow",
+            "shortname": "components.UiRow",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-row.js",
+            "line": 4,
+            "description": "ui-row component"
+        },
+        "components.UiSegment": {
+            "name": "components.UiSegment",
+            "shortname": "components.UiSegment",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-segment.js",
+            "line": 5,
+            "description": "ui-segment component {{#crossLink \"mixins.uiSegmentBase\"}}{{/crossLink}}"
+        },
+        "components.UiSelect": {
+            "name": "components.UiSelect",
+            "shortname": "components.UiSelect",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-select.js",
+            "line": 7,
+            "description": "ui-select component"
+        },
+        "components.UiTabMenu": {
+            "name": "components.UiTabMenu",
+            "shortname": "components.UiTabMenu",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-tab-menu.js",
+            "line": 7,
+            "description": "ui-tab-menu component"
+        },
+        "components.UiTabSegment": {
+            "name": "components.UiTabSegment",
+            "shortname": "components.UiTabSegment",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-tab-segment.js",
+            "line": 6,
+            "description": "ui-tab-segment component  {{#crossLink \"mixins.uiSegmentBase\"}}{{/crossLink}}"
+        },
+        "components.UiTextContainer": {
+            "name": "components.UiTextContainer",
+            "shortname": "components.UiTextContainer",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-text-container.js",
+            "line": 4,
+            "description": "ui-text-container component"
+        },
+        "components.UiUploader": {
+            "name": "components.UiUploader",
+            "shortname": "components.UiUploader",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-uploader.js",
+            "line": 15,
+            "description": "ui-uploader component"
+        },
+        "components.UiVerticalMenu": {
+            "name": "components.UiVerticalMenu",
+            "shortname": "components.UiVerticalMenu",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "components",
+            "namespace": "components",
+            "file": "addon/components/ui-vertical-menu.js",
+            "line": 4,
+            "description": "ui-vertical-menu component"
+        },
+        "mixins.FileInputBase": {
+            "name": "mixins.FileInputBase",
+            "shortname": "mixins.FileInputBase",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "mixins",
+            "namespace": "mixins",
+            "file": "addon/mixins/file-input-base.js",
+            "line": 11,
+            "description": "file-input-base mixinx"
+        },
+        "mixins.UiButtonBase": {
+            "name": "mixins.UiButtonBase",
+            "shortname": "mixins.UiButtonBase",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "mixins",
+            "namespace": "mixins",
+            "file": "addon/mixins/ui-button-base.js",
+            "line": 3,
+            "description": "ui-button-base mixinx"
+        },
+        "mixins.UiCheckboxBase": {
+            "name": "mixins.UiCheckboxBase",
+            "shortname": "mixins.UiCheckboxBase",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "mixins",
+            "namespace": "mixins",
+            "file": "addon/mixins/ui-checkbox-base.js",
+            "line": 3,
+            "description": "ui-checkbox-base mixinx"
+        },
+        "mixins.UiCheckboxGroupBase": {
+            "name": "mixins.UiCheckboxGroupBase",
+            "shortname": "mixins.UiCheckboxGroupBase",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "mixins",
+            "namespace": "mixins",
+            "file": "addon/mixins/ui-checkbox-group-base.js",
+            "line": 9,
+            "description": "ui-checkbox-base mixinx"
+        },
+        "mixins.UiInputBase": {
+            "name": "mixins.UiInputBase",
+            "shortname": "mixins.UiInputBase",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "mixins",
+            "namespace": "mixins",
+            "file": "addon/mixins/ui-input-base.js",
+            "line": 4,
+            "description": "ui-input-base mixin"
+        },
+        "mixins.UiLabelBase": {
+            "name": "mixins.UiLabelBase",
+            "shortname": "mixins.UiLabelBase",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "mixins",
+            "namespace": "mixins",
+            "file": "addon/mixins/ui-label-base.js",
+            "line": 3,
+            "description": "ui-label-base mixin"
+        },
+        "mixins.uiSegmentBase": {
+            "name": "mixins.uiSegmentBase",
+            "shortname": "mixins.uiSegmentBase",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "mixins",
+            "namespace": "mixins",
+            "file": "addon/mixins/ui-segment-base.js",
+            "line": 3,
+            "description": "ui-segment-base mixin"
+        },
+        "mixins.UiSelectBase": {
+            "name": "mixins.UiSelectBase",
+            "shortname": "mixins.UiSelectBase",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "mixins",
+            "namespace": "mixins",
+            "file": "addon/mixins/ui-select-base.js",
+            "line": 7,
+            "description": "ui-select-base mixin"
+        },
+        "utils.EmberUploader": {
+            "name": "utils.EmberUploader",
+            "shortname": "utils.EmberUploader",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "utils",
+            "namespace": "utils",
+            "file": "addon/utils/ember-uploader.js",
+            "line": 15,
+            "description": "EmberUploader class"
+        },
+        "utils.FileObject": {
+            "name": "utils.FileObject",
+            "shortname": "utils.FileObject",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "utils",
+            "namespace": "utils",
+            "file": "addon/utils/file-object.js",
+            "line": 3,
+            "description": "FileObject class"
+        }
+    },
+    "elements": {},
+    "classitems": [
+        {
+            "file": "addon/components/ui-checkbox-group.js",
+            "line": 16,
+            "description": "value is checked or not",
+            "itemtype": "method",
+            "name": "isOptionChecked",
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "components.UiCheckboxGroup",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-date-input.js",
+            "line": 25,
+            "description": "display language, by default is zh_CN",
+            "itemtype": "property",
+            "name": "lang",
+            "type": "String",
+            "default": "'zh_CN'",
+            "class": "components.UiDateInput",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-date-input.js",
+            "line": 33,
+            "description": "class apply to this component",
+            "itemtype": "property",
+            "name": "class",
+            "type": "String",
+            "default": "'ui input'",
+            "class": "components.UiDateInput",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-date-input.js",
+            "line": 57,
+            "description": "pikaday position 'bottom right', 'bottom left', 'top left', 'top right'",
+            "itemtype": "property",
+            "name": "position",
+            "type": "String",
+            "default": "'bottom left'",
+            "class": "components.UiDateInput",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-date-input.js",
+            "line": 63,
+            "description": "moment format",
+            "itemtype": "property",
+            "name": "format",
+            "type": "String",
+            "default": "'YYYY-MM-DD'",
+            "class": "components.UiDateInput",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-date-time-input.js",
+            "line": 30,
+            "description": "datetime value",
+            "itemtype": "property",
+            "name": "value",
+            "type": "String",
+            "default": "null",
+            "class": "components.UiDateTimeInput",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-date-time-input.js",
+            "line": 37,
+            "description": "class apply to this component",
+            "itemtype": "property",
+            "name": "class",
+            "type": "String",
+            "default": "''",
+            "class": "components.UiDateTimeInput",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-dropdown-menu.js",
+            "line": 14,
+            "description": "the component style class",
+            "itemtype": "property",
+            "name": "theme",
+            "type": "String",
+            "default": "''",
+            "class": "components.UiDropdownMenu",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-dropdown-menu.js",
+            "line": 21,
+            "description": "the component style class",
+            "itemtype": "property",
+            "name": "class",
+            "type": "String",
+            "class": "components.UiDropdownMenu",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-form.js",
+            "line": 14,
+            "description": "The root component element",
+            "itemtype": "property",
+            "name": "tagName",
+            "type": "String",
+            "default": "\"div\"",
+            "class": "components.UiForm",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-form.js",
+            "line": 22,
+            "description": "the form theme",
+            "itemtype": "property",
+            "name": "theme",
+            "type": "String",
+            "class": "components.UiForm",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-form.js",
+            "line": 29,
+            "description": "the form loading status",
+            "itemtype": "property",
+            "name": "loading",
+            "type": "Boolean",
+            "class": "components.UiForm",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-form.js",
+            "line": 36,
+            "description": "the form error status",
+            "itemtype": "property",
+            "name": "error",
+            "type": "Boolean",
+            "class": "components.UiForm",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-form.js",
+            "line": 43,
+            "description": "the form success status",
+            "itemtype": "property",
+            "name": "error",
+            "type": "Boolean",
+            "class": "components.UiForm",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-form.js",
+            "line": 50,
+            "description": "the form warning status",
+            "itemtype": "property",
+            "name": "warning",
+            "type": "Boolean",
+            "class": "components.UiForm",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-form.js",
+            "line": 57,
+            "description": "Class names to apply to the button",
+            "itemtype": "property",
+            "name": "classNames",
+            "type": "Array",
+            "class": "components.UiForm",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-grid.js",
+            "line": 17,
+            "description": "Class name to apply to the button",
+            "itemtype": "property",
+            "name": "class",
+            "type": "String",
+            "class": "components.UiGrid",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-input-tags.js",
+            "line": 22,
+            "description": "Class name to apply to the button",
+            "itemtype": "property",
+            "name": "theme",
+            "type": "String",
+            "class": "components.UiInputTags",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-input-tags.js",
+            "line": 28,
+            "description": "Class name to apply to the button",
+            "itemtype": "property",
+            "name": "class",
+            "type": "String",
+            "class": "components.UiInputTags",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-left-labeled-button.js",
+            "line": 18,
+            "description": "Attribute bindings for containing div",
+            "itemtype": "property",
+            "name": "attributeBindings",
+            "type": "Ember.Array",
+            "class": "components.UiLeftLabeledButton",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-message.js",
+            "line": 20,
+            "description": "The message to show",
+            "itemtype": "property",
+            "name": "message",
+            "type": "String",
+            "default": "null",
+            "class": "components.UiMessage",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-message.js",
+            "line": 27,
+            "description": "The messages to show",
+            "itemtype": "property",
+            "name": "message",
+            "type": "Array",
+            "default": "null",
+            "class": "components.UiMessage",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-message.js",
+            "line": 34,
+            "description": "allow to close messsage, by default false",
+            "itemtype": "property",
+            "name": "close",
+            "type": "Boolean",
+            "default": "false",
+            "class": "components.UiMessage",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-message.js",
+            "line": 42,
+            "description": "Class name to apply to the message",
+            "itemtype": "property",
+            "name": "theme",
+            "type": "String",
+            "class": "components.UiMessage",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-message.js",
+            "line": 49,
+            "description": "Class name to apply to the message",
+            "itemtype": "property",
+            "name": "class",
+            "type": "String",
+            "class": "components.UiMessage",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-message.js",
+            "line": 55,
+            "description": "timeout to close message, by default 0",
+            "itemtype": "property",
+            "name": "timeout",
+            "type": "Number",
+            "default": "false",
+            "class": "components.UiMessage",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-message.js",
+            "line": 94,
+            "description": "close message event",
+            "itemtype": "event",
+            "name": "closeMessage",
+            "class": "components.UiMessage",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-modal-content.js",
+            "line": 16,
+            "description": "Class name to apply to the modal-content",
+            "itemtype": "property",
+            "name": "theme",
+            "type": "String",
+            "class": "components.UiModalContent",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-modal-content.js",
+            "line": 22,
+            "description": "Class name to apply to modal-content",
+            "itemtype": "property",
+            "name": "class",
+            "type": "String",
+            "class": "components.UiModalContent",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-modal.js",
+            "line": 17,
+            "description": "when modal show, this action will be triggered",
+            "itemtype": "event",
+            "name": "onShow",
+            "class": "components.UiModal",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-modal.js",
+            "line": 28,
+            "description": "when modal hide, this action will be triggered",
+            "itemtype": "event",
+            "name": "onShow",
+            "class": "components.UiModal",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-modal.js",
+            "line": 42,
+            "description": "modal status",
+            "itemtype": "property",
+            "name": "show",
+            "type": "Boolean",
+            "default": "false",
+            "class": "components.UiModal",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-modal.js",
+            "line": 49,
+            "description": "Setting to false will not allow you to close the modal by clicking on the dimmer",
+            "itemtype": "property",
+            "name": "closable",
+            "type": "Boolean",
+            "default": "true",
+            "class": "components.UiModal",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-modal.js",
+            "line": 56,
+            "description": "transition",
+            "itemtype": "property",
+            "name": "transition",
+            "type": "String",
+            "default": "'scale'",
+            "class": "components.UiModal",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-modal.js",
+            "line": 67,
+            "description": "Class names to apply to the modal",
+            "itemtype": "property",
+            "name": "class",
+            "type": "String",
+            "class": "components.UiModal",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-modal.js",
+            "line": 73,
+            "description": "Class names to apply to the modal",
+            "itemtype": "property",
+            "name": "theme",
+            "type": "String",
+            "class": "components.UiModal",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-modal.js",
+            "line": 79,
+            "itemtype": "method",
+            "name": "showModal",
+            "observes": "\"show\" property",
+            "return": {
+                "description": "",
+                "type": "Void"
+            },
+            "class": "components.UiModal",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-multi-select.js",
+            "line": 20,
+            "description": "defaultValue  for the component",
+            "itemtype": "property",
+            "name": "defaultValue",
+            "type": "Array",
+            "class": "components.UiMultiSelect",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-pointing-label.js",
+            "line": 19,
+            "description": "pointing direction: below, left, right",
+            "itemtype": "property",
+            "name": "direction",
+            "type": "String",
+            "class": "components.UiPointingLabel",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-popup-content.js",
+            "line": 21,
+            "description": "target which pop this component",
+            "itemtype": "property",
+            "name": "target",
+            "type": "Function",
+            "class": "components.UiPopupContent",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-popup.js",
+            "line": 29,
+            "description": "If a selector or jQuery object is specified this allows the popup to be positioned relative to that element.",
+            "itemtype": "property",
+            "name": "target",
+            "type": "String",
+            "default": "\"\"",
+            "class": "components.UiPopup",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-popup.js",
+            "line": 36,
+            "description": "the pop content",
+            "itemtype": "property",
+            "name": "content",
+            "type": "String",
+            "class": "components.UiPopup",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-popup.js",
+            "line": 41,
+            "description": "the pop html content",
+            "itemtype": "property",
+            "name": "html",
+            "type": "String",
+            "class": "components.UiPopup",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-popup.js",
+            "line": 46,
+            "description": "the pop title",
+            "itemtype": "property",
+            "name": "title",
+            "type": "String",
+            "class": "components.UiPopup",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-popup.js",
+            "line": 52,
+            "description": "Event used to trigger popup: focus, click, hover, or manual, by default hover",
+            "itemtype": "property",
+            "name": "event",
+            "type": "String",
+            "default": "\"hover\"",
+            "class": "components.UiPopup",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-popup.js",
+            "line": 62,
+            "description": "Whether popup should not close on hover (useful for popup navigation menus), by default false",
+            "itemtype": "property",
+            "name": "hoverable",
+            "type": "Boolean",
+            "default": "false",
+            "class": "components.UiPopup",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-popup.js",
+            "line": 69,
+            "description": "When using on: 'click' specifies whether clicking the page should close the popup, by default true",
+            "itemtype": "property",
+            "name": "closable",
+            "type": "Boolean",
+            "default": "true",
+            "class": "components.UiPopup",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-popup.js",
+            "line": 76,
+            "description": "Duration of animation events, by default 200",
+            "itemtype": "property",
+            "name": "duration",
+            "type": "Number",
+            "default": "200",
+            "class": "components.UiPopup",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-progress.js",
+            "line": 22,
+            "description": "progress theme, indicating",
+            "itemtype": "property",
+            "name": "theme",
+            "type": "String",
+            "default": "''",
+            "class": "components.UiProgress",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-progress.js",
+            "line": 30,
+            "description": "progress theme",
+            "itemtype": "property",
+            "name": "class",
+            "type": "String",
+            "default": "''",
+            "class": "components.UiProgress",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-progress.js",
+            "line": 38,
+            "description": "progress loading status, by default false",
+            "itemtype": "property",
+            "name": "loading",
+            "type": "Boolean",
+            "default": "false",
+            "class": "components.UiProgress",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-progress.js",
+            "line": 46,
+            "description": "progress success status, by default false",
+            "itemtype": "property",
+            "name": "success",
+            "type": "Boolean",
+            "default": "false",
+            "class": "components.UiProgress",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-progress.js",
+            "line": 54,
+            "description": "progress error status, by default false",
+            "itemtype": "property",
+            "name": "error",
+            "type": "Boolean",
+            "default": "false",
+            "class": "components.UiProgress",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-progress.js",
+            "line": 61,
+            "description": "progress percent",
+            "itemtype": "property",
+            "name": "percent",
+            "type": "Number",
+            "default": "0",
+            "class": "components.UiProgress",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-select.js",
+            "line": 33,
+            "description": "value  for the select",
+            "itemtype": "property",
+            "name": "value",
+            "type": "String",
+            "class": "components.UiSelect",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-select.js",
+            "line": 39,
+            "description": "label for the select radio group component",
+            "itemtype": "property",
+            "name": "label",
+            "type": "String",
+            "class": "components.UiSelect",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-select.js",
+            "line": 46,
+            "description": "name key for option, by default name",
+            "itemtype": "property",
+            "name": "namePath",
+            "type": "String",
+            "default": "'value'",
+            "class": "components.UiSelect",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-select.js",
+            "line": 54,
+            "description": "value key for option, by default value",
+            "itemtype": "property",
+            "name": "valuePath",
+            "type": "String",
+            "default": "'value'",
+            "class": "components.UiSelect",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-select.js",
+            "line": 61,
+            "description": "placeholder for blank option",
+            "itemtype": "property",
+            "name": "placeholder",
+            "type": "String",
+            "class": "components.UiSelect",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-select.js",
+            "line": 68,
+            "description": "the select theme",
+            "itemtype": "property",
+            "name": "theme",
+            "type": "String",
+            "class": "components.UiSelect",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-select.js",
+            "line": 75,
+            "description": "the select theme",
+            "itemtype": "property",
+            "name": "class",
+            "type": "String",
+            "class": "components.UiSelect",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-select.js",
+            "line": 82,
+            "description": "options for the select component",
+            "itemtype": "property",
+            "name": "options",
+            "type": "Array",
+            "class": "components.UiSelect",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-select.js",
+            "line": 89,
+            "description": "options for the select component",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "_options",
+            "type": "Array",
+            "class": "components.UiSelect",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-select.js",
+            "line": 116,
+            "description": "allow select to search or not , by default false",
+            "itemtype": "property",
+            "name": "search",
+            "type": "Boolean",
+            "default": "false",
+            "class": "components.UiSelect",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-select.js",
+            "line": 123,
+            "itemtype": "method",
+            "name": "setupOptions",
+            "observes": "\"options\" property",
+            "return": {
+                "description": "",
+                "type": "Void"
+            },
+            "class": "components.UiSelect",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-tab-menu.js",
+            "line": 38,
+            "description": "the active tab name",
+            "itemtype": "property",
+            "name": "active",
+            "type": "String",
+            "class": "components.UiTabMenu",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-tab-segment.js",
+            "line": 20,
+            "description": "tab name",
+            "itemtype": "property",
+            "name": "tab",
+            "type": "String",
+            "class": "components.UiTabSegment",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-uploader.js",
+            "line": 25,
+            "description": "file request ajax setting traditional, by default true",
+            "itemtype": "property",
+            "name": "traditional",
+            "type": "Boolean",
+            "class": "components.UiUploader",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-uploader.js",
+            "line": 32,
+            "description": "activate upload action",
+            "itemtype": "event",
+            "name": "start",
+            "params": [
+                {
+                    "name": "obj",
+                    "description": "fileInput instance see {{#crossLink \" fileInput\"}}{{/crossLink}}",
+                    "type": "Object"
+                }
+            ],
+            "class": "components.UiUploader",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-uploader.js",
+            "line": 63,
+            "description": "deactivate upload action",
+            "itemtype": "event",
+            "name": "abort",
+            "params": [
+                {
+                    "name": "obj",
+                    "description": "fileInput instance see {{#crossLink \" fileInput\"}}{{/crossLink}}",
+                    "type": "Object"
+                }
+            ],
+            "class": "components.UiUploader",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-uploader.js",
+            "line": 82,
+            "description": "delete file from queue",
+            "itemtype": "event",
+            "name": "",
+            "params": [
+                {
+                    "name": "obj",
+                    "description": "fileInput instance see {{#crossLink \" fileInput\"}}{{/crossLink}}",
+                    "type": "Object"
+                }
+            ],
+            "class": "components.UiUploader",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-uploader.js",
+            "line": 92,
+            "description": "The upload url",
+            "itemtype": "property",
+            "name": "url",
+            "type": "String",
+            "default": "\"\"",
+            "class": "components.UiUploader",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-uploader.js",
+            "line": 101,
+            "description": "The root component element",
+            "itemtype": "property",
+            "name": "tagName",
+            "type": "String",
+            "default": "\"div\"",
+            "class": "components.UiUploader",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-uploader.js",
+            "line": 110,
+            "description": "A array contain class names apply to root element",
+            "itemtype": "property",
+            "name": "classNames",
+            "type": "Array",
+            "default": "['ui', 'segment']",
+            "class": "components.UiUploader",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-uploader.js",
+            "line": 119,
+            "description": "To allow  file autoUpload",
+            "itemtype": "property",
+            "name": "autoUpload",
+            "type": "boolean",
+            "default": "true",
+            "class": "components.UiUploader",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-uploader.js",
+            "line": 128,
+            "description": "upload file queue",
+            "itemtype": "property",
+            "name": "queue",
+            "type": "Array",
+            "default": "[]",
+            "class": "components.UiUploader",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-uploader.js",
+            "line": 137,
+            "description": "upload multiple file",
+            "itemtype": "property",
+            "name": "multiple",
+            "type": "boolean",
+            "default": "false",
+            "class": "components.UiUploader",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-uploader.js",
+            "line": 146,
+            "description": "extra params",
+            "itemtype": "property",
+            "name": "params",
+            "type": "params",
+            "default": "null",
+            "class": "components.UiUploader",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-uploader.js",
+            "line": 155,
+            "description": "file accept",
+            "itemtype": "property",
+            "name": "accept",
+            "type": "String",
+            "default": "null",
+            "class": "components.UiUploader",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-uploader.js",
+            "line": 164,
+            "itemtype": "method",
+            "name": "didInsertElement",
+            "observes": "\"didInsertElement\" event",
+            "return": {
+                "description": "",
+                "type": "Void"
+            },
+            "class": "components.UiUploader",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-uploader.js",
+            "line": 190,
+            "itemtype": "method",
+            "name": "willDestroy empty queue",
+            "return": {
+                "description": "null"
+            },
+            "class": "components.UiUploader",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-uploader.js",
+            "line": 200,
+            "itemtype": "method",
+            "name": "willDestroy empty queue",
+            "return": {
+                "description": "null"
+            },
+            "class": "components.UiUploader",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-uploader.js",
+            "line": 211,
+            "itemtype": "method",
+            "name": "inputStyle",
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "components.UiUploader",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/components/ui-uploader.js",
+            "line": 229,
+            "itemtype": "method",
+            "name": "labelStyle",
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "components.UiUploader",
+            "module": "components",
+            "namespace": "components"
+        },
+        {
+            "file": "addon/mixins/file-input-base.js",
+            "line": 21,
+            "description": "file request ajax setting traditional, by default true",
+            "itemtype": "property",
+            "name": "traditional",
+            "type": "Boolean",
+            "class": "mixins.FileInputBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/file-input-base.js",
+            "line": 27,
+            "description": "file object instance see {{#crossLink \" file-object\"}}{{/crossLink}}",
+            "itemtype": "property",
+            "name": "fileObject",
+            "type": "Object",
+            "class": "mixins.FileInputBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/file-input-base.js",
+            "line": 33,
+            "description": "style",
+            "itemtype": "property",
+            "name": "style",
+            "type": "String",
+            "class": "mixins.FileInputBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/file-input-base.js",
+            "line": 39,
+            "description": "ember uploader instance see {{#crossLink \"utils.EmberUploader\"}}{{/crossLink}}",
+            "itemtype": "property",
+            "name": "uploader",
+            "type": "Object",
+            "class": "mixins.FileInputBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/file-input-base.js",
+            "line": 46,
+            "description": "upload url",
+            "itemtype": "property",
+            "name": "url",
+            "type": "String",
+            "class": "mixins.FileInputBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/file-input-base.js",
+            "line": 53,
+            "description": "upload request method",
+            "itemtype": "property",
+            "name": "method",
+            "type": "String",
+            "default": "'POST'",
+            "class": "mixins.FileInputBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/file-input-base.js",
+            "line": 61,
+            "description": "extra parameters for upload",
+            "itemtype": "property",
+            "name": "extra",
+            "type": "Object",
+            "default": "null",
+            "class": "mixins.FileInputBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/file-input-base.js",
+            "line": 69,
+            "description": "the upload file parameter name",
+            "itemtype": "property",
+            "name": "paramName",
+            "type": "String",
+            "default": "'file'",
+            "class": "mixins.FileInputBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/file-input-base.js",
+            "line": 77,
+            "description": "the upload file is finished",
+            "itemtype": "property",
+            "name": "isUploaded",
+            "type": "Boolean",
+            "default": "false",
+            "class": "mixins.FileInputBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/file-input-base.js",
+            "line": 85,
+            "description": "the upload request status",
+            "itemtype": "property",
+            "name": "isUploading",
+            "type": "Boolean",
+            "default": "false",
+            "class": "mixins.FileInputBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/file-input-base.js",
+            "line": 93,
+            "description": "allow autoUpload",
+            "itemtype": "property",
+            "name": "autoUpload",
+            "type": "Boolean",
+            "default": "true",
+            "class": "mixins.FileInputBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/file-input-base.js",
+            "line": 102,
+            "description": "multiple file or not, by default false",
+            "itemtype": "property",
+            "name": "multiple",
+            "type": "Boolean",
+            "default": "false",
+            "class": "mixins.FileInputBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/file-input-base.js",
+            "line": 132,
+            "description": "start upload action",
+            "itemtype": "event",
+            "name": "start",
+            "class": "mixins.FileInputBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/file-input-base.js",
+            "line": 171,
+            "description": "abort upload action",
+            "itemtype": "event",
+            "name": "abort",
+            "class": "mixins.FileInputBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-button-base.js",
+            "line": 12,
+            "description": "The root component element",
+            "itemtype": "property",
+            "name": "tagName",
+            "type": "{String}",
+            "default": "\"button\"",
+            "class": "mixins.UiButtonBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-button-base.js",
+            "line": 21,
+            "description": "Alert external code about the click",
+            "itemtype": "method",
+            "name": "click",
+            "return": {
+                "description": "",
+                "type": "Void"
+            },
+            "class": "mixins.UiButtonBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-button-base.js",
+            "line": 34,
+            "description": "Class names to apply to the button",
+            "itemtype": "property",
+            "name": "classNames",
+            "type": "{Array}",
+            "class": "mixins.UiButtonBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-button-base.js",
+            "line": 43,
+            "description": "private variable, Class names to apply to the button",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "_theme",
+            "type": "{String}",
+            "class": "mixins.UiButtonBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-button-base.js",
+            "line": 50,
+            "description": "Class name to apply to the button",
+            "itemtype": "property",
+            "name": "theme",
+            "type": "{String}",
+            "class": "mixins.UiButtonBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-button-base.js",
+            "line": 57,
+            "description": "the button loading status",
+            "itemtype": "property",
+            "name": "loading",
+            "type": "{boolean}",
+            "default": "false",
+            "class": "mixins.UiButtonBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-button-base.js",
+            "line": 65,
+            "description": "the button disabled status",
+            "itemtype": "property",
+            "name": "disabled",
+            "type": "{boolean}",
+            "default": "false",
+            "class": "mixins.UiButtonBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-button-base.js",
+            "line": 73,
+            "description": "the button active status",
+            "itemtype": "property",
+            "name": "active",
+            "type": "{boolean}",
+            "default": "false",
+            "class": "mixins.UiButtonBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-checkbox-base.js",
+            "line": 12,
+            "description": "The root component element",
+            "itemtype": "property",
+            "name": "tagName",
+            "type": "Ember.String",
+            "default": "\"input\"",
+            "class": "mixins.UiCheckboxBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-checkbox-base.js",
+            "line": 20,
+            "description": "the checkbox default class",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "_theme",
+            "type": "Ember.String",
+            "class": "mixins.UiCheckboxBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-checkbox-base.js",
+            "line": 26,
+            "description": "the checkbox classes",
+            "itemtype": "property",
+            "name": "theme",
+            "type": "Ember.String",
+            "class": "mixins.UiCheckboxBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-checkbox-base.js",
+            "line": 32,
+            "description": "Class names to apply to the button",
+            "itemtype": "property",
+            "name": "classNames",
+            "type": "Ember.Array",
+            "class": "mixins.UiCheckboxBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-checkbox-base.js",
+            "line": 41,
+            "itemtype": "property",
+            "name": "value",
+            "type": "Ember.String",
+            "class": "mixins.UiCheckboxBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-checkbox-base.js",
+            "line": 48,
+            "description": "checkbox checked",
+            "itemtype": "property",
+            "name": "checked",
+            "type": "Ember.Boolean",
+            "class": "mixins.UiCheckboxBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-checkbox-base.js",
+            "line": 54,
+            "description": "checkbox name",
+            "itemtype": "property",
+            "name": "name",
+            "type": "Ember.String",
+            "class": "mixins.UiCheckboxBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-checkbox-base.js",
+            "line": 61,
+            "itemtype": "method",
+            "name": "initialize",
+            "observes": "\"didInsertElement\" event",
+            "return": {
+                "description": "",
+                "type": "Void"
+            },
+            "class": "mixins.UiCheckboxBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-checkbox-base.js",
+            "line": 98,
+            "itemtype": "method",
+            "name": "setChecked",
+            "observes": "\"checked\"",
+            "return": {
+                "description": "",
+                "type": "Void"
+            },
+            "class": "mixins.UiCheckboxBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-checkbox-group-base.js",
+            "line": 18,
+            "description": "The root component element",
+            "itemtype": "property",
+            "name": "tagName",
+            "type": "Ember.String",
+            "default": "\"div\"",
+            "class": "mixins.UiCheckboxGroupBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-checkbox-group-base.js",
+            "line": 26,
+            "description": "value  for the checkbox radio group component",
+            "itemtype": "property",
+            "name": "value",
+            "type": "Ember.Array",
+            "class": "mixins.UiCheckboxGroupBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-checkbox-group-base.js",
+            "line": 33,
+            "description": "name for the checkbox radio group component",
+            "itemtype": "property",
+            "name": "name",
+            "type": "Ember.String",
+            "class": "mixins.UiCheckboxGroupBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-checkbox-group-base.js",
+            "line": 40,
+            "description": "label for the checkbox radio group component",
+            "itemtype": "property",
+            "name": "label",
+            "type": "Ember.String",
+            "class": "mixins.UiCheckboxGroupBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-checkbox-group-base.js",
+            "line": 47,
+            "description": "label key for option",
+            "itemtype": "property",
+            "name": "labelPath",
+            "type": "Ember.String",
+            "class": "mixins.UiCheckboxGroupBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-checkbox-group-base.js",
+            "line": 54,
+            "description": "value key for option",
+            "itemtype": "property",
+            "name": "valuePath",
+            "type": "Ember.String",
+            "class": "mixins.UiCheckboxGroupBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-checkbox-group-base.js",
+            "line": 61,
+            "description": "Class bindings for the checkbox component",
+            "itemtype": "property",
+            "name": "classNameBindings",
+            "type": "Ember.Array",
+            "class": "mixins.UiCheckboxGroupBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-checkbox-group-base.js",
+            "line": 70,
+            "description": "options for the checkbox component",
+            "itemtype": "property",
+            "name": "options",
+            "type": "Ember.Array",
+            "class": "mixins.UiCheckboxGroupBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-checkbox-group-base.js",
+            "line": 77,
+            "description": "options for the checkbox component",
+            "itemtype": "property",
+            "name": "options",
+            "type": "Ember.Array",
+            "class": "mixins.UiCheckboxGroupBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-checkbox-group-base.js",
+            "line": 92,
+            "itemtype": "method",
+            "name": "initOptions connect options and _options step one",
+            "observes": "\"didInsertElement\" event",
+            "return": {
+                "description": "",
+                "type": "Void"
+            },
+            "class": "mixins.UiCheckboxGroupBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-input-base.js",
+            "line": 15,
+            "description": "the input type",
+            "itemtype": "property",
+            "name": "type",
+            "type": "String",
+            "default": "text",
+            "class": "mixins.UiInputBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-input-base.js",
+            "line": 23,
+            "description": "the input value",
+            "itemtype": "property",
+            "name": "value",
+            "type": "String",
+            "class": "mixins.UiInputBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-input-base.js",
+            "line": 30,
+            "description": "the input placeholder",
+            "itemtype": "property",
+            "name": "placeholder",
+            "type": "String",
+            "class": "mixins.UiInputBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-input-base.js",
+            "line": 37,
+            "description": "the label",
+            "itemtype": "property",
+            "name": "label",
+            "type": "String",
+            "class": "mixins.UiInputBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-input-base.js",
+            "line": 44,
+            "description": "the input",
+            "itemtype": "property",
+            "name": "theme",
+            "type": "String",
+            "class": "mixins.UiInputBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-input-base.js",
+            "line": 51,
+            "description": "the input focus status",
+            "itemtype": "property",
+            "name": "focus",
+            "type": "Boolean",
+            "default": "false",
+            "class": "mixins.UiInputBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-input-base.js",
+            "line": 59,
+            "description": "the input loading status",
+            "itemtype": "property",
+            "name": "loading",
+            "type": "Boolean",
+            "default": "false",
+            "class": "mixins.UiInputBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-input-base.js",
+            "line": 67,
+            "description": "the input error status",
+            "itemtype": "property",
+            "name": "error",
+            "type": "Boolean",
+            "default": "false",
+            "class": "mixins.UiInputBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-input-base.js",
+            "line": 75,
+            "description": "the input error status",
+            "itemtype": "property",
+            "name": "error",
+            "type": "Boolean",
+            "default": "false",
+            "class": "mixins.UiInputBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-input-base.js",
+            "line": 83,
+            "description": "the input readonly status",
+            "itemtype": "property",
+            "name": "readonly",
+            "type": "Boolean",
+            "default": "false",
+            "class": "mixins.UiInputBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-label-base.js",
+            "line": 17,
+            "description": "label class",
+            "itemtype": "property",
+            "name": "class",
+            "type": "String",
+            "default": "''",
+            "class": "mixins.UiLabelBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-label-base.js",
+            "line": 24,
+            "description": "lable theme",
+            "itemtype": "property",
+            "name": "theme",
+            "type": "String",
+            "default": "''",
+            "class": "mixins.UiLabelBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-select-base.js",
+            "line": 18,
+            "description": "value  for the select",
+            "itemtype": "property",
+            "name": "value",
+            "type": "String",
+            "class": "mixins.UiSelectBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-select-base.js",
+            "line": 24,
+            "description": "label for the select radio group component",
+            "itemtype": "property",
+            "name": "label",
+            "type": "String",
+            "class": "mixins.UiSelectBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-select-base.js",
+            "line": 31,
+            "description": "name key for option, by default name",
+            "itemtype": "property",
+            "name": "namePath",
+            "type": "String",
+            "default": "'value'",
+            "class": "mixins.UiSelectBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-select-base.js",
+            "line": 39,
+            "description": "value key for option, by default value",
+            "itemtype": "property",
+            "name": "valuePath",
+            "type": "String",
+            "default": "'value'",
+            "class": "mixins.UiSelectBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-select-base.js",
+            "line": 46,
+            "description": "placeholder for blank option",
+            "itemtype": "property",
+            "name": "placeholder",
+            "type": "String",
+            "class": "mixins.UiSelectBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-select-base.js",
+            "line": 53,
+            "description": "the select theme",
+            "itemtype": "property",
+            "name": "theme",
+            "type": "String",
+            "class": "mixins.UiSelectBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-select-base.js",
+            "line": 60,
+            "description": "the select theme",
+            "itemtype": "property",
+            "name": "class",
+            "type": "String",
+            "class": "mixins.UiSelectBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-select-base.js",
+            "line": 67,
+            "description": "options for the select component",
+            "itemtype": "property",
+            "name": "options",
+            "type": "Array",
+            "class": "mixins.UiSelectBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-select-base.js",
+            "line": 74,
+            "description": "options for the select component",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "_options",
+            "type": "Array",
+            "class": "mixins.UiSelectBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-select-base.js",
+            "line": 86,
+            "description": "allow select to search or not , by default false",
+            "itemtype": "property",
+            "name": "search",
+            "type": "Boolean",
+            "default": "false",
+            "class": "mixins.UiSelectBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-select-base.js",
+            "line": 94,
+            "description": "inner value state just for outer value change",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "_value",
+            "type": "String",
+            "class": "mixins.UiSelectBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-select-base.js",
+            "line": 102,
+            "description": "selected items to",
+            "itemtype": "property",
+            "name": "_selectedOptions",
+            "type": "String",
+            "class": "mixins.UiSelectBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/mixins/ui-select-base.js",
+            "line": 112,
+            "itemtype": "method",
+            "name": "setupOptions",
+            "observes": "\"options\" property",
+            "return": {
+                "description": "",
+                "type": "Void"
+            },
+            "class": "mixins.UiSelectBase",
+            "module": "mixins",
+            "namespace": "mixins"
+        },
+        {
+            "file": "addon/utils/ember-uploader.js",
+            "line": 24,
+            "description": "upload url",
+            "itemtype": "property",
+            "name": "url",
+            "type": "String",
+            "class": "utils.EmberUploader",
+            "module": "utils",
+            "namespace": "utils"
+        },
+        {
+            "file": "addon/utils/ember-uploader.js",
+            "line": 32,
+            "description": "upload file parameter name",
+            "itemtype": "property",
+            "name": "paramName",
+            "type": "String",
+            "default": "'file'",
+            "class": "utils.EmberUploader",
+            "module": "utils",
+            "namespace": "utils"
+        },
+        {
+            "file": "addon/utils/ember-uploader.js",
+            "line": 39,
+            "description": "ajax request settings traditional, by default false",
+            "itemtype": "property",
+            "name": "traditional",
+            "type": "Boolean",
+            "default": "true",
+            "class": "utils.EmberUploader",
+            "module": "utils",
+            "namespace": "utils"
+        },
+        {
+            "file": "addon/utils/ember-uploader.js",
+            "line": 47,
+            "description": "ajax request status",
+            "itemtype": "property",
+            "name": "isUploading",
+            "type": "Boolean",
+            "default": "false",
+            "class": "utils.EmberUploader",
+            "module": "utils",
+            "namespace": "utils"
+        },
+        {
+            "file": "addon/utils/ember-uploader.js",
+            "line": 55,
+            "description": "ajax request type (method), by default it will be POST",
+            "itemtype": "property",
+            "name": "type",
+            "type": "String",
+            "default": "'POST'",
+            "class": "utils.EmberUploader",
+            "module": "utils",
+            "namespace": "utils"
+        },
+        {
+            "file": "addon/utils/ember-uploader.js",
+            "line": 63,
+            "description": "Start upload of files and extra data",
+            "params": [
+                {
+                    "name": "files",
+                    "description": "One file object or one array of files object",
+                    "type": "Object|array"
+                },
+                {
+                    "name": "extra",
+                    "description": "",
+                    "type": "Array"
+                }
+            ],
+            "return": {
+                "description": "jquery promise from ajax object",
+                "type": "Object"
+            },
+            "class": "utils.EmberUploader",
+            "module": "utils",
+            "namespace": "utils"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "unknown tag: observes",
+            "line": " addon/components/ui-modal.js:79"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " addon/components/ui-modal.js:79"
+        },
+        {
+            "message": "unknown tag: observes",
+            "line": " addon/components/ui-select.js:123"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " addon/components/ui-select.js:123"
+        },
+        {
+            "message": "unknown tag: observes",
+            "line": " addon/components/ui-uploader.js:164"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " addon/components/ui-uploader.js:164"
+        },
+        {
+            "message": "replacing incorrect tag: function with method",
+            "line": " addon/components/ui-uploader.js:190"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " addon/components/ui-uploader.js:190"
+        },
+        {
+            "message": "replacing incorrect tag: function with method",
+            "line": " addon/components/ui-uploader.js:200"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " addon/components/ui-uploader.js:200"
+        },
+        {
+            "message": "replacing incorrect tag: function with method",
+            "line": " addon/components/ui-uploader.js:211"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " addon/components/ui-uploader.js:211"
+        },
+        {
+            "message": "replacing incorrect tag: function with method",
+            "line": " addon/components/ui-uploader.js:229"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " addon/components/ui-uploader.js:229"
+        },
+        {
+            "message": "replacing incorrect tag: function with method",
+            "line": " addon/mixins/ui-checkbox-base.js:61"
+        },
+        {
+            "message": "unknown tag: observes",
+            "line": " addon/mixins/ui-checkbox-base.js:61"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " addon/mixins/ui-checkbox-base.js:61"
+        },
+        {
+            "message": "replacing incorrect tag: function with method",
+            "line": " addon/mixins/ui-checkbox-base.js:98"
+        },
+        {
+            "message": "unknown tag: observes",
+            "line": " addon/mixins/ui-checkbox-base.js:98"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " addon/mixins/ui-checkbox-base.js:98"
+        },
+        {
+            "message": "replacing incorrect tag: function with method",
+            "line": " addon/mixins/ui-checkbox-group-base.js:92"
+        },
+        {
+            "message": "unknown tag: observes",
+            "line": " addon/mixins/ui-checkbox-group-base.js:92"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " addon/mixins/ui-checkbox-group-base.js:92"
+        },
+        {
+            "message": "unknown tag: observes",
+            "line": " addon/mixins/ui-select-base.js:112"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " addon/mixins/ui-select-base.js:112"
+        },
+        {
+            "message": "Missing item type\nStart upload of files and extra data",
+            "line": " addon/utils/ember-uploader.js:63"
+        }
+    ]
+}

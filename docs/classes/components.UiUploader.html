@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>components.UiUploader - ember-semantic-ui</title>
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <script src="http://yui.yahooapis.com/combo?3.8.0pr2/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div class="yui3-g">
+        <div id="sidebar" class="yui3-u">
+            <div class="logo">
+              <a href="../index.html">
+                  ember-semantic-ui
+              </a>
+            </div>
+            
+            <div id="modules" class="sidebox">
+                <div class="hd">
+                    <h2 class="no-toc">Modules</h2>
+                </div>
+                <div class="bd">
+                    <ul>
+                            <li><a href="../modules/components.html">components</a>
+                            </li>
+                            <li><a href="../modules/mixins.html">mixins</a>
+                            </li>
+                            <li><a href="../modules/utils.html">utils</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="classes" class="sidebox">
+                <div class="hd">
+                    <h2 class="no-toc">Classes</h2>
+                </div>
+                <div class="bd">
+                    <ul>
+                            <li><a href="../classes/components.FileInput.html">components.FileInput</a></li>
+                            <li><a href="../classes/components.UiAnimatedButton.html">components.UiAnimatedButton</a></li>
+                            <li><a href="../classes/components.UiButton.html">components.UiButton</a></li>
+                            <li><a href="../classes/components.UiCheckbox.html">components.UiCheckbox</a></li>
+                            <li><a href="../classes/components.UiCheckboxGroup.html">components.UiCheckboxGroup</a></li>
+                            <li><a href="../classes/components.UiContainer.html">components.UiContainer</a></li>
+                            <li><a href="../classes/components.UiDateInput.html">components.UiDateInput</a></li>
+                            <li><a href="../classes/components.UiDateTimeInput.html">components.UiDateTimeInput</a></li>
+                            <li><a href="../classes/components.UiDropdownMenu.html">components.UiDropdownMenu</a></li>
+                            <li><a href="../classes/components.UiForm.html">components.UiForm</a></li>
+                            <li><a href="../classes/components.UiFormInput.html">components.UiFormInput</a></li>
+                            <li><a href="../classes/components.UiGrid.html">components.UiGrid</a></li>
+                            <li><a href="../classes/components.UiInput.html">components.UiInput</a></li>
+                            <li><a href="../classes/components.UiInputTags.html">components.UiInputTags</a></li>
+                            <li><a href="../classes/components.UiLabel.html">components.UiLabel</a></li>
+                            <li><a href="../classes/components.UiLabeledButton.html">components.UiLabeledButton</a></li>
+                            <li><a href="../classes/components.UiLeftLabeledButton.html">components.UiLeftLabeledButton</a></li>
+                            <li><a href="../classes/components.UiMenu.html">components.UiMenu</a></li>
+                            <li><a href="../classes/components.UiMessage.html">components.UiMessage</a></li>
+                            <li><a href="../classes/components.UiModal.html">components.UiModal</a></li>
+                            <li><a href="../classes/components.UiModalContent.html">components.UiModalContent</a></li>
+                            <li><a href="../classes/components.UiModalFoot.html">components.UiModalFoot</a></li>
+                            <li><a href="../classes/components.UiModalTitle.html">components.UiModalTitle</a></li>
+                            <li><a href="../classes/components.UiMultiSelect.html">components.UiMultiSelect</a></li>
+                            <li><a href="../classes/components.UiPointingLabel.html">components.UiPointingLabel</a></li>
+                            <li><a href="../classes/components.UiPopup.html">components.UiPopup</a></li>
+                            <li><a href="../classes/components.UiPopupContent.html">components.UiPopupContent</a></li>
+                            <li><a href="../classes/components.UiProgress.html">components.UiProgress</a></li>
+                            <li><a href="../classes/components.UiRadio.html">components.UiRadio</a></li>
+                            <li><a href="../classes/components.UiRadioGroup.html">components.UiRadioGroup</a></li>
+                            <li><a href="../classes/components.UiRow.html">components.UiRow</a></li>
+                            <li><a href="../classes/components.UiSegment.html">components.UiSegment</a></li>
+                            <li><a href="../classes/components.UiSelect.html">components.UiSelect</a></li>
+                            <li><a href="../classes/components.UiTabMenu.html">components.UiTabMenu</a></li>
+                            <li><a href="../classes/components.UiTabSegment.html">components.UiTabSegment</a></li>
+                            <li><a href="../classes/components.UiTextContainer.html">components.UiTextContainer</a></li>
+                            <li><a href="../classes/components.UiUploader.html">components.UiUploader</a></li>
+                            <li><a href="../classes/components.UiVerticalMenu.html">components.UiVerticalMenu</a></li>
+                            <li><a href="../classes/mixins.FileInputBase.html">mixins.FileInputBase</a></li>
+                            <li><a href="../classes/mixins.UiButtonBase.html">mixins.UiButtonBase</a></li>
+                            <li><a href="../classes/mixins.UiCheckboxBase.html">mixins.UiCheckboxBase</a></li>
+                            <li><a href="../classes/mixins.UiCheckboxGroupBase.html">mixins.UiCheckboxGroupBase</a></li>
+                            <li><a href="../classes/mixins.UiInputBase.html">mixins.UiInputBase</a></li>
+                            <li><a href="../classes/mixins.UiLabelBase.html">mixins.UiLabelBase</a></li>
+                            <li><a href="../classes/mixins.uiSegmentBase.html">mixins.uiSegmentBase</a></li>
+                            <li><a href="../classes/mixins.UiSelectBase.html">mixins.UiSelectBase</a></li>
+                            <li><a href="../classes/utils.EmberUploader.html">utils.EmberUploader</a></li>
+                            <li><a href="../classes/utils.FileObject.html">utils.FileObject</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            
+            <div id="sections" class="sidebox">
+              <div class="hd">
+                <h2 class="no-toc">components.UiUploader</h2>
+              </div>
+              <div class="bd">
+            
+            
+            
+                  <div><a href="#property-summary">Property Summary</a></div>
+            
+                  <div><a href="#method-summary">Method Summary</a></div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                  <div><a href="#public-properties">Public Properties</a></div>
+                  <ul>
+                      <li><a href="#props_accept">accept</a></li>
+                      <li><a href="#props_autoUpload">autoUpload</a></li>
+                      <li><a href="#props_classNames">classNames</a></li>
+                      <li><a href="#props_multiple">multiple</a></li>
+                      <li><a href="#props_params">params</a></li>
+                      <li><a href="#props_queue">queue</a></li>
+                      <li><a href="#props_tagName">tagName</a></li>
+                      <li><a href="#props_traditional">traditional</a></li>
+                      <li><a href="#props_url">url</a></li>
+                  </ul>
+            
+            
+            
+                  <div><a href="#public-methods">Public Methods</a></div>
+                  <ul>
+                      <li><a href="#method_didInsertElement">didInsertElement</a></li>
+                      <li><a href="#method_inputStyle">inputStyle</a></li>
+                      <li><a href="#method_labelStyle">labelStyle</a></li>
+                      <li><a href="#method_willDestroy empty queue">willDestroy empty queue</a></li>
+                      <li><a href="#method_willDestroy empty queue">willDestroy empty queue</a></li>
+                  </ul>
+            
+            
+              </div>
+            </div>
+            
+            <div id="events-on-page" class="sidebox on-page">
+                <div class="hd">
+                    <h2 class="no-toc">Events On Page</h2>
+                </div>
+                <div class="bd">
+                    <ul>
+                            <li><a href="#events_abort">abort</a></li>
+                            <li><a href="#events_start">start</a></li>
+                            <li><a href="#events_"></a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            
+            <div class="version-info">
+              Version: 0.2.5
+            </div>
+            
+        </div>
+
+        <div id="main" class="yui3-u">
+            <div class="content"><div class="title">
+    <span class="source-link"><a href="../files/addon_components_ui-uploader.js.html#l15"><code>addon&#x2F;components&#x2F;ui-uploader.js:15</code></a></span>
+    <h1 class="class-name">components.UiUploader</h1>
+</div>
+
+
+
+
+<div class="class-description"><p>ui-uploader component</p>
+</div>
+
+
+
+
+
+
+
+  <h2 id="property-summary">Property Summary</h2>
+
+    <table class="summary">
+      <thead>
+      <tr>
+        <th colspan="2">Public Properties</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            public
+            
+            
+          </td>
+          <td>
+            <div class="property-name ">
+              <a href="#props_accept">accept</a>: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a>
+            </div>
+            <div class="short-description">
+              <p>file accept</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            public
+            
+            
+          </td>
+          <td>
+            <div class="property-name ">
+              <a href="#props_autoUpload">autoUpload</a>: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a>
+            </div>
+            <div class="short-description">
+              <p>To allow  file autoUpload</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            public
+            
+            
+          </td>
+          <td>
+            <div class="property-name ">
+              <a href="#props_classNames">classNames</a>: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a>
+            </div>
+            <div class="short-description">
+              <p>A array contain class names apply to root element</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            public
+            
+            
+          </td>
+          <td>
+            <div class="property-name ">
+              <a href="#props_multiple">multiple</a>: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a>
+            </div>
+            <div class="short-description">
+              <p>upload multiple file</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            public
+            
+            
+          </td>
+          <td>
+            <div class="property-name ">
+              <a href="#props_params">params</a>: Params
+            </div>
+            <div class="short-description">
+              <p>extra params</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            public
+            
+            
+          </td>
+          <td>
+            <div class="property-name ">
+              <a href="#props_queue">queue</a>: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a>
+            </div>
+            <div class="short-description">
+              <p>upload file queue</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            public
+            
+            
+          </td>
+          <td>
+            <div class="property-name ">
+              <a href="#props_tagName">tagName</a>: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a>
+            </div>
+            <div class="short-description">
+              <p>The root component element</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            public
+            
+            
+          </td>
+          <td>
+            <div class="property-name ">
+              <a href="#props_traditional">traditional</a>: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a>
+            </div>
+            <div class="short-description">
+              <p>file request ajax setting traditional, by default true</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            public
+            
+            
+          </td>
+          <td>
+            <div class="property-name ">
+              <a href="#props_url">url</a>: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a>
+            </div>
+            <div class="short-description">
+              <p>The upload url</p>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+  <h2 id="method-summary">Method Summary</h2>
+
+    <table class="summary">
+      <thead>
+      <tr>
+        <th colspan="2">Public Methods</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            public
+            
+            
+          </td>
+          <td>
+            <div class="method-name ">
+              <a href="#method_didInsertElement">didInsertElement</a>( ): Void
+            </div>
+            <div class="short-description">
+              
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            public
+            
+            
+          </td>
+          <td>
+            <div class="method-name ">
+              <a href="#method_inputStyle">inputStyle</a>( ): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a>
+            </div>
+            <div class="short-description">
+              
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            public
+            
+            
+          </td>
+          <td>
+            <div class="method-name ">
+              <a href="#method_labelStyle">labelStyle</a>( ): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a>
+            </div>
+            <div class="short-description">
+              
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            public
+            
+            
+          </td>
+          <td>
+            <div class="method-name ">
+              <a href="#method_willDestroy empty queue">willDestroy empty queue</a>( ): 
+            </div>
+            <div class="short-description">
+              
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            public
+            
+            
+          </td>
+          <td>
+            <div class="method-name ">
+              <a href="#method_willDestroy empty queue">willDestroy empty queue</a>( ): 
+            </div>
+            <div class="short-description">
+              
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="properties public">
+        <h2 id="public-properties">Public Properties</h2>
+<div class="property item">
+  <div id="props_accept" class="title">
+    <span class="source-link"><a href="../files/addon_components_ui-uploader.js.html#l155"><code>addon&#x2F;components&#x2F;ui-uploader.js:155</code></a></span>
+    <h3 class="">
+      public
+      
+      
+      accept: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a>
+    </h3>
+  </div>
+
+
+  <div class="property-description"><p>file accept</p>
+</div>
+
+</div>
+<div class="property item">
+  <div id="props_autoUpload" class="title">
+    <span class="source-link"><a href="../files/addon_components_ui-uploader.js.html#l119"><code>addon&#x2F;components&#x2F;ui-uploader.js:119</code></a></span>
+    <h3 class="">
+      public
+      
+      
+      autoUpload: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a>
+    </h3>
+  </div>
+
+
+  <div class="property-description"><p>To allow  file autoUpload</p>
+</div>
+
+</div>
+<div class="property item">
+  <div id="props_classNames" class="title">
+    <span class="source-link"><a href="../files/addon_components_ui-uploader.js.html#l110"><code>addon&#x2F;components&#x2F;ui-uploader.js:110</code></a></span>
+    <h3 class="">
+      public
+      
+      
+      classNames: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a>
+    </h3>
+  </div>
+
+
+  <div class="property-description"><p>A array contain class names apply to root element</p>
+</div>
+
+</div>
+<div class="property item">
+  <div id="props_multiple" class="title">
+    <span class="source-link"><a href="../files/addon_components_ui-uploader.js.html#l137"><code>addon&#x2F;components&#x2F;ui-uploader.js:137</code></a></span>
+    <h3 class="">
+      public
+      
+      
+      multiple: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a>
+    </h3>
+  </div>
+
+
+  <div class="property-description"><p>upload multiple file</p>
+</div>
+
+</div>
+<div class="property item">
+  <div id="props_params" class="title">
+    <span class="source-link"><a href="../files/addon_components_ui-uploader.js.html#l146"><code>addon&#x2F;components&#x2F;ui-uploader.js:146</code></a></span>
+    <h3 class="">
+      public
+      
+      
+      params: Params
+    </h3>
+  </div>
+
+
+  <div class="property-description"><p>extra params</p>
+</div>
+
+</div>
+<div class="property item">
+  <div id="props_queue" class="title">
+    <span class="source-link"><a href="../files/addon_components_ui-uploader.js.html#l128"><code>addon&#x2F;components&#x2F;ui-uploader.js:128</code></a></span>
+    <h3 class="">
+      public
+      
+      
+      queue: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a>
+    </h3>
+  </div>
+
+
+  <div class="property-description"><p>upload file queue</p>
+</div>
+
+</div>
+<div class="property item">
+  <div id="props_tagName" class="title">
+    <span class="source-link"><a href="../files/addon_components_ui-uploader.js.html#l101"><code>addon&#x2F;components&#x2F;ui-uploader.js:101</code></a></span>
+    <h3 class="">
+      public
+      
+      
+      tagName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a>
+    </h3>
+  </div>
+
+
+  <div class="property-description"><p>The root component element</p>
+</div>
+
+</div>
+<div class="property item">
+  <div id="props_traditional" class="title">
+    <span class="source-link"><a href="../files/addon_components_ui-uploader.js.html#l25"><code>addon&#x2F;components&#x2F;ui-uploader.js:25</code></a></span>
+    <h3 class="">
+      public
+      
+      
+      traditional: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a>
+    </h3>
+  </div>
+
+
+  <div class="property-description"><p>file request ajax setting traditional, by default true</p>
+</div>
+
+</div>
+<div class="property item">
+  <div id="props_url" class="title">
+    <span class="source-link"><a href="../files/addon_components_ui-uploader.js.html#l92"><code>addon&#x2F;components&#x2F;ui-uploader.js:92</code></a></span>
+    <h3 class="">
+      public
+      
+      
+      url: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a>
+    </h3>
+  </div>
+
+
+  <div class="property-description"><p>The upload url</p>
+</div>
+
+</div>
+    </div>
+
+
+
+  <div id="methods public">
+    <h2 id="public-methods">Public Methods</h2>
+<div class="method item">
+    <div id="method_didInsertElement" class="title">
+        <span class="source-link"><a href="../files/addon_components_ui-uploader.js.html#l164"><code>addon&#x2F;components&#x2F;ui-uploader.js:164</code></a></span>
+        <h3 class="">
+            public
+            
+            
+            didInsertElement( ): Void
+        </h3>
+    </div>
+
+
+
+    <div class="method-description"></div>
+
+
+      <div class="return">
+        <h4>Return:</h4>
+        <div>
+          <span class="return-type">Void</span>
+          <span class="return-description"></span>
+        </div>
+      </div>
+
+
+</div>
+<div class="method item">
+    <div id="method_inputStyle" class="title">
+        <span class="source-link"><a href="../files/addon_components_ui-uploader.js.html#l211"><code>addon&#x2F;components&#x2F;ui-uploader.js:211</code></a></span>
+        <h3 class="">
+            public
+            
+            
+            inputStyle( ): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a>
+        </h3>
+    </div>
+
+
+
+    <div class="method-description"></div>
+
+
+      <div class="return">
+        <h4>Return:</h4>
+        <div>
+          <span class="return-type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+          <span class="return-description"></span>
+        </div>
+      </div>
+
+
+</div>
+<div class="method item">
+    <div id="method_labelStyle" class="title">
+        <span class="source-link"><a href="../files/addon_components_ui-uploader.js.html#l229"><code>addon&#x2F;components&#x2F;ui-uploader.js:229</code></a></span>
+        <h3 class="">
+            public
+            
+            
+            labelStyle( ): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a>
+        </h3>
+    </div>
+
+
+
+    <div class="method-description"></div>
+
+
+      <div class="return">
+        <h4>Return:</h4>
+        <div>
+          <span class="return-type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+          <span class="return-description"></span>
+        </div>
+      </div>
+
+
+</div>
+<div class="method item">
+    <div id="method_willDestroy empty queue" class="title">
+        <span class="source-link"><a href="../files/addon_components_ui-uploader.js.html#l190"><code>addon&#x2F;components&#x2F;ui-uploader.js:190</code></a></span>
+        <h3 class="">
+            public
+            
+            
+            willDestroy empty queue( ): 
+        </h3>
+    </div>
+
+
+
+    <div class="method-description"></div>
+
+
+      <div class="return">
+        <h4>Return:</h4>
+        <div>
+          
+          <span class="return-description"><p>null</p>
+</span>
+        </div>
+      </div>
+
+
+</div>
+<div class="method item">
+    <div id="method_willDestroy empty queue" class="title">
+        <span class="source-link"><a href="../files/addon_components_ui-uploader.js.html#l200"><code>addon&#x2F;components&#x2F;ui-uploader.js:200</code></a></span>
+        <h3 class="">
+            public
+            
+            
+            willDestroy empty queue( ): 
+        </h3>
+    </div>
+
+
+
+    <div class="method-description"></div>
+
+
+      <div class="return">
+        <h4>Return:</h4>
+        <div>
+          
+          <span class="return-description"><p>null</p>
+</span>
+        </div>
+      </div>
+
+
+</div>
+  </div>
+
+
+
+
+    <div id="events">
+        <h2>Events</h2>
+<a name="events_abort"></a>
+<div class="events item">
+    <code>abort</code> 
+    
+    
+    <br>
+    <span class="foundat"><a href="../files/addon_components_ui-uploader.js.html#l63"><code>addon&#x2F;components&#x2F;ui-uploader.js:63</code></a></span>
+    <p>deactivate upload action</p>
+
+    <strong>Extra event object properties:</strong>
+    <ul>
+        <li>
+            <code>obj</code> <strong>&lt;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a>&gt;</strong>
+        <p>fileInput instance see fileInput</p>
+
+        </li>
+    </ul>
+</div>
+
+<a name="events_start"></a>
+<div class="events item">
+    <code>start</code> 
+    
+    
+    <br>
+    <span class="foundat"><a href="../files/addon_components_ui-uploader.js.html#l32"><code>addon&#x2F;components&#x2F;ui-uploader.js:32</code></a></span>
+    <p>activate upload action</p>
+
+    <strong>Extra event object properties:</strong>
+    <ul>
+        <li>
+            <code>obj</code> <strong>&lt;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a>&gt;</strong>
+        <p>fileInput instance see fileInput</p>
+
+        </li>
+    </ul>
+</div>
+
+<a name="events_"></a>
+<div class="events item">
+    `` 
+    
+    
+    <br>
+    <span class="foundat"><a href="../files/addon_components_ui-uploader.js.html#l82"><code>addon&#x2F;components&#x2F;ui-uploader.js:82</code></a></span>
+    <p>delete file from queue</p>
+
+    <strong>Extra event object properties:</strong>
+    <ul>
+        <li>
+            <code>obj</code> <strong>&lt;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a>&gt;</strong>
+        <p>fileInput instance see fileInput</p>
+
+        </li>
+    </ul>
+</div>
+
+    </div>
+</div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+</body>
+</html>
