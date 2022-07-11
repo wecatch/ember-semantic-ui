@@ -7,8 +7,8 @@
 This Ember addon support many UI components based on [semantic-ui](http://semantic-ui.com), Anyone can use this addon in their Ember project. 
 
 
-[Demo](http://wecatch.me/ember-semantic-ui/demo/)
-[Docs](http://wecatch.me/ember-semantic-ui/docs/)
+[Demo](https://wecatch.me/ember-semantic-ui/demo/)
+[Docs](https://wecatch.me/ember-semantic-ui/docs/)
 
 
 ## Components
@@ -19,71 +19,52 @@ This Ember addon support many UI components based on [semantic-ui](http://semant
 
 **Button**
 
-- [ui-button](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-button)
+- [ui-button](http://wecatch.me/ember-semantic-ui/demo/#/ui-button)
 
 **Menu**
 
-- [ui-dropdown-menu](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-dropdown-menu)
-- [ui-tab-menu](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-tab-menu)
+- [ui-dropdown-menu](http://wecatch.me/ember-semantic-ui/demo/#/ui-dropdown-menu)
+- [ui-tab-menu](http://wecatch.me/ember-semantic-ui/demo/#/ui-tab-menu)
 
 
 **Input**
 
-- [ui-input-tags](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-input-tags)
-- [ui-input](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-input)
-- [ui-date-input](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-date-input)
-- [ui-date-time-input](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-date-time-input)
+- [ui-input-tags](https://wecatch.me/ember-semantic-ui/demo/#/ui-input-tags)
+- [ui-input](https://wecatch.me/ember-semantic-ui/demo/#/ui-input)
+- [ui-date-input](https://wecatch.me/ember-semantic-ui/demo/#/ui-date-input)
+- [ui-date-time-input](https://wecatch.me/ember-semantic-ui/demo/#/ui-date-time-input)
 
 
 **Checkbox**
 
-- [ui-checkbox-group](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-checkbox-group)
-- [ui-checkbox](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-checkbox)
+- [ui-checkbox-group](https://wecatch.me/ember-semantic-ui/demo/#/ui-checkbox-group)
+- [ui-checkbox](https://wecatch.me/ember-semantic-ui/demo/#/ui-checkbox)
 
 
 **Modal**
 
-- [ui-modal](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-modal)
+- [ui-modal](https://wecatch.me/ember-semantic-ui/demo/#/ui-modal)
 
 **Select**
 
-- [ui-select](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-select)
-- [ui-multi-select](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-multi-select)
+- [ui-select](https://wecatch.me/ember-semantic-ui/demo/#/ui-select)
+- [ui-multi-select](https://wecatch.me/ember-semantic-ui/demo/#/ui-multi-select)
 
 **File**
 
-- [ui-uploader](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-uploader)
-- [file-input](http://wecatch.github.io/ember-semantic-ui/demo/#/file-input)
+- [ui-uploader](https://wecatch.me/ember-semantic-ui/demo/#/ui-uploader)
+- [file-input](https://wecatch.me/ember-semantic-ui/demo/#/file-input)
 
 
 **Popup**
 
-- [ui-popup](http://wecatch.github.io/ember-semantic-ui/demo/#/ui-popup)
+- [ui-popup](https://wecatch.me/ember-semantic-ui/demo/#/ui-popup)
 
 **Message**
 
-- [ui-message](http://wecatch.me/ember-semantic-ui/demo/ui-message)
+- [ui-message](https://wecatch.me/ember-semantic-ui/demo/ui-message)
 
 # Getting Started
-
-## Install
-
-In your ember-cli project, install this addon from npm
-
-## Compatibility
-
-or install the latest version from github
-
-```
-npm install git+https://github.com/wecatch/ember-semantic-ui --save-dev
-```
-
-If your ember version has remove jquery, please do as below:
-```
-ember install @ember/jquery
-ember install @ember/optional-features
-ember feature:enable jquery-integration
-```
 
 ## Dummy app
 
@@ -95,6 +76,10 @@ ember server
 ```
 
 ## Use this addon in your ember application
+
+```
+ember install ember-semantic-ui
+```
 
 
 1.Modify app/index.html and import semanti-ui js file and css file

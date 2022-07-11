@@ -83,6 +83,7 @@
     "qunit": "^2.19.1",
     "qunit-dom": "^2.0.0",
     "showdown": "^2.1.0",
+    "walk-sync": "^3.0.0",
     "webpack": "^5.72.1",
     "yuidoc-ember-cli-theme": "^1.0.2"
   },
