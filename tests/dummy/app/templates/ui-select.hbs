@@ -1,6 +1,6 @@
 <div class="ui grid">
-	<div class="row">
-		<div class="column">
+  <div class="row">
+    <div class="column">
       <CodeHighlight @lang={{"javascript"}} >
 import Service from '@ember/service';
 export default class OptionService extends Service {
@@ -16,15 +16,26 @@ export default class OptionService extends Service {
     }
   }
       </CodeHighlight>
-      <CodeHighlight @code={{code-show 'ui-select' 0}} />
-			<div class="ui segments">
-				<div class="ui segment">
-					<div class="meta">
-						{{this.value}}
-					</div>
-					<UiSelect @search={{true}} @options={{this.options.options}} @onChange={{set this "value"}} />
-				</div>
-			</div>
-		</div>
-	</div>
+      <pre class='hljs language-handlebars' >
+      {{render-html '
+  <div class="ui segment">
+    <div class="meta">
+      {{this.value}}
+    </div>
+    <UiSelect @search={{true}} @value="apple"
+    @options={{this.options.options}} @onChange={{set this "value" }} />
+  </div>
+        ' 'handlebars'
+      }}
+  </pre>
+      <div class="ui segments">
+        <div class="ui segment">
+          <div class="meta">
+            {{this.value}}
+          </div>
+          <UiSelect @search={{true}} @value="apple" @options={{this.options.options}} @onChange={{set this "value" }} />
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
