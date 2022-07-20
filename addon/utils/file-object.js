@@ -20,10 +20,10 @@ class FileObject {
   rawSize = 0;
 
   // {Property} Indicates if this file is an image we can display
-  isDisplayableImage = false;
+  @tracked isDisplayableImage = false;
 
   // {Property} String representation of the file
-  base64Image = '';
+  @tracked base64Image = '';
 
   // {Property} Will be an HTML5 File
   fileToUpload = null;
@@ -38,16 +38,16 @@ class FileObject {
   uploader = null;
 
   // {Property} Upload progress 0-100
-  percent = null;
+  @tracked percent = null;
 
   // {Property} If a file is currently being uploaded
   @tracked isUploading = false;
 
   // {Property} If a file is currently being uploaded
-  isDeleted = false;
+  @tracked isDeleted = false;
 
   // {Property} If the file was uploaded successfully
-  isUploaded = false;
+  @tracked isUploaded = false;
 
   // {Property} when the file was uploaded successfully, response data from server
   data = null;
@@ -66,7 +66,7 @@ class FileObject {
 
       // Create a reader and read the file.
       var reader = new FileReader();
-      reader.onload = function (e) {
+      reader.onload = (e) => {
         this.base64Image = e.target.result;
       };
 
@@ -98,4 +98,4 @@ function humanReadableFileSize(size) {
   return label;
 }
 
-export default { FileObject, humanReadableFileSize };
+export { FileObject, humanReadableFileSize };

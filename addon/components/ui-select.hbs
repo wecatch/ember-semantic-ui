@@ -1,4 +1,4 @@
-<select class="ui selection {{if this.search 'search'}} dropdown" ...attributes {{did-insert this.register}}>
+<select class="ui selection {{if this.search 'search'}} dropdown" ...attributes {{did-insert this.register}} {{did-update this.clear}} >
 
   {{#if (has-block)}}
     {{yield}}

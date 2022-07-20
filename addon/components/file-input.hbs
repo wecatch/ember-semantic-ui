@@ -1,9 +1,9 @@
 <div ...attributes {{did-insert this.register}}>
   {{#if this.multiple}}
     {{! template-lint-disable require-input-label }}
-    <input type="file" name="file" multiple />
+    <input type="file" name="file" multiple {{on "change" this.fileChange }} />
   {{else}}
-    <input type="file" name="file" />
+    <input type="file" name="file" {{on "change" this.fileChange }} />
   {{/if}}
 
   {{#if (has-block-params)}}

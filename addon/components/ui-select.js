@@ -25,6 +25,11 @@ export default class UiSelectComponent extends Component {
     });
   }
 
+  @action
+  clear(element) {
+    $(element).dropdown('clear');
+  }
+
   /**
    * value  for the select
    *

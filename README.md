@@ -71,7 +71,6 @@ This Ember addon support many UI components based on [semantic-ui](http://semant
 ```
 git clone https://github.com/wecatch/ember-semantic-ui
 npm install
-bower install
 ember server
 ```
 

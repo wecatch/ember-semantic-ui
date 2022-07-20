@@ -1,9 +1,8 @@
 /* eslint-disable ember/no-jquery */
 /* eslint-disable ember/no-new-mixins */
-import { A, isArray } from '@ember/array';
+import { A } from '@ember/array';
 import { action } from '@ember/object';
-import { isEmpty } from '@ember/utils';
-import $ from 'jquery';
+import { tracked } from '@glimmer/tracking';
 
 import Component from '@glimmer/component';
 import EmberUploader from '../utils/ember-uploader';
@@ -22,6 +21,28 @@ export default class FileInputComponent extends Component {
   element = null;
 
   /**
+   * ember uploader instance see {{#crossLink "utils.EmberUploader"}}{{/crossLink}}
+   *
+   * @property {Object} uploader
+   *
+   */
+  uploader = null;
+
+  /**
+   * the upload file is finished
+   *
+   * @property {Boolean} isUploaded
+   * @default false
+   *
+   */
+  @tracked isUploaded = false;
+
+  /**
+   * this input file that is uploaded
+   */
+  fileObject = null;
+
+  /**
    * file request ajax setting traditional, by default true
    * @property {boolean} traditional
    *
@@ -38,13 +59,7 @@ export default class FileInputComponent extends Component {
   get style() {
     return this.args.style ?? this.style;
   }
-  /**
-   * ember uploader instance see {{#crossLink "utils.EmberUploader"}}{{/crossLink}}
-   *
-   * @property {Object} uploader
-   *
-   */
-  uploader = null;
+
   /**
    * upload url
    *
@@ -84,14 +99,7 @@ export default class FileInputComponent extends Component {
   get paramName() {
     return this.args.paramName ?? 'file';
   }
-  /**
-   * the upload file is finished
-   *
-   * @property {Boolean} isUploaded
-   * @default false
-   *
-   */
-  isUploaded = false;
+
   /**
    * the upload request status
    *
@@ -127,24 +135,27 @@ export default class FileInputComponent extends Component {
   @action
   register(element) {
     this.element = element;
-    let self = this;
-    $(element)
-      .find('input')
-      .on('onchange', function (e) {
-        let input = e.target;
-        self.filesDidChange(input.files);
-      });
+  }
+
+  @action
+  fileChange(e) {
+    let input = e.target;
+    this.filesDidChange(input.files);
   }
 
   filesDidChange(files) {
-    if (isArray(files)) {
+    if (this.multiple) {
       this.start(files);
-    } else if (!isEmpty(files)) {
+    } else if (files.length > 0) {
       this.fileObject = new FileObject({ fileToUpload: files[0] });
       if (this.autoUpload) {
         this.start();
       }
     }
+  }
+
+  clearInputFile() {
+    this.element.querySelector('input[type="file"]').value = '';
   }
 
   /**
@@ -157,19 +168,18 @@ export default class FileInputComponent extends Component {
   @action
   start(files) {
     let { uploader, fileObject, extra } = this;
-    let self = this;
     if (files) {
       let fa = A({ content: files });
       uploader.upload(files, extra);
       if (this.args.uploadStart) {
         this.args.uploadStart(fa);
       }
-      uploader.on('didUpload', function (data) {
-        self.isUploaded = true;
+      uploader.on('didUpload', (data) => {
+        this.isUploaded = true;
         //empty input file
-        $(self.element).find('input').val('');
-        if (self.args.uploadSuccess) {
-          self.args.uploadSuccess(fa, data);
+        this.clearInputFile();
+        if (this.args.uploadSuccess) {
+          this.args.uploadSuccess(fa, data);
         }
       });
     } else if (fileObject) {
@@ -179,19 +189,19 @@ export default class FileInputComponent extends Component {
       }
 
       //didupload event
-      uploader.on('didUpload', function (data) {
-        self.isUploaded = true;
+      uploader.on('didUpload', (data) => {
+        this.isUploaded = true;
         fileObject.set('data', data);
         //empty input file TODO
-        $(self.element).find('input').val('');
-        if (self.args.uploadSuccess) {
-          self.args.uploadSuccess(fileObject, data);
+        this.clearInputFile();
+        if (this.args.uploadSuccess) {
+          this.args.uploadSuccess(fileObject, data);
         }
       });
     }
 
     //progress event
-    uploader.on('progress', function (e) {
+    uploader.on('progress', (e) => {
       if (this.args.uploadProgress) {
         this.args.uploadProgress(e);
       }
@@ -212,7 +222,7 @@ export default class FileInputComponent extends Component {
       this.args.uploadAbort();
     }
     //empty input file
-    $(this.element).find('input').val('');
+    this.clearInputFile();
   }
 
   constructor() {
