@@ -5,6 +5,11 @@
       <div class="ui segment">
         <UiInputTags @value={{this.value}} @onChange={{set this "value"}} />
         <p>{{this.valueShow}}</p>
+
+        {{!-- template-lint-disable require-input-label --}}
+        <div class="ui input" >
+            <input type="text" placeholder="add new value" {{on "change" this.addValue }} >
+        </div>
       </div>
     </div>
   </div>

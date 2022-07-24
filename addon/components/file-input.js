@@ -191,7 +191,6 @@ export default class FileInputComponent extends Component {
       //didupload event
       uploader.on('didUpload', (data) => {
         this.isUploaded = true;
-        fileObject.set('data', data);
         //empty input file TODO
         this.clearInputFile();
         if (this.args.uploadSuccess) {

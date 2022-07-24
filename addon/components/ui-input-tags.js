@@ -2,7 +2,6 @@
 import { A } from '@ember/array';
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
-import { tracked } from '@glimmer/tracking';
 import $ from 'jquery';
 
 /**
@@ -17,7 +16,9 @@ value must be required
 
 */
 export default class UiInputTagsComponent extends Component {
-  @tracked value = A();
+  get value() {
+    return this.args.value.map((v) => String(v));
+  }
 
   @action
   register(element) {
@@ -36,24 +37,22 @@ export default class UiInputTagsComponent extends Component {
       },
     });
   }
+
   _addValue(value) {
-    this.value.addObject(value);
+    // keep up to date args value
     if (typeof this.args.onChange === 'function') {
-      this.args.onChange(this.value);
+      const newValue = A([].concat(this.args.value));
+      newValue.addObject(value);
+      this.args.onChange(newValue);
     }
   }
 
   _removeValue(value) {
-    this.value.removeObject(value);
+    // keep up to date args value
     if (typeof this.args.onChange === 'function') {
-      this.args.onChange(this.value);
-    }
-  }
-
-  constructor() {
-    super(...arguments);
-    for (var i = this.args.value.length - 1; i >= 0; i--) {
-      this.value.set(String(i), String(this.args.value[i]));
+      const newValue = A([].concat(this.args.value));
+      newValue.removeObject(value);
+      this.args.onChange(newValue);
     }
   }
 

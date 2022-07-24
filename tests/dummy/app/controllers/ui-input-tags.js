@@ -2,10 +2,12 @@ import Controller from '@ember/controller';
 import { A } from '@ember/array';
 import { later } from '@ember/runloop';
 import { action } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
 
 // eslint-disable-next-line ember/no-classic-classes
 export default class UiInputTagsController extends Controller {
-  value = A(['google']);
+  @tracked value = A(['google']);
+
   get valueShow() {
     return this.value.join(',');
   }
@@ -16,6 +18,12 @@ export default class UiInputTagsController extends Controller {
 
   get value2Show() {
     return this.value2 && this.value2.join(',');
+  }
+
+  @action
+  addValue(e) {
+    this.value.addObject(e.target.value);
+    e.target.value = '';
   }
 
   @action
