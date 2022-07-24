@@ -113,6 +113,12 @@ The [ember-uploader](https://github.com/benefitcloud/ember-uploader) project sup
 # Release notes
 
 
+## 1.0.1
+
+- fix FileInput bug
+- fix UiInputTags value change rerender
+
+
 ## 1.0.0
 
 - Upgrade ember-cli to 4.4, this version is not compatible, please take caution
