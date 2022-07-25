@@ -40,5 +40,6 @@
 /yarn.lock.ember-try
 /docs
 /Makefile
-/readme.js
+readme.js
 /yuidoc.json
+/.vscode

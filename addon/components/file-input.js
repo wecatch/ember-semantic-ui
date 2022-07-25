@@ -19,6 +19,7 @@ file-input-base mixinx
 */
 export default class FileInputComponent extends Component {
   element = null;
+  files = null;
 
   /**
    * ember uploader instance see {{#crossLink "utils.EmberUploader"}}{{/crossLink}}
@@ -139,18 +140,12 @@ export default class FileInputComponent extends Component {
 
   @action
   fileChange(e) {
-    let input = e.target;
-    this.filesDidChange(input.files);
-  }
-
-  filesDidChange(files) {
-    if (this.multiple) {
-      this.start(files);
-    } else if (files.length > 0) {
-      this.fileObject = new FileObject({ fileToUpload: files[0] });
-      if (this.autoUpload) {
-        this.start();
-      }
+    this.files = e.target.files;
+    if (this.files.length > 0) {
+      this.fileObject = new FileObject({ fileToUpload: this.files[0] });
+    }
+    if (this.autoUpload) {
+      this.start();
     }
   }
 
@@ -166,45 +161,19 @@ export default class FileInputComponent extends Component {
    *
    */
   @action
-  start(files) {
-    let { uploader, fileObject, extra } = this;
-    if (files) {
-      let fa = A({ content: files });
+  start() {
+    let { uploader, fileObject, extra, files } = this;
+    let fa = fileObject;
+    if (this.multiple) {
+      fa = A({ content: files });
       uploader.upload(files, extra);
-      if (this.args.uploadStart) {
-        this.args.uploadStart(fa);
-      }
-      uploader.on('didUpload', (data) => {
-        this.isUploaded = true;
-        //empty input file
-        this.clearInputFile();
-        if (this.args.uploadSuccess) {
-          this.args.uploadSuccess(fa, data);
-        }
-      });
-    } else if (fileObject) {
+    } else {
       uploader.upload(fileObject.fileToUpload, extra);
-      if (this.args.uploadStart) {
-        this.args.uploadStart(fileObject);
-      }
-
-      //didupload event
-      uploader.on('didUpload', (data) => {
-        this.isUploaded = true;
-        //empty input file TODO
-        this.clearInputFile();
-        if (this.args.uploadSuccess) {
-          this.args.uploadSuccess(fileObject, data);
-        }
-      });
     }
 
-    //progress event
-    uploader.on('progress', (e) => {
-      if (this.args.uploadProgress) {
-        this.args.uploadProgress(e);
-      }
-    });
+    if (this.args.uploadStart) {
+      this.args.uploadStart(fa);
+    }
   }
   /**
    * abort upload action
@@ -232,6 +201,26 @@ export default class FileInputComponent extends Component {
       paramName: paramName,
       type: method,
       traditional: this.traditional,
+    });
+
+    //didupload event
+    this.uploader.on('didUpload', (data) => {
+      this.isUploaded = true;
+      this.clearInputFile();
+      if (this.args.uploadSuccess) {
+        if (this.multiple) {
+          this.args.uploadSuccess(this.files, data);
+        } else {
+          this.args.uploadSuccess(this.fileObject, data);
+        }
+      }
+    });
+
+    //progress event
+    this.uploader.on('progress', (e) => {
+      if (this.args.uploadProgress) {
+        this.args.uploadProgress(e);
+      }
     });
   }
 
